@@ -9,7 +9,7 @@ namespace CampusNex
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            Console.WriteLine(textBox1.Text);
         }
     }
 }
