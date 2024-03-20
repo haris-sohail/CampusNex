@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace CampusNex
 {
-    public partial class LogIn : Form
+    public partial class Login : Form
     {
-        public LogIn()
+        public Login()
         {
             InitializeComponent();
         }
