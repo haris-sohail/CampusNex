@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,5 +39,11 @@ namespace CampusNex
 
         }
 
+        private void bunifuButton1_Click_1(object sender, EventArgs e)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT * FROM your_table;";
+            dbConnector.ExecuteQuery(query);
+        }
     }
 }
