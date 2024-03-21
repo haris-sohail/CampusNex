@@ -75,5 +75,25 @@ CREATE TABLE Members (
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
 
+INSERT INTO Users (username, password, email, role) VALUES
+('haris', 'password', 'haris@gmail.com', 'student'),
+('kalsoom', 'password', 'kalsoom@gmail.com', 'mentor');
+
+INSERT INTO Students (user_id, roll_number) VALUES
+(1, 531);
+
+INSERT INTO Mentors (user_id, designation, education_info) VALUES
+(2, 'Assistant Professor', 'BSCS');
+
+INSERT INTO Societies (society_name, society_description, mentor_id, head_id, creation_date) VALUES
+('Fast Computing Society', 'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
+ skills, and innovation in the field of computing through various educational, 
+ collaborative, and networking activities.', 2, 1, '2012-05-15');
+ 
+ SELECT * FROM Users;
+ SELECT * FROM Students;
+ SELECT * FROM Mentors;
+ SELECT * FROM Societies;
+
 
 
