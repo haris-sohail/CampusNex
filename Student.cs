@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace CampusNex
         public Student()
         {
             InitializeComponent();
+            this.Shown += Student_Shown;
         }
 
         private void societiesBtn_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace CampusNex
 
         private void Student_Shown(object sender, EventArgs e)
         {
-            // Connecting to Database to 
+
         }
 
     }
