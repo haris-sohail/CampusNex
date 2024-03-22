@@ -41,14 +41,16 @@ namespace CampusNex
 
         private void bunifuButton1_Click_1(object sender, EventArgs e)
         {
-            //DB_Connection dbConnector = new DB_Connection();
-            //string query = "SELECT * FROM your_table;";
-            //dbConnector.ExecuteQuery(query);
             this.Hide();
-            Student s = new Student();
+            //Student s = new Student();
+            Mentor m = new Mentor();
+
             // Subscribe to the FormClosed event of Form2
-            s.FormClosed += studentFormClosed;
-            s.Show();
+            //s.FormClosed += studentFormClosed;
+            m.FormClosed += studentFormClosed;
+
+            //s.Show();
+            m.Show();
         }
 
 
