@@ -174,7 +174,17 @@ namespace CampusNex
 
         private void regNewSociety_Click(object sender, EventArgs e)
         {
+            DB_Connection dbConnector = new DB_Connection();
 
+            List<object> formInput = new List<object>();
+
+            formInput.Add(societyName.Text);
+            formInput.Add(societySlogan.Text);
+            formInput.Add(societyDesc.Text);
+            formInput.Add(availableMentors.Text);
+            formInput.Add(uploadImgPicBox);
+
+            dbConnector.executeInsert(formInput, "Societies");
         }
     }
 }

@@ -123,5 +123,16 @@ namespace CampusNex
             }
             
         }
+
+        public void executeInsert(List<object> toInsert, string tableName) {
+            if (OpenConnection())
+            {
+                string query = "INSERT INTO " + tableName;
+                foreach(var value in toInsert)
+                {
+
+                }
+            }
+        }
     }
 }
