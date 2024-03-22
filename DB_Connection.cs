@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -124,15 +125,51 @@ namespace CampusNex
             
         }
 
+        public string getMentorId(string mentorName)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT Mentors.user_id FROM Mentors " +
+                           "INNER JOIN Users ON Mentors.user_id = Users.user_id " +
+                           "WHERE Users.username = '" + mentorName + "'";
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            if (selectResult[0].Count > 0 && selectResult.Count > 0)
+            {
+                string mentorId = selectResult[0][0].ToString();
+                return mentorId;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         public void executeInsert(List<object> toInsert, string tableName) {
             if (OpenConnection())
             {
-                string query = "INSERT INTO " + tableName;
-                foreach(var value in toInsert)
-                {
+                string mentorName = toInsert[3].ToString();
+                int mentorId = int.Parse(getMentorId(mentorName));
 
-                }
+                string query = "INSERT INTO " + tableName + "(society_name, society_slogan,society_description," +
+                    "mentor_id, head_id, creation_date,society_logo) VALUES (@societyName, @societySlog, " +
+                    "@societyDesc, @mentorId, @headId, @creationDate, @logoBlob)";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.Add("@societyName", MySqlDbType.String).Value = toInsert[0];
+                cmd.Parameters.Add("@societySlog", MySqlDbType.String).Value = toInsert[1];
+                cmd.Parameters.Add("@societyDesc", MySqlDbType.String).Value = toInsert[2];
+                cmd.Parameters.Add("@mentorId", MySqlDbType.Int32).Value = mentorId;
+                cmd.Parameters.Add("@headId", MySqlDbType.Int32).Value = 1;
+                cmd.Parameters.Add("@creationDate", MySqlDbType.Date).Value = DateTime.Today;
+                cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = toInsert[4];
+
+                cmd.ExecuteNonQuery();
             }
         }
+
+        
     }
 }

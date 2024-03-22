@@ -172,6 +172,18 @@ namespace CampusNex
             }
         }
 
+        public byte[] convertToByteStream(System.Drawing.Image image)
+        {
+            byte[] bytes;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat); // Choose appropriate format
+                bytes = ms.ToArray();
+            }
+
+            return bytes;
+        }
         private void regNewSociety_Click(object sender, EventArgs e)
         {
             DB_Connection dbConnector = new DB_Connection();
@@ -182,7 +194,11 @@ namespace CampusNex
             formInput.Add(societySlogan.Text);
             formInput.Add(societyDesc.Text);
             formInput.Add(availableMentors.Text);
-            formInput.Add(uploadImgPicBox);
+
+            // convert the image to byte stream
+            byte[] imageBytes = convertToByteStream(uploadImgPicBox.Image);
+
+            formInput.Add(imageBytes);
 
             dbConnector.executeInsert(formInput, "Societies");
         }
