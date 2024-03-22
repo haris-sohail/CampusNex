@@ -128,7 +128,7 @@ namespace CampusNex
         public string getMentorId(string mentorName)
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT Mentors.user_id FROM Mentors " +
+            string query = "SELECT Mentors.mentor_id FROM Mentors " +
                            "INNER JOIN Users ON Mentors.user_id = Users.user_id " +
                            "WHERE Users.username = '" + mentorName + "'";
 
@@ -162,7 +162,7 @@ namespace CampusNex
                 cmd.Parameters.Add("@societySlog", MySqlDbType.String).Value = toInsert[1];
                 cmd.Parameters.Add("@societyDesc", MySqlDbType.String).Value = toInsert[2];
                 cmd.Parameters.Add("@mentorId", MySqlDbType.Int32).Value = mentorId;
-                cmd.Parameters.Add("@headId", MySqlDbType.Int32).Value = 1;
+                cmd.Parameters.Add("@headId", MySqlDbType.Int32).Value = 2;
                 cmd.Parameters.Add("@creationDate", MySqlDbType.Date).Value = DateTime.Today;
                 cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = toInsert[4];
 
