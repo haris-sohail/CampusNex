@@ -47,9 +47,12 @@ CREATE TABLE Societies (
 	head_id INT NOT NULL,
     creation_date DATE NOT NULL,
     society_logo BLOB,
+	status ENUM('pending', 'accepted', 'rejected') NOT NULL,
     FOREIGN KEY (head_id) REFERENCES Students(student_id),
-    FOREIGN KEY (mentor_id) REFERENCES Users(user_id)
+    FOREIGN KEY (mentor_id) REFERENCES Mentors(mentor_id)
 );
+-- Society Reg Request
+
 
 -- Event Table
 CREATE TABLE Events (
@@ -79,26 +82,28 @@ CREATE TABLE Members (
 );
 
 INSERT INTO Users (username, password, email, role, user_pic) VALUES
-('kalsoom', 'password', 'kalsoom@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
-('haris', 'password', 'haris@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\1.png'))),
+('kalsoom', 'password', 'kalsoom@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
+('haris', 'password', 'haris@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\1.png'))),
 ('aiman', 'password', 'aiman@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
-('aliza', 'password', 'aliza@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png')));
+('aliza', 'password', 'aliza@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png')));
 ;
 
 INSERT INTO Students (user_id, roll_number) VALUES
-(1, 531);
+(1, 531),
+(4, 470);
 
 INSERT INTO Mentors (user_id, designation, education_info) VALUES
 (2, 'Assistant Professor', 'BSCS'),
-(3, 'Assistant Professor', 'BSCS'),
-(4, 'Assistant Professor', 'BSCS')
+(3, 'Assistant Professor', 'BSCS')
 ;
 
-INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
+INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo,status) VALUES
 ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
 skills, and innovation in the field of computing through various educational, 
-collaborative, and networking activities.', 2, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')));
- 
+collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'accepted'),
+('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
+skills, and innovation in the field of computing through various educational, 
+collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
  -- The following query runs on Haris' machine only
  
  -- INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
@@ -115,6 +120,7 @@ collaborative, and networking activities.', 2, 1, '2012-05-15',(LOAD_FILE('D:\\S
  SELECT * FROM Users;
  SELECT * FROM Students;
  SELECT * FROM Mentors;
+ 
  
   select username from Users INNER JOIN Students ON Students.user_id = Users.user_id WHERE Students.user_id = 1;
 
@@ -134,5 +140,6 @@ LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
 WHERE U.role = 'mentor'
 GROUP BY M.mentor_id
 HAVING COUNT(S.society_id) < 2;
+
 
 

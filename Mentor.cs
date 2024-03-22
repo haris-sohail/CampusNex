@@ -18,7 +18,6 @@ namespace CampusNex
         public Mentor()
         {
             InitializeComponent();
-            this.Shown += Student_Shown;
         }
 
         private void societiesBtn_Click(object sender, EventArgs e)
@@ -98,7 +97,8 @@ namespace CampusNex
 
             return societyImg;
         }
-        private void Student_Shown(object sender, EventArgs e)
+
+        private void Mentor_Load(object sender, EventArgs e)
         {
             // get societies from database
 
@@ -110,7 +110,8 @@ namespace CampusNex
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
             // Add society cards from the select results
-            foreach(var row in selectResult) {
+            foreach (var row in selectResult)
+            {
                 // Get the columns in the correct order
                 string societyName = row[1].ToString();
                 string sSlogan = row[2].ToString();
@@ -127,10 +128,58 @@ namespace CampusNex
 
                 string headName = getHeadName(sHeadId);
 
-                string acronym = getAcronym(societyName); 
+                string acronym = getAcronym(societyName);
 
                 Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
             }
         }
+
+        private void loadReqData()
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT * FROM Societies;";
+
+            // each list contains an individual row's data
+
+            //List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            //// Add society cards from the select results
+            //foreach (var row in selectResult)
+            //{
+            //    // Get the columns in the correct order
+            //    string societyName = row[1].ToString();
+            //    string sSlogan = row[2].ToString();
+            //    string sMentorId = row[4].ToString();
+            //    string sHeadId = row[5].ToString();
+
+
+            //    byte[] imageBlob = (byte[])row[7];
+
+            //    System.Drawing.Image societyImg = getImage(imageBlob);
+
+            //    // get mentor and head names
+            //    string mentorName = getMentorName(sMentorId);
+
+            //    string headName = getHeadName(sHeadId);
+
+            //    string acronym = getAcronym(societyName);
+
+            //    Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
+            //}
+        }
+        private void reqBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage(((Control)sender).Text);
+            for (int i = 0; i < 10; i++)
+            {
+                socReqGrid.Rows.Add(new Object[]
+                {
+                    imageList1.Images[0]
+                }) ;
+            }
+
+            loadReqData();
+        }
+
     }
 }
