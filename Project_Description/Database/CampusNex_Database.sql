@@ -91,8 +91,15 @@ INSERT INTO Mentors (user_id, designation, education_info) VALUES
 
 INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
 ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
- skills, and innovation in the field of computing through various educational, 
- collaborative, and networking activities.', 2, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')));
+skills, and innovation in the field of computing through various educational, 
+collaborative, and networking activities.', 2, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')));
+ 
+ -- The following query runs on Haris' machine only
+ 
+ -- INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
+-- ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
+-- skills, and innovation in the field of computing through various educational, 
+-- collaborative, and networking activities.', 2, 1, '2012-05-15',(LOAD_FILE('F:\\Haris\'\\Assignments\\SE_Iteration0\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')));
 
 -- UPDATE Societies
 -- SET society_logo = LOAD_FILE('ab.jpg')
@@ -104,6 +111,7 @@ INSERT INTO Societies (society_name, society_slogan,society_description, mentor_
  SELECT * FROM Students;
  SELECT * FROM Mentors;
  
+  select username from Users INNER JOIN Students ON Students.user_id = Users.user_id WHERE Students.user_id = 1
 
 
 
