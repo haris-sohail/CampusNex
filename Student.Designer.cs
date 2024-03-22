@@ -44,7 +44,6 @@
             this.StudentPages = new Bunifu.UI.WinForms.BunifuPages();
             this.SocietiesPage = new System.Windows.Forms.TabPage();
             this.societyCardsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.societyCard1 = new CampusNex.societyCard();
             this.userName = new Bunifu.UI.WinForms.BunifuLabel();
             this.userPic = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.searchBar = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -53,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
             this.SocietiesPage.SuspendLayout();
-            this.societyCardsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -330,44 +328,12 @@
             // 
             this.societyCardsPanel.AutoScroll = true;
             this.societyCardsPanel.BackColor = System.Drawing.Color.Transparent;
-            this.societyCardsPanel.Controls.Add(this.societyCard1);
             this.societyCardsPanel.Location = new System.Drawing.Point(25, 126);
             this.societyCardsPanel.Margin = new System.Windows.Forms.Padding(10);
             this.societyCardsPanel.Name = "societyCardsPanel";
             this.societyCardsPanel.Padding = new System.Windows.Forms.Padding(40, 10, 10, 10);
             this.societyCardsPanel.Size = new System.Drawing.Size(996, 492);
             this.societyCardsPanel.TabIndex = 4;
-            // 
-            // societyCard1
-            // 
-            this.societyCard1.AllowAnimations = false;
-            this.societyCard1.AllowBorderColorChanges = false;
-            this.societyCard1.AllowMouseEffects = true;
-            this.societyCard1.AnimationSpeed = 200;
-            this.societyCard1.BackColor = System.Drawing.Color.Transparent;
-            this.societyCard1.BackgroundColor = System.Drawing.Color.White;
-            this.societyCard1.BorderColor = System.Drawing.Color.White;
-            this.societyCard1.BorderRadius = 10;
-            this.societyCard1.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
-            this.societyCard1.BorderThickness = 1;
-            this.societyCard1.ColorContrastOnClick = 30;
-            this.societyCard1.ColorContrastOnHover = 30;
-            this.societyCard1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.societyCard1.Image = null;
-            this.societyCard1.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.societyCard1.Location = new System.Drawing.Point(50, 20);
-            this.societyCard1.Margin = new System.Windows.Forms.Padding(10);
-            this.societyCard1.Name = "societyCard1";
-            this.societyCard1.sAcronym = "FDSS";
-            this.societyCard1.sHead = "ABC";
-            this.societyCard1.ShowBorders = true;
-            this.societyCard1.sImage = ((System.Drawing.Image)(resources.GetObject("societyCard1.sImage")));
-            this.societyCard1.Size = new System.Drawing.Size(285, 310);
-            this.societyCard1.sMentor = "ABC";
-            this.societyCard1.sName = "Fast Data Science Society";
-            this.societyCard1.sSlogan = "Data, Data, Data";
-            this.societyCard1.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
-            this.societyCard1.TabIndex = 0;
             // 
             // userName
             // 
@@ -504,7 +470,6 @@
             this.StudentPages.ResumeLayout(false);
             this.SocietiesPage.ResumeLayout(false);
             this.SocietiesPage.PerformLayout();
-            this.societyCardsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
             this.ResumeLayout(false);
 
@@ -524,6 +489,5 @@
         private Bunifu.UI.WinForms.BunifuLabel userName;
         private Bunifu.UI.WinForms.BunifuPictureBox userPic;
         private System.Windows.Forms.FlowLayoutPanel societyCardsPanel;
-        private societyCard societyCard1;
     }
 }

@@ -39,6 +39,51 @@ namespace CampusNex
 
         }
 
+        public string getMentorName(String mentorId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = " select username from Users " +
+                "INNER JOIN Mentors " +
+                "ON Mentors.user_id = Users.user_id " +
+                "WHERE Mentors.user_id = " + mentorId;
+
+            // each list contains an individual row's data
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string mentorName = selectResult[0][0].ToString();
+            return mentorName;
+        }
+
+        public string getHeadName(String headId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = " select username from Users " +
+                "INNER JOIN Students " +
+                "ON Students.user_id = Users.user_id " +
+                "WHERE Students.user_id = " + headId;
+
+            // each list contains an individual row's data
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string headName = selectResult[0][0].ToString();
+            return headName;
+        }
+
+        public string getAcronym(string societyName)
+        {
+            string[] splitName = societyName.Split(' ');
+
+            string acronym = "";
+
+            foreach(var word in splitName)
+            {
+                acronym += word[0];
+            }
+
+            return acronym;
+        }
         private void Student_Shown(object sender, EventArgs e)
         {
             // get societies from database
@@ -49,6 +94,24 @@ namespace CampusNex
             // each list contains an individual row's data
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            // Add society cards from the select results
+            foreach(var row in selectResult) {
+                // Get the columns in the correct order
+                string societyName = row[1].ToString();
+                string sSlogan = row[2].ToString();
+                string sMentorId = row[4].ToString();
+                string sHeadId = row[5].ToString();
+
+                // get mentor and head names
+                string mentorName = getMentorName(sMentorId);
+
+                string headName = getHeadName(sHeadId);
+
+                string acronym = getAcronym(societyName); 
+
+                Add_Society(societyName, sSlogan, acronym, headName, mentorName, null);
+            }
         }
     }
 }
