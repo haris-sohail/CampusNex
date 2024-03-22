@@ -99,5 +99,10 @@ namespace CampusNex
                 mentorName.Text = value;
             }
         }
+
+        private void societyCard_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

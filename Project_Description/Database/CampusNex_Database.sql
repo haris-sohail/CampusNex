@@ -80,14 +80,19 @@ CREATE TABLE Members (
 
 INSERT INTO Users (username, password, email, role, user_pic) VALUES
 ('kalsoom', 'password', 'kalsoom@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
-('haris', 'password', 'haris@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\1.png')));
+('haris', 'password', 'haris@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\1.png'))),
+('aiman', 'password', 'aiman@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
+('aliza', 'password', 'aliza@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png')));
 ;
 
 INSERT INTO Students (user_id, roll_number) VALUES
 (1, 531);
 
 INSERT INTO Mentors (user_id, designation, education_info) VALUES
-(2, 'Assistant Professor', 'BSCS');
+(2, 'Assistant Professor', 'BSCS'),
+(3, 'Assistant Professor', 'BSCS'),
+(4, 'Assistant Professor', 'BSCS')
+;
 
 INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
 ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
@@ -111,7 +116,23 @@ collaborative, and networking activities.', 2, 1, '2012-05-15',(LOAD_FILE('D:\\S
  SELECT * FROM Students;
  SELECT * FROM Mentors;
  
-  select username from Users INNER JOIN Students ON Students.user_id = Users.user_id WHERE Students.user_id = 1
+  select username from Users INNER JOIN Students ON Students.user_id = Users.user_id WHERE Students.user_id = 1;
 
+-- Select Mentors Avaiable based on no enlistment
+SELECT U.username AS mentor_name
+FROM Mentors M
+INNER JOIN Users U ON M.user_id = U.user_id
+LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
+WHERE S.society_id IS NULL
+AND U.role = 'mentor';
+
+-- Select Mentors Avaiable based on less than 2 societies
+SELECT U.username AS mentor_name-- , COUNT(S.society_id) AS num_societies_enlisted
+FROM Mentors M
+INNER JOIN Users U ON M.user_id = U.user_id
+LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
+WHERE U.role = 'mentor'
+GROUP BY M.mentor_id
+HAVING COUNT(S.society_id) < 2;
 
 

@@ -1,8 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Bunifu.UI.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -130,6 +132,32 @@ namespace CampusNex
                 string acronym = getAcronym(societyName); 
 
                 Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
+            }
+        }
+
+        private void rSocietyForm_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage(((Control)sender).Text);
+            // Load Dropdown of available Mentors
+            string query = @"
+            SELECT U.username AS mentor_name
+            FROM Mentors M
+            INNER JOIN Users U ON M.user_id = U.user_id
+            LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
+            WHERE U.role = 'mentor'
+            GROUP BY M.mentor_id
+            HAVING COUNT(S.society_id) < 2;"
+            ;
+            DB_Connection dbConnector = new DB_Connection();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            // Add society cards from the select results
+  
+            foreach (var row in selectResult)
+            {
+                // Get the columns in the correct order
+                string mentorName = row[0].ToString();
+                Console.WriteLine(mentorName);
+                availableMentors.Items.Add(mentorName);
             }
         }
     }
