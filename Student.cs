@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CampusNex
 {
@@ -24,7 +26,7 @@ namespace CampusNex
             StudentPages.SetPage(((Control)sender).Text);
         }
 
-        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, Image logo)
+        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo)
         {
             societyCardsPanel.Controls.Add(new societyCard()
             {
@@ -84,6 +86,18 @@ namespace CampusNex
 
             return acronym;
         }
+
+        public System.Drawing.Image getImage(byte[] imageBlob)
+        {
+            System.Drawing.Image societyImg;
+
+            using (MemoryStream memoryStr = new MemoryStream(imageBlob))
+            {
+                societyImg = System.Drawing.Image.FromStream(memoryStr);
+            }
+
+            return societyImg;
+        }
         private void Student_Shown(object sender, EventArgs e)
         {
             // get societies from database
@@ -103,6 +117,11 @@ namespace CampusNex
                 string sMentorId = row[4].ToString();
                 string sHeadId = row[5].ToString();
 
+
+                byte[] imageBlob = (byte[])row[7];
+
+                System.Drawing.Image societyImg = getImage(imageBlob);
+
                 // get mentor and head names
                 string mentorName = getMentorName(sMentorId);
 
@@ -110,7 +129,7 @@ namespace CampusNex
 
                 string acronym = getAcronym(societyName); 
 
-                Add_Society(societyName, sSlogan, acronym, headName, mentorName, null);
+                Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
             }
         }
     }
