@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace CampusNex
 {
@@ -65,15 +67,61 @@ namespace CampusNex
             }
         }
 
-        // Execute query
-        public void ExecuteQuery(string query)
+        public string getTypeOfQuery(string query)
+        {
+
+            string[] querySplit = query.Split(' ');
+
+
+            string typeOfQuery = querySplit[0];
+
+            return typeOfQuery;
+        }
+
+        static string[] GetColumnNames(MySqlDataReader reader)
+        {
+            var colNames = new List<string>();
+
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                colNames.Add(reader.GetName(i));
+            }
+
+            return colNames.ToArray();
+        }
+
+        public List<List<object>> executeSelect(string query)
         {
             if (OpenConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
+
+                List<List<object>> selectResult = new List<List<object>>();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    var columnNames = GetColumnNames(reader);
+
+                    while (reader.Read())
+                    {
+                        List<object> row = new List<object>();
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            row.Add(reader[i]);
+                        }
+
+                        selectResult.Add(row);
+                    }
+                }
                 CloseConnection();
+
+                return selectResult;
             }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }

@@ -41,8 +41,14 @@ namespace CampusNex
 
         private void Student_Shown(object sender, EventArgs e)
         {
+            // get societies from database
 
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT * FROM Societies;";
+
+            // each list contains an individual row's data
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
         }
-
     }
 }
