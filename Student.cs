@@ -160,5 +160,21 @@ namespace CampusNex
                 availableMentors.Items.Add(mentorName);
             }
         }
+
+        private void uploadImageBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDial = new OpenFileDialog();
+            fileDial.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff)|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff";
+
+            if (fileDial.ShowDialog() == DialogResult.OK)
+            {
+                uploadImgPicBox.Image = new Bitmap(fileDial.FileName);
+            }
+        }
+
+        private void regNewSociety_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

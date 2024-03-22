@@ -37,6 +37,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -49,7 +50,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.societiesBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -64,6 +65,9 @@
             this.searchBar = new Bunifu.UI.WinForms.BunifuTextBox();
             this.EventsPage = new System.Windows.Forms.TabPage();
             this.societyReg = new System.Windows.Forms.TabPage();
+            this.uploadImageBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.uploadImgPicBox = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.availableMentors = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.societySlogan = new Bunifu.UI.WinForms.BunifuTextBox();
             this.societyName = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -76,13 +80,13 @@
             this.sName = new System.Windows.Forms.Label();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.availableMentors = new Bunifu.UI.WinForms.BunifuDropdown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
             this.SocietiesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             this.societyReg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uploadImgPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -584,6 +588,8 @@
             // societyReg
             // 
             this.societyReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.societyReg.Controls.Add(this.uploadImageBtn);
+            this.societyReg.Controls.Add(this.uploadImgPicBox);
             this.societyReg.Controls.Add(this.availableMentors);
             this.societyReg.Controls.Add(this.bunifuTextBox1);
             this.societyReg.Controls.Add(this.societySlogan);
@@ -603,6 +609,158 @@
             this.societyReg.Size = new System.Drawing.Size(1071, 703);
             this.societyReg.TabIndex = 2;
             this.societyReg.Text = "Register a New Society !!";
+            // 
+            // uploadImageBtn
+            // 
+            this.uploadImageBtn.AllowAnimations = true;
+            this.uploadImageBtn.AllowMouseEffects = true;
+            this.uploadImageBtn.AllowToggling = true;
+            this.uploadImageBtn.AnimationSpeed = 200;
+            this.uploadImageBtn.AutoGenerateColors = false;
+            this.uploadImageBtn.AutoRoundBorders = false;
+            this.uploadImageBtn.AutoSizeLeftIcon = true;
+            this.uploadImageBtn.AutoSizeRightIcon = true;
+            this.uploadImageBtn.BackColor = System.Drawing.Color.Transparent;
+            this.uploadImageBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.uploadImageBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uploadImageBtn.BackgroundImage")));
+            this.uploadImageBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uploadImageBtn.ButtonText = "Upload Image";
+            this.uploadImageBtn.ButtonTextMarginLeft = 0;
+            this.uploadImageBtn.ColorContrastOnClick = 45;
+            this.uploadImageBtn.ColorContrastOnHover = 45;
+            this.uploadImageBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.uploadImageBtn.CustomizableEdges = borderEdges4;
+            this.uploadImageBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.uploadImageBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.uploadImageBtn.DisabledFillColor = System.Drawing.Color.Empty;
+            this.uploadImageBtn.DisabledForecolor = System.Drawing.Color.Empty;
+            this.uploadImageBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.uploadImageBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uploadImageBtn.ForeColor = System.Drawing.Color.White;
+            this.uploadImageBtn.IconLeft = null;
+            this.uploadImageBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uploadImageBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.uploadImageBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.uploadImageBtn.IconMarginLeft = 11;
+            this.uploadImageBtn.IconPadding = 10;
+            this.uploadImageBtn.IconRight = null;
+            this.uploadImageBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uploadImageBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.uploadImageBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.uploadImageBtn.IconSize = 25;
+            this.uploadImageBtn.IdleBorderColor = System.Drawing.Color.Empty;
+            this.uploadImageBtn.IdleBorderRadius = 0;
+            this.uploadImageBtn.IdleBorderThickness = 0;
+            this.uploadImageBtn.IdleFillColor = System.Drawing.Color.Empty;
+            this.uploadImageBtn.IdleIconLeftImage = null;
+            this.uploadImageBtn.IdleIconRightImage = null;
+            this.uploadImageBtn.IndicateFocus = true;
+            this.uploadImageBtn.Location = new System.Drawing.Point(710, 188);
+            this.uploadImageBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.uploadImageBtn.Name = "uploadImageBtn";
+            this.uploadImageBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.uploadImageBtn.OnDisabledState.BorderRadius = 39;
+            this.uploadImageBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uploadImageBtn.OnDisabledState.BorderThickness = 1;
+            this.uploadImageBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.uploadImageBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.uploadImageBtn.OnDisabledState.IconLeftImage = null;
+            this.uploadImageBtn.OnDisabledState.IconRightImage = null;
+            this.uploadImageBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.uploadImageBtn.onHoverState.BorderRadius = 39;
+            this.uploadImageBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
+            this.uploadImageBtn.onHoverState.BorderThickness = 1;
+            this.uploadImageBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.uploadImageBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.uploadImageBtn.onHoverState.IconLeftImage = null;
+            this.uploadImageBtn.onHoverState.IconRightImage = null;
+            this.uploadImageBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.uploadImageBtn.OnIdleState.BorderRadius = 39;
+            this.uploadImageBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uploadImageBtn.OnIdleState.BorderThickness = 1;
+            this.uploadImageBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.uploadImageBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.uploadImageBtn.OnIdleState.IconLeftImage = null;
+            this.uploadImageBtn.OnIdleState.IconRightImage = null;
+            this.uploadImageBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.uploadImageBtn.OnPressedState.BorderRadius = 39;
+            this.uploadImageBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uploadImageBtn.OnPressedState.BorderThickness = 1;
+            this.uploadImageBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.uploadImageBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.uploadImageBtn.OnPressedState.IconLeftImage = null;
+            this.uploadImageBtn.OnPressedState.IconRightImage = null;
+            this.uploadImageBtn.Size = new System.Drawing.Size(128, 38);
+            this.uploadImageBtn.TabIndex = 18;
+            this.uploadImageBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uploadImageBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.uploadImageBtn.TextMarginLeft = 0;
+            this.uploadImageBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.uploadImageBtn.UseDefaultRadiusAndThickness = true;
+            this.uploadImageBtn.Click += new System.EventHandler(this.uploadImageBtn_Click);
+            // 
+            // uploadImgPicBox
+            // 
+            this.uploadImgPicBox.AllowFocused = false;
+            this.uploadImgPicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uploadImgPicBox.AutoSizeHeight = true;
+            this.uploadImgPicBox.BorderRadius = 61;
+            this.uploadImgPicBox.IsCircle = true;
+            this.uploadImgPicBox.Location = new System.Drawing.Point(865, 127);
+            this.uploadImgPicBox.Name = "uploadImgPicBox";
+            this.uploadImgPicBox.Size = new System.Drawing.Size(123, 123);
+            this.uploadImgPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.uploadImgPicBox.TabIndex = 17;
+            this.uploadImgPicBox.TabStop = false;
+            this.uploadImgPicBox.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // availableMentors
+            // 
+            this.availableMentors.BackColor = System.Drawing.Color.Transparent;
+            this.availableMentors.BackgroundColor = System.Drawing.Color.White;
+            this.availableMentors.BorderColor = System.Drawing.Color.Silver;
+            this.availableMentors.BorderRadius = 1;
+            this.availableMentors.Color = System.Drawing.Color.Silver;
+            this.availableMentors.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.availableMentors.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.availableMentors.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.availableMentors.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.availableMentors.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.availableMentors.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.availableMentors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.availableMentors.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.availableMentors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.availableMentors.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.availableMentors.FillDropDown = true;
+            this.availableMentors.FillIndicator = false;
+            this.availableMentors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.availableMentors.Font = new System.Drawing.Font("Verdana", 9.75F);
+            this.availableMentors.ForeColor = System.Drawing.Color.Black;
+            this.availableMentors.FormattingEnabled = true;
+            this.availableMentors.Icon = null;
+            this.availableMentors.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.availableMentors.IndicatorColor = System.Drawing.Color.DarkGray;
+            this.availableMentors.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.availableMentors.IndicatorThickness = 2;
+            this.availableMentors.IsDropdownOpened = false;
+            this.availableMentors.ItemBackColor = System.Drawing.Color.White;
+            this.availableMentors.ItemBorderColor = System.Drawing.Color.White;
+            this.availableMentors.ItemForeColor = System.Drawing.Color.Black;
+            this.availableMentors.ItemHeight = 26;
+            this.availableMentors.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.availableMentors.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.availableMentors.ItemTopMargin = 3;
+            this.availableMentors.Location = new System.Drawing.Point(339, 460);
+            this.availableMentors.Name = "availableMentors";
+            this.availableMentors.Size = new System.Drawing.Size(260, 32);
+            this.availableMentors.TabIndex = 16;
+            this.availableMentors.Text = null;
+            this.availableMentors.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.availableMentors.TextLeftMargin = 5;
             // 
             // bunifuTextBox1
             // 
@@ -852,11 +1010,11 @@
             this.regNewSociety.ColorContrastOnClick = 45;
             this.regNewSociety.ColorContrastOnHover = 45;
             this.regNewSociety.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.regNewSociety.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.regNewSociety.CustomizableEdges = borderEdges5;
             this.regNewSociety.DialogResult = System.Windows.Forms.DialogResult.None;
             this.regNewSociety.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.regNewSociety.DisabledFillColor = System.Drawing.Color.Empty;
@@ -924,70 +1082,71 @@
             this.regNewSociety.TextMarginLeft = 0;
             this.regNewSociety.TextPadding = new System.Windows.Forms.Padding(0);
             this.regNewSociety.UseDefaultRadiusAndThickness = true;
+            this.regNewSociety.Click += new System.EventHandler(this.regNewSociety_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Hack Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(661, 152);
+            this.label6.Location = new System.Drawing.Point(714, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 22);
+            this.label6.Size = new System.Drawing.Size(120, 24);
             this.label6.TabIndex = 11;
             this.label6.Text = "Insert Logo:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Hack Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(87, 457);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 22);
+            this.label5.Size = new System.Drawing.Size(155, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "Society Mentor:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Hack Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(87, 277);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 22);
+            this.label4.Size = new System.Drawing.Size(195, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "Society Description:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Hack Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(87, 212);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 22);
+            this.label3.Size = new System.Drawing.Size(155, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Society Slogan:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Hack Nerd Font", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(367, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(320, 28);
+            this.label2.Size = new System.Drawing.Size(286, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "Register a New Society";
             // 
             // sName
             // 
             this.sName.AutoSize = true;
-            this.sName.Font = new System.Drawing.Font("Hack Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sName.ForeColor = System.Drawing.Color.White;
             this.sName.Location = new System.Drawing.Point(87, 151);
             this.sName.Name = "sName";
-            this.sName.Size = new System.Drawing.Size(153, 22);
+            this.sName.Size = new System.Drawing.Size(145, 24);
             this.sName.TabIndex = 6;
             this.sName.Text = "Society Name:";
             // 
@@ -1025,49 +1184,6 @@
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // availableMentors
-            // 
-            this.availableMentors.BackColor = System.Drawing.Color.Transparent;
-            this.availableMentors.BackgroundColor = System.Drawing.Color.White;
-            this.availableMentors.BorderColor = System.Drawing.Color.Silver;
-            this.availableMentors.BorderRadius = 1;
-            this.availableMentors.Color = System.Drawing.Color.Silver;
-            this.availableMentors.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.availableMentors.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.availableMentors.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.availableMentors.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.availableMentors.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.availableMentors.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.availableMentors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.availableMentors.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.availableMentors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.availableMentors.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.availableMentors.FillDropDown = true;
-            this.availableMentors.FillIndicator = false;
-            this.availableMentors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.availableMentors.Font = new System.Drawing.Font("Verdana", 9.75F);
-            this.availableMentors.ForeColor = System.Drawing.Color.Black;
-            this.availableMentors.FormattingEnabled = true;
-            this.availableMentors.Icon = null;
-            this.availableMentors.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.availableMentors.IndicatorColor = System.Drawing.Color.DarkGray;
-            this.availableMentors.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.availableMentors.IndicatorThickness = 2;
-            this.availableMentors.IsDropdownOpened = false;
-            this.availableMentors.ItemBackColor = System.Drawing.Color.White;
-            this.availableMentors.ItemBorderColor = System.Drawing.Color.White;
-            this.availableMentors.ItemForeColor = System.Drawing.Color.Black;
-            this.availableMentors.ItemHeight = 26;
-            this.availableMentors.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.availableMentors.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.availableMentors.ItemTopMargin = 3;
-            this.availableMentors.Location = new System.Drawing.Point(339, 460);
-            this.availableMentors.Name = "availableMentors";
-            this.availableMentors.Size = new System.Drawing.Size(260, 32);
-            this.availableMentors.TabIndex = 16;
-            this.availableMentors.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.availableMentors.TextLeftMargin = 5;
-            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1086,6 +1202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
             this.societyReg.ResumeLayout(false);
             this.societyReg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uploadImgPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1120,5 +1237,7 @@
         private Bunifu.UI.WinForms.BunifuTextBox societyName;
         private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
         private Bunifu.UI.WinForms.BunifuDropdown availableMentors;
+        private Bunifu.UI.WinForms.BunifuPictureBox uploadImgPicBox;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton uploadImageBtn;
     }
 }
