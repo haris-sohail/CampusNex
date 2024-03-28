@@ -104,5 +104,10 @@ namespace CampusNex
         {
 
         }
+
+        private void viewBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
