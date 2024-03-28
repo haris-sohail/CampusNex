@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Bunifu.UI.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,7 @@ namespace CampusNex
             string query = " select username from Users " +
                 "INNER JOIN Mentors " +
                 "ON Mentors.user_id = Users.user_id " +
-                "WHERE Mentors.user_id = " + mentorId;
+                "WHERE Mentors.mentor_id = " + mentorId;
 
             // each list contains an individual row's data
 
@@ -62,7 +63,7 @@ namespace CampusNex
             string query = " select username from Users " +
                 "INNER JOIN Students " +
                 "ON Students.user_id = Users.user_id " +
-                "WHERE Students.user_id = " + headId;
+                "WHERE Students.student_id = " + headId;
 
             // each list contains an individual row's data
 
@@ -98,17 +99,39 @@ namespace CampusNex
             return societyImg;
         }
 
+
+
         private void Mentor_Load(object sender, EventArgs e)
+        {
+            loadSocData();
+        }
+
+        public System.Drawing.Image ResizeImage(System.Drawing.Image image, int width, int height)
+        {
+            // Create a new bitmap with the desired dimensions
+            Bitmap resizedImage = new Bitmap(width, height);
+
+            // Draw the original image onto the new bitmap using Graphics
+            using (Graphics graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.DrawImage(image, 0, 0, width, height);
+            }
+
+            // Return the resized image
+            return resizedImage;
+        }
+
+        private void loadSocData()
         {
             // get societies from database
 
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT * FROM Societies;";
+            string query = "SELECT * FROM Societies where status = 'accepted';";
 
             // each list contains an individual row's data
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);
-
+            societyCardsPanel.Controls.Clear();
             // Add society cards from the select results
             foreach (var row in selectResult)
             {
@@ -132,58 +155,74 @@ namespace CampusNex
 
                 Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
             }
+
         }
 
         private void loadReqData()
         {
+            int mentorId = 1;
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT * FROM Societies;";
+            // Query to select data to populate Society Request Data Grid
+            string query = "SELECT society_logo, society_name, u.username " +
+                       "FROM societies s " +
+                       "JOIN students st ON s.head_id = st.student_id " +
+                       "JOIN users u ON st.user_id = u.user_id " +
+                       "WHERE s.status = 'pending' AND mentor_id = ";
+            query = query + mentorId.ToString();
+            Console.WriteLine(query);
 
-            // each list contains an individual row's data
-
-            //List<List<object>> selectResult = dbConnector.executeSelect(query);
-
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            socReqGrid.Rows.Clear();
             //// Add society cards from the select results
-            //foreach (var row in selectResult)
-            //{
-            //    // Get the columns in the correct order
-            //    string societyName = row[1].ToString();
-            //    string sSlogan = row[2].ToString();
-            //    string sMentorId = row[4].ToString();
-            //    string sHeadId = row[5].ToString();
+            foreach (var row in selectResult)
+            {
+                // Get the columns in the correct order
+                string societyName = row[1].ToString();
+                string sHeadName = row[2].ToString();
 
+                byte[] slogo = (byte[])row[0];
+                
+                System.Drawing.Image societyImg = getImage(slogo);
+                System.Drawing.Image resizedImage = ResizeImage(societyImg, 32, 32);
+                // Populate DataGrid
+                socReqGrid.Rows.Add(new Object[]
+                {
+                    resizedImage,
+                    societyName,
+                    sHeadName
+                });
 
-            //    byte[] imageBlob = (byte[])row[7];
-
-            //    System.Drawing.Image societyImg = getImage(imageBlob);
-
-            //    // get mentor and head names
-            //    string mentorName = getMentorName(sMentorId);
-
-            //    string headName = getHeadName(sHeadId);
-
-            //    string acronym = getAcronym(societyName);
-
-            //    Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
-            //}
+            }
         }
         private void reqBtn_Click(object sender, EventArgs e)
         {
             StudentPages.SetPage(((Control)sender).Text);
-            for (int i = 0; i < 10; i++)
-            {
-                socReqGrid.Rows.Add(new Object[]
-                {
-                    imageList1.Images[0]
-                }) ;
-            }
-
             loadReqData();
         }
 
         private void socReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == 4) 
+            {
+                if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
+                    // Extract Society Name
+                    string cellValue = clickedRow.Cells[1].Value.ToString();
 
+                    DB_Connection DB_Connector = new DB_Connection();
+                    // Set status to accepted
+                    string tableName = "Societies";
+                    string[] scolumns = { "status" };
+                    string[] wcolumns = { "society_name" };
+                    object[] values = { "accepted", cellValue  };
+     
+                    // Call the UpdateData method
+                    bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns,values);
+                    loadReqData();
+                    loadSocData();
+                }
+            }
         }
     }
 }

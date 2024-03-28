@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -145,6 +146,68 @@ namespace CampusNex
             }
         }
 
+        public bool UpdateData(string tableName, string[] setcolumns, string[] wherecolumns, object[] values)
+        {
+            StringBuilder queryBuilder = new StringBuilder($"UPDATE {tableName} SET ");
+
+            int j = 0;
+            for (int i = 0; i < setcolumns.Length; i++)
+            {
+                queryBuilder.Append($"{setcolumns[i]} = @param{i}");
+                j++;
+                if (i < setcolumns.Length - 1)
+                {
+                    queryBuilder.Append(", ");
+                }
+            }
+
+            queryBuilder.Append($" WHERE ");
+            
+            for (int i = 0; i < wherecolumns.Length; i++)
+            {
+                queryBuilder.Append($"{wherecolumns[i]} = @param{i+j}");
+                if (i < wherecolumns.Length - 1)
+                {
+                    queryBuilder.Append(", ");
+                }
+            }
+
+
+            Console.WriteLine(queryBuilder);
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                Console.WriteLine(values[i]);
+            }
+
+
+            if (OpenConnection())
+            {
+                try
+                {
+
+                    using (MySqlCommand command = new MySqlCommand(queryBuilder.ToString(), connection))
+                    {
+                        for (int i = 0; i < values.Length; i++)
+                        {
+                            command.Parameters.AddWithValue($"@param{i}", values[i]);
+                        }
+
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
+            }
+            return false;
+            
+        }
+    
 
         public void executeInsert(List<object> toInsert, string tableName) {
             if (OpenConnection())

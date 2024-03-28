@@ -202,5 +202,10 @@ namespace CampusNex
 
             dbConnector.executeInsert(formInput, "Societies");
         }
+
+        private void Student_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

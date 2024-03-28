@@ -55,14 +55,15 @@
             this.EventsPage = new System.Windows.Forms.TabPage();
             this.Requests = new System.Windows.Forms.TabPage();
             this.socReqGrid = new System.Windows.Forms.DataGridView();
-            this.reqLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.soclogo = new System.Windows.Forms.DataGridViewImageColumn();
             this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reqStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.reqLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -627,6 +628,39 @@
             this.socReqGrid.TabIndex = 2;
             this.socReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.socReqGrid_CellContentClick);
             // 
+            // soclogo
+            // 
+            this.soclogo.FillWeight = 30F;
+            this.soclogo.HeaderText = "";
+            this.soclogo.Name = "soclogo";
+            this.soclogo.ReadOnly = true;
+            // 
+            // socName
+            // 
+            this.socName.HeaderText = "Society Name";
+            this.socName.Name = "socName";
+            this.socName.ReadOnly = true;
+            // 
+            // reqStatus
+            // 
+            this.reqStatus.HeaderText = "Student Name";
+            this.reqStatus.Name = "reqStatus";
+            this.reqStatus.ReadOnly = true;
+            this.reqStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reqStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // viewDetails
+            // 
+            this.viewDetails.HeaderText = "View Request";
+            this.viewDetails.Name = "viewDetails";
+            this.viewDetails.ReadOnly = true;
+            // 
+            // AcceptReg
+            // 
+            this.AcceptReg.HeaderText = "Accept";
+            this.AcceptReg.Name = "AcceptReg";
+            this.AcceptReg.ReadOnly = true;
+            // 
             // reqLabel2
             // 
             this.reqLabel2.AllowParentOverrides = false;
@@ -666,38 +700,12 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "AceCodersLogo.png");
             // 
-            // soclogo
+            // mySqlDataAdapter1
             // 
-            this.soclogo.FillWeight = 30F;
-            this.soclogo.HeaderText = "";
-            this.soclogo.Name = "soclogo";
-            this.soclogo.ReadOnly = true;
-            // 
-            // socName
-            // 
-            this.socName.HeaderText = "Society Name";
-            this.socName.Name = "socName";
-            this.socName.ReadOnly = true;
-            // 
-            // reqStatus
-            // 
-            this.reqStatus.HeaderText = "Student Name";
-            this.reqStatus.Name = "reqStatus";
-            this.reqStatus.ReadOnly = true;
-            this.reqStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reqStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // viewDetails
-            // 
-            this.viewDetails.HeaderText = "View Request";
-            this.viewDetails.Name = "viewDetails";
-            this.viewDetails.ReadOnly = true;
-            // 
-            // AcceptReg
-            // 
-            this.AcceptReg.HeaderText = "Accept";
-            this.AcceptReg.Name = "AcceptReg";
-            this.AcceptReg.ReadOnly = true;
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
             // 
             // Mentor
             // 
@@ -748,5 +756,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reqStatus;
         private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
         private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
     }
 }

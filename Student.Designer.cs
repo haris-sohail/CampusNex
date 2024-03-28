@@ -709,6 +709,7 @@
             this.uploadImgPicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.uploadImgPicBox.AutoSizeHeight = true;
             this.uploadImgPicBox.BorderRadius = 61;
+            this.uploadImgPicBox.Image = ((System.Drawing.Image)(resources.GetObject("uploadImgPicBox.Image")));
             this.uploadImgPicBox.IsCircle = true;
             this.uploadImgPicBox.Location = new System.Drawing.Point(865, 127);
             this.uploadImgPicBox.Name = "uploadImgPicBox";
@@ -1193,6 +1194,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Student";
             this.Text = "Student";
+            this.Load += new System.EventHandler(this.Student_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
