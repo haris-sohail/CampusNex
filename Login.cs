@@ -44,7 +44,7 @@ namespace CampusNex
         {
             if (role.Equals("mentor"))
             {
-                Mentor m = new Mentor();
+                Mentor m = new Mentor(user_id);
 
                 m.FormClosed += studentFormClosed;
 

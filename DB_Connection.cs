@@ -225,7 +225,7 @@ namespace CampusNex
                 cmd.Parameters.Add("@societySlog", MySqlDbType.String).Value = toInsert[1];
                 cmd.Parameters.Add("@societyDesc", MySqlDbType.String).Value = toInsert[2];
                 cmd.Parameters.Add("@mentorId", MySqlDbType.Int32).Value = mentorId;
-                cmd.Parameters.Add("@headId", MySqlDbType.Int32).Value = 2;
+                cmd.Parameters.Add("@headId", MySqlDbType.Int32).Value = int.Parse(toInsert[5].ToString());
                 cmd.Parameters.Add("@creationDate", MySqlDbType.Date).Value = DateTime.Today;
                 cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = toInsert[4];
 

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,9 +17,20 @@ namespace CampusNex
 {
     public partial class Mentor : Form
     {
-        public Mentor()
+        private String user_id;
+        private String mentor_id;
+        public Mentor(string user_id)
         {
             InitializeComponent();
+            this.user_id = user_id;
+            setMentorId();
+        }
+        private void setMentorId()
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT mentor_id FROM Mentors WHERE user_id = " + this.user_id.ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            this.mentor_id = selectResult[0][0].ToString();
         }
 
         private void societiesBtn_Click(object sender, EventArgs e)
@@ -87,6 +99,23 @@ namespace CampusNex
             return acronym;
         }
 
+        public void setUsernameAndPic()
+        {
+            DB_Connection dbConnector = new DB_Connection();
+
+            string query = "select username, user_pic from users where user_id = " + this.user_id;
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            userName.Text = selectResult[0][0].ToString();
+
+            byte[] userPicBytes = selectResult[0][1] as byte[];
+
+            System.Drawing.Image userImg = getImage(userPicBytes);
+
+            userPic.Image = userImg;
+        }
+
         public System.Drawing.Image getImage(byte[] imageBlob)
         {
             System.Drawing.Image societyImg;
@@ -103,6 +132,7 @@ namespace CampusNex
 
         private void Mentor_Load(object sender, EventArgs e)
         {
+            setUsernameAndPic();
             loadSocData();
         }
 
@@ -160,15 +190,15 @@ namespace CampusNex
 
         private void loadReqData()
         {
-            int mentorId = 1;
             DB_Connection dbConnector = new DB_Connection();
             // Query to select data to populate Society Request Data Grid
             string query = "SELECT society_logo, society_name, u.username " +
                        "FROM societies s " +
                        "JOIN students st ON s.head_id = st.student_id " +
                        "JOIN users u ON st.user_id = u.user_id " +
-                       "WHERE s.status = 'pending' AND mentor_id = ";
-            query = query + mentorId.ToString();
+                       "WHERE s.status = 'pending' AND mentor_id = " + this.mentor_id;
+
+
             Console.WriteLine(query);
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);

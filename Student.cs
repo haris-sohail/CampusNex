@@ -23,7 +23,6 @@ namespace CampusNex
             this.user_id = user_id;
 
             InitializeComponent();
-            this.Shown += Student_Shown;
         }
 
         private void societiesBtn_Click(object sender, EventArgs e)
@@ -155,11 +154,6 @@ namespace CampusNex
 
             userPic.Image = userImg;
         }
-        private void Student_Shown(object sender, EventArgs e)
-        {
-            setUsernameAndPic();
-            showSocieties();
-        }
 
         private void rSocietyForm_Click(object sender, EventArgs e)
         {
@@ -225,13 +219,16 @@ namespace CampusNex
             byte[] imageBytes = convertToByteStream(uploadImgPicBox.Image);
 
             formInput.Add(imageBytes);
+            formInput.Add(this.user_id);
+
 
             dbConnector.executeInsert(formInput, "Societies");
         }
 
         private void Student_Load(object sender, EventArgs e)
         {
-
+            setUsernameAndPic();
+            showSocieties();
         }
     }
 }
