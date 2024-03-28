@@ -181,5 +181,9 @@ namespace CampusNex
             loadReqData();
         }
 
+        private void socReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

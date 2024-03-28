@@ -55,14 +55,14 @@
             this.EventsPage = new System.Windows.Forms.TabPage();
             this.Requests = new System.Windows.Forms.TabPage();
             this.socReqGrid = new System.Windows.Forms.DataGridView();
-            this.soclogo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reqStatus = new System.Windows.Forms.DataGridViewImageColumn();
-            this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
             this.reqLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.soclogo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reqStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -623,39 +623,9 @@
             this.socReqGrid.RowTemplate.Height = 40;
             this.socReqGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.socReqGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.socReqGrid.Size = new System.Drawing.Size(640, 225);
+            this.socReqGrid.Size = new System.Drawing.Size(784, 225);
             this.socReqGrid.TabIndex = 2;
-            // 
-            // soclogo
-            // 
-            this.soclogo.FillWeight = 30F;
-            this.soclogo.HeaderText = "";
-            this.soclogo.Name = "soclogo";
-            this.soclogo.ReadOnly = true;
-            // 
-            // socName
-            // 
-            this.socName.HeaderText = "Society Name";
-            this.socName.Name = "socName";
-            this.socName.ReadOnly = true;
-            // 
-            // reqStatus
-            // 
-            this.reqStatus.HeaderText = "Status";
-            this.reqStatus.Name = "reqStatus";
-            this.reqStatus.ReadOnly = true;
-            // 
-            // viewDetails
-            // 
-            this.viewDetails.HeaderText = "View Request";
-            this.viewDetails.Name = "viewDetails";
-            this.viewDetails.ReadOnly = true;
-            // 
-            // AcceptReg
-            // 
-            this.AcceptReg.HeaderText = "Accept";
-            this.AcceptReg.Name = "AcceptReg";
-            this.AcceptReg.ReadOnly = true;
+            this.socReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.socReqGrid_CellContentClick);
             // 
             // reqLabel2
             // 
@@ -695,6 +665,39 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "AceCodersLogo.png");
+            // 
+            // soclogo
+            // 
+            this.soclogo.FillWeight = 30F;
+            this.soclogo.HeaderText = "";
+            this.soclogo.Name = "soclogo";
+            this.soclogo.ReadOnly = true;
+            // 
+            // socName
+            // 
+            this.socName.HeaderText = "Society Name";
+            this.socName.Name = "socName";
+            this.socName.ReadOnly = true;
+            // 
+            // reqStatus
+            // 
+            this.reqStatus.HeaderText = "Student Name";
+            this.reqStatus.Name = "reqStatus";
+            this.reqStatus.ReadOnly = true;
+            this.reqStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reqStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // viewDetails
+            // 
+            this.viewDetails.HeaderText = "View Request";
+            this.viewDetails.Name = "viewDetails";
+            this.viewDetails.ReadOnly = true;
+            // 
+            // AcceptReg
+            // 
+            this.AcceptReg.HeaderText = "Accept";
+            this.AcceptReg.Name = "AcceptReg";
+            this.AcceptReg.ReadOnly = true;
             // 
             // Mentor
             // 
@@ -742,7 +745,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridViewImageColumn soclogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn socName;
-        private System.Windows.Forms.DataGridViewImageColumn reqStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reqStatus;
         private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
         private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
     }
