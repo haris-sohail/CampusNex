@@ -17,8 +17,11 @@ namespace CampusNex
 {
     public partial class Student : Form
     {
-        public Student()
+        private string user_id;
+        public Student(string user_id)
         {
+            this.user_id = user_id;
+
             InitializeComponent();
             this.Shown += Student_Shown;
         }
@@ -65,7 +68,7 @@ namespace CampusNex
             string query = " select username from Users " +
                 "INNER JOIN Students " +
                 "ON Students.user_id = Users.user_id " +
-                "WHERE Students.user_id = " + headId;
+                "WHERE Students.student_id = " + headId;
 
             // each list contains an individual row's data
 
@@ -91,16 +94,17 @@ namespace CampusNex
 
         public System.Drawing.Image getImage(byte[] imageBlob)
         {
-            System.Drawing.Image societyImg;
+            System.Drawing.Image img;
 
             using (MemoryStream memoryStr = new MemoryStream(imageBlob))
             {
-                societyImg = System.Drawing.Image.FromStream(memoryStr);
+                img = System.Drawing.Image.FromStream(memoryStr);
             }
 
-            return societyImg;
+            return img;
         }
-        private void Student_Shown(object sender, EventArgs e)
+
+        public void showSocieties()
         {
             // get societies from database
 
@@ -112,7 +116,8 @@ namespace CampusNex
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
             // Add society cards from the select results
-            foreach(var row in selectResult) {
+            foreach (var row in selectResult)
+            {
                 // Get the columns in the correct order
                 string societyName = row[1].ToString();
                 string sSlogan = row[2].ToString();
@@ -129,10 +134,31 @@ namespace CampusNex
 
                 string headName = getHeadName(sHeadId);
 
-                string acronym = getAcronym(societyName); 
+                string acronym = getAcronym(societyName);
 
                 Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
             }
+        }
+        public void setUsernameAndPic()
+        {
+            DB_Connection dbConnector = new DB_Connection();
+
+            string query = "select username, user_pic from users where user_id = " + this.user_id;
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            userName.Text = selectResult[0][0].ToString();
+
+            byte[] userPicBytes = selectResult[0][1] as byte[];
+
+            System.Drawing.Image userImg = getImage(userPicBytes);
+
+            userPic.Image = userImg;
+        }
+        private void Student_Shown(object sender, EventArgs e)
+        {
+            setUsernameAndPic();
+            showSocieties();
         }
 
         private void rSocietyForm_Click(object sender, EventArgs e)

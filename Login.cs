@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlX.XDevAPI;
 
 namespace CampusNex
 {
@@ -39,18 +40,53 @@ namespace CampusNex
 
         }
 
+        public void openRelevantScreen(string role, string user_id)
+        {
+            if (role.Equals("mentor"))
+            {
+                Mentor m = new Mentor();
+
+                m.FormClosed += studentFormClosed;
+
+                m.Show();
+            }
+
+            else
+            {
+                Student s = new Student(user_id);
+
+                s.FormClosed += studentFormClosed;
+
+                s.Show();
+            }
+        }
         private void bunifuButton1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            //Student s = new Student();
-            Mentor m = new Mentor();
+            // get the username and password
+            string usernameEntered = usernameTxt.Text;
+            string passEntered = passTxt.Text;
 
-            // Subscribe to the FormClosed event of Form2
-            //s.FormClosed += studentFormClosed;
-            m.FormClosed += studentFormClosed;
+            // run select query based on the entered username and password
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT user_id, role, username FROM USERS WHERE USERS.username = '" + usernameEntered
+                + "' AND USERS.password = '" + passEntered + "'";
 
-            //s.Show();
-            m.Show();
+            List<List<object>> user = dbConnector.executeSelect(query);
+            
+            if(user.Count != 0)
+            {
+                // successfully logged in
+                MessageBox.Show("Welcome " + user[0][2], "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+
+                // open the relevant screen according to user
+                openRelevantScreen(user[0][1].ToString(), user[0][0].ToString());
+            }
+            else
+            {
+                // login failed
+                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

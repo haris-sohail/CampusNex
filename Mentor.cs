@@ -46,7 +46,7 @@ namespace CampusNex
             string query = " select username from Users " +
                 "INNER JOIN Mentors " +
                 "ON Mentors.user_id = Users.user_id " +
-                "WHERE Mentors.user_id = " + mentorId;
+                "WHERE Mentors.mentor_id = " + mentorId;
 
             // each list contains an individual row's data
 
@@ -62,7 +62,7 @@ namespace CampusNex
             string query = " select username from Users " +
                 "INNER JOIN Students " +
                 "ON Students.user_id = Users.user_id " +
-                "WHERE Students.user_id = " + headId;
+                "WHERE Students.student_id = " + headId;
 
             // each list contains an individual row's data
 
