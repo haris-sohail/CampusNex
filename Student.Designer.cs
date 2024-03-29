@@ -318,10 +318,10 @@
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.societyReg;
-            this.StudentPages.PageIndex = 2;
-            this.StudentPages.PageName = "societyReg";
-            this.StudentPages.PageTitle = "Register a New Society !!";
+            this.StudentPages.Page = this.SocietiesPage;
+            this.StudentPages.PageIndex = 0;
+            this.StudentPages.PageName = "SocietiesPage";
+            this.StudentPages.PageTitle = "Societies";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1079, 729);
             this.StudentPages.TabIndex = 1;
@@ -571,6 +571,7 @@
             this.searchBar.TextPlaceholder = "Search Societies";
             this.searchBar.UseSystemPasswordChar = false;
             this.searchBar.WordWrap = true;
+            this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
             // 
             // EventsPage
             // 

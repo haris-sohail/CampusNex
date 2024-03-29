@@ -557,6 +557,7 @@
             this.searchBar.TextPlaceholder = "Search Societies";
             this.searchBar.UseSystemPasswordChar = false;
             this.searchBar.WordWrap = true;
+            this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
             // 
             // EventsPage
             // 
@@ -594,7 +595,7 @@
             this.socReqGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Hack Nerd Font", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -666,12 +667,12 @@
             this.reqLabel2.AllowParentOverrides = false;
             this.reqLabel2.AutoEllipsis = false;
             this.reqLabel2.CursorType = null;
-            this.reqLabel2.Font = new System.Drawing.Font("Hack Nerd Font", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqLabel2.ForeColor = System.Drawing.Color.White;
             this.reqLabel2.Location = new System.Drawing.Point(43, 346);
             this.reqLabel2.Name = "reqLabel2";
             this.reqLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.reqLabel2.Size = new System.Drawing.Size(210, 28);
+            this.reqLabel2.Size = new System.Drawing.Size(195, 29);
             this.reqLabel2.TabIndex = 1;
             this.reqLabel2.Text = "Events Requests";
             this.reqLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -683,12 +684,12 @@
             this.reqLabel1.AutoEllipsis = false;
             this.reqLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.reqLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.reqLabel1.Font = new System.Drawing.Font("Hack Nerd Font", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqLabel1.ForeColor = System.Drawing.Color.White;
             this.reqLabel1.Location = new System.Drawing.Point(43, 66);
             this.reqLabel1.Name = "reqLabel1";
             this.reqLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.reqLabel1.Size = new System.Drawing.Size(224, 28);
+            this.reqLabel1.Size = new System.Drawing.Size(203, 29);
             this.reqLabel1.TabIndex = 0;
             this.reqLabel1.Text = "Society Requests";
             this.reqLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;

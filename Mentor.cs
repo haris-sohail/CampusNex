@@ -151,12 +151,17 @@ namespace CampusNex
             return resizedImage;
         }
 
-        private void loadSocData()
+        private void loadSocData(string searchTxt = null)
         {
             // get societies from database
 
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT * FROM Societies where status = 'accepted';";
+            string query = "SELECT * FROM Societies where status = 'accepted'";
+
+            if (!(searchTxt is null))
+            {
+                query += $" AND (Societies.society_name LIKE '%{searchTxt}%'\r\n OR Societies.society_slogan LIKE '%{searchTxt}%'\r\n OR Societies.society_description LIKE '%{searchTxt}%'\r\n OR Societies.creation_date LIKE '%{searchTxt}%')";
+            }
 
             // each list contains an individual row's data
 
@@ -253,6 +258,15 @@ namespace CampusNex
                     loadSocData();
                 }
             }
+        }
+
+        private void searchBar_TextChanged(object sender, EventArgs e)
+        {
+            // Remove the existing societies
+            societyCardsPanel.Controls.Clear();
+
+            // Search the societies 
+            loadSocData(searchBar.Text);
         }
     }
 }
