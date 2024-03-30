@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CampusNex
 {
     public partial class societyCard : Bunifu.UI.WinForms.BunifuUserControl
     {
+
+        //third adjustment
+        public event EventHandler ViewBtnClicked;
         public societyCard()
         {
             InitializeComponent();
@@ -107,7 +111,14 @@ namespace CampusNex
 
         private void viewBtn_Click(object sender, EventArgs e)
         {
+            //need to display name, logo, description
+            //clicking on this button should create Student page, but the view Society one
+
+            //first addition
+            ViewBtnClicked?.Invoke(this, EventArgs.Empty);
 
         }
+
+       
     }
 }

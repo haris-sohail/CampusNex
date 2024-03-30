@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace CampusNex
@@ -30,18 +31,58 @@ namespace CampusNex
             StudentPages.SetPage(((Control)sender).Text);
         }
 
-        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo)
+        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description)
         {
-            societyCardsPanel.Controls.Add(new societyCard()
+            //second adjusment   -- original
+            /* societyCardsPanel.Controls.Add(new societyCard()
+             {
+                 sName = Name,
+                 sSlogan = Slogan,
+                 sAcronym = Acronym,
+                 sHead  = Head,
+                 sMentor = Mentor,
+                 sImage = logo
+             });*/
+            societyCard newCard = new societyCard()
             {
                 sName = Name,
                 sSlogan = Slogan,
                 sAcronym = Acronym,
-                sHead  = Head,
+                sHead = Head,
                 sMentor = Mentor,
                 sImage = logo
-            });
-          
+            };
+
+            // Subscribe to the "View More" button click event
+            newCard.ViewBtnClicked += (sender, e) =>
+            {
+                // Switch to the "View More" tab when the button is clicked
+                StudentPages.SelectedIndex = 3; // Index of the "View More" tab
+
+
+              
+                // Get the details from the clicked user control object
+                societyCard clickedCard = sender as societyCard;
+                string societyName = clickedCard.sName;
+                string societySlogan = clickedCard.sSlogan;
+                string societyAcronym = clickedCard.sAcronym;
+                string societyHead = clickedCard.sHead;
+                System.Drawing.Image societyLogo = clickedCard.sImage;
+                string societyDesc = description;
+                // Update the labels on the tab with the details
+                titleViewSociety.Text = societyName;    
+                sloganViewSociety.Text = societySlogan;
+                accViewSociety.Text = societyAcronym;
+                headViewSociety.Text = societyHead;
+                logoViewSociety.Image = societyLogo;
+                descViewSociety.Text += societyDesc;
+
+
+
+            };
+
+            societyCardsPanel.Controls.Add(newCard);
+
 
         }
 
@@ -93,13 +134,15 @@ namespace CampusNex
 
         public System.Drawing.Image getImage(byte[] imageBlob)
         {
-            System.Drawing.Image img;
-
+            System.Drawing.Image img = null;
+            
+            
             using (MemoryStream memoryStr = new MemoryStream(imageBlob))
             {
                 img = System.Drawing.Image.FromStream(memoryStr);
             }
-
+            
+          
             return img;
         }
 
@@ -120,13 +163,16 @@ namespace CampusNex
                 // Get the columns in the correct order
                 string societyName = row[1].ToString();
                 string sSlogan = row[2].ToString();
+                string sDesc = row[3].ToString();    //new addition
                 string sMentorId = row[4].ToString();
                 string sHeadId = row[5].ToString();
 
 
-                byte[] imageBlob = (byte[])row[7];
+                byte[] imageBlob = (byte[])row[7];     
 
-                System.Drawing.Image societyImg = getImage(imageBlob);
+
+                System.Drawing.Image societyImg = getImage(imageBlob);     
+
 
                 // get mentor and head names
                 string mentorName = getMentorName(sMentorId);
@@ -135,7 +181,7 @@ namespace CampusNex
 
                 string acronym = getAcronym(societyName);
 
-                Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
+                Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg, sDesc);
             }
         }
         public void setUsernameAndPic()
@@ -229,6 +275,46 @@ namespace CampusNex
         {
             setUsernameAndPic();
             showSocieties();
+        }
+
+        private void societyReg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void societyCardsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SocietiesPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EventsPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userPic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headLabelViewSociety_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleViewSociety_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void descViewSociety_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
