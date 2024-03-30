@@ -3,8 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
-LogIn.Designer.cs
-LogIn.cs
+./LogIn.Designer.cs
+./LogIn.cs
 
 # User-specific files
 *.rsuser
