@@ -268,5 +268,10 @@ namespace CampusNex
             // Search the societies 
             loadSocData(searchBar.Text);
         }
+
+        private void societyCardsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

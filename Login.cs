@@ -92,7 +92,9 @@ namespace CampusNex
 
         private void studentFormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            // Stop Code Execution Manually
+            this.Show();
+           // Application.Exit();
         }
     }
 }

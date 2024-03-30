@@ -447,6 +447,7 @@
             this.societyCardsPanel.Padding = new System.Windows.Forms.Padding(40, 10, 10, 10);
             this.societyCardsPanel.Size = new System.Drawing.Size(996, 492);
             this.societyCardsPanel.TabIndex = 4;
+            this.societyCardsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.societyCardsPanel_Paint);
             // 
             // userName
             // 
