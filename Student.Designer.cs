@@ -334,10 +334,16 @@
             this.StudentPages.Margin = new System.Windows.Forms.Padding(4);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
+
             this.StudentPages.Page = this.viewSociety;
             this.StudentPages.PageIndex = 3;
             this.StudentPages.PageName = "viewSociety";
             this.StudentPages.PageTitle = "view Society";
+            this.StudentPages.Page = this.SocietiesPage;
+            this.StudentPages.PageIndex = 0;
+            this.StudentPages.PageName = "SocietiesPage";
+            this.StudentPages.PageTitle = "Societies";
+
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1439, 897);
             this.StudentPages.TabIndex = 1;
@@ -594,6 +600,7 @@
             this.searchBar.TextPlaceholder = "Search Societies";
             this.searchBar.UseSystemPasswordChar = false;
             this.searchBar.WordWrap = true;
+            this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
             // 
             // EventsPage
             // 
