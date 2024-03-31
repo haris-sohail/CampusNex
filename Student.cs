@@ -18,10 +18,11 @@ namespace CampusNex
 {
     public partial class Student : Form
     {
-        private string user_id;
+        Model.Student student;
         public Student(string user_id)
         {
-            this.user_id = user_id;
+            student = new Model.Student();
+            student.SetUserId(int.Parse(user_id));
 
             InitializeComponent();
         }
@@ -193,7 +194,7 @@ namespace CampusNex
         {
             DB_Connection dbConnector = new DB_Connection();
 
-            string query = "select username, user_pic from users where user_id = " + this.user_id;
+            string query = "select username, user_pic from users where user_id = " + student.GetUserId();
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
@@ -270,7 +271,7 @@ namespace CampusNex
             byte[] imageBytes = convertToByteStream(uploadImgPicBox.Image);
 
             formInput.Add(imageBytes);
-            formInput.Add(this.user_id);
+            formInput.Add(student.GetUserId());
 
 
             dbConnector.executeInsert(formInput, "Societies");

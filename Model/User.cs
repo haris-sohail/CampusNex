@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 namespace CampusNex.Model
 {
 
@@ -16,6 +17,8 @@ namespace CampusNex.Model
         public string Role { get; set; }
         public string Email { get; set; }
         public Image UserImage { get; set; }
+
+        private static DB_Connection dbConnector;
 
         // Constructor
         public User()
@@ -87,10 +90,35 @@ namespace CampusNex.Model
         }
 
         // Other methods
-        public bool ValidateUser(string username, string password)
+
+        public static bool ValidateUser(string username, string password, Login loginForm)
         {
+            dbConnector = new DB_Connection();
+
             // Implement validation logic here
-            return true; // Example: Always return true for now
+            // run select query based on the entered username and password
+            string query = "SELECT user_id, role, username FROM USERS WHERE USERS.username = '" + username
+                + "' AND USERS.password = '" + password + "'";
+
+            List<List<object>> user = dbConnector.executeSelect(query);
+
+            if (user.Count != 0)
+            {
+                // successfully logged in
+                MessageBox.Show("Welcome " + user[0][2], "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // open the relevant screen according to user
+                loginForm.openRelevantScreen(user[0][1].ToString(), user[0][0].ToString());
+
+                return true;
+            }
+            else
+            {
+                // login failed
+                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
         }
 
         public void FetchData(string username)
