@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace CampusNex.Model
 {
 
@@ -18,7 +19,8 @@ namespace CampusNex.Model
         public string Email { get; set; }
         public Image UserImage { get; set; }
 
-        private static DB_Connection dbConnector;
+        protected static DB_Connection dbConnector;
+        protected Util utilObj;
 
         // Constructor
         public User()
@@ -91,6 +93,15 @@ namespace CampusNex.Model
 
         // Other methods
 
+        public void initialize(string user_id)
+        {
+            this.UserId = int.Parse(user_id);
+
+            this.utilObj = new Util();
+
+            this.FetchData();
+        }
+
         public static bool ValidateUser(string username, string password, Login loginForm)
         {
             dbConnector = new DB_Connection();
@@ -121,9 +132,21 @@ namespace CampusNex.Model
             }
         }
 
-        public void FetchData(string username)
+        public void FetchUsernameAndPic()
         {
-            // Implement data fetching logic here
+            string query = "select username, user_pic from users where user_id = " + this.UserId;
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            this.Username = selectResult[0][0].ToString();
+
+            byte[] userPicBytes = selectResult[0][1] as byte[];
+
+            this.UserImage = utilObj.getImage(userPicBytes);
+        }
+        public void FetchData()
+        {
+            FetchUsernameAndPic();
         }
 
         public void SearchSociety(string keyword)

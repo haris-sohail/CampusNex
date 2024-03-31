@@ -19,10 +19,18 @@ namespace CampusNex
     public partial class Student : Form
     {
         Model.Student student;
+        List<Model.Society> societies = new List<Model.Society>();
         public Student(string user_id)
         {
             student = new Model.Student();
-            student.SetUserId(int.Parse(user_id));
+
+            student.initialize(user_id);
+
+            // initialize all societies
+            foreach(var society in societies)
+            {
+                society.FetchData();
+            }
 
             InitializeComponent();
         }
@@ -34,16 +42,6 @@ namespace CampusNex
 
         private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description)
         {
-            //second adjusment   -- original
-            /* societyCardsPanel.Controls.Add(new societyCard()
-             {
-                 sName = Name,
-                 sSlogan = Slogan,
-                 sAcronym = Acronym,
-                 sHead  = Head,
-                 sMentor = Mentor,
-                 sImage = logo
-             });*/
             societyCard newCard = new societyCard()
             {
                 sName = Name,
@@ -190,22 +188,6 @@ namespace CampusNex
                 Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg, sDesc);
             }
         }
-        public void setUsernameAndPic()
-        {
-            DB_Connection dbConnector = new DB_Connection();
-
-            string query = "select username, user_pic from users where user_id = " + student.GetUserId();
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            userName.Text = selectResult[0][0].ToString();
-
-            byte[] userPicBytes = selectResult[0][1] as byte[];
-
-            System.Drawing.Image userImg = getImage(userPicBytes);
-
-            userPic.Image = userImg;
-        }
 
         private void rSocietyForm_Click(object sender, EventArgs e)
         {
@@ -275,6 +257,12 @@ namespace CampusNex
 
 
             dbConnector.executeInsert(formInput, "Societies");
+        }
+
+        public void setUsernameAndPic()
+        {
+            this.userName.Text = student.GetUsername();
+            this.userPic.Image = student.GetUserImage();
         }
 
         private void Student_Load(object sender, EventArgs e)
