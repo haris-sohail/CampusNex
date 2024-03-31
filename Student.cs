@@ -172,6 +172,12 @@ namespace CampusNex
 
 
             dbConnector.executeInsert(formInput, "Societies");
+
+            // Show registration request sent popup
+            MessageBox.Show("Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Navigate back to the Societies page
+            StudentPages.SetPage("Societies");
         }
 
         public void setUsernameAndPic()
