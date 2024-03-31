@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace CampusNex.Model
 {
     internal class Util
     {
+        DB_Connection dbConnector = new DB_Connection();
         public System.Drawing.Image getImage(byte[] imageBlob)
         {
             System.Drawing.Image img = null;
@@ -21,6 +23,74 @@ namespace CampusNex.Model
 
 
             return img;
+        }
+
+        public List<List<object>> getAllSocieties()
+        {
+            string query = "SELECT * FROM Societies WHERE STATUS='accepted'";
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            return selectResult;
+        }
+
+        public string getAcronym(string societyName)
+        {
+            string[] splitName = societyName.Split(' ');
+
+            string acronym = "";
+
+            foreach (var word in splitName)
+            {
+                acronym += word[0];
+            }
+
+            return acronym;
+        }
+
+        public string getHeadName(String headId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = " select username from Users " +
+                "INNER JOIN Students " +
+                "ON Students.user_id = Users.user_id " +
+                "WHERE Students.student_id = " + headId;
+
+            // each list contains an individual row's data
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string headName = selectResult[0][0].ToString();
+            return headName;
+        }
+
+        public string getMentorName(String mentorId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = " select username from Users " +
+                "INNER JOIN Mentors " +
+                "ON Mentors.user_id = Users.user_id " +
+                "WHERE Mentors.mentor_id = " + mentorId;
+
+            // each list contains an individual row's data
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string mentorName = selectResult[0][0].ToString();
+            return mentorName;
+        }
+
+        public byte[] convertToByteStream(System.Drawing.Image image)
+        {
+            byte[] bytes;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat); // Choose appropriate format
+                bytes = ms.ToArray();
+            }
+
+            return bytes;
         }
     }
 }

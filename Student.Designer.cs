@@ -369,7 +369,6 @@
             this.SocietiesPage.Size = new System.Drawing.Size(1071, 703);
             this.SocietiesPage.TabIndex = 0;
             this.SocietiesPage.Text = "Societies";
-            this.SocietiesPage.Click += new System.EventHandler(this.SocietiesPage_Click);
             // 
             // rSocietyForm
             // 
@@ -474,7 +473,6 @@
             this.societyCardsPanel.Padding = new System.Windows.Forms.Padding(40, 10, 10, 10);
             this.societyCardsPanel.Size = new System.Drawing.Size(996, 492);
             this.societyCardsPanel.TabIndex = 4;
-            this.societyCardsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.societyCardsPanel_Paint);
             // 
             // userName
             // 
@@ -509,7 +507,6 @@
             this.userPic.TabIndex = 2;
             this.userPic.TabStop = false;
             this.userPic.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            this.userPic.Click += new System.EventHandler(this.userPic_Click);
             // 
             // searchBar
             // 
@@ -597,7 +594,6 @@
             this.EventsPage.Size = new System.Drawing.Size(1071, 703);
             this.EventsPage.TabIndex = 1;
             this.EventsPage.Text = "Events";
-            this.EventsPage.Click += new System.EventHandler(this.EventsPage_Click);
             // 
             // societyReg
             // 
@@ -621,7 +617,6 @@
             this.societyReg.Size = new System.Drawing.Size(1071, 703);
             this.societyReg.TabIndex = 2;
             this.societyReg.Text = "Register a New Society !!";
-            this.societyReg.Click += new System.EventHandler(this.societyReg_Click);
             // 
             // uploadImageBtn
             // 
@@ -1218,7 +1213,6 @@
             this.descViewSociety.Size = new System.Drawing.Size(375, 244);
             this.descViewSociety.TabIndex = 5;
             this.descViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.descViewSociety.Click += new System.EventHandler(this.descViewSociety_Click);
             // 
             // aboutUsLabelViewSociety
             // 
@@ -1286,7 +1280,6 @@
             this.titleViewSociety.Size = new System.Drawing.Size(261, 39);
             this.titleViewSociety.TabIndex = 0;
             this.titleViewSociety.Text = "Title of Society";
-            this.titleViewSociety.Click += new System.EventHandler(this.titleViewSociety_Click);
             // 
             // Student
             // 

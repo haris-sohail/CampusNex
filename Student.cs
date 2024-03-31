@@ -20,19 +20,31 @@ namespace CampusNex
     {
         Model.Student student;
         List<Model.Society> societies = new List<Model.Society>();
+        Model.Util utilObj = new Model.Util();
         public Student(string user_id)
         {
             student = new Model.Student();
 
             student.initialize(user_id);
 
-            // initialize all societies
-            foreach(var society in societies)
-            {
-                society.FetchData();
-            }
+            initializeSocieties();
 
             InitializeComponent();
+        }
+
+        public void initializeSocieties()
+        {
+            List<List<object>> allSocieties = utilObj.getAllSocieties();
+
+            // initialize all societies
+            foreach (var society in allSocieties)
+            {
+                Model.Society newSociety = new Model.Society();
+
+                newSociety.initialize(society);
+
+                societies.Add(newSociety);
+            }
         }
 
         private void societiesBtn_Click(object sender, EventArgs e)
@@ -83,109 +95,23 @@ namespace CampusNex
             societyCardsPanel.Controls.Add(newCard);
 
 
-        }
-
-        public string getMentorName(String mentorId)
-        {
-            DB_Connection dbConnector = new DB_Connection();
-            string query = " select username from Users " +
-                "INNER JOIN Mentors " +
-                "ON Mentors.user_id = Users.user_id " +
-                "WHERE Mentors.mentor_id = " + mentorId;
-
-            // each list contains an individual row's data
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            string mentorName = selectResult[0][0].ToString();
-            return mentorName;
-        }
-
-        public string getHeadName(String headId)
-        {
-            DB_Connection dbConnector = new DB_Connection();
-            string query = " select username from Users " +
-                "INNER JOIN Students " +
-                "ON Students.user_id = Users.user_id " +
-                "WHERE Students.student_id = " + headId;
-
-            // each list contains an individual row's data
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            string headName = selectResult[0][0].ToString();
-            return headName;
-        }
-
-        public string getAcronym(string societyName)
-        {
-            string[] splitName = societyName.Split(' ');
-
-            string acronym = "";
-
-            foreach(var word in splitName)
-            {
-                acronym += word[0];
-            }
-
-            return acronym;
-        }
-
-        public System.Drawing.Image getImage(byte[] imageBlob)
-        {
-            System.Drawing.Image img = null;
-            
-            
-            using (MemoryStream memoryStr = new MemoryStream(imageBlob))
-            {
-                img = System.Drawing.Image.FromStream(memoryStr);
-            }
-            
-          
-            return img;
-        }
+        }    
 
         public void showSocieties(string searchTxt = null)
         {
-            // get societies from database
-
-            DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT * FROM Societies WHERE STATUS='accepted'";
-
-            if(!(searchTxt is null))
+            // Add society cards from the society list
+            foreach (var society in societies)
             {
-                query += $" AND (Societies.society_name LIKE '%{searchTxt}%'\r\n OR Societies.society_slogan LIKE '%{searchTxt}%'\r\n OR Societies.society_description LIKE '%{searchTxt}%'\r\n OR Societies.creation_date LIKE '%{searchTxt}%')";
-            }
-
-            // each list contains an individual row's data
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            // Add society cards from the select results
-            foreach (var row in selectResult)
-            {
-                // Get the columns in the correct order
-                string societyName = row[1].ToString();
-                string sSlogan = row[2].ToString();
-                string sDesc = row[3].ToString();    //new addition
-                string sMentorId = row[4].ToString();
-                string sHeadId = row[5].ToString();
-
-
-                byte[] imageBlob = (byte[])row[7];     
-
-
-                System.Drawing.Image societyImg = getImage(imageBlob);     
-
+                System.Drawing.Image societyImg = utilObj.getImage(society.Logo);     
 
                 // get mentor and head names
-                string mentorName = getMentorName(sMentorId);
+                string mentorName = utilObj.getMentorName(society.MentorId.ToString());
 
-                string headName = getHeadName(sHeadId);
+                string headName = utilObj.getHeadName(society.HeadId.ToString());
 
-                string acronym = getAcronym(societyName);
+                string acronym = utilObj.getAcronym(society.Name);
 
-                Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg, sDesc);
+                Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description);
             }
         }
 
@@ -226,18 +152,7 @@ namespace CampusNex
             }
         }
 
-        public byte[] convertToByteStream(System.Drawing.Image image)
-        {
-            byte[] bytes;
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                image.Save(ms, image.RawFormat); // Choose appropriate format
-                bytes = ms.ToArray();
-            }
-
-            return bytes;
-        }
+        
         private void regNewSociety_Click(object sender, EventArgs e)
         {
             DB_Connection dbConnector = new DB_Connection();
@@ -250,7 +165,7 @@ namespace CampusNex
             formInput.Add(availableMentors.Text);
 
             // convert the image to byte stream
-            byte[] imageBytes = convertToByteStream(uploadImgPicBox.Image);
+            byte[] imageBytes = utilObj.convertToByteStream(uploadImgPicBox.Image);
 
             formInput.Add(imageBytes);
             formInput.Add(student.GetUserId());
@@ -269,47 +184,6 @@ namespace CampusNex
         {
             setUsernameAndPic();
             showSocieties();
-        }
-
-
-        private void societyReg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void societyCardsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SocietiesPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EventsPage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userPic_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void headLabelViewSociety_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titleViewSociety_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void descViewSociety_Click(object sender, EventArgs e)
-        {
-
         }
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
