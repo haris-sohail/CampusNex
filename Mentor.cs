@@ -1,4 +1,5 @@
 ﻿using Bunifu.UI.WinForms;
+using CampusNex.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,20 +18,33 @@ namespace CampusNex
 {
     public partial class Mentor : Form
     {
-        private String user_id;
-        private String mentor_id;
+        Model.Mentor mentor;
+        List<Model.Society> societies = new List<Model.Society>();
+        Model.Util utilObj = new Model.Util();
+
         public Mentor(string user_id)
         {
+            mentor = new Model.Mentor();
+            mentor.initialize(user_id);
+            mentor.setMentorId();
+            initializeSocieties();
+
             InitializeComponent();
-            this.user_id = user_id;
-            setMentorId();
         }
-        private void setMentorId()
+
+        public void initializeSocieties()
         {
-            DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT mentor_id FROM Mentors WHERE user_id = " + this.user_id.ToString();
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-            this.mentor_id = selectResult[0][0].ToString();
+            List<List<object>> allSocieties = utilObj.getAllSocieties();
+
+            // initialize all societies
+            foreach (var society in allSocieties)
+            {
+                Model.Society newSociety = new Model.Society();
+
+                newSociety.initialize(society);
+
+                societies.Add(newSociety);
+            }
         }
 
         private void societiesBtn_Click(object sender, EventArgs e)
@@ -38,36 +52,52 @@ namespace CampusNex
             StudentPages.SetPage(((Control)sender).Text);
         }
 
-        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo)
+        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description)
         {
-            societyCardsPanel.Controls.Add(new societyCard()
+            societyCard newCard = new societyCard()
             {
                 sName = Name,
                 sSlogan = Slogan,
                 sAcronym = Acronym,
-                sHead  = Head,
+                sHead = Head,
                 sMentor = Mentor,
                 sImage = logo
-            });
-          
+            };
+
+            // Subscribe to the "View More" button click event
+            newCard.ViewBtnClicked += (sender, e) =>
+            {
+                // Switch to the "View More" tab when the button is clicked
+                StudentPages.SelectedIndex = 3; // Index of the "View More" tab
+
+
+
+                // Get the details from the clicked user control object
+                societyCard clickedCard = sender as societyCard;
+                string societyName = clickedCard.sName;
+                string societySlogan = clickedCard.sSlogan;
+                string societyAcronym = clickedCard.sAcronym;
+                string societyHead = clickedCard.sHead;
+                System.Drawing.Image societyLogo = clickedCard.sImage;
+                string societyDesc = description;
+                // Update the labels on the tab with the details
+                titleViewSociety.Text = societyName;
+                sloganViewSociety.Text = societySlogan;
+                accViewSociety.Text = societyAcronym;
+                headViewSociety.Text = societyHead;
+                logoViewSociety.Image = societyLogo;
+                descViewSociety.Text += societyDesc;
+
+
+
+            };
+
+            societyCardsPanel.Controls.Add(newCard);
+
+
 
         }
 
-        public string getMentorName(String mentorId)
-        {
-            DB_Connection dbConnector = new DB_Connection();
-            string query = " select username from Users " +
-                "INNER JOIN Mentors " +
-                "ON Mentors.user_id = Users.user_id " +
-                "WHERE Mentors.mentor_id = " + mentorId;
-
-            // each list contains an individual row's data
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            string mentorName = selectResult[0][0].ToString();
-            return mentorName;
-        }
 
         public string getHeadName(String headId)
         {
@@ -85,35 +115,10 @@ namespace CampusNex
             return headName;
         }
 
-        public string getAcronym(string societyName)
-        {
-            string[] splitName = societyName.Split(' ');
-
-            string acronym = "";
-
-            foreach(var word in splitName)
-            {
-                acronym += word[0];
-            }
-
-            return acronym;
-        }
-
         public void setUsernameAndPic()
         {
-            DB_Connection dbConnector = new DB_Connection();
-
-            string query = "select username, user_pic from users where user_id = " + this.user_id;
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            userName.Text = selectResult[0][0].ToString();
-
-            byte[] userPicBytes = selectResult[0][1] as byte[];
-
-            System.Drawing.Image userImg = getImage(userPicBytes);
-
-            userPic.Image = userImg;
+            this.userName.Text = mentor.GetUsername();
+            this.userPic.Image = mentor.GetUserImage();
         }
 
         public System.Drawing.Image getImage(byte[] imageBlob)
@@ -131,9 +136,9 @@ namespace CampusNex
 
 
         private void Mentor_Load(object sender, EventArgs e)
-        {
+        {   
             setUsernameAndPic();
-            loadSocData();
+            showSocieties();
         }
 
         public System.Drawing.Image ResizeImage(System.Drawing.Image image, int width, int height)
@@ -151,46 +156,22 @@ namespace CampusNex
             return resizedImage;
         }
 
-        private void loadSocData(string searchTxt = null)
+        public void showSocieties(string searchTxt = null)
         {
-            // get societies from database
-
-            DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT * FROM Societies where status = 'accepted'";
-
-            if (!(searchTxt is null))
+            // Add society cards from the society list
+            foreach (var society in societies)
             {
-                query += $" AND (Societies.society_name LIKE '%{searchTxt}%'\r\n OR Societies.society_slogan LIKE '%{searchTxt}%'\r\n OR Societies.society_description LIKE '%{searchTxt}%'\r\n OR Societies.creation_date LIKE '%{searchTxt}%')";
-            }
-
-            // each list contains an individual row's data
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-            societyCardsPanel.Controls.Clear();
-            // Add society cards from the select results
-            foreach (var row in selectResult)
-            {
-                // Get the columns in the correct order
-                string societyName = row[1].ToString();
-                string sSlogan = row[2].ToString();
-                string sMentorId = row[4].ToString();
-                string sHeadId = row[5].ToString();
-
-
-                byte[] imageBlob = (byte[])row[7];
-
-                System.Drawing.Image societyImg = getImage(imageBlob);
+                System.Drawing.Image societyImg = utilObj.getImage(society.Logo);
 
                 // get mentor and head names
-                string mentorName = getMentorName(sMentorId);
+                string mentorName = utilObj.getMentorName(society.MentorId.ToString());
 
-                string headName = getHeadName(sHeadId);
+                string headName = utilObj.getHeadName(society.HeadId.ToString());
 
-                string acronym = getAcronym(societyName);
+                string acronym = utilObj.getAcronym(society.Name);
 
-                Add_Society(societyName, sSlogan, acronym, headName, mentorName, societyImg);
+                Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description);
             }
-
         }
 
         private void loadReqData()
@@ -201,7 +182,7 @@ namespace CampusNex
                        "FROM societies s " +
                        "JOIN students st ON s.head_id = st.student_id " +
                        "JOIN users u ON st.user_id = u.user_id " +
-                       "WHERE s.status = 'pending' AND mentor_id = " + this.mentor_id;
+                       "WHERE s.status = 'pending' AND mentor_id = " + mentor.MentorId;
 
 
             Console.WriteLine(query);
@@ -255,7 +236,7 @@ namespace CampusNex
                     // Call the UpdateData method
                     bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns,values);
                     loadReqData();
-                    loadSocData();
+                    showSocieties();
                 }
             }
         }
@@ -266,12 +247,8 @@ namespace CampusNex
             societyCardsPanel.Controls.Clear();
 
             // Search the societies 
-            loadSocData(searchBar.Text);
+            showSocieties(searchBar.Text);
         }
 
-        private void societyCardsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -59,5 +59,10 @@ namespace CampusNex
             // Stop Code Execution Manually
             this.Show();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

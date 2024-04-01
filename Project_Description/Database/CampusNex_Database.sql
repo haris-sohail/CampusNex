@@ -144,4 +144,4 @@ HAVING COUNT(S.society_id) < 2;
 select society_name, u.username from societies s join students st on s.head_id = st.student_id
 join users u on st.user_id = u.user_id where s.status = 'pending' and mentor_id = 1;
 
-show variables like "secure_file_priv";
+-- show variables like "secure_file_priv";
