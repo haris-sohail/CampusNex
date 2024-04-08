@@ -267,11 +267,6 @@ namespace CampusNex
 
         }
 
-        private void sloganViewSociety_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void StudentRegistrationTab(string societyName, System.Drawing.Image societyLogo)
          {
            
@@ -336,55 +331,9 @@ namespace CampusNex
 
         }
 
-        private void bunifuLabel1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void tabPage1_Click(object sender, EventArgs e)   //page for student member registration
-        {
-            
 
-        }
-
-        private void datePickerRegStudent_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titlReg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dropDownStudentReg_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void societyReg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void availableMentors_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void headViewSociety_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void headLabelViewSociety_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logoViewSociety_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

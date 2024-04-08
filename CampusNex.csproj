@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB_Connection.cs" />
+    <Compile Include="eventCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="eventCard.Designer.cs">
+      <DependentUpon>eventCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     <Compile Include="Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="eventCard.resx">
+      <DependentUpon>eventCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
