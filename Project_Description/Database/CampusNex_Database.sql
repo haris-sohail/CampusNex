@@ -65,10 +65,10 @@ CREATE TABLE Events (
     description TEXT,
     event_type VARCHAR(50) NOT NULL,
     organizer_id INT NOT NULL,
+    status ENUM('pending', 'accepted', 'rejected') NOT NULL, 
     FOREIGN KEY (society_id) REFERENCES Societies(society_id),
     FOREIGN KEY (organizer_id) REFERENCES Students(student_id)
 );
-
 
 -- Members Table
 
@@ -86,13 +86,16 @@ CREATE TABLE Members (
 INSERT INTO Users (username, password, email, role, user_pic) VALUES
 ('kalsoom', 'password', 'kalsoom@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
 ('haris', 'password', 'haris@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\1.png'))),
-('aiman', 'password', 'aiman@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
-('aliza', 'password', 'aliza@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png')));
-;
+('aiman', 'password', 'aiman@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\3.png'))),
+('aliza', 'password', 'aliza@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
+('kissa', 'password', 'kissa@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png'))),
+('hamna', 'password', 'hamna@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\4.png')));
 
 INSERT INTO Students (user_id, roll_number) VALUES
 (1, 531),
-(4, 470);
+(4, 470),
+(5, 572),
+(6, 603);
 
 INSERT INTO Mentors (user_id, designation, education_info) VALUES
 (2, 'Assistant Professor', 'BSCS'),
@@ -107,6 +110,21 @@ collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\S
  ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
  skills, and innovation in the field of computing through various educational, 
  collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
+ 
+INSERT INTO Members (user_id, society_id, join_date, is_head, interest)
+VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence'),
+(4, 2, '2023-01-20', 1, 'Data Science, Machine Learning'),
+(5, 1, '2024-01-10', 0, 'Graphic Design, Calculations'),
+(6, 2, '2024-02-05', 0, 'NLP, Management');
+
+INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status)
+VALUES (2, 'Data Escapes', '2024-04-15', '15:00:00', 'Community Hall', 'Join us for an immersive journey into the world of data science at "Data Escapes." This 
+captivating event brings together data enthusiasts, experts, and novices alike to explore the endless possibilities 
+and applications of data science.', 'Seminar', 4, 'accepted'),
+(1, 'Code Craft', '2024-06-15', '12:30:00', 'Khyber Lab II', 'Join us for an exhilarating coding workshop hosted by the Computing Society, where we delve into the 
+intricacies of software development, algorithmic problem-solving, and innovative coding techniques', 
+'Workshop', 3, 'pending');
+
  -- The following query runs on Haris' machine only
  
  -- INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
