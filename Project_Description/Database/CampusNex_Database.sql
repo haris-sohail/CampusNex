@@ -77,6 +77,8 @@ CREATE TABLE Members (
     user_id INT NOT NULL,
     society_id INT NOT NULL,
     join_date DATE NOT NULL,
+    is_head BOOL NOT NULL,     -- new adjusmnet
+    interest VARCHAR(200),     -- new adjusment
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
@@ -97,13 +99,14 @@ INSERT INTO Mentors (user_id, designation, education_info) VALUES
 (3, 'Assistant Professor', 'BSCS')
 ;
 
+
 INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo,status) VALUES
 ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
 skills, and innovation in the field of computing through various educational, 
 collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'accepted'),
-('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
-skills, and innovation in the field of computing through various educational, 
-collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
+ ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
+ skills, and innovation in the field of computing through various educational, 
+ collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
  -- The following query runs on Haris' machine only
  
  -- INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo) VALUES
@@ -115,12 +118,23 @@ collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\S
 -- SET society_logo = LOAD_FILE('ab.jpg')
 -- WHERE society_id = 1;
 
+
+-- aimen's machine
+-- INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo,status) VALUES
+-- ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
+-- skills, and innovation in the field of computing through various educational, 
+-- collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('C:\\Users\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'accepted'),
+-- ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
+-- skills, and innovation in the field of computing through various educational, 
+-- collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('C:\\Users\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
+
  SELECT * FROM Societies;
  
  SELECT * FROM Users;
  SELECT * FROM Students;
  SELECT * FROM Mentors;
  
+ SELECT * FROM Members;
  
   select username from Users INNER JOIN Students ON Students.user_id = Users.user_id WHERE Students.user_id = 1;
 
