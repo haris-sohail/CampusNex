@@ -104,11 +104,6 @@ namespace CampusNex
             }
         }
 
-        private void societyCard_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void viewBtn_Click(object sender, EventArgs e)
         {
             //need to display name, logo, description

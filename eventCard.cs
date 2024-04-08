@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CampusNex.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,13 @@ namespace CampusNex
 {
     public partial class eventCard : Bunifu.UI.WinForms.BunifuUserControl
     {
+        public event EventHandler<eventData> DetailsBtn;
         public eventCard()
         {
             InitializeComponent();
         }
 
+        public int eId;
         public string sName
         {
 
@@ -101,5 +104,19 @@ namespace CampusNex
             }
         }
 
+        public void viewBtn_Click(object sender, EventArgs e)
+        {
+            DetailsBtn?.Invoke(this, new eventData(eId));
+        }
+    }
+}
+
+public class eventData : EventArgs
+{
+    public int Id { get; }
+
+    public eventData(int Id)
+    {
+        this.Id = Id;
     }
 }

@@ -254,7 +254,6 @@
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "societyCard";
             this.Size = new System.Drawing.Size(285, 310);
-            this.Click += new System.EventHandler(this.societyCard_Click);
             ((System.ComponentModel.ISupportInitialize)(this.societyLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

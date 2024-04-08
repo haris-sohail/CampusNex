@@ -121,10 +121,6 @@ namespace CampusNex
                 sImage = logo
             };
 
-        
-
-
-
             // Subscribe to the "View More" button click event
             newCard.ViewBtnClicked += (sender, e) =>
             {
@@ -330,6 +326,12 @@ namespace CampusNex
                         eStatus = e.Status
 
                     };
+                    c.eId = e.EventId;
+                    c.DetailsBtn += (sender, eve) =>
+                    {
+                        StudentPages.SelectedIndex = 6;
+                        eventDetails(eve);
+                    };
 
                     if (e.Status == "accepted")
                     {
@@ -347,6 +349,31 @@ namespace CampusNex
                     }
                 }
             }
+        }
+
+        private void eventDetails(eventData e)
+        {
+            foreach(var s in societies)
+            {
+                foreach (var eve in s.Events)
+                {
+                    // Populate Page
+                    if (e.Id == eve.EventId)
+                    {
+                        socImg.Image = utilObj.getImage(s.Logo);
+                        eveImg.Image = utilObj.getImage(eve.EventImg);
+                        socTitle.Text = s.Name;
+                        eveTitle.Text = eve.Title;
+
+                        eveDesc.Text = eve.Description;
+                        eveTime.Text = eve.Time.ToString();
+                        eveDate.Text = eve.Date;
+                        eveLoc.Text = eve.Location;
+                    }
+
+                }
+            }
+            
         }
 
         // Member Request Data For Head
@@ -426,6 +453,11 @@ namespace CampusNex
         {
             StudentPages.SetPage("Member Requests");
             loadReqData();
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Events");
         }
     }
 }

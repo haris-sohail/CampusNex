@@ -66,6 +66,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MemberReqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.Announcements = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -128,12 +129,27 @@
             this.titlReg = new Bunifu.UI.WinForms.BunifuLabel();
             this.memberRequest = new System.Windows.Forms.TabPage();
             this.memReqGrid = new System.Windows.Forms.DataGridView();
-            this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.reqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reqStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.viewEvent = new System.Windows.Forms.TabPage();
+            this.backBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.eveImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.eveTitle = new System.Windows.Forms.Label();
+            this.presentLbl = new System.Windows.Forms.Label();
+            this.eveDesc = new System.Windows.Forms.Label();
+            this.desclbl = new System.Windows.Forms.Label();
+            this.socImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.socTitle = new System.Windows.Forms.Label();
+            this.locLbl = new System.Windows.Forms.Label();
+            this.timeLbl = new System.Windows.Forms.Label();
+            this.dateLbl = new System.Windows.Forms.Label();
+            this.eveLoc = new System.Windows.Forms.Label();
+            this.eveTime = new System.Windows.Forms.Label();
+            this.eveDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -148,6 +164,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).BeginInit();
             this.memberRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memReqGrid)).BeginInit();
+            this.viewEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eveImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -567,14 +586,15 @@
             this.StudentPages.Controls.Add(this.viewSociety);
             this.StudentPages.Controls.Add(this.studentReg);
             this.StudentPages.Controls.Add(this.memberRequest);
+            this.StudentPages.Controls.Add(this.viewEvent);
             this.StudentPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.memberRequest;
-            this.StudentPages.PageIndex = 5;
-            this.StudentPages.PageName = "memberRequest";
-            this.StudentPages.PageTitle = "Member Requests";
+            this.StudentPages.Page = this.viewEvent;
+            this.StudentPages.PageIndex = 6;
+            this.StudentPages.PageName = "viewEvent";
+            this.StudentPages.PageTitle = "view Event";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1079, 729);
             this.StudentPages.TabIndex = 1;
@@ -2311,23 +2331,6 @@
             this.memReqGrid.TabIndex = 2;
             this.memReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.memReqGrid_CellContentClick);
             // 
-            // reqLabel1
-            // 
-            this.reqLabel1.AllowParentOverrides = false;
-            this.reqLabel1.AutoEllipsis = false;
-            this.reqLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.reqLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.reqLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqLabel1.ForeColor = System.Drawing.Color.White;
-            this.reqLabel1.Location = new System.Drawing.Point(43, 66);
-            this.reqLabel1.Name = "reqLabel1";
-            this.reqLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.reqLabel1.Size = new System.Drawing.Size(213, 29);
-            this.reqLabel1.TabIndex = 0;
-            this.reqLabel1.Text = "Member Requests";
-            this.reqLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.reqLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // reqID
             // 
             this.reqID.FillWeight = 77.48223F;
@@ -2381,6 +2384,246 @@
             this.AcceptReg.ToolTipText = "Accept";
             this.AcceptReg.Width = 150;
             // 
+            // reqLabel1
+            // 
+            this.reqLabel1.AllowParentOverrides = false;
+            this.reqLabel1.AutoEllipsis = false;
+            this.reqLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.reqLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.reqLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqLabel1.ForeColor = System.Drawing.Color.White;
+            this.reqLabel1.Location = new System.Drawing.Point(43, 66);
+            this.reqLabel1.Name = "reqLabel1";
+            this.reqLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.reqLabel1.Size = new System.Drawing.Size(213, 29);
+            this.reqLabel1.TabIndex = 0;
+            this.reqLabel1.Text = "Member Requests";
+            this.reqLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.reqLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // viewEvent
+            // 
+            this.viewEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.viewEvent.Controls.Add(this.eveDate);
+            this.viewEvent.Controls.Add(this.eveTime);
+            this.viewEvent.Controls.Add(this.eveLoc);
+            this.viewEvent.Controls.Add(this.dateLbl);
+            this.viewEvent.Controls.Add(this.timeLbl);
+            this.viewEvent.Controls.Add(this.locLbl);
+            this.viewEvent.Controls.Add(this.backBtn);
+            this.viewEvent.Controls.Add(this.eveImg);
+            this.viewEvent.Controls.Add(this.eveTitle);
+            this.viewEvent.Controls.Add(this.presentLbl);
+            this.viewEvent.Controls.Add(this.eveDesc);
+            this.viewEvent.Controls.Add(this.desclbl);
+            this.viewEvent.Controls.Add(this.socImg);
+            this.viewEvent.Controls.Add(this.socTitle);
+            this.viewEvent.Location = new System.Drawing.Point(4, 4);
+            this.viewEvent.Margin = new System.Windows.Forms.Padding(2);
+            this.viewEvent.Name = "viewEvent";
+            this.viewEvent.Padding = new System.Windows.Forms.Padding(2);
+            this.viewEvent.Size = new System.Drawing.Size(1071, 703);
+            this.viewEvent.TabIndex = 6;
+            this.viewEvent.Text = "view Event";
+            // 
+            // backBtn
+            // 
+            this.backBtn.AllowAnimations = true;
+            this.backBtn.AllowBorderColorChanges = true;
+            this.backBtn.AllowMouseEffects = true;
+            this.backBtn.AnimationSpeed = 200;
+            this.backBtn.BackColor = System.Drawing.Color.Transparent;
+            this.backBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.backBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.backBtn.BorderRadius = 1;
+            this.backBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.backBtn.BorderThickness = 1;
+            this.backBtn.ColorContrastOnClick = 30;
+            this.backBtn.ColorContrastOnHover = 30;
+            this.backBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.backBtn.CustomizableEdges = borderEdges11;
+            this.backBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.backBtn.Location = new System.Drawing.Point(17, 20);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.RoundBorders = true;
+            this.backBtn.ShowBorders = true;
+            this.backBtn.Size = new System.Drawing.Size(59, 59);
+            this.backBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.backBtn.TabIndex = 16;
+            this.backBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
+            // eveImg
+            // 
+            this.eveImg.AllowFocused = false;
+            this.eveImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.eveImg.AutoSizeHeight = true;
+            this.eveImg.BorderRadius = 0;
+            this.eveImg.Image = ((System.Drawing.Image)(resources.GetObject("eveImg.Image")));
+            this.eveImg.IsCircle = true;
+            this.eveImg.Location = new System.Drawing.Point(653, 90);
+            this.eveImg.Margin = new System.Windows.Forms.Padding(2);
+            this.eveImg.Name = "eveImg";
+            this.eveImg.Size = new System.Drawing.Size(200, 200);
+            this.eveImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.eveImg.TabIndex = 15;
+            this.eveImg.TabStop = false;
+            this.eveImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            // 
+            // eveTitle
+            // 
+            this.eveTitle.AutoSize = true;
+            this.eveTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.eveTitle.Location = new System.Drawing.Point(664, 319);
+            this.eveTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveTitle.Name = "eveTitle";
+            this.eveTitle.Size = new System.Drawing.Size(213, 32);
+            this.eveTitle.TabIndex = 14;
+            this.eveTitle.Text = "Title of Event";
+            // 
+            // presentLbl
+            // 
+            this.presentLbl.AutoSize = true;
+            this.presentLbl.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.presentLbl.Location = new System.Drawing.Point(430, 197);
+            this.presentLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.presentLbl.Name = "presentLbl";
+            this.presentLbl.Size = new System.Drawing.Size(114, 25);
+            this.presentLbl.TabIndex = 6;
+            this.presentLbl.Text = "presents";
+            // 
+            // eveDesc
+            // 
+            this.eveDesc.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveDesc.Location = new System.Drawing.Point(105, 472);
+            this.eveDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveDesc.MaximumSize = new System.Drawing.Size(375, 406);
+            this.eveDesc.Name = "eveDesc";
+            this.eveDesc.Size = new System.Drawing.Size(375, 203);
+            this.eveDesc.TabIndex = 5;
+            this.eveDesc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // desclbl
+            // 
+            this.desclbl.AutoSize = true;
+            this.desclbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desclbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.desclbl.Location = new System.Drawing.Point(107, 434);
+            this.desclbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.desclbl.Name = "desclbl";
+            this.desclbl.Size = new System.Drawing.Size(128, 23);
+            this.desclbl.TabIndex = 4;
+            this.desclbl.Text = "Description:";
+            // 
+            // socImg
+            // 
+            this.socImg.AllowFocused = false;
+            this.socImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.socImg.AutoSizeHeight = true;
+            this.socImg.BorderRadius = 0;
+            this.socImg.Image = ((System.Drawing.Image)(resources.GetObject("socImg.Image")));
+            this.socImg.IsCircle = true;
+            this.socImg.Location = new System.Drawing.Point(110, 90);
+            this.socImg.Margin = new System.Windows.Forms.Padding(2);
+            this.socImg.Name = "socImg";
+            this.socImg.Size = new System.Drawing.Size(200, 200);
+            this.socImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.socImg.TabIndex = 1;
+            this.socImg.TabStop = false;
+            this.socImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            // 
+            // socTitle
+            // 
+            this.socTitle.AutoSize = true;
+            this.socTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.socTitle.Location = new System.Drawing.Point(104, 319);
+            this.socTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.socTitle.Name = "socTitle";
+            this.socTitle.Size = new System.Drawing.Size(239, 32);
+            this.socTitle.TabIndex = 0;
+            this.socTitle.Text = "Title of Society";
+            // 
+            // locLbl
+            // 
+            this.locLbl.AutoSize = true;
+            this.locLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.locLbl.Location = new System.Drawing.Point(666, 439);
+            this.locLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.locLbl.Name = "locLbl";
+            this.locLbl.Size = new System.Drawing.Size(91, 23);
+            this.locLbl.TabIndex = 17;
+            this.locLbl.Text = "Location";
+            // 
+            // timeLbl
+            // 
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.timeLbl.Location = new System.Drawing.Point(666, 580);
+            this.timeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(57, 23);
+            this.timeLbl.TabIndex = 18;
+            this.timeLbl.Text = "Time";
+            // 
+            // dateLbl
+            // 
+            this.dateLbl.AutoSize = true;
+            this.dateLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dateLbl.Location = new System.Drawing.Point(666, 509);
+            this.dateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dateLbl.Name = "dateLbl";
+            this.dateLbl.Size = new System.Drawing.Size(54, 23);
+            this.dateLbl.TabIndex = 19;
+            this.dateLbl.Text = "Date";
+            // 
+            // eveLoc
+            // 
+            this.eveLoc.AutoSize = true;
+            this.eveLoc.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveLoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveLoc.Location = new System.Drawing.Point(788, 439);
+            this.eveLoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveLoc.Name = "eveLoc";
+            this.eveLoc.Size = new System.Drawing.Size(99, 18);
+            this.eveLoc.TabIndex = 20;
+            this.eveLoc.Text = "Khyber Lab";
+            // 
+            // eveTime
+            // 
+            this.eveTime.AutoSize = true;
+            this.eveTime.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveTime.Location = new System.Drawing.Point(788, 580);
+            this.eveTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveTime.Name = "eveTime";
+            this.eveTime.Size = new System.Drawing.Size(82, 18);
+            this.eveTime.TabIndex = 21;
+            this.eveTime.Text = "14:00:00";
+            // 
+            // eveDate
+            // 
+            this.eveDate.AutoSize = true;
+            this.eveDate.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveDate.Location = new System.Drawing.Point(788, 513);
+            this.eveDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveDate.Name = "eveDate";
+            this.eveDate.Size = new System.Drawing.Size(102, 18);
+            this.eveDate.TabIndex = 22;
+            this.eveDate.Text = "02/04/2025";
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2412,6 +2655,10 @@
             this.memberRequest.ResumeLayout(false);
             this.memberRequest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memReqGrid)).EndInit();
+            this.viewEvent.ResumeLayout(false);
+            this.viewEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eveImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2486,5 +2733,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reqStatus;
         private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
         private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
+        private System.Windows.Forms.TabPage viewEvent;
+        private System.Windows.Forms.Label presentLbl;
+        private System.Windows.Forms.Label eveDesc;
+        private System.Windows.Forms.Label desclbl;
+        private Bunifu.UI.WinForms.BunifuPictureBox socImg;
+        private System.Windows.Forms.Label socTitle;
+        private System.Windows.Forms.Label eveTitle;
+        private Bunifu.UI.WinForms.BunifuPictureBox eveImg;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton backBtn;
+        private System.Windows.Forms.Label dateLbl;
+        private System.Windows.Forms.Label timeLbl;
+        private System.Windows.Forms.Label locLbl;
+        private System.Windows.Forms.Label eveDate;
+        private System.Windows.Forms.Label eveTime;
+        private System.Windows.Forms.Label eveLoc;
     }
 }

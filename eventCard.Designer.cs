@@ -158,6 +158,7 @@
             this.viewBtn.TextMarginLeft = 0;
             this.viewBtn.TextPadding = new System.Windows.Forms.Padding(0);
             this.viewBtn.UseDefaultRadiusAndThickness = true;
+            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
             // 
             // presentLabel
             // 
