@@ -41,7 +41,7 @@ namespace CampusNex
                 s.Show();
             }
         }
-        private void bunifuButton1_Click_1(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
             // get the username and password
             string usernameEntered = usernameTxt.Text;
@@ -49,8 +49,17 @@ namespace CampusNex
 
             if(User.ValidateUser(usernameEntered, passEntered, this))
             {
+                clearInputFields();
                 this.Hide();
             }
+        }
+
+        // Function that Clears UserName and
+        // Password Fields upon successful Login
+        private void clearInputFields()
+        {
+            usernameTxt.Text = "";
+            passTxt.Text = "";
         }
 
 
@@ -63,6 +72,11 @@ namespace CampusNex
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+           this.Close();
         }
     }
 }
