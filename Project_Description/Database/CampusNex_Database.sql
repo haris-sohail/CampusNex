@@ -42,11 +42,11 @@ CREATE TABLE Societies (
     society_id INT PRIMARY KEY AUTO_INCREMENT,
     society_name VARCHAR(100) UNIQUE NOT NULL,
     society_slogan VARCHAR(100) NOT NULL,
-    society_description TEXT,
+    society_description longtext,
     mentor_id INT NOT NULL,
 	head_id INT NOT NULL,
     creation_date DATE NOT NULL,
-    society_logo BLOB,
+    society_logo longblob,
 	status ENUM('pending', 'accepted', 'rejected') NOT NULL,
     FOREIGN KEY (head_id) REFERENCES Students(student_id),
     FOREIGN KEY (mentor_id) REFERENCES Mentors(mentor_id)
@@ -62,10 +62,11 @@ CREATE TABLE Events (
     event_date DATE NOT NULL,
     event_time TIME NOT NULL,
     location VARCHAR(255) NOT NULL,
-    description TEXT,
+    description longtext,
     event_type VARCHAR(50) NOT NULL,
     organizer_id INT NOT NULL,
     status ENUM('pending', 'accepted', 'rejected') NOT NULL, 
+    event_Img longblob,
     FOREIGN KEY (society_id) REFERENCES Societies(society_id),
     FOREIGN KEY (organizer_id) REFERENCES Students(student_id)
 );
@@ -106,10 +107,10 @@ INSERT INTO Mentors (user_id, designation, education_info) VALUES
 INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo,status) VALUES
 ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
 skills, and innovation in the field of computing through various educational, 
-collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'accepted'),
+collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\FCS_Logo.png')),'accepted'),
  ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
  skills, and innovation in the field of computing through various educational, 
- collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
+ collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\FDSS_Logo.png')),'pending');
  
 INSERT INTO Members (user_id, society_id, join_date, is_head, interest)
 VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence'),
@@ -117,13 +118,13 @@ VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence'),
 (5, 1, '2024-01-10', 0, 'Graphic Design, Calculations'),
 (6, 2, '2024-02-05', 0, 'NLP, Management');
 
-INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status)
+INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status,event_Img)
 VALUES (2, 'Data Escapes', '2024-04-15', '15:00:00', 'Community Hall', 'Join us for an immersive journey into the world of data science at "Data Escapes." This 
 captivating event brings together data enthusiasts, experts, and novices alike to explore the endless possibilities 
-and applications of data science.', 'Seminar', 4, 'accepted'),
+and applications of data science.', 'Seminar', 4, 'accepted',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\DataEscape.png'))),
 (1, 'Code Craft', '2024-06-15', '12:30:00', 'Khyber Lab II', 'Join us for an exhilarating coding workshop hosted by the Computing Society, where we delve into the 
 intricacies of software development, algorithmic problem-solving, and innovative coding techniques', 
-'Workshop', 3, 'pending');
+'Workshop', 3, 'pending',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CampusNex\\Project_Description\\assets\\CodeCraft.png')));
 
  -- The following query runs on Haris' machine only
  
