@@ -14,7 +14,7 @@ namespace CampusNex
 {
     internal class DB_Connection
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -39,7 +39,7 @@ namespace CampusNex
         }
 
         // Open connection to the database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -208,7 +208,6 @@ namespace CampusNex
             return false;
             
         }
-    
 
         public void executeInsert(List<object> toInsert, string tableName) {
             if (OpenConnection())

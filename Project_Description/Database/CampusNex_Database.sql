@@ -179,5 +179,14 @@ HAVING COUNT(S.society_id) < 2;
 
 select society_name, u.username from societies s join students st on s.head_id = st.student_id
 join users u on st.user_id = u.user_id where s.status = 'pending' and mentor_id = 1;
-select * from members;
+
+select * from events;
+
+SELECT U.user_pic AS user_img, U.username AS user_name, S.society_name
+FROM Members M
+JOIN Students St ON M.student_id = St.student_id
+JOIN Users U ON St.user_id = U.user_id
+JOIN Societies S ON M.society_id = S.society_id
+WHERE M.status = 'pending' and M.society_id = 2;
+
 -- show variables like "secure_file_priv";

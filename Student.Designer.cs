@@ -67,6 +67,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties33 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties34 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties35 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties36 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MemberReqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.Announcements = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -136,6 +155,12 @@
             this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
             this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.viewEvent = new System.Windows.Forms.TabPage();
+            this.eveDate = new System.Windows.Forms.Label();
+            this.eveTime = new System.Windows.Forms.Label();
+            this.eveLoc = new System.Windows.Forms.Label();
+            this.dateLbl = new System.Windows.Forms.Label();
+            this.timeLbl = new System.Windows.Forms.Label();
+            this.locLbl = new System.Windows.Forms.Label();
             this.backBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.eveImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.eveTitle = new System.Windows.Forms.Label();
@@ -144,12 +169,25 @@
             this.desclbl = new System.Windows.Forms.Label();
             this.socImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.socTitle = new System.Windows.Forms.Label();
-            this.locLbl = new System.Windows.Forms.Label();
-            this.timeLbl = new System.Windows.Forms.Label();
-            this.dateLbl = new System.Windows.Forms.Label();
-            this.eveLoc = new System.Windows.Forms.Label();
-            this.eveTime = new System.Windows.Forms.Label();
-            this.eveDate = new System.Windows.Forms.Label();
+            this.organizeEvent = new System.Windows.Forms.TabPage();
+            this.uplBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.eimgHolder = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.chooseSocDD = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.eDesc = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.elocation = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.eTitle = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.regEventBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.relvImgLbl = new System.Windows.Forms.Label();
+            this.elocLbl = new System.Windows.Forms.Label();
+            this.edesclbl = new System.Windows.Forms.Label();
+            this.titleLbl = new System.Windows.Forms.Label();
+            this.regEvent = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dteLbl = new System.Windows.Forms.Label();
+            this.eDt = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.bckBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.eTypeLbl = new System.Windows.Forms.Label();
+            this.eType = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -167,6 +205,8 @@
             this.viewEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eveImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socImg)).BeginInit();
+            this.organizeEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eimgHolder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -587,14 +627,15 @@
             this.StudentPages.Controls.Add(this.studentReg);
             this.StudentPages.Controls.Add(this.memberRequest);
             this.StudentPages.Controls.Add(this.viewEvent);
+            this.StudentPages.Controls.Add(this.organizeEvent);
             this.StudentPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.viewEvent;
-            this.StudentPages.PageIndex = 6;
-            this.StudentPages.PageName = "viewEvent";
-            this.StudentPages.PageTitle = "view Event";
+            this.StudentPages.Page = this.organizeEvent;
+            this.StudentPages.PageIndex = 7;
+            this.StudentPages.PageName = "organizeEvent";
+            this.StudentPages.PageTitle = "Organize An Event !!";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1079, 729);
             this.StudentPages.TabIndex = 1;
@@ -952,6 +993,7 @@
             this.organizeEventBtn.TextMarginLeft = 0;
             this.organizeEventBtn.TextPadding = new System.Windows.Forms.Padding(0);
             this.organizeEventBtn.UseDefaultRadiusAndThickness = true;
+            this.organizeEventBtn.Click += new System.EventHandler(this.organizeEventBtn_Click);
             // 
             // societyEventPanel
             // 
@@ -2426,6 +2468,78 @@
             this.viewEvent.TabIndex = 6;
             this.viewEvent.Text = "view Event";
             // 
+            // eveDate
+            // 
+            this.eveDate.AutoSize = true;
+            this.eveDate.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveDate.Location = new System.Drawing.Point(788, 513);
+            this.eveDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveDate.Name = "eveDate";
+            this.eveDate.Size = new System.Drawing.Size(102, 18);
+            this.eveDate.TabIndex = 22;
+            this.eveDate.Text = "02/04/2025";
+            // 
+            // eveTime
+            // 
+            this.eveTime.AutoSize = true;
+            this.eveTime.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveTime.Location = new System.Drawing.Point(788, 580);
+            this.eveTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveTime.Name = "eveTime";
+            this.eveTime.Size = new System.Drawing.Size(82, 18);
+            this.eveTime.TabIndex = 21;
+            this.eveTime.Text = "14:00:00";
+            // 
+            // eveLoc
+            // 
+            this.eveLoc.AutoSize = true;
+            this.eveLoc.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveLoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveLoc.Location = new System.Drawing.Point(788, 439);
+            this.eveLoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveLoc.Name = "eveLoc";
+            this.eveLoc.Size = new System.Drawing.Size(99, 18);
+            this.eveLoc.TabIndex = 20;
+            this.eveLoc.Text = "Khyber Lab";
+            // 
+            // dateLbl
+            // 
+            this.dateLbl.AutoSize = true;
+            this.dateLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dateLbl.Location = new System.Drawing.Point(666, 509);
+            this.dateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dateLbl.Name = "dateLbl";
+            this.dateLbl.Size = new System.Drawing.Size(54, 23);
+            this.dateLbl.TabIndex = 19;
+            this.dateLbl.Text = "Date";
+            // 
+            // timeLbl
+            // 
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.timeLbl.Location = new System.Drawing.Point(666, 580);
+            this.timeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(57, 23);
+            this.timeLbl.TabIndex = 18;
+            this.timeLbl.Text = "Time";
+            // 
+            // locLbl
+            // 
+            this.locLbl.AutoSize = true;
+            this.locLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.locLbl.Location = new System.Drawing.Point(666, 439);
+            this.locLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.locLbl.Name = "locLbl";
+            this.locLbl.Size = new System.Drawing.Size(91, 23);
+            this.locLbl.TabIndex = 17;
+            this.locLbl.Text = "Location";
+            // 
             // backBtn
             // 
             this.backBtn.AllowAnimations = true;
@@ -2552,77 +2666,729 @@
             this.socTitle.TabIndex = 0;
             this.socTitle.Text = "Title of Society";
             // 
-            // locLbl
+            // organizeEvent
             // 
-            this.locLbl.AutoSize = true;
-            this.locLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.locLbl.Location = new System.Drawing.Point(666, 439);
-            this.locLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.locLbl.Name = "locLbl";
-            this.locLbl.Size = new System.Drawing.Size(91, 23);
-            this.locLbl.TabIndex = 17;
-            this.locLbl.Text = "Location";
+            this.organizeEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.organizeEvent.Controls.Add(this.eType);
+            this.organizeEvent.Controls.Add(this.eTypeLbl);
+            this.organizeEvent.Controls.Add(this.bckBtn);
+            this.organizeEvent.Controls.Add(this.eDt);
+            this.organizeEvent.Controls.Add(this.dteLbl);
+            this.organizeEvent.Controls.Add(this.uplBtn);
+            this.organizeEvent.Controls.Add(this.eimgHolder);
+            this.organizeEvent.Controls.Add(this.chooseSocDD);
+            this.organizeEvent.Controls.Add(this.eDesc);
+            this.organizeEvent.Controls.Add(this.elocation);
+            this.organizeEvent.Controls.Add(this.eTitle);
+            this.organizeEvent.Controls.Add(this.regEventBtn);
+            this.organizeEvent.Controls.Add(this.relvImgLbl);
+            this.organizeEvent.Controls.Add(this.elocLbl);
+            this.organizeEvent.Controls.Add(this.edesclbl);
+            this.organizeEvent.Controls.Add(this.titleLbl);
+            this.organizeEvent.Controls.Add(this.regEvent);
+            this.organizeEvent.Controls.Add(this.label12);
+            this.organizeEvent.Location = new System.Drawing.Point(4, 4);
+            this.organizeEvent.Name = "organizeEvent";
+            this.organizeEvent.Padding = new System.Windows.Forms.Padding(3);
+            this.organizeEvent.Size = new System.Drawing.Size(1071, 703);
+            this.organizeEvent.TabIndex = 7;
+            this.organizeEvent.Text = "Organize An Event !!";
             // 
-            // timeLbl
+            // uplBtn
             // 
-            this.timeLbl.AutoSize = true;
-            this.timeLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.timeLbl.Location = new System.Drawing.Point(666, 580);
-            this.timeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.timeLbl.Name = "timeLbl";
-            this.timeLbl.Size = new System.Drawing.Size(57, 23);
-            this.timeLbl.TabIndex = 18;
-            this.timeLbl.Text = "Time";
+            this.uplBtn.AllowAnimations = true;
+            this.uplBtn.AllowMouseEffects = false;
+            this.uplBtn.AllowToggling = false;
+            this.uplBtn.AnimationSpeed = 200;
+            this.uplBtn.AutoGenerateColors = false;
+            this.uplBtn.AutoRoundBorders = false;
+            this.uplBtn.AutoSizeLeftIcon = true;
+            this.uplBtn.AutoSizeRightIcon = true;
+            this.uplBtn.BackColor = System.Drawing.Color.Transparent;
+            this.uplBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.uplBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uplBtn.BackgroundImage")));
+            this.uplBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uplBtn.ButtonText = "Upload Image";
+            this.uplBtn.ButtonTextMarginLeft = 0;
+            this.uplBtn.ColorContrastOnClick = 45;
+            this.uplBtn.ColorContrastOnHover = 45;
+            this.uplBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges13.BottomLeft = true;
+            borderEdges13.BottomRight = true;
+            borderEdges13.TopLeft = true;
+            borderEdges13.TopRight = true;
+            this.uplBtn.CustomizableEdges = borderEdges13;
+            this.uplBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.uplBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.uplBtn.DisabledFillColor = System.Drawing.Color.Empty;
+            this.uplBtn.DisabledForecolor = System.Drawing.Color.Empty;
+            this.uplBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.uplBtn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uplBtn.ForeColor = System.Drawing.Color.White;
+            this.uplBtn.IconLeft = null;
+            this.uplBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uplBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.uplBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.uplBtn.IconMarginLeft = 11;
+            this.uplBtn.IconPadding = 10;
+            this.uplBtn.IconRight = null;
+            this.uplBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uplBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.uplBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.uplBtn.IconSize = 25;
+            this.uplBtn.IdleBorderColor = System.Drawing.Color.Empty;
+            this.uplBtn.IdleBorderRadius = 0;
+            this.uplBtn.IdleBorderThickness = 0;
+            this.uplBtn.IdleFillColor = System.Drawing.Color.Empty;
+            this.uplBtn.IdleIconLeftImage = null;
+            this.uplBtn.IdleIconRightImage = null;
+            this.uplBtn.IndicateFocus = true;
+            this.uplBtn.Location = new System.Drawing.Point(663, 193);
+            this.uplBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.uplBtn.Name = "uplBtn";
+            this.uplBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.uplBtn.OnDisabledState.BorderRadius = 39;
+            this.uplBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uplBtn.OnDisabledState.BorderThickness = 1;
+            this.uplBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.uplBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.uplBtn.OnDisabledState.IconLeftImage = null;
+            this.uplBtn.OnDisabledState.IconRightImage = null;
+            this.uplBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.uplBtn.onHoverState.BorderRadius = 39;
+            this.uplBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
+            this.uplBtn.onHoverState.BorderThickness = 1;
+            this.uplBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.uplBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.uplBtn.onHoverState.IconLeftImage = null;
+            this.uplBtn.onHoverState.IconRightImage = null;
+            this.uplBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.uplBtn.OnIdleState.BorderRadius = 39;
+            this.uplBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uplBtn.OnIdleState.BorderThickness = 1;
+            this.uplBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.uplBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.uplBtn.OnIdleState.IconLeftImage = null;
+            this.uplBtn.OnIdleState.IconRightImage = null;
+            this.uplBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.uplBtn.OnPressedState.BorderRadius = 39;
+            this.uplBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.uplBtn.OnPressedState.BorderThickness = 1;
+            this.uplBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.uplBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.uplBtn.OnPressedState.IconLeftImage = null;
+            this.uplBtn.OnPressedState.IconRightImage = null;
+            this.uplBtn.Size = new System.Drawing.Size(128, 38);
+            this.uplBtn.TabIndex = 18;
+            this.uplBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uplBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.uplBtn.TextMarginLeft = 0;
+            this.uplBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.uplBtn.UseDefaultRadiusAndThickness = true;
+            this.uplBtn.Click += new System.EventHandler(this.uploadImg_Click);
             // 
-            // dateLbl
+            // eimgHolder
             // 
-            this.dateLbl.AutoSize = true;
-            this.dateLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dateLbl.Location = new System.Drawing.Point(666, 509);
-            this.dateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(54, 23);
-            this.dateLbl.TabIndex = 19;
-            this.dateLbl.Text = "Date";
+            this.eimgHolder.AllowFocused = false;
+            this.eimgHolder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.eimgHolder.AutoSizeHeight = true;
+            this.eimgHolder.BorderRadius = 0;
+            this.eimgHolder.Image = ((System.Drawing.Image)(resources.GetObject("eimgHolder.Image")));
+            this.eimgHolder.IsCircle = true;
+            this.eimgHolder.Location = new System.Drawing.Point(831, 127);
+            this.eimgHolder.Name = "eimgHolder";
+            this.eimgHolder.Size = new System.Drawing.Size(123, 123);
+            this.eimgHolder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.eimgHolder.TabIndex = 17;
+            this.eimgHolder.TabStop = false;
+            this.eimgHolder.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
-            // eveLoc
+            // chooseSocDD
             // 
-            this.eveLoc.AutoSize = true;
-            this.eveLoc.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eveLoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eveLoc.Location = new System.Drawing.Point(788, 439);
-            this.eveLoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eveLoc.Name = "eveLoc";
-            this.eveLoc.Size = new System.Drawing.Size(99, 18);
-            this.eveLoc.TabIndex = 20;
-            this.eveLoc.Text = "Khyber Lab";
+            this.chooseSocDD.BackColor = System.Drawing.Color.Transparent;
+            this.chooseSocDD.BackgroundColor = System.Drawing.Color.White;
+            this.chooseSocDD.BorderColor = System.Drawing.Color.Silver;
+            this.chooseSocDD.BorderRadius = 1;
+            this.chooseSocDD.Color = System.Drawing.Color.Silver;
+            this.chooseSocDD.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.chooseSocDD.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.chooseSocDD.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.chooseSocDD.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.chooseSocDD.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.chooseSocDD.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.chooseSocDD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.chooseSocDD.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.chooseSocDD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.chooseSocDD.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.chooseSocDD.FillDropDown = true;
+            this.chooseSocDD.FillIndicator = false;
+            this.chooseSocDD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chooseSocDD.Font = new System.Drawing.Font("Verdana", 9.75F);
+            this.chooseSocDD.ForeColor = System.Drawing.Color.Black;
+            this.chooseSocDD.FormattingEnabled = true;
+            this.chooseSocDD.Icon = null;
+            this.chooseSocDD.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.chooseSocDD.IndicatorColor = System.Drawing.Color.DarkGray;
+            this.chooseSocDD.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.chooseSocDD.IndicatorThickness = 2;
+            this.chooseSocDD.IsDropdownOpened = false;
+            this.chooseSocDD.ItemBackColor = System.Drawing.Color.White;
+            this.chooseSocDD.ItemBorderColor = System.Drawing.Color.White;
+            this.chooseSocDD.ItemForeColor = System.Drawing.Color.Black;
+            this.chooseSocDD.ItemHeight = 26;
+            this.chooseSocDD.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.chooseSocDD.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.chooseSocDD.ItemTopMargin = 3;
+            this.chooseSocDD.Location = new System.Drawing.Point(339, 151);
+            this.chooseSocDD.Name = "chooseSocDD";
+            this.chooseSocDD.Size = new System.Drawing.Size(260, 32);
+            this.chooseSocDD.TabIndex = 16;
+            this.chooseSocDD.Text = null;
+            this.chooseSocDD.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.chooseSocDD.TextLeftMargin = 5;
             // 
-            // eveTime
+            // eDesc
             // 
-            this.eveTime.AutoSize = true;
-            this.eveTime.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eveTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eveTime.Location = new System.Drawing.Point(788, 580);
-            this.eveTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eveTime.Name = "eveTime";
-            this.eveTime.Size = new System.Drawing.Size(82, 18);
-            this.eveTime.TabIndex = 21;
-            this.eveTime.Text = "14:00:00";
+            this.eDesc.AcceptsReturn = false;
+            this.eDesc.AcceptsTab = false;
+            this.eDesc.AnimationSpeed = 200;
+            this.eDesc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.eDesc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.eDesc.AutoSizeHeight = true;
+            this.eDesc.BackColor = System.Drawing.Color.Transparent;
+            this.eDesc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eDesc.BackgroundImage")));
+            this.eDesc.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.eDesc.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.eDesc.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.eDesc.BorderColorIdle = System.Drawing.Color.Silver;
+            this.eDesc.BorderRadius = 30;
+            this.eDesc.BorderThickness = 1;
+            this.eDesc.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.eDesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.eDesc.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.eDesc.DefaultFont = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eDesc.DefaultText = "";
+            this.eDesc.FillColor = System.Drawing.Color.White;
+            this.eDesc.HideSelection = true;
+            this.eDesc.IconLeft = null;
+            this.eDesc.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.eDesc.IconPadding = 10;
+            this.eDesc.IconRight = null;
+            this.eDesc.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.eDesc.Lines = new string[0];
+            this.eDesc.Location = new System.Drawing.Point(339, 368);
+            this.eDesc.MaximumSize = new System.Drawing.Size(260, 180);
+            this.eDesc.MaxLength = 32767;
+            this.eDesc.MinimumSize = new System.Drawing.Size(260, 100);
+            this.eDesc.Modified = false;
+            this.eDesc.Multiline = true;
+            this.eDesc.Name = "eDesc";
+            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties25.FillColor = System.Drawing.Color.Empty;
+            stateProperties25.ForeColor = System.Drawing.Color.Empty;
+            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eDesc.OnActiveState = stateProperties25;
+            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.eDesc.OnDisabledState = stateProperties26;
+            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties27.FillColor = System.Drawing.Color.Empty;
+            stateProperties27.ForeColor = System.Drawing.Color.Empty;
+            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eDesc.OnHoverState = stateProperties27;
+            stateProperties28.BorderColor = System.Drawing.Color.Silver;
+            stateProperties28.FillColor = System.Drawing.Color.White;
+            stateProperties28.ForeColor = System.Drawing.Color.Empty;
+            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eDesc.OnIdleState = stateProperties28;
+            this.eDesc.Padding = new System.Windows.Forms.Padding(3);
+            this.eDesc.PasswordChar = '\0';
+            this.eDesc.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.eDesc.PlaceholderText = "Bringing an Innovative Experience ...";
+            this.eDesc.ReadOnly = false;
+            this.eDesc.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.eDesc.SelectedText = "";
+            this.eDesc.SelectionLength = 0;
+            this.eDesc.SelectionStart = 0;
+            this.eDesc.ShortcutsEnabled = true;
+            this.eDesc.Size = new System.Drawing.Size(260, 139);
+            this.eDesc.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.eDesc.TabIndex = 15;
+            this.eDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.eDesc.TextMarginBottom = 0;
+            this.eDesc.TextMarginLeft = 10;
+            this.eDesc.TextMarginTop = 10;
+            this.eDesc.TextPlaceholder = "Bringing an Innovative Experience ...";
+            this.eDesc.UseSystemPasswordChar = false;
+            this.eDesc.WordWrap = true;
             // 
-            // eveDate
+            // elocation
             // 
-            this.eveDate.AutoSize = true;
-            this.eveDate.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eveDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eveDate.Location = new System.Drawing.Point(788, 513);
-            this.eveDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eveDate.Name = "eveDate";
-            this.eveDate.Size = new System.Drawing.Size(102, 18);
-            this.eveDate.TabIndex = 22;
-            this.eveDate.Text = "02/04/2025";
+            this.elocation.AcceptsReturn = false;
+            this.elocation.AcceptsTab = false;
+            this.elocation.AnimationSpeed = 200;
+            this.elocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.elocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.elocation.AutoSizeHeight = true;
+            this.elocation.BackColor = System.Drawing.Color.Transparent;
+            this.elocation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("elocation.BackgroundImage")));
+            this.elocation.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.elocation.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.elocation.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.elocation.BorderColorIdle = System.Drawing.Color.Silver;
+            this.elocation.BorderRadius = 30;
+            this.elocation.BorderThickness = 1;
+            this.elocation.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.elocation.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.elocation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.elocation.DefaultFont = new System.Drawing.Font("Verdana", 9.75F);
+            this.elocation.DefaultText = "";
+            this.elocation.FillColor = System.Drawing.Color.White;
+            this.elocation.HideSelection = true;
+            this.elocation.IconLeft = null;
+            this.elocation.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.elocation.IconPadding = 10;
+            this.elocation.IconRight = null;
+            this.elocation.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.elocation.Lines = new string[0];
+            this.elocation.Location = new System.Drawing.Point(791, 438);
+            this.elocation.MaxLength = 32767;
+            this.elocation.MinimumSize = new System.Drawing.Size(1, 1);
+            this.elocation.Modified = false;
+            this.elocation.Multiline = false;
+            this.elocation.Name = "elocation";
+            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties29.FillColor = System.Drawing.Color.Empty;
+            stateProperties29.ForeColor = System.Drawing.Color.Empty;
+            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.elocation.OnActiveState = stateProperties29;
+            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.elocation.OnDisabledState = stateProperties30;
+            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties31.FillColor = System.Drawing.Color.Empty;
+            stateProperties31.ForeColor = System.Drawing.Color.Empty;
+            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.elocation.OnHoverState = stateProperties31;
+            stateProperties32.BorderColor = System.Drawing.Color.Silver;
+            stateProperties32.FillColor = System.Drawing.Color.White;
+            stateProperties32.ForeColor = System.Drawing.Color.Empty;
+            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.elocation.OnIdleState = stateProperties32;
+            this.elocation.Padding = new System.Windows.Forms.Padding(3);
+            this.elocation.PasswordChar = '\0';
+            this.elocation.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.elocation.PlaceholderText = "Karakoram Lab";
+            this.elocation.ReadOnly = false;
+            this.elocation.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.elocation.SelectedText = "";
+            this.elocation.SelectionLength = 0;
+            this.elocation.SelectionStart = 0;
+            this.elocation.ShortcutsEnabled = true;
+            this.elocation.Size = new System.Drawing.Size(260, 38);
+            this.elocation.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.elocation.TabIndex = 14;
+            this.elocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.elocation.TextMarginBottom = 0;
+            this.elocation.TextMarginLeft = 3;
+            this.elocation.TextMarginTop = 1;
+            this.elocation.TextPlaceholder = "Karakoram Lab";
+            this.elocation.UseSystemPasswordChar = false;
+            this.elocation.WordWrap = true;
+            // 
+            // eTitle
+            // 
+            this.eTitle.AcceptsReturn = false;
+            this.eTitle.AcceptsTab = false;
+            this.eTitle.AnimationSpeed = 200;
+            this.eTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.eTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.eTitle.AutoSizeHeight = true;
+            this.eTitle.BackColor = System.Drawing.Color.Transparent;
+            this.eTitle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eTitle.BackgroundImage")));
+            this.eTitle.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.eTitle.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.eTitle.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.eTitle.BorderColorIdle = System.Drawing.Color.Silver;
+            this.eTitle.BorderRadius = 30;
+            this.eTitle.BorderThickness = 1;
+            this.eTitle.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.eTitle.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.eTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.eTitle.DefaultFont = new System.Drawing.Font("Verdana", 9.75F);
+            this.eTitle.DefaultText = "";
+            this.eTitle.FillColor = System.Drawing.Color.White;
+            this.eTitle.HideSelection = true;
+            this.eTitle.IconLeft = null;
+            this.eTitle.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.eTitle.IconPadding = 10;
+            this.eTitle.IconRight = null;
+            this.eTitle.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.eTitle.Lines = new string[0];
+            this.eTitle.Location = new System.Drawing.Point(339, 226);
+            this.eTitle.MaxLength = 32767;
+            this.eTitle.MinimumSize = new System.Drawing.Size(1, 1);
+            this.eTitle.Modified = false;
+            this.eTitle.Multiline = false;
+            this.eTitle.Name = "eTitle";
+            stateProperties33.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties33.FillColor = System.Drawing.Color.Empty;
+            stateProperties33.ForeColor = System.Drawing.Color.Empty;
+            stateProperties33.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eTitle.OnActiveState = stateProperties33;
+            stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.eTitle.OnDisabledState = stateProperties34;
+            stateProperties35.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties35.FillColor = System.Drawing.Color.Empty;
+            stateProperties35.ForeColor = System.Drawing.Color.Empty;
+            stateProperties35.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eTitle.OnHoverState = stateProperties35;
+            stateProperties36.BorderColor = System.Drawing.Color.Silver;
+            stateProperties36.FillColor = System.Drawing.Color.White;
+            stateProperties36.ForeColor = System.Drawing.Color.Empty;
+            stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eTitle.OnIdleState = stateProperties36;
+            this.eTitle.Padding = new System.Windows.Forms.Padding(3);
+            this.eTitle.PasswordChar = '\0';
+            this.eTitle.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.eTitle.PlaceholderText = "CodeCrafts";
+            this.eTitle.ReadOnly = false;
+            this.eTitle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.eTitle.SelectedText = "";
+            this.eTitle.SelectionLength = 0;
+            this.eTitle.SelectionStart = 0;
+            this.eTitle.ShortcutsEnabled = true;
+            this.eTitle.Size = new System.Drawing.Size(260, 38);
+            this.eTitle.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.eTitle.TabIndex = 13;
+            this.eTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.eTitle.TextMarginBottom = 0;
+            this.eTitle.TextMarginLeft = 3;
+            this.eTitle.TextMarginTop = 1;
+            this.eTitle.TextPlaceholder = "CodeCrafts";
+            this.eTitle.UseSystemPasswordChar = false;
+            this.eTitle.WordWrap = true;
+            // 
+            // regEventBtn
+            // 
+            this.regEventBtn.AllowAnimations = true;
+            this.regEventBtn.AllowMouseEffects = false;
+            this.regEventBtn.AllowToggling = false;
+            this.regEventBtn.AnimationSpeed = 200;
+            this.regEventBtn.AutoGenerateColors = false;
+            this.regEventBtn.AutoRoundBorders = false;
+            this.regEventBtn.AutoSizeLeftIcon = true;
+            this.regEventBtn.AutoSizeRightIcon = true;
+            this.regEventBtn.BackColor = System.Drawing.Color.Transparent;
+            this.regEventBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.regEventBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("regEventBtn.BackgroundImage")));
+            this.regEventBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regEventBtn.ButtonText = "Register";
+            this.regEventBtn.ButtonTextMarginLeft = 0;
+            this.regEventBtn.ColorContrastOnClick = 45;
+            this.regEventBtn.ColorContrastOnHover = 45;
+            this.regEventBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges14.BottomLeft = true;
+            borderEdges14.BottomRight = true;
+            borderEdges14.TopLeft = true;
+            borderEdges14.TopRight = true;
+            this.regEventBtn.CustomizableEdges = borderEdges14;
+            this.regEventBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.regEventBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.regEventBtn.DisabledFillColor = System.Drawing.Color.Empty;
+            this.regEventBtn.DisabledForecolor = System.Drawing.Color.Empty;
+            this.regEventBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.regEventBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regEventBtn.ForeColor = System.Drawing.Color.White;
+            this.regEventBtn.IconLeft = null;
+            this.regEventBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.regEventBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.regEventBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.regEventBtn.IconMarginLeft = 11;
+            this.regEventBtn.IconPadding = 10;
+            this.regEventBtn.IconRight = null;
+            this.regEventBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.regEventBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.regEventBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.regEventBtn.IconSize = 25;
+            this.regEventBtn.IdleBorderColor = System.Drawing.Color.Empty;
+            this.regEventBtn.IdleBorderRadius = 0;
+            this.regEventBtn.IdleBorderThickness = 0;
+            this.regEventBtn.IdleFillColor = System.Drawing.Color.Empty;
+            this.regEventBtn.IdleIconLeftImage = null;
+            this.regEventBtn.IdleIconRightImage = null;
+            this.regEventBtn.IndicateFocus = false;
+            this.regEventBtn.Location = new System.Drawing.Point(358, 553);
+            this.regEventBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.regEventBtn.Name = "regEventBtn";
+            this.regEventBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.regEventBtn.OnDisabledState.BorderRadius = 39;
+            this.regEventBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regEventBtn.OnDisabledState.BorderThickness = 1;
+            this.regEventBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.regEventBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.regEventBtn.OnDisabledState.IconLeftImage = null;
+            this.regEventBtn.OnDisabledState.IconRightImage = null;
+            this.regEventBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.regEventBtn.onHoverState.BorderRadius = 39;
+            this.regEventBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
+            this.regEventBtn.onHoverState.BorderThickness = 1;
+            this.regEventBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.regEventBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.regEventBtn.onHoverState.IconLeftImage = null;
+            this.regEventBtn.onHoverState.IconRightImage = null;
+            this.regEventBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.regEventBtn.OnIdleState.BorderRadius = 39;
+            this.regEventBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regEventBtn.OnIdleState.BorderThickness = 1;
+            this.regEventBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.regEventBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.regEventBtn.OnIdleState.IconLeftImage = null;
+            this.regEventBtn.OnIdleState.IconRightImage = null;
+            this.regEventBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.regEventBtn.OnPressedState.BorderRadius = 39;
+            this.regEventBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regEventBtn.OnPressedState.BorderThickness = 1;
+            this.regEventBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.regEventBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.regEventBtn.OnPressedState.IconLeftImage = null;
+            this.regEventBtn.OnPressedState.IconRightImage = null;
+            this.regEventBtn.Size = new System.Drawing.Size(220, 50);
+            this.regEventBtn.TabIndex = 12;
+            this.regEventBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.regEventBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regEventBtn.TextMarginLeft = 0;
+            this.regEventBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.regEventBtn.UseDefaultRadiusAndThickness = true;
+            this.regEventBtn.Click += new System.EventHandler(this.regEventBtn_Click);
+            // 
+            // relvImgLbl
+            // 
+            this.relvImgLbl.AutoSize = true;
+            this.relvImgLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.relvImgLbl.ForeColor = System.Drawing.Color.White;
+            this.relvImgLbl.Location = new System.Drawing.Point(671, 150);
+            this.relvImgLbl.Name = "relvImgLbl";
+            this.relvImgLbl.Size = new System.Drawing.Size(120, 24);
+            this.relvImgLbl.TabIndex = 11;
+            this.relvImgLbl.Text = "Insert Logo:";
+            // 
+            // elocLbl
+            // 
+            this.elocLbl.AutoSize = true;
+            this.elocLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elocLbl.ForeColor = System.Drawing.Color.White;
+            this.elocLbl.Location = new System.Drawing.Point(671, 438);
+            this.elocLbl.Name = "elocLbl";
+            this.elocLbl.Size = new System.Drawing.Size(95, 24);
+            this.elocLbl.TabIndex = 10;
+            this.elocLbl.Text = "Location:";
+            // 
+            // edesclbl
+            // 
+            this.edesclbl.AutoSize = true;
+            this.edesclbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edesclbl.ForeColor = System.Drawing.Color.White;
+            this.edesclbl.Location = new System.Drawing.Point(87, 368);
+            this.edesclbl.Name = "edesclbl";
+            this.edesclbl.Size = new System.Drawing.Size(180, 24);
+            this.edesclbl.TabIndex = 9;
+            this.edesclbl.Text = "Event Description:";
+            // 
+            // titleLbl
+            // 
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.ForeColor = System.Drawing.Color.White;
+            this.titleLbl.Location = new System.Drawing.Point(87, 226);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(115, 24);
+            this.titleLbl.TabIndex = 8;
+            this.titleLbl.Text = "Event Title:";
+            // 
+            // regEvent
+            // 
+            this.regEvent.AutoSize = true;
+            this.regEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regEvent.ForeColor = System.Drawing.Color.White;
+            this.regEvent.Location = new System.Drawing.Point(367, 57);
+            this.regEvent.Name = "regEvent";
+            this.regEvent.Size = new System.Drawing.Size(265, 29);
+            this.regEvent.TabIndex = 7;
+            this.regEvent.Text = "Register a New Event";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(87, 151);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(148, 24);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Select Society:";
+            // 
+            // dteLbl
+            // 
+            this.dteLbl.AutoSize = true;
+            this.dteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dteLbl.ForeColor = System.Drawing.Color.White;
+            this.dteLbl.Location = new System.Drawing.Point(671, 365);
+            this.dteLbl.Name = "dteLbl";
+            this.dteLbl.Size = new System.Drawing.Size(111, 24);
+            this.dteLbl.TabIndex = 19;
+            this.dteLbl.Text = "Date/Time:";
+            // 
+            // eDt
+            // 
+            this.eDt.BackColor = System.Drawing.Color.White;
+            this.eDt.BorderColor = System.Drawing.Color.Transparent;
+            this.eDt.BorderRadius = 10;
+            this.eDt.Color = System.Drawing.Color.Transparent;
+            this.eDt.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thick;
+            this.eDt.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.eDt.DisabledColor = System.Drawing.Color.Gray;
+            this.eDt.DisplayWeekNumbers = false;
+            this.eDt.DPHeight = 0;
+            this.eDt.FillDatePicker = false;
+            this.eDt.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eDt.ForeColor = System.Drawing.Color.Black;
+            this.eDt.Icon = ((System.Drawing.Image)(resources.GetObject("eDt.Icon")));
+            this.eDt.IconColor = System.Drawing.Color.DodgerBlue;
+            this.eDt.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.eDt.LeftTextMargin = 5;
+            this.eDt.Location = new System.Drawing.Point(791, 365);
+            this.eDt.MinimumSize = new System.Drawing.Size(0, 32);
+            this.eDt.Name = "eDt";
+            this.eDt.Size = new System.Drawing.Size(246, 32);
+            this.eDt.TabIndex = 22;
+            this.eDt.Value = new System.DateTime(2024, 4, 8, 22, 7, 0, 0);
+            // 
+            // bckBtn
+            // 
+            this.bckBtn.AllowAnimations = true;
+            this.bckBtn.AllowBorderColorChanges = true;
+            this.bckBtn.AllowMouseEffects = true;
+            this.bckBtn.AnimationSpeed = 200;
+            this.bckBtn.BackColor = System.Drawing.Color.Transparent;
+            this.bckBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bckBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.bckBtn.BorderRadius = 1;
+            this.bckBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.bckBtn.BorderThickness = 1;
+            this.bckBtn.ColorContrastOnClick = 30;
+            this.bckBtn.ColorContrastOnHover = 30;
+            this.bckBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges12.BottomLeft = true;
+            borderEdges12.BottomRight = true;
+            borderEdges12.TopLeft = true;
+            borderEdges12.TopRight = true;
+            this.bckBtn.CustomizableEdges = borderEdges12;
+            this.bckBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bckBtn.Image = ((System.Drawing.Image)(resources.GetObject("bckBtn.Image")));
+            this.bckBtn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.bckBtn.Location = new System.Drawing.Point(33, 38);
+            this.bckBtn.Name = "bckBtn";
+            this.bckBtn.RoundBorders = true;
+            this.bckBtn.ShowBorders = true;
+            this.bckBtn.Size = new System.Drawing.Size(59, 59);
+            this.bckBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.bckBtn.TabIndex = 23;
+            this.bckBtn.Click += new System.EventHandler(this.eventsBtn_Click);
+            // 
+            // eTypeLbl
+            // 
+            this.eTypeLbl.AutoSize = true;
+            this.eTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eTypeLbl.ForeColor = System.Drawing.Color.White;
+            this.eTypeLbl.Location = new System.Drawing.Point(87, 297);
+            this.eTypeLbl.Name = "eTypeLbl";
+            this.eTypeLbl.Size = new System.Drawing.Size(122, 24);
+            this.eTypeLbl.TabIndex = 24;
+            this.eTypeLbl.Text = "Event Type:";
+            // 
+            // eType
+            // 
+            this.eType.AcceptsReturn = false;
+            this.eType.AcceptsTab = false;
+            this.eType.AnimationSpeed = 200;
+            this.eType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.eType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.eType.AutoSizeHeight = true;
+            this.eType.BackColor = System.Drawing.Color.Transparent;
+            this.eType.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eType.BackgroundImage")));
+            this.eType.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.eType.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.eType.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.eType.BorderColorIdle = System.Drawing.Color.Silver;
+            this.eType.BorderRadius = 30;
+            this.eType.BorderThickness = 1;
+            this.eType.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.eType.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.eType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.eType.DefaultFont = new System.Drawing.Font("Verdana", 9.75F);
+            this.eType.DefaultText = "";
+            this.eType.FillColor = System.Drawing.Color.White;
+            this.eType.HideSelection = true;
+            this.eType.IconLeft = null;
+            this.eType.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.eType.IconPadding = 10;
+            this.eType.IconRight = null;
+            this.eType.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.eType.Lines = new string[0];
+            this.eType.Location = new System.Drawing.Point(339, 292);
+            this.eType.MaxLength = 32767;
+            this.eType.MinimumSize = new System.Drawing.Size(1, 1);
+            this.eType.Modified = false;
+            this.eType.Multiline = false;
+            this.eType.Name = "eType";
+            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eType.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.eType.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eType.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.Silver;
+            stateProperties24.FillColor = System.Drawing.Color.White;
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.eType.OnIdleState = stateProperties24;
+            this.eType.Padding = new System.Windows.Forms.Padding(3);
+            this.eType.PasswordChar = '\0';
+            this.eType.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.eType.PlaceholderText = "Seminar";
+            this.eType.ReadOnly = false;
+            this.eType.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.eType.SelectedText = "";
+            this.eType.SelectionLength = 0;
+            this.eType.SelectionStart = 0;
+            this.eType.ShortcutsEnabled = true;
+            this.eType.Size = new System.Drawing.Size(260, 38);
+            this.eType.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.eType.TabIndex = 25;
+            this.eType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.eType.TextMarginBottom = 0;
+            this.eType.TextMarginLeft = 3;
+            this.eType.TextMarginTop = 1;
+            this.eType.TextPlaceholder = "Seminar";
+            this.eType.UseSystemPasswordChar = false;
+            this.eType.WordWrap = true;
             // 
             // Student
             // 
@@ -2659,6 +3425,9 @@
             this.viewEvent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eveImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socImg)).EndInit();
+            this.organizeEvent.ResumeLayout(false);
+            this.organizeEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eimgHolder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2748,5 +3517,24 @@
         private System.Windows.Forms.Label eveDate;
         private System.Windows.Forms.Label eveTime;
         private System.Windows.Forms.Label eveLoc;
+        private System.Windows.Forms.TabPage organizeEvent;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton uplBtn;
+        private Bunifu.UI.WinForms.BunifuPictureBox eimgHolder;
+        private Bunifu.UI.WinForms.BunifuDropdown chooseSocDD;
+        private Bunifu.UI.WinForms.BunifuTextBox eDesc;
+        private Bunifu.UI.WinForms.BunifuTextBox elocation;
+        private Bunifu.UI.WinForms.BunifuTextBox eTitle;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton regEventBtn;
+        private System.Windows.Forms.Label relvImgLbl;
+        private System.Windows.Forms.Label elocLbl;
+        private System.Windows.Forms.Label edesclbl;
+        private System.Windows.Forms.Label titleLbl;
+        private System.Windows.Forms.Label regEvent;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label dteLbl;
+        private Bunifu.UI.WinForms.BunifuDatePicker eDt;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton bckBtn;
+        private Bunifu.UI.WinForms.BunifuTextBox eType;
+        private System.Windows.Forms.Label eTypeLbl;
     }
 }

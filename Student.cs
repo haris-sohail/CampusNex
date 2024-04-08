@@ -1,5 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
 using CampusNex.Model;
+using Google.Protobuf;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -45,10 +46,14 @@ namespace CampusNex
             student = new Model.Student(user_id);
             // Hide Member Request Btn
             MemberReqBtn.Visible = false;
+            // Hide Event Reg Button
+            organizeEventBtn.Visible = false;
             // Attach Members to Society
             foreach (var m in student.Members)
             {
-                foreach(var s in societies)
+                // show only if student is member
+                organizeEventBtn.Visible = true;
+                foreach (var s in societies)
                 {
                     if(m.SocietyId == s.SocietyId)
                     {
@@ -193,7 +198,6 @@ namespace CampusNex
                 availableMentors.Items.Add(mentorName);
             }
 
-            regNewSociety.IndicateFocus = false;
         }
 
         private void uploadImageBtn_Click(object sender, EventArgs e)
@@ -207,7 +211,18 @@ namespace CampusNex
             }
         }
 
-        
+        private void uploadImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDial = new OpenFileDialog();
+            fileDial.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff)|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff";
+
+            if (fileDial.ShowDialog() == DialogResult.OK)
+            {
+                eimgHolder.Image = new Bitmap(fileDial.FileName);
+            }
+        }
+
+
         private void regNewSociety_Click(object sender, EventArgs e)
         {
             DB_Connection dbConnector = new DB_Connection();
@@ -301,7 +316,7 @@ namespace CampusNex
 
         private void eventsBtn_Click(object sender, EventArgs e)
         {
-            StudentPages.SetPage(((Control)sender).Text);
+            StudentPages.SetPage("Events");
             showEvents();
         }
 
@@ -316,6 +331,7 @@ namespace CampusNex
             {
                 foreach(var e in s.Events)
                 {
+                    
                     eventCard c = new eventCard()
                     {
                         sName = s.Name,
@@ -458,6 +474,84 @@ namespace CampusNex
         private void BackBtn_Click(object sender, EventArgs e)
         {
             StudentPages.SetPage("Events");
+        }
+
+        private void organizeEventBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Organize An Event !!");
+            // Set DropDown
+            foreach (var s in societies)
+            {
+                foreach(var m in s.Members)
+                {
+                    foreach (var i in student.Members)
+                    {
+                        if (m.MemberId == i.MemberId)
+                        {
+                            // Populate Society Name in
+                            // Drop down
+                            chooseSocDD.Items.Add(s.Name);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void regEventBtn_Click(object sender, EventArgs e)
+        {
+            // Register an event
+            Event newEvent = new Event();
+
+            // Get Society ID
+            foreach (var s in societies)
+            {
+                if(s.Name == chooseSocDD.Text)
+                {
+                    newEvent.SocietyId = s.SocietyId;
+                }
+            }
+            // Get Title, Type and Description
+            newEvent.Title = eTitle.Text;
+            newEvent.Type = eType.Text;
+            newEvent.Description = eDesc.Text;
+
+            // Get Date, Time and Location
+            // Get the selected date and time from the DateTimePicker
+            DateTime tmp = eDt.Value;
+            string val = dateVal(tmp.ToShortDateString());
+
+            Console.WriteLine(val);
+            newEvent.Date = val;
+            newEvent.Time = tmp.TimeOfDay;
+            newEvent.Location = elocation.Text;
+
+
+            // Get status and Organizer Id
+            newEvent.Status = "pending";
+            newEvent.OrganizerId = student.StudentId;
+
+            byte[] imageBytes = utilObj.convertToByteStream(eimgHolder.Image);
+            // Get Image
+            newEvent.EventImg = imageBytes;
+
+           Event.AddEvent(newEvent);
+        }
+
+        private string dateVal(string dt)
+        {
+            string[] parts = dt.Split('/');
+
+            // Extract day, month, and year parts
+            string day = parts[0];
+            string month = parts[1];
+            string year = parts[2];
+
+            // Pad day and month parts with leading zeros if necessary
+            day = day.PadLeft(2, '0');
+            month = month.PadLeft(2, '0');
+
+            // Create the formatted date string
+            return $"{year}-{month}-{day}";
         }
     }
 }

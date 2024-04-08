@@ -1,6 +1,8 @@
 ﻿using Google.Protobuf;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Common;
 using System.Globalization;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace CampusNex.Model
         public int SocietyId { get; set; }
         public string Status { get; set; }
         public byte[] EventImg { get; set; }
+
         private static DB_Connection dbConnector = new DB_Connection();
         // Constructor
         public Event(int eventId)
@@ -31,6 +34,7 @@ namespace CampusNex.Model
             this.EventId = eventId;
             FetchEvent();
         }
+        public Event() { }
 
         // Methods
         public void FetchEvent()
@@ -50,6 +54,26 @@ namespace CampusNex.Model
             this.Status = selectResult[0][9].ToString();
             this.EventImg = (byte[])selectResult[0][10];
 
+        }
+
+        public static void AddEvent(Event e)
+        {
+            Console.WriteLine(e.Time);
+            Console.WriteLine(e.Date);
+            string query = "INSERT INTO Events (society_id, title, event_date, " +
+                "event_time, location, description, event_type, organizer_id, status,event_Img)" +
+                " VALUES ('"+ e.SocietyId.ToString() +"','"+e.Title +"','"+e.Date+"','"+
+                e.Time+"','"+e.Location+"','"+e.Description+"','"+ e.Type+ "','" +
+                e.OrganizerId + "','pending', @logoBlob);";
+            // Execute Insert
+            if (dbConnector.OpenConnection())
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, dbConnector.connection);
+                cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = e.EventImg;
+
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public void CreateEvent()
