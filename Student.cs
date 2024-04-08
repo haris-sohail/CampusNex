@@ -24,6 +24,7 @@ namespace CampusNex
     {
         Model.Student student;
         List<Model.Society> societies = new List<Model.Society>();
+        List<Model.Event> events = new List<Model.Event>();
         Model.Util utilObj = new Model.Util();
 
 
@@ -35,8 +36,31 @@ namespace CampusNex
             student.initialize(user_id);
 
             initializeSocieties();
-
+            initializeEvents();
             InitializeComponent();
+        }
+
+        private void initializeEvents()
+        {
+            // Get Events count from database
+            int count = utilObj.getCount("Events");
+            for (int i = 0; i < count; i++)
+            {
+                Model.Event e = new Model.Event(i+1);
+                events.Add(e);
+            }
+            // Link events with Societies
+            foreach (var e in events)
+            {
+                foreach(var s in societies)
+                {
+                    if (e.SocietyId == s.SocietyId)
+                    {
+                        s.Events.Add(e);
+                    }
+                }
+               
+            }
         }
 
 
@@ -103,8 +127,6 @@ namespace CampusNex
                 // Switch to the "View More" tab when the button is clicked
                 StudentPages.SelectedIndex = 3; // Index of the "View More" tab
 
-
-              
                 // Get the details from the clicked user control object
                 societyCard clickedCard = sender as societyCard;
                 string societyName = clickedCard.sName;
@@ -331,9 +353,33 @@ namespace CampusNex
 
         }
 
+        private void eventsBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage(((Control)sender).Text);
+            showEvents();
+        }
 
+        private void showEvents()
+        {
+            // Parse Each event of society 
+            // and add it to Panel
 
+            foreach (var s in societies)
+            {
+                foreach(var e in s.Events)
+                {
+                    eventCard c = new eventCard()
+                    {
+                        sName = s.Name,
+                        eName = e.Title,
+                        eDate = e.Date,
+                        eTime = e.Time.ToString(),
+                        eImage = utilObj.getImage(e.EventImg)
 
- 
+                    };
+                    allEventPanel.Controls.Add(c);
+                }
+            }
+        }
     }
 }

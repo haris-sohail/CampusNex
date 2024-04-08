@@ -24,6 +24,13 @@ namespace CampusNex.Model
 
             return img;
         }
+        // Get Number of rows in Table
+        public int getCount(string tableName)
+        {
+            string query = "SELECT COUNT(*) FROM "+tableName;
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            return int.Parse(selectResult[0][0].ToString());
+        }
 
         public List<List<object>> getAllSocieties()
         {

@@ -37,6 +37,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -57,7 +58,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.societiesBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -71,6 +71,8 @@
             this.userPic = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.searchBar = new Bunifu.UI.WinForms.BunifuTextBox();
             this.EventsPage = new System.Windows.Forms.TabPage();
+            this.organizeEventBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.societyEventPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.societyEventLabel = new System.Windows.Forms.Label();
             this.allEventPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.allEventLabel = new System.Windows.Forms.Label();
@@ -114,26 +116,18 @@
             this.idRegLabel = new Bunifu.UI.WinForms.BunifuLabel();
             this.nameLabelReg = new Bunifu.UI.WinForms.BunifuLabel();
             this.titlReg = new Bunifu.UI.WinForms.BunifuLabel();
-            this.societyEventPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.organizeEventBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.eventCard5 = new CampusNex.eventCard();
-            this.eventCard1 = new CampusNex.eventCard();
-            this.eventCard2 = new CampusNex.eventCard();
-            this.eventCard3 = new CampusNex.eventCard();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
             this.SocietiesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             this.EventsPage.SuspendLayout();
-            this.allEventPanel.SuspendLayout();
             this.societyReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadImgPicBox)).BeginInit();
             this.viewSociety.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).BeginInit();
             this.studentReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).BeginInit();
-            this.societyEventPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -240,7 +234,7 @@
             this.eventsBtn.TextMarginLeft = 0;
             this.eventsBtn.TextPadding = new System.Windows.Forms.Padding(0);
             this.eventsBtn.UseDefaultRadiusAndThickness = true;
-            this.eventsBtn.Click += new System.EventHandler(this.societiesBtn_Click);
+            this.eventsBtn.Click += new System.EventHandler(this.eventsBtn_Click);
             // 
             // societiesBtn
             // 
@@ -639,6 +633,111 @@
             this.EventsPage.TabIndex = 1;
             this.EventsPage.Text = "Events";
             // 
+            // organizeEventBtn
+            // 
+            this.organizeEventBtn.AllowAnimations = true;
+            this.organizeEventBtn.AllowMouseEffects = true;
+            this.organizeEventBtn.AllowToggling = true;
+            this.organizeEventBtn.AnimationSpeed = 200;
+            this.organizeEventBtn.AutoGenerateColors = false;
+            this.organizeEventBtn.AutoRoundBorders = false;
+            this.organizeEventBtn.AutoSizeLeftIcon = true;
+            this.organizeEventBtn.AutoSizeRightIcon = true;
+            this.organizeEventBtn.BackColor = System.Drawing.Color.Transparent;
+            this.organizeEventBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.organizeEventBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("organizeEventBtn.BackgroundImage")));
+            this.organizeEventBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.organizeEventBtn.ButtonText = "Organize An Event !!";
+            this.organizeEventBtn.ButtonTextMarginLeft = 0;
+            this.organizeEventBtn.ColorContrastOnClick = 45;
+            this.organizeEventBtn.ColorContrastOnHover = 45;
+            this.organizeEventBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.organizeEventBtn.CustomizableEdges = borderEdges4;
+            this.organizeEventBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.organizeEventBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.organizeEventBtn.DisabledFillColor = System.Drawing.Color.Empty;
+            this.organizeEventBtn.DisabledForecolor = System.Drawing.Color.Empty;
+            this.organizeEventBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.organizeEventBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.organizeEventBtn.ForeColor = System.Drawing.Color.White;
+            this.organizeEventBtn.IconLeft = null;
+            this.organizeEventBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.organizeEventBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.organizeEventBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.organizeEventBtn.IconMarginLeft = 11;
+            this.organizeEventBtn.IconPadding = 10;
+            this.organizeEventBtn.IconRight = null;
+            this.organizeEventBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.organizeEventBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.organizeEventBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.organizeEventBtn.IconSize = 25;
+            this.organizeEventBtn.IdleBorderColor = System.Drawing.Color.Empty;
+            this.organizeEventBtn.IdleBorderRadius = 0;
+            this.organizeEventBtn.IdleBorderThickness = 0;
+            this.organizeEventBtn.IdleFillColor = System.Drawing.Color.Empty;
+            this.organizeEventBtn.IdleIconLeftImage = null;
+            this.organizeEventBtn.IdleIconRightImage = null;
+            this.organizeEventBtn.IndicateFocus = true;
+            this.organizeEventBtn.Location = new System.Drawing.Point(334, 655);
+            this.organizeEventBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.organizeEventBtn.Name = "organizeEventBtn";
+            this.organizeEventBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.organizeEventBtn.OnDisabledState.BorderRadius = 39;
+            this.organizeEventBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.organizeEventBtn.OnDisabledState.BorderThickness = 1;
+            this.organizeEventBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.organizeEventBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.organizeEventBtn.OnDisabledState.IconLeftImage = null;
+            this.organizeEventBtn.OnDisabledState.IconRightImage = null;
+            this.organizeEventBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.organizeEventBtn.onHoverState.BorderRadius = 39;
+            this.organizeEventBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
+            this.organizeEventBtn.onHoverState.BorderThickness = 1;
+            this.organizeEventBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.organizeEventBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.organizeEventBtn.onHoverState.IconLeftImage = null;
+            this.organizeEventBtn.onHoverState.IconRightImage = null;
+            this.organizeEventBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.organizeEventBtn.OnIdleState.BorderRadius = 39;
+            this.organizeEventBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.organizeEventBtn.OnIdleState.BorderThickness = 1;
+            this.organizeEventBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.organizeEventBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.organizeEventBtn.OnIdleState.IconLeftImage = null;
+            this.organizeEventBtn.OnIdleState.IconRightImage = null;
+            this.organizeEventBtn.OnPressedState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.organizeEventBtn.OnPressedState.BorderRadius = 39;
+            this.organizeEventBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.organizeEventBtn.OnPressedState.BorderThickness = 1;
+            this.organizeEventBtn.OnPressedState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.organizeEventBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.organizeEventBtn.OnPressedState.IconLeftImage = null;
+            this.organizeEventBtn.OnPressedState.IconRightImage = null;
+            this.organizeEventBtn.Size = new System.Drawing.Size(332, 50);
+            this.organizeEventBtn.TabIndex = 8;
+            this.organizeEventBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.organizeEventBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.organizeEventBtn.TextMarginLeft = 0;
+            this.organizeEventBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.organizeEventBtn.UseDefaultRadiusAndThickness = true;
+            // 
+            // societyEventPanel
+            // 
+            this.societyEventPanel.AutoScroll = true;
+            this.societyEventPanel.BackColor = System.Drawing.Color.Transparent;
+            this.societyEventPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.societyEventPanel.Location = new System.Drawing.Point(29, 399);
+            this.societyEventPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.societyEventPanel.Name = "societyEventPanel";
+            this.societyEventPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.societyEventPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.societyEventPanel.Size = new System.Drawing.Size(970, 240);
+            this.societyEventPanel.TabIndex = 7;
+            // 
             // societyEventLabel
             // 
             this.societyEventLabel.AutoSize = true;
@@ -654,7 +753,6 @@
             // 
             this.allEventPanel.AutoScroll = true;
             this.allEventPanel.BackColor = System.Drawing.Color.Transparent;
-            this.allEventPanel.Controls.Add(this.eventCard3);
             this.allEventPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.allEventPanel.Location = new System.Drawing.Point(29, 92);
             this.allEventPanel.Margin = new System.Windows.Forms.Padding(10);
@@ -1926,238 +2024,6 @@
             this.titlReg.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.titlReg.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // societyEventPanel
-            // 
-            this.societyEventPanel.AutoScroll = true;
-            this.societyEventPanel.BackColor = System.Drawing.Color.Transparent;
-            this.societyEventPanel.Controls.Add(this.eventCard5);
-            this.societyEventPanel.Controls.Add(this.eventCard1);
-            this.societyEventPanel.Controls.Add(this.eventCard2);
-            this.societyEventPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.societyEventPanel.Location = new System.Drawing.Point(29, 399);
-            this.societyEventPanel.Margin = new System.Windows.Forms.Padding(10);
-            this.societyEventPanel.Name = "societyEventPanel";
-            this.societyEventPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.societyEventPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.societyEventPanel.Size = new System.Drawing.Size(970, 240);
-            this.societyEventPanel.TabIndex = 7;
-            // 
-            // organizeEventBtn
-            // 
-            this.organizeEventBtn.AllowAnimations = true;
-            this.organizeEventBtn.AllowMouseEffects = true;
-            this.organizeEventBtn.AllowToggling = true;
-            this.organizeEventBtn.AnimationSpeed = 200;
-            this.organizeEventBtn.AutoGenerateColors = false;
-            this.organizeEventBtn.AutoRoundBorders = false;
-            this.organizeEventBtn.AutoSizeLeftIcon = true;
-            this.organizeEventBtn.AutoSizeRightIcon = true;
-            this.organizeEventBtn.BackColor = System.Drawing.Color.Transparent;
-            this.organizeEventBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.organizeEventBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("organizeEventBtn.BackgroundImage")));
-            this.organizeEventBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.organizeEventBtn.ButtonText = "Organize An Event !!";
-            this.organizeEventBtn.ButtonTextMarginLeft = 0;
-            this.organizeEventBtn.ColorContrastOnClick = 45;
-            this.organizeEventBtn.ColorContrastOnHover = 45;
-            this.organizeEventBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.organizeEventBtn.CustomizableEdges = borderEdges4;
-            this.organizeEventBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.organizeEventBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.organizeEventBtn.DisabledFillColor = System.Drawing.Color.Empty;
-            this.organizeEventBtn.DisabledForecolor = System.Drawing.Color.Empty;
-            this.organizeEventBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.organizeEventBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.organizeEventBtn.ForeColor = System.Drawing.Color.White;
-            this.organizeEventBtn.IconLeft = null;
-            this.organizeEventBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.organizeEventBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.organizeEventBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.organizeEventBtn.IconMarginLeft = 11;
-            this.organizeEventBtn.IconPadding = 10;
-            this.organizeEventBtn.IconRight = null;
-            this.organizeEventBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.organizeEventBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.organizeEventBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.organizeEventBtn.IconSize = 25;
-            this.organizeEventBtn.IdleBorderColor = System.Drawing.Color.Empty;
-            this.organizeEventBtn.IdleBorderRadius = 0;
-            this.organizeEventBtn.IdleBorderThickness = 0;
-            this.organizeEventBtn.IdleFillColor = System.Drawing.Color.Empty;
-            this.organizeEventBtn.IdleIconLeftImage = null;
-            this.organizeEventBtn.IdleIconRightImage = null;
-            this.organizeEventBtn.IndicateFocus = true;
-            this.organizeEventBtn.Location = new System.Drawing.Point(334, 655);
-            this.organizeEventBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.organizeEventBtn.Name = "organizeEventBtn";
-            this.organizeEventBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.organizeEventBtn.OnDisabledState.BorderRadius = 39;
-            this.organizeEventBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.organizeEventBtn.OnDisabledState.BorderThickness = 1;
-            this.organizeEventBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.organizeEventBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.organizeEventBtn.OnDisabledState.IconLeftImage = null;
-            this.organizeEventBtn.OnDisabledState.IconRightImage = null;
-            this.organizeEventBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.organizeEventBtn.onHoverState.BorderRadius = 39;
-            this.organizeEventBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
-            this.organizeEventBtn.onHoverState.BorderThickness = 1;
-            this.organizeEventBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.organizeEventBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.organizeEventBtn.onHoverState.IconLeftImage = null;
-            this.organizeEventBtn.onHoverState.IconRightImage = null;
-            this.organizeEventBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.organizeEventBtn.OnIdleState.BorderRadius = 39;
-            this.organizeEventBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.organizeEventBtn.OnIdleState.BorderThickness = 1;
-            this.organizeEventBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.organizeEventBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.organizeEventBtn.OnIdleState.IconLeftImage = null;
-            this.organizeEventBtn.OnIdleState.IconRightImage = null;
-            this.organizeEventBtn.OnPressedState.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.organizeEventBtn.OnPressedState.BorderRadius = 39;
-            this.organizeEventBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.organizeEventBtn.OnPressedState.BorderThickness = 1;
-            this.organizeEventBtn.OnPressedState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.organizeEventBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.organizeEventBtn.OnPressedState.IconLeftImage = null;
-            this.organizeEventBtn.OnPressedState.IconRightImage = null;
-            this.organizeEventBtn.Size = new System.Drawing.Size(332, 50);
-            this.organizeEventBtn.TabIndex = 8;
-            this.organizeEventBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.organizeEventBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.organizeEventBtn.TextMarginLeft = 0;
-            this.organizeEventBtn.TextPadding = new System.Windows.Forms.Padding(0);
-            this.organizeEventBtn.UseDefaultRadiusAndThickness = true;
-            // 
-            // eventCard5
-            // 
-            this.eventCard5.AllowAnimations = false;
-            this.eventCard5.AllowBorderColorChanges = false;
-            this.eventCard5.AllowMouseEffects = false;
-            this.eventCard5.AnimationSpeed = 200;
-            this.eventCard5.BackColor = System.Drawing.Color.Transparent;
-            this.eventCard5.BackgroundColor = System.Drawing.Color.White;
-            this.eventCard5.BorderColor = System.Drawing.Color.White;
-            this.eventCard5.BorderRadius = 10;
-            this.eventCard5.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
-            this.eventCard5.BorderThickness = 1;
-            this.eventCard5.ColorContrastOnClick = 30;
-            this.eventCard5.ColorContrastOnHover = 30;
-            this.eventCard5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.eventCard5.eDate = "05/05/2024";
-            this.eventCard5.eImage = ((System.Drawing.Image)(resources.GetObject("eventCard5.eImage")));
-            this.eventCard5.eName = "Data Escapes";
-            this.eventCard5.eTime = "14:00";
-            this.eventCard5.ForeColor = System.Drawing.Color.White;
-            this.eventCard5.Image = null;
-            this.eventCard5.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.eventCard5.Location = new System.Drawing.Point(20, -2);
-            this.eventCard5.Margin = new System.Windows.Forms.Padding(10);
-            this.eventCard5.Name = "eventCard5";
-            this.eventCard5.ShowBorders = true;
-            this.eventCard5.Size = new System.Drawing.Size(455, 195);
-            this.eventCard5.sName = "Fast Data Science Society";
-            this.eventCard5.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
-            this.eventCard5.TabIndex = 0;
-            // 
-            // eventCard1
-            // 
-            this.eventCard1.AllowAnimations = false;
-            this.eventCard1.AllowBorderColorChanges = false;
-            this.eventCard1.AllowMouseEffects = false;
-            this.eventCard1.AnimationSpeed = 200;
-            this.eventCard1.BackColor = System.Drawing.Color.Transparent;
-            this.eventCard1.BackgroundColor = System.Drawing.Color.White;
-            this.eventCard1.BorderColor = System.Drawing.Color.White;
-            this.eventCard1.BorderRadius = 10;
-            this.eventCard1.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
-            this.eventCard1.BorderThickness = 1;
-            this.eventCard1.ColorContrastOnClick = 30;
-            this.eventCard1.ColorContrastOnHover = 30;
-            this.eventCard1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.eventCard1.eDate = "05/05/2024";
-            this.eventCard1.eImage = ((System.Drawing.Image)(resources.GetObject("eventCard1.eImage")));
-            this.eventCard1.eName = "Data Escapes";
-            this.eventCard1.eTime = "14:00";
-            this.eventCard1.ForeColor = System.Drawing.Color.White;
-            this.eventCard1.Image = null;
-            this.eventCard1.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.eventCard1.Location = new System.Drawing.Point(495, -2);
-            this.eventCard1.Margin = new System.Windows.Forms.Padding(10);
-            this.eventCard1.Name = "eventCard1";
-            this.eventCard1.ShowBorders = true;
-            this.eventCard1.Size = new System.Drawing.Size(455, 195);
-            this.eventCard1.sName = "Fast Data Science Society";
-            this.eventCard1.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
-            this.eventCard1.TabIndex = 1;
-            // 
-            // eventCard2
-            // 
-            this.eventCard2.AllowAnimations = false;
-            this.eventCard2.AllowBorderColorChanges = false;
-            this.eventCard2.AllowMouseEffects = false;
-            this.eventCard2.AnimationSpeed = 200;
-            this.eventCard2.BackColor = System.Drawing.Color.Transparent;
-            this.eventCard2.BackgroundColor = System.Drawing.Color.White;
-            this.eventCard2.BorderColor = System.Drawing.Color.White;
-            this.eventCard2.BorderRadius = 10;
-            this.eventCard2.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
-            this.eventCard2.BorderThickness = 1;
-            this.eventCard2.ColorContrastOnClick = 30;
-            this.eventCard2.ColorContrastOnHover = 30;
-            this.eventCard2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.eventCard2.eDate = "05/05/2024";
-            this.eventCard2.eImage = ((System.Drawing.Image)(resources.GetObject("eventCard2.eImage")));
-            this.eventCard2.eName = "Data Escapes";
-            this.eventCard2.eTime = "14:00";
-            this.eventCard2.ForeColor = System.Drawing.Color.White;
-            this.eventCard2.Image = null;
-            this.eventCard2.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.eventCard2.Location = new System.Drawing.Point(970, -2);
-            this.eventCard2.Margin = new System.Windows.Forms.Padding(10);
-            this.eventCard2.Name = "eventCard2";
-            this.eventCard2.ShowBorders = true;
-            this.eventCard2.Size = new System.Drawing.Size(455, 195);
-            this.eventCard2.sName = "Fast Data Science Society";
-            this.eventCard2.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
-            this.eventCard2.TabIndex = 2;
-            // 
-            // eventCard3
-            // 
-            this.eventCard3.AllowAnimations = false;
-            this.eventCard3.AllowBorderColorChanges = false;
-            this.eventCard3.AllowMouseEffects = false;
-            this.eventCard3.AnimationSpeed = 200;
-            this.eventCard3.BackColor = System.Drawing.Color.Transparent;
-            this.eventCard3.BackgroundColor = System.Drawing.Color.White;
-            this.eventCard3.BorderColor = System.Drawing.Color.White;
-            this.eventCard3.BorderRadius = 10;
-            this.eventCard3.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
-            this.eventCard3.BorderThickness = 1;
-            this.eventCard3.ColorContrastOnClick = 30;
-            this.eventCard3.ColorContrastOnHover = 30;
-            this.eventCard3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.eventCard3.eDate = "05/05/2024";
-            this.eventCard3.eImage = ((System.Drawing.Image)(resources.GetObject("eventCard3.eImage")));
-            this.eventCard3.eName = "Data Escapes";
-            this.eventCard3.eTime = "14:00";
-            this.eventCard3.ForeColor = System.Drawing.Color.White;
-            this.eventCard3.Image = null;
-            this.eventCard3.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.eventCard3.Location = new System.Drawing.Point(20, 15);
-            this.eventCard3.Margin = new System.Windows.Forms.Padding(10);
-            this.eventCard3.Name = "eventCard3";
-            this.eventCard3.ShowBorders = true;
-            this.eventCard3.Size = new System.Drawing.Size(455, 195);
-            this.eventCard3.sName = "Fast Data Science Society";
-            this.eventCard3.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
-            this.eventCard3.TabIndex = 2;
-            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2177,7 +2043,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
             this.EventsPage.ResumeLayout(false);
             this.EventsPage.PerformLayout();
-            this.allEventPanel.ResumeLayout(false);
             this.societyReg.ResumeLayout(false);
             this.societyReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadImgPicBox)).EndInit();
@@ -2187,7 +2052,6 @@
             this.studentReg.ResumeLayout(false);
             this.studentReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).EndInit();
-            this.societyEventPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2249,12 +2113,8 @@
         private Bunifu.UI.WinForms.BunifuTextBox societyStudentRegTextBox;
         private System.Windows.Forms.FlowLayoutPanel allEventPanel;
         private System.Windows.Forms.Label allEventLabel;
-        private eventCard eventCard3;
         private System.Windows.Forms.Label societyEventLabel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton organizeEventBtn;
         private System.Windows.Forms.FlowLayoutPanel societyEventPanel;
-        private eventCard eventCard5;
-        private eventCard eventCard1;
-        private eventCard eventCard2;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eventCard));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.eventName = new System.Windows.Forms.Label();
             this.societyName = new System.Windows.Forms.Label();
             this.viewBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -84,11 +84,11 @@
             this.viewBtn.ColorContrastOnClick = 45;
             this.viewBtn.ColorContrastOnHover = 45;
             this.viewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.viewBtn.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.viewBtn.CustomizableEdges = borderEdges1;
             this.viewBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.viewBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.viewBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -218,7 +218,7 @@
             this.eventImg.AllowFocused = false;
             this.eventImg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.eventImg.AutoSizeHeight = true;
-            this.eventImg.BorderRadius = 84;
+            this.eventImg.BorderRadius = 0;
             this.eventImg.Image = ((System.Drawing.Image)(resources.GetObject("eventImg.Image")));
             this.eventImg.IsCircle = true;
             this.eventImg.Location = new System.Drawing.Point(12, 14);
@@ -227,7 +227,7 @@
             this.eventImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.eventImg.TabIndex = 24;
             this.eventImg.TabStop = false;
-            this.eventImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.eventImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
             // eventCard
             // 

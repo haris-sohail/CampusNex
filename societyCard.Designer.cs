@@ -90,7 +90,6 @@
             this.societyHead.Size = new System.Drawing.Size(77, 16);
             this.societyHead.TabIndex = 5;
             this.societyHead.Text = "President:";
-          
             // 
             // societyMentor
             // 
@@ -102,7 +101,6 @@
             this.societyMentor.Size = new System.Drawing.Size(58, 16);
             this.societyMentor.TabIndex = 6;
             this.societyMentor.Text = "Mentor:";
-
             // 
             // presidentName
             // 
@@ -224,7 +222,7 @@
             this.societyLogo.AllowFocused = false;
             this.societyLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.societyLogo.AutoSizeHeight = true;
-            this.societyLogo.BorderRadius = 61;
+            this.societyLogo.BorderRadius = 0;
             this.societyLogo.Image = ((System.Drawing.Image)(resources.GetObject("societyLogo.Image")));
             this.societyLogo.IsCircle = true;
             this.societyLogo.Location = new System.Drawing.Point(8, 15);
@@ -233,7 +231,7 @@
             this.societyLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.societyLogo.TabIndex = 0;
             this.societyLogo.TabStop = false;
-            this.societyLogo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.societyLogo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
             // societyCard
             // 
@@ -253,7 +251,7 @@
             this.Controls.Add(this.societyAcronym);
             this.Controls.Add(this.societyLogo);
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "societyCard";
             this.Size = new System.Drawing.Size(285, 310);
             this.Click += new System.EventHandler(this.societyCard_Click);
