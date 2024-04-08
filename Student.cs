@@ -1,7 +1,9 @@
 ﻿using Bunifu.UI.WinForms;
+using CampusNex.Model;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
@@ -12,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static CampusNex.Student;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace CampusNex
@@ -21,6 +25,9 @@ namespace CampusNex
         Model.Student student;
         List<Model.Society> societies = new List<Model.Society>();
         Model.Util utilObj = new Model.Util();
+
+
+
         public Student(string user_id)
         {
             student = new Model.Student();
@@ -31,6 +38,7 @@ namespace CampusNex
 
             InitializeComponent();
         }
+
 
         public void initializeSocieties()
         {
@@ -52,7 +60,28 @@ namespace CampusNex
             StudentPages.SetPage(((Control)sender).Text);
         }
 
-        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description)
+        private void addHead(int userID, int society_id)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+
+            int userIDforStudent = userID;
+            int societyId = society_id;   //getting soicetyId and converting it to string
+            bool isHead = true;
+            List<object> formInput = new List<object>();
+
+            formInput.Add(userIDforStudent);
+            formInput.Add(societyId);
+            formInput.Add(datePickerRegStudent.Value);
+            formInput.Add(isHead);
+            formInput.Add(societyStudentRegTextBox.Text);
+
+
+            dbConnector.executeInsert2(formInput, "Members");
+
+        }
+
+
+        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
         {
             societyCard newCard = new societyCard()
             {
@@ -63,6 +92,10 @@ namespace CampusNex
                 sMentor = Mentor,
                 sImage = logo
             };
+
+        
+
+
 
             // Subscribe to the "View More" button click event
             newCard.ViewBtnClicked += (sender, e) =>
@@ -78,6 +111,7 @@ namespace CampusNex
                 string societySlogan = clickedCard.sSlogan;
                 string societyAcronym = clickedCard.sAcronym;
                 string societyHead = clickedCard.sHead;
+                addHead(student.GetUserId(), societyId);
                 System.Drawing.Image societyLogo = clickedCard.sImage;
                 string societyDesc = description;
                 // Update the labels on the tab with the details
@@ -86,7 +120,9 @@ namespace CampusNex
                 accViewSociety.Text = societyAcronym;
                 headViewSociety.Text = societyHead;
                 logoViewSociety.Image = societyLogo;
-                descViewSociety.Text += societyDesc;
+                descViewSociety.Text = societyDesc;
+
+              
 
 
 
@@ -111,7 +147,7 @@ namespace CampusNex
 
                 string acronym = utilObj.getAcronym(society.Name);
 
-                Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description);
+                Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description, society.SocietyId);    //society id added as another parameter
             }
         }
 
@@ -170,7 +206,7 @@ namespace CampusNex
             formInput.Add(imageBytes);
             formInput.Add(student.GetUserId());
 
-
+            
             dbConnector.executeInsert(formInput, "Societies");
 
             // Show registration request sent popup
@@ -198,6 +234,156 @@ namespace CampusNex
 
             // Search the societies 
             showSocieties(searchBar.Text);
+        }
+
+
+
+
+        private void Confrim_Click(object sender, EventArgs e)     //registration button for student registration in society
+        {
+            DB_Connection dbConnector = new DB_Connection();
+
+            int userIDforStudent = student.GetUserId();
+            string societyId = dbConnector.getSocietyId(societyNameRegField.Text).ToString();   //getting soicetyId and converting it to string
+            bool isHead = false;   //will always be false for members
+            List<object> formInput = new List<object>();
+
+            formInput.Add(userIDforStudent);
+            formInput.Add(societyId);
+            formInput.Add(datePickerRegStudent.Value);
+            formInput.Add(isHead);            
+            formInput.Add(societyStudentRegTextBox.Text);
+
+
+            dbConnector.executeInsert2(formInput, "Members");
+
+            MessageBox.Show("Member Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+           
+
+
+            StudentPages.SelectedIndex = 0;   //will take user bcak to socities display page after user has pressed confirm button
+
+
+        }
+
+        private void sloganViewSociety_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentRegistrationTab(string societyName, System.Drawing.Image societyLogo)
+         {
+           
+   
+           string studentName = null;
+           string rollNumber = null;
+
+
+           int userIDforStudent = student.GetUserId();
+    
+
+             string query = "SELECT Users.username AS StudentName, Students.roll_number AS RollNumber "+
+             "FROM Users "+
+             "INNER JOIN Students ON Users.user_id = Students.user_id " +
+             "WHERE Users.user_id = '" + userIDforStudent + "'";
+
+             DB_Connection dbConnector = new DB_Connection();
+
+               try   //we need the user's name and roll number from db
+               {
+                      List<List<object>> selectResult = dbConnector.executeSelect(query);
+                      if (selectResult != null && selectResult.Count > 0 && selectResult[0].Count > 0)
+                       {
+            
+                          studentName = selectResult[0][0].ToString();
+                          rollNumber = selectResult[0][1].ToString();
+
+          
+                       }
+               }
+               catch (Exception ex)
+               {
+     
+                MessageBox.Show("Error: " + ex.Message);
+                }
+
+   
+
+
+                 societyNameRegField.Text = societyName;   //automatically filled fields of already present data
+                logoStudentReg.Image = societyLogo;
+                  idRegField.Text = rollNumber;
+                 nameRegField.Text = studentName;
+    
+
+    
+
+         }
+
+        private void regViewSocietyButton_Click(object sender, EventArgs e)    //on student page, tab 'view society'
+        {
+
+            string societyName = titleViewSociety.Text;
+            System.Drawing.Image societyLogo = logoViewSociety.Image;
+
+            // this function will help us switch to tab for student registartion and pass soceity name and logo as well
+            StudentRegistrationTab(societyName, societyLogo);
+
+
+
+            StudentPages.SelectedIndex = 4;
+
+        }
+
+        private void bunifuLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)   //page for student member registration
+        {
+            
+
+        }
+
+        private void datePickerRegStudent_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titlReg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dropDownStudentReg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void societyReg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void availableMentors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headViewSociety_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headLabelViewSociety_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoViewSociety_Click(object sender, EventArgs e)
+        {
 
         }
     }

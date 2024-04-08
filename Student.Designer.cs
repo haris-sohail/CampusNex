@@ -51,6 +51,12 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.societiesBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -79,6 +85,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.sName = new System.Windows.Forms.Label();
             this.viewSociety = new System.Windows.Forms.TabPage();
+            this.regViewSocietyButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.accViewSociety = new System.Windows.Forms.Label();
             this.sloganViewSociety = new System.Windows.Forms.Label();
             this.descViewSociety = new System.Windows.Forms.Label();
@@ -87,6 +94,22 @@
             this.headLabelViewSociety = new System.Windows.Forms.Label();
             this.logoViewSociety = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.titleViewSociety = new System.Windows.Forms.Label();
+            this.studentReg = new System.Windows.Forms.TabPage();
+            this.societyStudentRegTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.datePickerRegStudent = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.dateJoinedRegLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.logoStudentReg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.buttonRegStudent = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.rectangleDesign = new Bunifu.UI.WinForms.BunifuShapes();
+            this.dropDownStudentReg = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.previousSocietyRegLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.questionRegLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.idRegField = new Bunifu.UI.WinForms.BunifuLabel();
+            this.nameRegField = new Bunifu.UI.WinForms.BunifuLabel();
+            this.societyNameRegField = new Bunifu.UI.WinForms.BunifuLabel();
+            this.idRegLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.nameLabelReg = new Bunifu.UI.WinForms.BunifuLabel();
+            this.titlReg = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -96,6 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.uploadImgPicBox)).BeginInit();
             this.viewSociety.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).BeginInit();
+            this.studentReg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,8 +132,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(271, 729);
+            this.panel1.Size = new System.Drawing.Size(361, 897);
             this.panel1.TabIndex = 0;
             // 
             // eventsBtn
@@ -160,8 +186,8 @@
             this.eventsBtn.IdleIconLeftImage = null;
             this.eventsBtn.IdleIconRightImage = null;
             this.eventsBtn.IndicateFocus = true;
-            this.eventsBtn.Location = new System.Drawing.Point(27, 234);
-            this.eventsBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.eventsBtn.Location = new System.Drawing.Point(36, 288);
+            this.eventsBtn.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.eventsBtn.Name = "eventsBtn";
             this.eventsBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.eventsBtn.OnDisabledState.BorderRadius = 39;
@@ -195,7 +221,7 @@
             this.eventsBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.eventsBtn.OnPressedState.IconLeftImage = null;
             this.eventsBtn.OnPressedState.IconRightImage = null;
-            this.eventsBtn.Size = new System.Drawing.Size(220, 50);
+            this.eventsBtn.Size = new System.Drawing.Size(293, 62);
             this.eventsBtn.TabIndex = 3;
             this.eventsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.eventsBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -253,8 +279,8 @@
             this.societiesBtn.IdleIconLeftImage = null;
             this.societiesBtn.IdleIconRightImage = null;
             this.societiesBtn.IndicateFocus = true;
-            this.societiesBtn.Location = new System.Drawing.Point(27, 155);
-            this.societiesBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.societiesBtn.Location = new System.Drawing.Point(36, 191);
+            this.societiesBtn.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.societiesBtn.Name = "societiesBtn";
             this.societiesBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.societiesBtn.OnDisabledState.BorderRadius = 39;
@@ -288,7 +314,7 @@
             this.societiesBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.societiesBtn.OnPressedState.IconLeftImage = null;
             this.societiesBtn.OnPressedState.IconRightImage = null;
-            this.societiesBtn.Size = new System.Drawing.Size(220, 50);
+            this.societiesBtn.Size = new System.Drawing.Size(293, 62);
             this.societiesBtn.TabIndex = 2;
             this.societiesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.societiesBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -302,18 +328,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(82)))), ((int)(((byte)(90)))));
-            this.label1.Location = new System.Drawing.Point(109, 56);
+            this.label1.Location = new System.Drawing.Point(145, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 29);
+            this.label1.Size = new System.Drawing.Size(186, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "CampusNex";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CampusNex.Properties.Resources.CampusNex1;
-            this.pictureBox1.Location = new System.Drawing.Point(-66, -30);
+            this.pictureBox1.Location = new System.Drawing.Point(-88, -37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(337, 256);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -326,16 +354,18 @@
             this.StudentPages.Controls.Add(this.EventsPage);
             this.StudentPages.Controls.Add(this.societyReg);
             this.StudentPages.Controls.Add(this.viewSociety);
+            this.StudentPages.Controls.Add(this.studentReg);
             this.StudentPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StudentPages.Location = new System.Drawing.Point(271, 0);
+            this.StudentPages.Location = new System.Drawing.Point(361, 0);
+            this.StudentPages.Margin = new System.Windows.Forms.Padding(4);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.SocietiesPage;
-            this.StudentPages.PageIndex = 0;
-            this.StudentPages.PageName = "SocietiesPage";
-            this.StudentPages.PageTitle = "Societies";
+            this.StudentPages.Page = this.studentReg;
+            this.StudentPages.PageIndex = 4;
+            this.StudentPages.PageName = "studentReg";
+            this.StudentPages.PageTitle = "studentReg";
             this.StudentPages.SelectedIndex = 0;
-            this.StudentPages.Size = new System.Drawing.Size(1079, 729);
+            this.StudentPages.Size = new System.Drawing.Size(1439, 897);
             this.StudentPages.TabIndex = 1;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -364,9 +394,10 @@
             this.SocietiesPage.Controls.Add(this.userPic);
             this.SocietiesPage.Controls.Add(this.searchBar);
             this.SocietiesPage.Location = new System.Drawing.Point(4, 4);
+            this.SocietiesPage.Margin = new System.Windows.Forms.Padding(4);
             this.SocietiesPage.Name = "SocietiesPage";
-            this.SocietiesPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.SocietiesPage.Size = new System.Drawing.Size(1071, 703);
+            this.SocietiesPage.Padding = new System.Windows.Forms.Padding(4);
+            this.SocietiesPage.Size = new System.Drawing.Size(1431, 868);
             this.SocietiesPage.TabIndex = 0;
             this.SocietiesPage.Text = "Societies";
             // 
@@ -419,8 +450,8 @@
             this.rSocietyForm.IdleIconLeftImage = null;
             this.rSocietyForm.IdleIconRightImage = null;
             this.rSocietyForm.IndicateFocus = true;
-            this.rSocietyForm.Location = new System.Drawing.Point(398, 633);
-            this.rSocietyForm.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rSocietyForm.Location = new System.Drawing.Point(531, 779);
+            this.rSocietyForm.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.rSocietyForm.Name = "rSocietyForm";
             this.rSocietyForm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.rSocietyForm.OnDisabledState.BorderRadius = 39;
@@ -454,7 +485,7 @@
             this.rSocietyForm.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.rSocietyForm.OnPressedState.IconLeftImage = null;
             this.rSocietyForm.OnPressedState.IconRightImage = null;
-            this.rSocietyForm.Size = new System.Drawing.Size(332, 50);
+            this.rSocietyForm.Size = new System.Drawing.Size(443, 62);
             this.rSocietyForm.TabIndex = 5;
             this.rSocietyForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rSocietyForm.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -467,11 +498,11 @@
             // 
             this.societyCardsPanel.AutoScroll = true;
             this.societyCardsPanel.BackColor = System.Drawing.Color.Transparent;
-            this.societyCardsPanel.Location = new System.Drawing.Point(25, 126);
-            this.societyCardsPanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.societyCardsPanel.Location = new System.Drawing.Point(33, 155);
+            this.societyCardsPanel.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.societyCardsPanel.Name = "societyCardsPanel";
-            this.societyCardsPanel.Padding = new System.Windows.Forms.Padding(40, 10, 10, 10);
-            this.societyCardsPanel.Size = new System.Drawing.Size(996, 492);
+            this.societyCardsPanel.Padding = new System.Windows.Forms.Padding(53, 12, 13, 12);
+            this.societyCardsPanel.Size = new System.Drawing.Size(1328, 606);
             this.societyCardsPanel.TabIndex = 4;
             // 
             // userName
@@ -483,10 +514,11 @@
             this.userName.CursorType = System.Windows.Forms.Cursors.Default;
             this.userName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.userName.Location = new System.Drawing.Point(878, 66);
+            this.userName.Location = new System.Drawing.Point(1171, 81);
+            this.userName.Margin = new System.Windows.Forms.Padding(4);
             this.userName.Name = "userName";
             this.userName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.userName.Size = new System.Drawing.Size(97, 18);
+            this.userName.Size = new System.Drawing.Size(122, 25);
             this.userName.TabIndex = 3;
             this.userName.Text = "User Name";
             this.userName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -497,12 +529,13 @@
             this.userPic.AllowFocused = false;
             this.userPic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.userPic.AutoSizeHeight = true;
-            this.userPic.BorderRadius = 50;
+            this.userPic.BorderRadius = 66;
             this.userPic.Image = ((System.Drawing.Image)(resources.GetObject("userPic.Image")));
             this.userPic.IsCircle = true;
-            this.userPic.Location = new System.Drawing.Point(781, 22);
+            this.userPic.Location = new System.Drawing.Point(1041, 27);
+            this.userPic.Margin = new System.Windows.Forms.Padding(4);
             this.userPic.Name = "userPic";
-            this.userPic.Size = new System.Drawing.Size(100, 100);
+            this.userPic.Size = new System.Drawing.Size(133, 133);
             this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userPic.TabIndex = 2;
             this.userPic.TabStop = false;
@@ -537,7 +570,8 @@
             this.searchBar.IconRight = global::CampusNex.Properties.Resources.searchIcon;
             this.searchBar.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.searchBar.Lines = new string[0];
-            this.searchBar.Location = new System.Drawing.Point(69, 52);
+            this.searchBar.Location = new System.Drawing.Point(92, 64);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(4);
             this.searchBar.MaxLength = 32767;
             this.searchBar.MinimumSize = new System.Drawing.Size(1, 1);
             this.searchBar.Modified = false;
@@ -563,7 +597,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Transparent;
             this.searchBar.OnIdleState = stateProperties4;
-            this.searchBar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.searchBar.Padding = new System.Windows.Forms.Padding(4);
             this.searchBar.PasswordChar = '\0';
             this.searchBar.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.searchBar.PlaceholderText = "Search Societies";
@@ -573,7 +607,7 @@
             this.searchBar.SelectionLength = 0;
             this.searchBar.SelectionStart = 0;
             this.searchBar.ShortcutsEnabled = true;
-            this.searchBar.Size = new System.Drawing.Size(525, 41);
+            this.searchBar.Size = new System.Drawing.Size(700, 50);
             this.searchBar.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.searchBar.TabIndex = 1;
             this.searchBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -589,9 +623,10 @@
             // 
             this.EventsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.EventsPage.Location = new System.Drawing.Point(4, 4);
+            this.EventsPage.Margin = new System.Windows.Forms.Padding(4);
             this.EventsPage.Name = "EventsPage";
-            this.EventsPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.EventsPage.Size = new System.Drawing.Size(1071, 703);
+            this.EventsPage.Padding = new System.Windows.Forms.Padding(4);
+            this.EventsPage.Size = new System.Drawing.Size(1431, 868);
             this.EventsPage.TabIndex = 1;
             this.EventsPage.Text = "Events";
             // 
@@ -612,11 +647,13 @@
             this.societyReg.Controls.Add(this.label2);
             this.societyReg.Controls.Add(this.sName);
             this.societyReg.Location = new System.Drawing.Point(4, 4);
+            this.societyReg.Margin = new System.Windows.Forms.Padding(4);
             this.societyReg.Name = "societyReg";
-            this.societyReg.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.societyReg.Size = new System.Drawing.Size(1071, 703);
+            this.societyReg.Padding = new System.Windows.Forms.Padding(4);
+            this.societyReg.Size = new System.Drawing.Size(1431, 868);
             this.societyReg.TabIndex = 2;
             this.societyReg.Text = "Register a New Society !!";
+            this.societyReg.Click += new System.EventHandler(this.societyReg_Click);
             // 
             // uploadImageBtn
             // 
@@ -667,8 +704,8 @@
             this.uploadImageBtn.IdleIconLeftImage = null;
             this.uploadImageBtn.IdleIconRightImage = null;
             this.uploadImageBtn.IndicateFocus = true;
-            this.uploadImageBtn.Location = new System.Drawing.Point(710, 188);
-            this.uploadImageBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.uploadImageBtn.Location = new System.Drawing.Point(947, 231);
+            this.uploadImageBtn.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.uploadImageBtn.Name = "uploadImageBtn";
             this.uploadImageBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.uploadImageBtn.OnDisabledState.BorderRadius = 39;
@@ -702,7 +739,7 @@
             this.uploadImageBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.uploadImageBtn.OnPressedState.IconLeftImage = null;
             this.uploadImageBtn.OnPressedState.IconRightImage = null;
-            this.uploadImageBtn.Size = new System.Drawing.Size(128, 38);
+            this.uploadImageBtn.Size = new System.Drawing.Size(171, 47);
             this.uploadImageBtn.TabIndex = 18;
             this.uploadImageBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.uploadImageBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -716,12 +753,13 @@
             this.uploadImgPicBox.AllowFocused = false;
             this.uploadImgPicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.uploadImgPicBox.AutoSizeHeight = true;
-            this.uploadImgPicBox.BorderRadius = 61;
+            this.uploadImgPicBox.BorderRadius = 82;
             this.uploadImgPicBox.Image = ((System.Drawing.Image)(resources.GetObject("uploadImgPicBox.Image")));
             this.uploadImgPicBox.IsCircle = true;
-            this.uploadImgPicBox.Location = new System.Drawing.Point(865, 127);
+            this.uploadImgPicBox.Location = new System.Drawing.Point(1153, 156);
+            this.uploadImgPicBox.Margin = new System.Windows.Forms.Padding(4);
             this.uploadImgPicBox.Name = "uploadImgPicBox";
-            this.uploadImgPicBox.Size = new System.Drawing.Size(123, 123);
+            this.uploadImgPicBox.Size = new System.Drawing.Size(164, 164);
             this.uploadImgPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.uploadImgPicBox.TabIndex = 17;
             this.uploadImgPicBox.TabStop = false;
@@ -763,13 +801,15 @@
             this.availableMentors.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.availableMentors.ItemHighLightForeColor = System.Drawing.Color.White;
             this.availableMentors.ItemTopMargin = 3;
-            this.availableMentors.Location = new System.Drawing.Point(339, 460);
+            this.availableMentors.Location = new System.Drawing.Point(452, 566);
+            this.availableMentors.Margin = new System.Windows.Forms.Padding(4);
             this.availableMentors.Name = "availableMentors";
-            this.availableMentors.Size = new System.Drawing.Size(260, 32);
+            this.availableMentors.Size = new System.Drawing.Size(345, 32);
             this.availableMentors.TabIndex = 16;
             this.availableMentors.Text = null;
             this.availableMentors.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.availableMentors.TextLeftMargin = 5;
+            this.availableMentors.SelectedIndexChanged += new System.EventHandler(this.availableMentors_SelectedIndexChanged);
             // 
             // societyDesc
             // 
@@ -800,10 +840,11 @@
             this.societyDesc.IconRight = null;
             this.societyDesc.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.societyDesc.Lines = new string[0];
-            this.societyDesc.Location = new System.Drawing.Point(339, 277);
-            this.societyDesc.MaximumSize = new System.Drawing.Size(260, 180);
+            this.societyDesc.Location = new System.Drawing.Point(452, 341);
+            this.societyDesc.Margin = new System.Windows.Forms.Padding(4);
+            this.societyDesc.MaximumSize = new System.Drawing.Size(347, 222);
             this.societyDesc.MaxLength = 32767;
-            this.societyDesc.MinimumSize = new System.Drawing.Size(260, 100);
+            this.societyDesc.MinimumSize = new System.Drawing.Size(347, 123);
             this.societyDesc.Modified = false;
             this.societyDesc.Multiline = true;
             this.societyDesc.Name = "societyDesc";
@@ -827,7 +868,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.societyDesc.OnIdleState = stateProperties8;
-            this.societyDesc.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.societyDesc.Padding = new System.Windows.Forms.Padding(4);
             this.societyDesc.PasswordChar = '\0';
             this.societyDesc.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.societyDesc.PlaceholderText = "Data, Data, Data";
@@ -837,7 +878,7 @@
             this.societyDesc.SelectionLength = 0;
             this.societyDesc.SelectionStart = 0;
             this.societyDesc.ShortcutsEnabled = true;
-            this.societyDesc.Size = new System.Drawing.Size(260, 139);
+            this.societyDesc.Size = new System.Drawing.Size(347, 171);
             this.societyDesc.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.societyDesc.TabIndex = 15;
             this.societyDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -877,7 +918,8 @@
             this.societySlogan.IconRight = null;
             this.societySlogan.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.societySlogan.Lines = new string[0];
-            this.societySlogan.Location = new System.Drawing.Point(339, 212);
+            this.societySlogan.Location = new System.Drawing.Point(452, 261);
+            this.societySlogan.Margin = new System.Windows.Forms.Padding(4);
             this.societySlogan.MaxLength = 32767;
             this.societySlogan.MinimumSize = new System.Drawing.Size(1, 1);
             this.societySlogan.Modified = false;
@@ -903,7 +945,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.societySlogan.OnIdleState = stateProperties12;
-            this.societySlogan.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.societySlogan.Padding = new System.Windows.Forms.Padding(4);
             this.societySlogan.PasswordChar = '\0';
             this.societySlogan.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.societySlogan.PlaceholderText = "Data, Data, Data";
@@ -913,7 +955,7 @@
             this.societySlogan.SelectionLength = 0;
             this.societySlogan.SelectionStart = 0;
             this.societySlogan.ShortcutsEnabled = true;
-            this.societySlogan.Size = new System.Drawing.Size(260, 38);
+            this.societySlogan.Size = new System.Drawing.Size(347, 47);
             this.societySlogan.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.societySlogan.TabIndex = 14;
             this.societySlogan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -953,7 +995,8 @@
             this.societyName.IconRight = null;
             this.societyName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.societyName.Lines = new string[0];
-            this.societyName.Location = new System.Drawing.Point(334, 151);
+            this.societyName.Location = new System.Drawing.Point(445, 186);
+            this.societyName.Margin = new System.Windows.Forms.Padding(4);
             this.societyName.MaxLength = 32767;
             this.societyName.MinimumSize = new System.Drawing.Size(1, 1);
             this.societyName.Modified = false;
@@ -979,7 +1022,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.societyName.OnIdleState = stateProperties16;
-            this.societyName.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.societyName.Padding = new System.Windows.Forms.Padding(4);
             this.societyName.PasswordChar = '\0';
             this.societyName.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.societyName.PlaceholderText = "Fast Data Science Society";
@@ -989,7 +1032,7 @@
             this.societyName.SelectionLength = 0;
             this.societyName.SelectionStart = 0;
             this.societyName.ShortcutsEnabled = true;
-            this.societyName.Size = new System.Drawing.Size(260, 38);
+            this.societyName.Size = new System.Drawing.Size(347, 47);
             this.societyName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.societyName.TabIndex = 13;
             this.societyName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1049,8 +1092,8 @@
             this.regNewSociety.IdleIconLeftImage = null;
             this.regNewSociety.IdleIconRightImage = null;
             this.regNewSociety.IndicateFocus = true;
-            this.regNewSociety.Location = new System.Drawing.Point(359, 529);
-            this.regNewSociety.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.regNewSociety.Location = new System.Drawing.Point(479, 651);
+            this.regNewSociety.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.regNewSociety.Name = "regNewSociety";
             this.regNewSociety.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.regNewSociety.OnDisabledState.BorderRadius = 39;
@@ -1084,7 +1127,7 @@
             this.regNewSociety.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.regNewSociety.OnPressedState.IconLeftImage = null;
             this.regNewSociety.OnPressedState.IconRightImage = null;
-            this.regNewSociety.Size = new System.Drawing.Size(220, 50);
+            this.regNewSociety.Size = new System.Drawing.Size(293, 62);
             this.regNewSociety.TabIndex = 12;
             this.regNewSociety.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.regNewSociety.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1098,9 +1141,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(714, 153);
+            this.label6.Location = new System.Drawing.Point(952, 188);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 24);
+            this.label6.Size = new System.Drawing.Size(151, 29);
             this.label6.TabIndex = 11;
             this.label6.Text = "Insert Logo:";
             // 
@@ -1109,9 +1153,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(87, 457);
+            this.label5.Location = new System.Drawing.Point(116, 562);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 24);
+            this.label5.Size = new System.Drawing.Size(194, 29);
             this.label5.TabIndex = 10;
             this.label5.Text = "Society Mentor:";
             // 
@@ -1120,9 +1165,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(87, 277);
+            this.label4.Location = new System.Drawing.Point(116, 341);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 24);
+            this.label4.Size = new System.Drawing.Size(246, 29);
             this.label4.TabIndex = 9;
             this.label4.Text = "Society Description:";
             // 
@@ -1131,9 +1177,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(87, 212);
+            this.label3.Location = new System.Drawing.Point(116, 261);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 24);
+            this.label3.Size = new System.Drawing.Size(195, 29);
             this.label3.TabIndex = 8;
             this.label3.Text = "Society Slogan:";
             // 
@@ -1142,9 +1189,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(367, 57);
+            this.label2.Location = new System.Drawing.Point(489, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 29);
+            this.label2.Size = new System.Drawing.Size(346, 36);
             this.label2.TabIndex = 7;
             this.label2.Text = "Register a New Society";
             // 
@@ -1153,15 +1201,17 @@
             this.sName.AutoSize = true;
             this.sName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sName.ForeColor = System.Drawing.Color.White;
-            this.sName.Location = new System.Drawing.Point(87, 151);
+            this.sName.Location = new System.Drawing.Point(116, 186);
+            this.sName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sName.Name = "sName";
-            this.sName.Size = new System.Drawing.Size(145, 24);
+            this.sName.Size = new System.Drawing.Size(182, 29);
             this.sName.TabIndex = 6;
             this.sName.Text = "Society Name:";
             // 
             // viewSociety
             // 
             this.viewSociety.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.viewSociety.Controls.Add(this.regViewSocietyButton);
             this.viewSociety.Controls.Add(this.accViewSociety);
             this.viewSociety.Controls.Add(this.sloganViewSociety);
             this.viewSociety.Controls.Add(this.descViewSociety);
@@ -1171,22 +1221,114 @@
             this.viewSociety.Controls.Add(this.logoViewSociety);
             this.viewSociety.Controls.Add(this.titleViewSociety);
             this.viewSociety.Location = new System.Drawing.Point(4, 4);
-            this.viewSociety.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewSociety.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewSociety.Name = "viewSociety";
-            this.viewSociety.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.viewSociety.Size = new System.Drawing.Size(1071, 703);
+            this.viewSociety.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewSociety.Size = new System.Drawing.Size(1431, 868);
             this.viewSociety.TabIndex = 3;
             this.viewSociety.Text = "view Society";
+            // 
+            // regViewSocietyButton
+            // 
+            this.regViewSocietyButton.AllowAnimations = true;
+            this.regViewSocietyButton.AllowMouseEffects = true;
+            this.regViewSocietyButton.AllowToggling = true;
+            this.regViewSocietyButton.AnimationSpeed = 200;
+            this.regViewSocietyButton.AutoGenerateColors = false;
+            this.regViewSocietyButton.AutoRoundBorders = false;
+            this.regViewSocietyButton.AutoSizeLeftIcon = true;
+            this.regViewSocietyButton.AutoSizeRightIcon = true;
+            this.regViewSocietyButton.BackColor = System.Drawing.Color.Transparent;
+            this.regViewSocietyButton.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.regViewSocietyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("regViewSocietyButton.BackgroundImage")));
+            this.regViewSocietyButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regViewSocietyButton.ButtonText = "Register";
+            this.regViewSocietyButton.ButtonTextMarginLeft = 0;
+            this.regViewSocietyButton.ColorContrastOnClick = 45;
+            this.regViewSocietyButton.ColorContrastOnHover = 45;
+            this.regViewSocietyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.regViewSocietyButton.CustomizableEdges = borderEdges6;
+            this.regViewSocietyButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.regViewSocietyButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.regViewSocietyButton.DisabledFillColor = System.Drawing.Color.Empty;
+            this.regViewSocietyButton.DisabledForecolor = System.Drawing.Color.Empty;
+            this.regViewSocietyButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.regViewSocietyButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regViewSocietyButton.ForeColor = System.Drawing.Color.White;
+            this.regViewSocietyButton.IconLeft = null;
+            this.regViewSocietyButton.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.regViewSocietyButton.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.regViewSocietyButton.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.regViewSocietyButton.IconMarginLeft = 11;
+            this.regViewSocietyButton.IconPadding = 10;
+            this.regViewSocietyButton.IconRight = null;
+            this.regViewSocietyButton.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.regViewSocietyButton.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.regViewSocietyButton.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.regViewSocietyButton.IconSize = 25;
+            this.regViewSocietyButton.IdleBorderColor = System.Drawing.Color.Empty;
+            this.regViewSocietyButton.IdleBorderRadius = 0;
+            this.regViewSocietyButton.IdleBorderThickness = 0;
+            this.regViewSocietyButton.IdleFillColor = System.Drawing.Color.Empty;
+            this.regViewSocietyButton.IdleIconLeftImage = null;
+            this.regViewSocietyButton.IdleIconRightImage = null;
+            this.regViewSocietyButton.IndicateFocus = true;
+            this.regViewSocietyButton.Location = new System.Drawing.Point(987, 607);
+            this.regViewSocietyButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.regViewSocietyButton.Name = "regViewSocietyButton";
+            this.regViewSocietyButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.regViewSocietyButton.OnDisabledState.BorderRadius = 39;
+            this.regViewSocietyButton.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regViewSocietyButton.OnDisabledState.BorderThickness = 1;
+            this.regViewSocietyButton.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.regViewSocietyButton.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.regViewSocietyButton.OnDisabledState.IconLeftImage = null;
+            this.regViewSocietyButton.OnDisabledState.IconRightImage = null;
+            this.regViewSocietyButton.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.regViewSocietyButton.onHoverState.BorderRadius = 39;
+            this.regViewSocietyButton.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
+            this.regViewSocietyButton.onHoverState.BorderThickness = 1;
+            this.regViewSocietyButton.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.regViewSocietyButton.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.regViewSocietyButton.onHoverState.IconLeftImage = null;
+            this.regViewSocietyButton.onHoverState.IconRightImage = null;
+            this.regViewSocietyButton.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.regViewSocietyButton.OnIdleState.BorderRadius = 39;
+            this.regViewSocietyButton.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regViewSocietyButton.OnIdleState.BorderThickness = 1;
+            this.regViewSocietyButton.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.regViewSocietyButton.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.regViewSocietyButton.OnIdleState.IconLeftImage = null;
+            this.regViewSocietyButton.OnIdleState.IconRightImage = null;
+            this.regViewSocietyButton.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.regViewSocietyButton.OnPressedState.BorderRadius = 39;
+            this.regViewSocietyButton.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.regViewSocietyButton.OnPressedState.BorderThickness = 1;
+            this.regViewSocietyButton.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.regViewSocietyButton.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.regViewSocietyButton.OnPressedState.IconLeftImage = null;
+            this.regViewSocietyButton.OnPressedState.IconRightImage = null;
+            this.regViewSocietyButton.Size = new System.Drawing.Size(293, 62);
+            this.regViewSocietyButton.TabIndex = 13;
+            this.regViewSocietyButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.regViewSocietyButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regViewSocietyButton.TextMarginLeft = 0;
+            this.regViewSocietyButton.TextPadding = new System.Windows.Forms.Padding(0);
+            this.regViewSocietyButton.UseDefaultRadiusAndThickness = true;
+            this.regViewSocietyButton.Click += new System.EventHandler(this.regViewSocietyButton_Click);
             // 
             // accViewSociety
             // 
             this.accViewSociety.AutoSize = true;
             this.accViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.accViewSociety.Location = new System.Drawing.Point(508, 152);
-            this.accViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.accViewSociety.Location = new System.Drawing.Point(134, 187);
             this.accViewSociety.Name = "accViewSociety";
-            this.accViewSociety.Size = new System.Drawing.Size(94, 31);
+            this.accViewSociety.Size = new System.Drawing.Size(112, 38);
             this.accViewSociety.TabIndex = 7;
             this.accViewSociety.Text = "<acc>";
             // 
@@ -1195,22 +1337,21 @@
             this.sloganViewSociety.AutoSize = true;
             this.sloganViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sloganViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sloganViewSociety.Location = new System.Drawing.Point(500, 214);
-            this.sloganViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sloganViewSociety.Location = new System.Drawing.Point(114, 269);
             this.sloganViewSociety.Name = "sloganViewSociety";
-            this.sloganViewSociety.Size = new System.Drawing.Size(134, 31);
+            this.sloganViewSociety.Size = new System.Drawing.Size(159, 38);
             this.sloganViewSociety.TabIndex = 6;
             this.sloganViewSociety.Text = "<slogan>";
+            this.sloganViewSociety.Click += new System.EventHandler(this.sloganViewSociety_Click);
             // 
             // descViewSociety
             // 
             this.descViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.descViewSociety.Location = new System.Drawing.Point(523, 418);
-            this.descViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.descViewSociety.MaximumSize = new System.Drawing.Size(375, 406);
+            this.descViewSociety.Location = new System.Drawing.Point(104, 488);
+            this.descViewSociety.MaximumSize = new System.Drawing.Size(500, 500);
             this.descViewSociety.Name = "descViewSociety";
-            this.descViewSociety.Size = new System.Drawing.Size(375, 244);
+            this.descViewSociety.Size = new System.Drawing.Size(500, 250);
             this.descViewSociety.TabIndex = 5;
             this.descViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1220,10 +1361,9 @@
             this.aboutUsLabelViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutUsLabelViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.aboutUsLabelViewSociety.Location = new System.Drawing.Point(514, 365);
-            this.aboutUsLabelViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.aboutUsLabelViewSociety.Location = new System.Drawing.Point(103, 421);
             this.aboutUsLabelViewSociety.Name = "aboutUsLabelViewSociety";
-            this.aboutUsLabelViewSociety.Size = new System.Drawing.Size(143, 31);
+            this.aboutUsLabelViewSociety.Size = new System.Drawing.Size(170, 38);
             this.aboutUsLabelViewSociety.TabIndex = 4;
             this.aboutUsLabelViewSociety.Text = "About Us:";
             // 
@@ -1232,12 +1372,12 @@
             this.headViewSociety.AutoSize = true;
             this.headViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.headViewSociety.Location = new System.Drawing.Point(724, 287);
-            this.headViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.headViewSociety.Location = new System.Drawing.Point(322, 346);
             this.headViewSociety.Name = "headViewSociety";
-            this.headViewSociety.Size = new System.Drawing.Size(191, 31);
+            this.headViewSociety.Size = new System.Drawing.Size(228, 38);
             this.headViewSociety.TabIndex = 3;
             this.headViewSociety.Text = "<head name>";
+            this.headViewSociety.Click += new System.EventHandler(this.headViewSociety_Click);
             // 
             // headLabelViewSociety
             // 
@@ -1245,49 +1385,511 @@
             this.headLabelViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headLabelViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.headLabelViewSociety.Location = new System.Drawing.Point(500, 287);
-            this.headLabelViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.headLabelViewSociety.Location = new System.Drawing.Point(103, 346);
             this.headLabelViewSociety.Name = "headLabelViewSociety";
-            this.headLabelViewSociety.Size = new System.Drawing.Size(148, 31);
+            this.headLabelViewSociety.Size = new System.Drawing.Size(177, 38);
             this.headLabelViewSociety.TabIndex = 2;
             this.headLabelViewSociety.Text = "Our Head:";
+            this.headLabelViewSociety.Click += new System.EventHandler(this.headLabelViewSociety_Click);
             // 
             // logoViewSociety
             // 
             this.logoViewSociety.AllowFocused = false;
             this.logoViewSociety.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoViewSociety.AutoSizeHeight = true;
-            this.logoViewSociety.BorderRadius = 100;
+            this.logoViewSociety.BorderRadius = 133;
             this.logoViewSociety.Image = ((System.Drawing.Image)(resources.GetObject("logoViewSociety.Image")));
             this.logoViewSociety.IsCircle = true;
-            this.logoViewSociety.Location = new System.Drawing.Point(104, 152);
-            this.logoViewSociety.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoViewSociety.Location = new System.Drawing.Point(987, 171);
+            this.logoViewSociety.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logoViewSociety.Name = "logoViewSociety";
-            this.logoViewSociety.Size = new System.Drawing.Size(200, 200);
+            this.logoViewSociety.Size = new System.Drawing.Size(267, 267);
             this.logoViewSociety.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoViewSociety.TabIndex = 1;
             this.logoViewSociety.TabStop = false;
             this.logoViewSociety.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.logoViewSociety.Click += new System.EventHandler(this.logoViewSociety_Click);
             // 
             // titleViewSociety
             // 
             this.titleViewSociety.AutoSize = true;
             this.titleViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleViewSociety.ForeColor = System.Drawing.SystemColors.Control;
-            this.titleViewSociety.Location = new System.Drawing.Point(498, 80);
-            this.titleViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleViewSociety.Location = new System.Drawing.Point(525, 53);
             this.titleViewSociety.Name = "titleViewSociety";
-            this.titleViewSociety.Size = new System.Drawing.Size(261, 39);
+            this.titleViewSociety.Size = new System.Drawing.Size(321, 51);
             this.titleViewSociety.TabIndex = 0;
             this.titleViewSociety.Text = "Title of Society";
             // 
+            // studentReg
+            // 
+            this.studentReg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.studentReg.Controls.Add(this.societyStudentRegTextBox);
+            this.studentReg.Controls.Add(this.datePickerRegStudent);
+            this.studentReg.Controls.Add(this.dateJoinedRegLabel);
+            this.studentReg.Controls.Add(this.logoStudentReg);
+            this.studentReg.Controls.Add(this.buttonRegStudent);
+            this.studentReg.Controls.Add(this.rectangleDesign);
+            this.studentReg.Controls.Add(this.dropDownStudentReg);
+            this.studentReg.Controls.Add(this.previousSocietyRegLabel);
+            this.studentReg.Controls.Add(this.questionRegLabel);
+            this.studentReg.Controls.Add(this.idRegField);
+            this.studentReg.Controls.Add(this.nameRegField);
+            this.studentReg.Controls.Add(this.societyNameRegField);
+            this.studentReg.Controls.Add(this.idRegLabel);
+            this.studentReg.Controls.Add(this.nameLabelReg);
+            this.studentReg.Controls.Add(this.titlReg);
+            this.studentReg.Location = new System.Drawing.Point(4, 4);
+            this.studentReg.Name = "studentReg";
+            this.studentReg.Padding = new System.Windows.Forms.Padding(3);
+            this.studentReg.Size = new System.Drawing.Size(1431, 868);
+            this.studentReg.TabIndex = 4;
+            this.studentReg.Text = "studentReg";
+            this.studentReg.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // societyStudentRegTextBox
+            // 
+            this.societyStudentRegTextBox.AcceptsReturn = false;
+            this.societyStudentRegTextBox.AcceptsTab = false;
+            this.societyStudentRegTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.societyStudentRegTextBox.AnimationSpeed = 200;
+            this.societyStudentRegTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.societyStudentRegTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.societyStudentRegTextBox.AutoSizeHeight = true;
+            this.societyStudentRegTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.societyStudentRegTextBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("societyStudentRegTextBox.BackgroundImage")));
+            this.societyStudentRegTextBox.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.societyStudentRegTextBox.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.societyStudentRegTextBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.societyStudentRegTextBox.BorderColorIdle = System.Drawing.Color.Silver;
+            this.societyStudentRegTextBox.BorderRadius = 30;
+            this.societyStudentRegTextBox.BorderThickness = 1;
+            this.societyStudentRegTextBox.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.societyStudentRegTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.societyStudentRegTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.societyStudentRegTextBox.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyStudentRegTextBox.DefaultText = "";
+            this.societyStudentRegTextBox.FillColor = System.Drawing.Color.White;
+            this.societyStudentRegTextBox.HideSelection = true;
+            this.societyStudentRegTextBox.IconLeft = null;
+            this.societyStudentRegTextBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.societyStudentRegTextBox.IconPadding = 10;
+            this.societyStudentRegTextBox.IconRight = null;
+            this.societyStudentRegTextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.societyStudentRegTextBox.Lines = new string[0];
+            this.societyStudentRegTextBox.Location = new System.Drawing.Point(118, 687);
+            this.societyStudentRegTextBox.MaxLength = 200;
+            this.societyStudentRegTextBox.MinimumSize = new System.Drawing.Size(1, 1);
+            this.societyStudentRegTextBox.Modified = false;
+            this.societyStudentRegTextBox.Multiline = true;
+            this.societyStudentRegTextBox.Name = "societyStudentRegTextBox";
+            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties17.FillColor = System.Drawing.Color.Empty;
+            stateProperties17.ForeColor = System.Drawing.Color.Empty;
+            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.societyStudentRegTextBox.OnActiveState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.societyStudentRegTextBox.OnDisabledState = stateProperties18;
+            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties19.FillColor = System.Drawing.Color.Empty;
+            stateProperties19.ForeColor = System.Drawing.Color.Empty;
+            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.societyStudentRegTextBox.OnHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.Silver;
+            stateProperties20.FillColor = System.Drawing.Color.White;
+            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.societyStudentRegTextBox.OnIdleState = stateProperties20;
+            this.societyStudentRegTextBox.Padding = new System.Windows.Forms.Padding(3);
+            this.societyStudentRegTextBox.PasswordChar = '\0';
+            this.societyStudentRegTextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.societyStudentRegTextBox.PlaceholderText = "Enter text";
+            this.societyStudentRegTextBox.ReadOnly = false;
+            this.societyStudentRegTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.societyStudentRegTextBox.SelectedText = "";
+            this.societyStudentRegTextBox.SelectionLength = 0;
+            this.societyStudentRegTextBox.SelectionStart = 0;
+            this.societyStudentRegTextBox.ShortcutsEnabled = true;
+            this.societyStudentRegTextBox.Size = new System.Drawing.Size(612, 124);
+            this.societyStudentRegTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.societyStudentRegTextBox.TabIndex = 15;
+            this.societyStudentRegTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.societyStudentRegTextBox.TextMarginBottom = 0;
+            this.societyStudentRegTextBox.TextMarginLeft = 3;
+            this.societyStudentRegTextBox.TextMarginTop = 1;
+            this.societyStudentRegTextBox.TextPlaceholder = "Enter text";
+            this.societyStudentRegTextBox.UseSystemPasswordChar = false;
+            this.societyStudentRegTextBox.WordWrap = true;
+            // 
+            // datePickerRegStudent
+            // 
+            this.datePickerRegStudent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.datePickerRegStudent.BackColor = System.Drawing.Color.Transparent;
+            this.datePickerRegStudent.BorderColor = System.Drawing.Color.Silver;
+            this.datePickerRegStudent.BorderRadius = 1;
+            this.datePickerRegStudent.Color = System.Drawing.Color.Silver;
+            this.datePickerRegStudent.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.datePickerRegStudent.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.datePickerRegStudent.DisabledColor = System.Drawing.Color.Gray;
+            this.datePickerRegStudent.DisplayWeekNumbers = false;
+            this.datePickerRegStudent.DPHeight = 0;
+            this.datePickerRegStudent.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.datePickerRegStudent.FillDatePicker = false;
+            this.datePickerRegStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerRegStudent.ForeColor = System.Drawing.Color.White;
+            this.datePickerRegStudent.Icon = ((System.Drawing.Image)(resources.GetObject("datePickerRegStudent.Icon")));
+            this.datePickerRegStudent.IconColor = System.Drawing.Color.Gray;
+            this.datePickerRegStudent.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.datePickerRegStudent.LeftTextMargin = 5;
+            this.datePickerRegStudent.Location = new System.Drawing.Point(371, 546);
+            this.datePickerRegStudent.MinimumSize = new System.Drawing.Size(4, 32);
+            this.datePickerRegStudent.Name = "datePickerRegStudent";
+            this.datePickerRegStudent.Size = new System.Drawing.Size(253, 32);
+            this.datePickerRegStudent.TabIndex = 14;
+            this.datePickerRegStudent.ValueChanged += new System.EventHandler(this.datePickerRegStudent_ValueChanged);
+            // 
+            // dateJoinedRegLabel
+            // 
+            this.dateJoinedRegLabel.AllowParentOverrides = false;
+            this.dateJoinedRegLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateJoinedRegLabel.AutoEllipsis = false;
+            this.dateJoinedRegLabel.CursorType = null;
+            this.dateJoinedRegLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateJoinedRegLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dateJoinedRegLabel.Location = new System.Drawing.Point(118, 536);
+            this.dateJoinedRegLabel.Name = "dateJoinedRegLabel";
+            this.dateJoinedRegLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateJoinedRegLabel.Size = new System.Drawing.Size(210, 42);
+            this.dateJoinedRegLabel.TabIndex = 13;
+            this.dateJoinedRegLabel.Text = "Date Joined:";
+            this.dateJoinedRegLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.dateJoinedRegLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.dateJoinedRegLabel.Click += new System.EventHandler(this.bunifuLabel1_Click);
+            // 
+            // logoStudentReg
+            // 
+            this.logoStudentReg.AllowFocused = false;
+            this.logoStudentReg.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.logoStudentReg.AutoSizeHeight = true;
+            this.logoStudentReg.BorderRadius = 105;
+            this.logoStudentReg.Image = ((System.Drawing.Image)(resources.GetObject("logoStudentReg.Image")));
+            this.logoStudentReg.IsCircle = true;
+            this.logoStudentReg.Location = new System.Drawing.Point(1046, 294);
+            this.logoStudentReg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logoStudentReg.Name = "logoStudentReg";
+            this.logoStudentReg.Size = new System.Drawing.Size(210, 210);
+            this.logoStudentReg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoStudentReg.TabIndex = 12;
+            this.logoStudentReg.TabStop = false;
+            this.logoStudentReg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // buttonRegStudent
+            // 
+            this.buttonRegStudent.AllowAnimations = true;
+            this.buttonRegStudent.AllowMouseEffects = true;
+            this.buttonRegStudent.AllowToggling = false;
+            this.buttonRegStudent.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonRegStudent.AnimationSpeed = 200;
+            this.buttonRegStudent.AutoGenerateColors = false;
+            this.buttonRegStudent.AutoRoundBorders = false;
+            this.buttonRegStudent.AutoSize = true;
+            this.buttonRegStudent.AutoSizeLeftIcon = true;
+            this.buttonRegStudent.AutoSizeRightIcon = true;
+            this.buttonRegStudent.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRegStudent.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.buttonRegStudent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRegStudent.BackgroundImage")));
+            this.buttonRegStudent.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRegStudent.ButtonText = "Confrim Registration";
+            this.buttonRegStudent.ButtonTextMarginLeft = 0;
+            this.buttonRegStudent.ColorContrastOnClick = 45;
+            this.buttonRegStudent.ColorContrastOnHover = 45;
+            this.buttonRegStudent.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.buttonRegStudent.CustomizableEdges = borderEdges7;
+            this.buttonRegStudent.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonRegStudent.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.buttonRegStudent.DisabledFillColor = System.Drawing.Color.Empty;
+            this.buttonRegStudent.DisabledForecolor = System.Drawing.Color.Empty;
+            this.buttonRegStudent.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonRegStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegStudent.ForeColor = System.Drawing.Color.White;
+            this.buttonRegStudent.IconLeft = null;
+            this.buttonRegStudent.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRegStudent.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.buttonRegStudent.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.buttonRegStudent.IconMarginLeft = 11;
+            this.buttonRegStudent.IconPadding = 10;
+            this.buttonRegStudent.IconRight = null;
+            this.buttonRegStudent.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRegStudent.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.buttonRegStudent.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.buttonRegStudent.IconSize = 25;
+            this.buttonRegStudent.IdleBorderColor = System.Drawing.Color.Empty;
+            this.buttonRegStudent.IdleBorderRadius = 0;
+            this.buttonRegStudent.IdleBorderThickness = 0;
+            this.buttonRegStudent.IdleFillColor = System.Drawing.Color.Empty;
+            this.buttonRegStudent.IdleIconLeftImage = null;
+            this.buttonRegStudent.IdleIconRightImage = null;
+            this.buttonRegStudent.IndicateFocus = false;
+            this.buttonRegStudent.Location = new System.Drawing.Point(1021, 751);
+            this.buttonRegStudent.Name = "buttonRegStudent";
+            this.buttonRegStudent.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.buttonRegStudent.OnDisabledState.BorderRadius = 1;
+            this.buttonRegStudent.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRegStudent.OnDisabledState.BorderThickness = 1;
+            this.buttonRegStudent.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonRegStudent.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonRegStudent.OnDisabledState.IconLeftImage = null;
+            this.buttonRegStudent.OnDisabledState.IconRightImage = null;
+            this.buttonRegStudent.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.buttonRegStudent.onHoverState.BorderRadius = 1;
+            this.buttonRegStudent.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRegStudent.onHoverState.BorderThickness = 1;
+            this.buttonRegStudent.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.buttonRegStudent.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.buttonRegStudent.onHoverState.IconLeftImage = null;
+            this.buttonRegStudent.onHoverState.IconRightImage = null;
+            this.buttonRegStudent.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonRegStudent.OnIdleState.BorderRadius = 1;
+            this.buttonRegStudent.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRegStudent.OnIdleState.BorderThickness = 1;
+            this.buttonRegStudent.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.buttonRegStudent.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.buttonRegStudent.OnIdleState.IconLeftImage = null;
+            this.buttonRegStudent.OnIdleState.IconRightImage = null;
+            this.buttonRegStudent.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.buttonRegStudent.OnPressedState.BorderRadius = 1;
+            this.buttonRegStudent.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRegStudent.OnPressedState.BorderThickness = 1;
+            this.buttonRegStudent.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.buttonRegStudent.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.buttonRegStudent.OnPressedState.IconLeftImage = null;
+            this.buttonRegStudent.OnPressedState.IconRightImage = null;
+            this.buttonRegStudent.Size = new System.Drawing.Size(187, 61);
+            this.buttonRegStudent.TabIndex = 11;
+            this.buttonRegStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonRegStudent.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.buttonRegStudent.TextMarginLeft = 0;
+            this.buttonRegStudent.TextPadding = new System.Windows.Forms.Padding(0);
+            this.buttonRegStudent.UseDefaultRadiusAndThickness = true;
+            this.buttonRegStudent.Click += new System.EventHandler(this.Confrim_Click);
+            // 
+            // rectangleDesign
+            // 
+            this.rectangleDesign.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rectangleDesign.Angle = 0F;
+            this.rectangleDesign.BackColor = System.Drawing.Color.Transparent;
+            this.rectangleDesign.BorderColor = System.Drawing.Color.Silver;
+            this.rectangleDesign.BorderThickness = 2;
+            this.rectangleDesign.FillColor = System.Drawing.Color.Transparent;
+            this.rectangleDesign.FillShape = true;
+            this.rectangleDesign.Location = new System.Drawing.Point(181, 226);
+            this.rectangleDesign.Name = "rectangleDesign";
+            this.rectangleDesign.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Rectangle;
+            this.rectangleDesign.Sides = 5;
+            this.rectangleDesign.Size = new System.Drawing.Size(1088, 12);
+            this.rectangleDesign.TabIndex = 10;
+            this.rectangleDesign.Text = "bunifuShapes1";
+            // 
+            // dropDownStudentReg
+            // 
+            this.dropDownStudentReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dropDownStudentReg.BackColor = System.Drawing.Color.Transparent;
+            this.dropDownStudentReg.BackgroundColor = System.Drawing.Color.White;
+            this.dropDownStudentReg.BorderColor = System.Drawing.Color.Silver;
+            this.dropDownStudentReg.BorderRadius = 17;
+            this.dropDownStudentReg.Color = System.Drawing.Color.Silver;
+            this.dropDownStudentReg.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.dropDownStudentReg.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dropDownStudentReg.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.dropDownStudentReg.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dropDownStudentReg.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.dropDownStudentReg.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.dropDownStudentReg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dropDownStudentReg.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.dropDownStudentReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownStudentReg.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.dropDownStudentReg.FillDropDown = true;
+            this.dropDownStudentReg.FillIndicator = false;
+            this.dropDownStudentReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dropDownStudentReg.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dropDownStudentReg.ForeColor = System.Drawing.Color.Black;
+            this.dropDownStudentReg.FormattingEnabled = true;
+            this.dropDownStudentReg.Icon = null;
+            this.dropDownStudentReg.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.dropDownStudentReg.IndicatorColor = System.Drawing.Color.DarkGray;
+            this.dropDownStudentReg.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.dropDownStudentReg.IndicatorThickness = 2;
+            this.dropDownStudentReg.IsDropdownOpened = false;
+            this.dropDownStudentReg.ItemBackColor = System.Drawing.Color.White;
+            this.dropDownStudentReg.ItemBorderColor = System.Drawing.Color.White;
+            this.dropDownStudentReg.ItemForeColor = System.Drawing.Color.Black;
+            this.dropDownStudentReg.ItemHeight = 26;
+            this.dropDownStudentReg.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.dropDownStudentReg.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.dropDownStudentReg.ItemTopMargin = 3;
+            this.dropDownStudentReg.Location = new System.Drawing.Point(600, 457);
+            this.dropDownStudentReg.Name = "dropDownStudentReg";
+            this.dropDownStudentReg.Size = new System.Drawing.Size(260, 32);
+            this.dropDownStudentReg.TabIndex = 9;
+            this.dropDownStudentReg.Text = null;
+            this.dropDownStudentReg.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.dropDownStudentReg.TextLeftMargin = 5;
+            this.dropDownStudentReg.SelectedIndexChanged += new System.EventHandler(this.dropDownStudentReg_SelectedIndexChanged);
+            // 
+            // previousSocietyRegLabel
+            // 
+            this.previousSocietyRegLabel.AllowParentOverrides = false;
+            this.previousSocietyRegLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.previousSocietyRegLabel.AutoEllipsis = false;
+            this.previousSocietyRegLabel.CursorType = null;
+            this.previousSocietyRegLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousSocietyRegLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.previousSocietyRegLabel.Location = new System.Drawing.Point(118, 448);
+            this.previousSocietyRegLabel.Name = "previousSocietyRegLabel";
+            this.previousSocietyRegLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.previousSocietyRegLabel.Size = new System.Drawing.Size(420, 82);
+            this.previousSocietyRegLabel.TabIndex = 8;
+            this.previousSocietyRegLabel.Text = "Previously joined society:\r\n\r\n";
+            this.previousSocietyRegLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.previousSocietyRegLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // questionRegLabel
+            // 
+            this.questionRegLabel.AllowParentOverrides = false;
+            this.questionRegLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.questionRegLabel.AutoEllipsis = false;
+            this.questionRegLabel.CursorType = null;
+            this.questionRegLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questionRegLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.questionRegLabel.Location = new System.Drawing.Point(118, 624);
+            this.questionRegLabel.Name = "questionRegLabel";
+            this.questionRegLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.questionRegLabel.Size = new System.Drawing.Size(612, 42);
+            this.questionRegLabel.TabIndex = 6;
+            this.questionRegLabel.Text = "Why do you want to join this society?";
+            this.questionRegLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.questionRegLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // idRegField
+            // 
+            this.idRegField.AllowParentOverrides = false;
+            this.idRegField.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.idRegField.AutoEllipsis = false;
+            this.idRegField.CursorType = null;
+            this.idRegField.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idRegField.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.idRegField.Location = new System.Drawing.Point(311, 362);
+            this.idRegField.Name = "idRegField";
+            this.idRegField.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.idRegField.Size = new System.Drawing.Size(44, 42);
+            this.idRegField.TabIndex = 5;
+            this.idRegField.Text = "\'Id\'";
+            this.idRegField.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.idRegField.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // nameRegField
+            // 
+            this.nameRegField.AllowParentOverrides = false;
+            this.nameRegField.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nameRegField.AutoEllipsis = false;
+            this.nameRegField.CursorType = null;
+            this.nameRegField.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameRegField.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nameRegField.Location = new System.Drawing.Point(311, 284);
+            this.nameRegField.Name = "nameRegField";
+            this.nameRegField.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nameRegField.Size = new System.Drawing.Size(107, 42);
+            this.nameRegField.TabIndex = 4;
+            this.nameRegField.Text = "\'name\'";
+            this.nameRegField.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.nameRegField.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // societyNameRegField
+            // 
+            this.societyNameRegField.AllowParentOverrides = false;
+            this.societyNameRegField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.societyNameRegField.AutoEllipsis = false;
+            this.societyNameRegField.CursorType = null;
+            this.societyNameRegField.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyNameRegField.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.societyNameRegField.Location = new System.Drawing.Point(591, 137);
+            this.societyNameRegField.Name = "societyNameRegField";
+            this.societyNameRegField.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.societyNameRegField.Size = new System.Drawing.Size(303, 54);
+            this.societyNameRegField.TabIndex = 3;
+            this.societyNameRegField.Text = "\'societyName\'";
+            this.societyNameRegField.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.societyNameRegField.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // idRegLabel
+            // 
+            this.idRegLabel.AllowParentOverrides = false;
+            this.idRegLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.idRegLabel.AutoEllipsis = false;
+            this.idRegLabel.CursorType = null;
+            this.idRegLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idRegLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.idRegLabel.Location = new System.Drawing.Point(118, 362);
+            this.idRegLabel.Name = "idRegLabel";
+            this.idRegLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.idRegLabel.Size = new System.Drawing.Size(46, 42);
+            this.idRegLabel.TabIndex = 2;
+            this.idRegLabel.Text = "ID:";
+            this.idRegLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.idRegLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // nameLabelReg
+            // 
+            this.nameLabelReg.AllowParentOverrides = false;
+            this.nameLabelReg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.nameLabelReg.AutoEllipsis = false;
+            this.nameLabelReg.CursorType = null;
+            this.nameLabelReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabelReg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nameLabelReg.Location = new System.Drawing.Point(118, 284);
+            this.nameLabelReg.Name = "nameLabelReg";
+            this.nameLabelReg.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nameLabelReg.Size = new System.Drawing.Size(109, 42);
+            this.nameLabelReg.TabIndex = 1;
+            this.nameLabelReg.Text = "Name:";
+            this.nameLabelReg.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.nameLabelReg.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // titlReg
+            // 
+            this.titlReg.AllowParentOverrides = false;
+            this.titlReg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titlReg.AutoEllipsis = false;
+            this.titlReg.Cursor = System.Windows.Forms.Cursors.Default;
+            this.titlReg.CursorType = System.Windows.Forms.Cursors.Default;
+            this.titlReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlReg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.titlReg.Location = new System.Drawing.Point(514, 65);
+            this.titlReg.Name = "titlReg";
+            this.titlReg.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.titlReg.Size = new System.Drawing.Size(476, 54);
+            this.titlReg.TabIndex = 0;
+            this.titlReg.Text = "Registration Form For";
+            this.titlReg.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.titlReg.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.titlReg.Click += new System.EventHandler(this.titlReg_Click);
+            // 
             // Student
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1800, 897);
             this.Controls.Add(this.StudentPages);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Student";
             this.Text = "Student";
             this.Load += new System.EventHandler(this.Student_Load);
@@ -1304,6 +1906,9 @@
             this.viewSociety.ResumeLayout(false);
             this.viewSociety.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).EndInit();
+            this.studentReg.ResumeLayout(false);
+            this.studentReg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1346,5 +1951,22 @@
         private System.Windows.Forms.Label descViewSociety;
         private System.Windows.Forms.Label sloganViewSociety;
         private System.Windows.Forms.Label accViewSociety;
+        private System.Windows.Forms.TabPage studentReg;
+        private Bunifu.UI.WinForms.BunifuLabel nameLabelReg;
+        private Bunifu.UI.WinForms.BunifuLabel titlReg;
+        private Bunifu.UI.WinForms.BunifuLabel idRegField;
+        private Bunifu.UI.WinForms.BunifuLabel nameRegField;
+        private Bunifu.UI.WinForms.BunifuLabel societyNameRegField;
+        private Bunifu.UI.WinForms.BunifuLabel idRegLabel;
+        private Bunifu.UI.WinForms.BunifuLabel questionRegLabel;
+        private Bunifu.UI.WinForms.BunifuLabel previousSocietyRegLabel;
+        private Bunifu.UI.WinForms.BunifuDropdown dropDownStudentReg;
+        private Bunifu.UI.WinForms.BunifuShapes rectangleDesign;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonRegStudent;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton regViewSocietyButton;
+        private Bunifu.UI.WinForms.BunifuPictureBox logoStudentReg;
+        private Bunifu.UI.WinForms.BunifuLabel dateJoinedRegLabel;
+        private Bunifu.UI.WinForms.BunifuDatePicker datePickerRegStudent;
+        private Bunifu.UI.WinForms.BunifuTextBox societyStudentRegTextBox;
     }
 }

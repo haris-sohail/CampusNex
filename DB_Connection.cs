@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.X509;
 
@@ -233,6 +234,63 @@ namespace CampusNex
             }
         }
 
+     
+        public void executeInsert2(List<object> toInsert, string tableName)     //purpose of this function is to insert data into db
+        {                                                                         //this function will store student registration for member data in db
+            if (OpenConnection())
+            {
+                string query = "INSERT INTO " + tableName + "(user_id, society_id, join_date,  is_head, interest) " +
+                 " VALUES (@userID, @societyID, @date, @head, @interest)";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.Add("@userID", MySqlDbType.Int32).Value = toInsert[0];
+                cmd.Parameters.Add("@societyID", MySqlDbType.Int32).Value = toInsert[1];
+                cmd.Parameters.Add("@date", MySqlDbType.Date).Value = toInsert[2];
+                bool isHead = (bool)toInsert[3];
+                cmd.Parameters.Add("@head", MySqlDbType.Bit).Value = isHead ? 1 : 0; // bool converted to 0 or 1
+                cmd.Parameters.Add("@interest", MySqlDbType.String).Value = toInsert[4];
+
+                cmd.ExecuteNonQuery();
+
+            }
+        }
+
+        //function to get societyId
+        public string getSocietyId(string societyName)
+        {
+                string societyId = null; // Default value if not found
+
+                // SQL query to retrieve the society_id based on the society_name
+                string query = "SELECT Societies.society_id FROM Societies WHERE Societies.society_name = '" + societyName + "'";
+
+                try
+                {
+                    // Execute the select query
+                    List<List<object>> selectResult = executeSelect(query);
+
+                    // Check if a result is returned
+                    if (selectResult != null && selectResult.Count > 0 && selectResult[0].Count > 0)
+                    {
+                        // Retrieve the society_id from the result
+                        societyId = selectResult[0][0].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
+                return societyId;
+            
+
+
+
+        }
+
         
+
+
     }
 }

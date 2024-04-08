@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace CampusNex
@@ -99,13 +100,16 @@ namespace CampusNex
         }
 
 
-        public string getHeadName(String headId)
+        public string getHeadName(String head_Id)   //take user id - go to student - go to members
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = " select username from Users " +
-                "INNER JOIN Students " +
-                "ON Students.user_id = Users.user_id " +
-                "WHERE Students.student_id = " + headId;
+             string query = " select username from Users " +
+                 "INNER JOIN Students " +
+                 "ON Students.user_id = Users.user_id " +
+                 "WHERE Students.student_id = " + head_Id;
+
+           // string query = "SELECT username FROM Users WHERE user_id = " + head_Id;
+
 
             // each list contains an individual row's data
 
@@ -165,8 +169,8 @@ namespace CampusNex
 
                 // get mentor and head names
                 string mentorName = utilObj.getMentorName(society.MentorId.ToString());
-
                 string headName = utilObj.getHeadName(society.HeadId.ToString());
+
 
                 string acronym = utilObj.getAcronym(society.Name);
 
