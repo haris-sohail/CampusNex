@@ -239,8 +239,8 @@ namespace CampusNex
         {                                                                         //this function will store student registration for member data in db
             if (OpenConnection())
             {
-                string query = "INSERT INTO " + tableName + "(user_id, society_id, join_date,  is_head, interest) " +
-                 " VALUES (@userID, @societyID, @date, @head, @interest)";
+                string query = "INSERT INTO " + tableName + "(student_id, society_id, join_date,  is_head, interest, status) " +
+                 " VALUES (@userID, @societyID, @date, @head, @interest, 'pending')";
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace CampusNex.Model
 
 
             return img;
+        }
+        // Added Image Resize Function
+        public System.Drawing.Image ResizeImage(System.Drawing.Image image, int width, int height)
+        {
+            // Create a new bitmap with the desired dimensions
+            Bitmap resizedImage = new Bitmap(width, height);
+
+            // Draw the original image onto the new bitmap using Graphics
+            using (Graphics graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.DrawImage(image, 0, 0, width, height);
+            }
+
+            // Return the resized image
+            return resizedImage;
         }
         // Get Number of rows in Table
         public int getCount(string tableName)

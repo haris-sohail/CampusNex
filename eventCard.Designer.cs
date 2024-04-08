@@ -39,6 +39,8 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
             this.eventImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.eventStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +116,7 @@
             this.viewBtn.IdleIconLeftImage = null;
             this.viewBtn.IdleIconRightImage = null;
             this.viewBtn.IndicateFocus = true;
-            this.viewBtn.Location = new System.Drawing.Point(327, 135);
+            this.viewBtn.Location = new System.Drawing.Point(333, 135);
             this.viewBtn.Margin = new System.Windows.Forms.Padding(5);
             this.viewBtn.Name = "viewBtn";
             this.viewBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -162,7 +164,7 @@
             this.presentLabel.AutoSize = true;
             this.presentLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presentLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.presentLabel.Location = new System.Drawing.Point(265, 41);
+            this.presentLabel.Location = new System.Drawing.Point(268, 41);
             this.presentLabel.MaximumSize = new System.Drawing.Size(150, 70);
             this.presentLabel.Name = "presentLabel";
             this.presentLabel.Size = new System.Drawing.Size(65, 16);
@@ -174,7 +176,7 @@
             this.eventDate.AutoSize = true;
             this.eventDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.eventDate.Location = new System.Drawing.Point(253, 97);
+            this.eventDate.Location = new System.Drawing.Point(253, 94);
             this.eventDate.Name = "eventDate";
             this.eventDate.Size = new System.Drawing.Size(71, 16);
             this.eventDate.TabIndex = 23;
@@ -185,7 +187,7 @@
             this.eventTime.AutoSize = true;
             this.eventTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.eventTime.Location = new System.Drawing.Point(254, 131);
+            this.eventTime.Location = new System.Drawing.Point(254, 121);
             this.eventTime.Name = "eventTime";
             this.eventTime.Size = new System.Drawing.Size(38, 16);
             this.eventTime.TabIndex = 22;
@@ -196,7 +198,7 @@
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.dateLabel.Location = new System.Drawing.Point(187, 98);
+            this.dateLabel.Location = new System.Drawing.Point(187, 95);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(40, 16);
             this.dateLabel.TabIndex = 21;
@@ -207,7 +209,7 @@
             this.timeLabel.AutoSize = true;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.timeLabel.Location = new System.Drawing.Point(187, 132);
+            this.timeLabel.Location = new System.Drawing.Point(187, 122);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(42, 16);
             this.timeLabel.TabIndex = 20;
@@ -229,6 +231,28 @@
             this.eventImg.TabStop = false;
             this.eventImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
+            this.statusLabel.Location = new System.Drawing.Point(188, 148);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(50, 16);
+            this.statusLabel.TabIndex = 25;
+            this.statusLabel.Text = "Status";
+            // 
+            // eventStatus
+            // 
+            this.eventStatus.AutoSize = true;
+            this.eventStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
+            this.eventStatus.Location = new System.Drawing.Point(254, 147);
+            this.eventStatus.Name = "eventStatus";
+            this.eventStatus.Size = new System.Drawing.Size(67, 16);
+            this.eventStatus.TabIndex = 26;
+            this.eventStatus.Text = "Approved";
+            // 
             // eventCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +261,8 @@
             this.BackgroundColor = System.Drawing.Color.White;
             this.BorderColor = System.Drawing.Color.White;
             this.BorderRadius = 10;
+            this.Controls.Add(this.eventStatus);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.eventImg);
             this.Controls.Add(this.eventDate);
             this.Controls.Add(this.eventTime);
@@ -267,5 +293,7 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label timeLabel;
         private Bunifu.UI.WinForms.BunifuPictureBox eventImg;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label eventStatus;
     }
 }

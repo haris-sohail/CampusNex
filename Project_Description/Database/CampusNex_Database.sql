@@ -75,13 +75,13 @@ CREATE TABLE Events (
 
 CREATE TABLE Members (
     member_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    student_id INT NOT NULL,
     society_id INT NOT NULL,
     join_date DATE NOT NULL,
     is_head BOOL NOT NULL,
     interest VARCHAR(200),   
     status ENUM('pending', 'accepted', 'rejected') NOT NULL, 
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
 
@@ -91,13 +91,15 @@ INSERT INTO Users (username, password, email, role, user_pic) VALUES
 ('aiman', 'password', 'aiman@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\6.png'))),
 ('aliza', 'password', 'aliza@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\4.png'))),
 ('kissa', 'password', 'kissa@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\2.png'))),
-('hamna', 'password', 'hamna@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\3.png')));
+('hamna', 'password', 'hamna@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\3.png'))),
+('test', 'password', 'test@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png')));
 
 INSERT INTO Students (user_id, roll_number) VALUES
-(1, 531),
+(1, 2487),
 (4, 470),
 (5, 572),
-(6, 603);
+(6, 603),
+(7, 111);
 
 INSERT INTO Mentors (user_id, designation, education_info) VALUES
 (2, 'Assistant Professor', 'BSCS'),
@@ -113,11 +115,11 @@ collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\S
  skills, and innovation in the field of computing through various educational, 
  collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\FDSS_Logo.png')),'accepted');
  
-INSERT INTO Members (user_id, society_id, join_date, is_head, interest,status)
+INSERT INTO Members (student_id, society_id, join_date, is_head, interest,status)
 VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence','accepted'),
-(4, 2, '2023-01-20', 1, 'Data Science, Machine Learning','accepted'),
-(5, 1, '2024-01-10', 0, 'Graphic Design, Calculations','accepted'),
-(6, 2, '2024-02-05', 0, 'NLP, Management','pending');
+(2, 2, '2023-01-20', 1, 'Data Science, Machine Learning','accepted'),
+(3, 1, '2024-01-10', 0, 'Graphic Design, Calculations','accepted'),
+(4, 2, '2024-02-05', 0, 'NLP, Management','pending');
 
 INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status,event_Img)
 VALUES (2, 'Data Escapes', '2024-04-15', '15:00:00', 'Community Hall', 'Join us for an immersive journey into the world of data science at "Data Escapes." This 
@@ -177,5 +179,5 @@ HAVING COUNT(S.society_id) < 2;
 
 select society_name, u.username from societies s join students st on s.head_id = st.student_id
 join users u on st.user_id = u.user_id where s.status = 'pending' and mentor_id = 1;
-select Count(*) from events;
+select * from members;
 -- show variables like "secure_file_priv";

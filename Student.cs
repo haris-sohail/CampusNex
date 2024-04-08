@@ -33,16 +33,18 @@ namespace CampusNex
         {
             
             initializeSocieties();
+            InitializeComponent();
             initializeStudent(user_id);
             initializeEvents();
-            InitializeComponent();
+            
         }
 
         private void initializeStudent(string user_id)
         {
             // Initialize Student 
             student = new Model.Student(user_id);
-
+            // Hide Member Request Btn
+            MemberReqBtn.Visible = false;
             // Attach Members to Society
             foreach (var m in student.Members)
             {
@@ -50,10 +52,18 @@ namespace CampusNex
                 {
                     if(m.SocietyId == s.SocietyId)
                     {
+
                         s.Members.Add(m);
+                        // Enable Member Request Btn only 
+                        // If the Student is Head of a Society
+                        if (m.IsHead)
+                        {
+                            MemberReqBtn.Visible = true;
+                        }
                     }
                 }
             }
+           
         }
         private void initializeEvents()
         {
@@ -99,27 +109,6 @@ namespace CampusNex
             StudentPages.SetPage(((Control)sender).Text);
         }
 
-        private void addHead(int userID, int society_id)
-        {
-            DB_Connection dbConnector = new DB_Connection();
-
-            int userIDforStudent = userID;
-            int societyId = society_id;   //getting soicetyId and converting it to string
-            bool isHead = true;
-            List<object> formInput = new List<object>();
-
-            formInput.Add(userIDforStudent);
-            formInput.Add(societyId);
-            formInput.Add(datePickerRegStudent.Value);
-            formInput.Add(isHead);
-            formInput.Add(societyStudentRegTextBox.Text);
-
-
-            dbConnector.executeInsert2(formInput, "Members");
-
-        }
-
-
         private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
         {
             societyCard newCard = new societyCard()
@@ -148,7 +137,7 @@ namespace CampusNex
                 string societySlogan = clickedCard.sSlogan;
                 string societyAcronym = clickedCard.sAcronym;
                 string societyHead = clickedCard.sHead;
-                addHead(student.GetUserId(), societyId);
+
                 System.Drawing.Image societyLogo = clickedCard.sImage;
                 string societyDesc = description;
                 // Update the labels on the tab with the details
@@ -158,11 +147,6 @@ namespace CampusNex
                 headViewSociety.Text = societyHead;
                 logoViewSociety.Image = societyLogo;
                 descViewSociety.Text = societyDesc;
-
-              
-
-
-
             };
 
             societyCardsPanel.Controls.Add(newCard);
@@ -212,6 +196,8 @@ namespace CampusNex
                 Console.WriteLine(mentorName);
                 availableMentors.Items.Add(mentorName);
             }
+
+            regNewSociety.IndicateFocus = false;
         }
 
         private void uploadImageBtn_Click(object sender, EventArgs e)
@@ -241,7 +227,7 @@ namespace CampusNex
             byte[] imageBytes = utilObj.convertToByteStream(uploadImgPicBox.Image);
 
             formInput.Add(imageBytes);
-            formInput.Add(student.GetUserId());
+            formInput.Add(student.StudentId);
 
             
             dbConnector.executeInsert(formInput, "Societies");
@@ -275,83 +261,36 @@ namespace CampusNex
 
 
 
-
-        private void Confrim_Click(object sender, EventArgs e)     //registration button for student registration in society
+        //registration button for student registration in society
+        private void member_Registration(object sender, EventArgs e)     
         {
             DB_Connection dbConnector = new DB_Connection();
-
-            int userIDforStudent = student.GetUserId();
             string societyId = dbConnector.getSocietyId(societyNameRegField.Text).ToString();   //getting soicetyId and converting it to string
             bool isHead = false;   //will always be false for members
             List<object> formInput = new List<object>();
-
-            formInput.Add(userIDforStudent);
+            formInput.Add(student.StudentId);
             formInput.Add(societyId);
             formInput.Add(datePickerRegStudent.Value);
             formInput.Add(isHead);            
             formInput.Add(societyStudentRegTextBox.Text);
 
-
             dbConnector.executeInsert2(formInput, "Members");
+            // Clear Fields
+            societyStudentRegTextBox.Text = "";
 
             MessageBox.Show("Member Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-           
-
-
             StudentPages.SelectedIndex = 0;   //will take user bcak to socities display page after user has pressed confirm button
-
-
+            regViewSocietyButton.IndicateFocus = false;
         }
 
         private void StudentRegistrationTab(string societyName, System.Drawing.Image societyLogo)
-         {
-           
-   
-           string studentName = null;
-           string rollNumber = null;
-
-
-           int userIDforStudent = student.GetUserId();
-    
-
-             string query = "SELECT Users.username AS StudentName, Students.roll_number AS RollNumber "+
-             "FROM Users "+
-             "INNER JOIN Students ON Users.user_id = Students.user_id " +
-             "WHERE Users.user_id = '" + userIDforStudent + "'";
-
-             DB_Connection dbConnector = new DB_Connection();
-
-               try   //we need the user's name and roll number from db
-               {
-                      List<List<object>> selectResult = dbConnector.executeSelect(query);
-                      if (selectResult != null && selectResult.Count > 0 && selectResult[0].Count > 0)
-                       {
-            
-                          studentName = selectResult[0][0].ToString();
-                          rollNumber = selectResult[0][1].ToString();
-
-          
-                       }
-               }
-               catch (Exception ex)
-               {
-     
-                MessageBox.Show("Error: " + ex.Message);
-                }
-
-   
-
-
-                 societyNameRegField.Text = societyName;   //automatically filled fields of already present data
-                logoStudentReg.Image = societyLogo;
-                  idRegField.Text = rollNumber;
-                 nameRegField.Text = studentName;
-    
-
-    
-
-         }
+        {
+            //Auto-Fill Fields of Data
+            societyNameRegField.Text = societyName;   
+            logoStudentReg.Image = societyLogo;
+            idRegField.Text = student.RollNo;
+            nameRegField.Text = student.Username;
+        }
 
         private void regViewSocietyButton_Click(object sender, EventArgs e)    //on student page, tab 'view society'
         {
@@ -361,11 +300,7 @@ namespace CampusNex
 
             // this function will help us switch to tab for student registartion and pass soceity name and logo as well
             StudentRegistrationTab(societyName, societyLogo);
-
-
-
             StudentPages.SelectedIndex = 4;
-
         }
 
         private void eventsBtn_Click(object sender, EventArgs e)
@@ -378,6 +313,8 @@ namespace CampusNex
         {
             // Parse Each event of society 
             // and add it to Panel
+            allEventPanel.Controls.Clear();
+            societyEventPanel.Controls.Clear();
 
             foreach (var s in societies)
             {
@@ -389,12 +326,17 @@ namespace CampusNex
                         eName = e.Title,
                         eDate = e.Date,
                         eTime = e.Time.ToString(),
-                        eImage = utilObj.getImage(e.EventImg)
+                        eImage = utilObj.getImage(e.EventImg),
+                        eStatus = e.Status
 
                     };
-                    // Add all events to Panel 1
-                    allEventPanel.Controls.Add(c);
 
+                    if (e.Status == "accepted")
+                    {
+                        // Add all accepted events to Panel 1
+                        allEventPanel.Controls.Add(c);
+                    }
+                   
                     // Add only Society Relevant Events to Panel 2
                     foreach(var m in student.Members)
                     {
@@ -405,6 +347,85 @@ namespace CampusNex
                     }
                 }
             }
+        }
+
+        // Member Request Data For Head
+        private void loadReqData()
+        {
+            // Fetch society Id
+            int sId = -1;
+            foreach (var m in student.Members)
+            {
+                if (m.IsHead)
+                {
+                    sId = m.SocietyId;
+                }
+            }
+
+            DB_Connection dbConnector = new DB_Connection();
+            // Query to select data to populate Society Request Data Grid
+            string query = "SELECT " +
+                "U.username AS user_name, S.society_name,M.member_id" +
+                " FROM Members M JOIN Students St ON M.student_id = St.student_id" +
+                " JOIN Users U ON St.user_id = U.user_id" +
+                " JOIN Societies S ON M.society_id = S.society_id" +
+                " WHERE M.status = 'pending' and M.society_id = " + sId.ToString();
+
+
+            Console.WriteLine(query);
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            memReqGrid.Rows.Clear();
+            //// Add society cards from the select results
+            foreach (var row in selectResult)
+            {
+                // Get the columns in the correct order
+                string societyName = row[1].ToString();
+                string memName = row[0].ToString();
+                string memId = row[2].ToString();
+
+                // Populate DataGrid
+                memReqGrid.Rows.Add(new Object[]
+                {
+                    memId,
+                    societyName,
+                    memName,
+                    "More Details",
+                    "Accept"
+                });
+
+            }
+            
+        }
+
+        private void memReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                if (memReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    DataGridViewRow clickedRow = memReqGrid.Rows[e.RowIndex];
+                    // Extract Request ID
+                    int cellValue = int.Parse(clickedRow.Cells[0].Value.ToString());
+
+                    DB_Connection DB_Connector = new DB_Connection();
+                    // Set status to accepted
+                    string tableName = "Members";
+                    string[] scolumns = { "status" };
+                    string[] wcolumns = { "member_id" };
+                    object[] values = { "accepted", cellValue };
+
+                    // Call the UpdateData method
+                    bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+                    loadReqData();
+                }
+            }
+        }
+
+        private void MemberReqBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Member Requests");
+            loadReqData();
         }
     }
 }

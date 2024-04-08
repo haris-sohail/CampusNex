@@ -87,5 +87,19 @@ namespace CampusNex
             }
         }
 
+        public string eStatus
+        {
+
+            get
+            {
+                return eventStatus.Text;
+            }
+
+            set
+            {
+                eventStatus.Text = value;
+            }
+        }
+
     }
 }
