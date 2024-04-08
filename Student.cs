@@ -31,15 +31,30 @@ namespace CampusNex
 
         public Student(string user_id)
         {
-            student = new Model.Student();
-
-            student.initialize(user_id);
-
+            
             initializeSocieties();
+            initializeStudent(user_id);
             initializeEvents();
             InitializeComponent();
         }
 
+        private void initializeStudent(string user_id)
+        {
+            // Initialize Student 
+            student = new Model.Student(user_id);
+
+            // Attach Members to Society
+            foreach (var m in student.Members)
+            {
+                foreach(var s in societies)
+                {
+                    if(m.SocietyId == s.SocietyId)
+                    {
+                        s.Members.Add(m);
+                    }
+                }
+            }
+        }
         private void initializeEvents()
         {
             // Get Events count from database
@@ -377,7 +392,17 @@ namespace CampusNex
                         eImage = utilObj.getImage(e.EventImg)
 
                     };
+                    // Add all events to Panel 1
                     allEventPanel.Controls.Add(c);
+
+                    // Add only Society Relevant Events to Panel 2
+                    foreach(var m in student.Members)
+                    {
+                        if(m.SocietyId == e.SocietyId)
+                        {
+                            societyEventPanel.Controls.Add(c);
+                        }
+                    }
                 }
             }
         }

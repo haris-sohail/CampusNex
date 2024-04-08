@@ -78,8 +78,9 @@ CREATE TABLE Members (
     user_id INT NOT NULL,
     society_id INT NOT NULL,
     join_date DATE NOT NULL,
-    is_head BOOL NOT NULL,     -- new adjusmnet
-    interest VARCHAR(200),     -- new adjusment
+    is_head BOOL NOT NULL,
+    interest VARCHAR(200),   
+    status ENUM('pending', 'accepted', 'rejected') NOT NULL, 
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
@@ -112,16 +113,16 @@ collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\S
  skills, and innovation in the field of computing through various educational, 
  collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\FDSS_Logo.png')),'accepted');
  
-INSERT INTO Members (user_id, society_id, join_date, is_head, interest)
-VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence'),
-(4, 2, '2023-01-20', 1, 'Data Science, Machine Learning'),
-(5, 1, '2024-01-10', 0, 'Graphic Design, Calculations'),
-(6, 2, '2024-02-05', 0, 'NLP, Management');
+INSERT INTO Members (user_id, society_id, join_date, is_head, interest,status)
+VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence','accepted'),
+(4, 2, '2023-01-20', 1, 'Data Science, Machine Learning','accepted'),
+(5, 1, '2024-01-10', 0, 'Graphic Design, Calculations','accepted'),
+(6, 2, '2024-02-05', 0, 'NLP, Management','pending');
 
 INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status,event_Img)
 VALUES (2, 'Data Escapes', '2024-04-15', '15:00:00', 'Community Hall', 'Join us for an immersive journey into the world of data science at "Data Escapes." This 
 captivating event brings together data enthusiasts, experts, and novices alike to explore the endless possibilities 
-and applications of data science.', 'Seminar', 4, 'accepted',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\DataEscape.png'))),
+and applications of data science.', 'Seminar', 2, 'accepted',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\DataEscape.png'))),
 (1, 'Code Craft', '2024-06-15', '12:30:00', 'Khyber Lab II', 'Join us for an exhilarating coding workshop hosted by the Computing Society, where we delve into the 
 intricacies of software development, algorithmic problem-solving, and innovative coding techniques', 
 'Workshop', 3, 'pending',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CodeCraft.png')));

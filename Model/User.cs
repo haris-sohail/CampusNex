@@ -96,9 +96,7 @@ namespace CampusNex.Model
         public void initialize(string user_id)
         {
             this.UserId = int.Parse(user_id);
-
             this.utilObj = new Util();
-
             this.FetchData();
         }
 
@@ -131,22 +129,20 @@ namespace CampusNex.Model
                 return false;
             }
         }
-
-        public void FetchUsernameAndPic()
-        {
-            string query = "select username, user_pic from users where user_id = " + this.UserId;
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            this.Username = selectResult[0][0].ToString();
-
-            byte[] userPicBytes = selectResult[0][1] as byte[];
-
-            this.UserImage = utilObj.getImage(userPicBytes);
-        }
         public void FetchData()
         {
-            FetchUsernameAndPic();
+            // Populate the User Class
+            // By fetching data from DB
+            string query = "Select * From Users where user_id = " + this.GetUserId().ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            // Set all Values
+            SetUsername(selectResult[0][1].ToString());
+            SetPassword(selectResult[0][2].ToString());
+            SetEmail(selectResult[0][3].ToString());
+            SetRole(selectResult[0][4].ToString());
+            SetUserImage(utilObj.getImage((selectResult[0][5] as byte[])));
+
         }
 
         public void SearchSociety(string keyword)
