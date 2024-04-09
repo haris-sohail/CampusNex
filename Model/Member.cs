@@ -31,13 +31,20 @@ namespace CampusNex.Model
         {
             string query = "Select * from Members where student_id = " + this.StudentId.ToString() + " and status = 'accepted'";
             List<List<object>> selectResult = dbConnector.executeSelect(query);
+            // Correct Later
+            // Change datatype
+            if (selectResult.Count == 0)
+            {
+                return;
+            }
             this.MemberId = int.Parse(selectResult[index][0].ToString());
             this.SocietyId = int.Parse(selectResult[index][2].ToString());
             this.JoinedDate = DateTime.Parse(selectResult[index][3].ToString());
             this.IsHead = Boolean.Parse(selectResult[index][4].ToString());
             Console.WriteLine("Is Head: ", this.IsHead);
             this.status = selectResult[index][6].ToString();
-
+           
+            
         }
         public static int IsMember(int student_id)
         {

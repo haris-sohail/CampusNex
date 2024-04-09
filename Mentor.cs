@@ -21,16 +21,15 @@ namespace CampusNex
     {
         Model.Mentor mentor;
         List<Model.Society> societies = new List<Model.Society>();
+        List<Model.Event> events = new List<Model.Event>();
         Model.Util utilObj = new Model.Util();
 
         public Mentor(string user_id)
         {
-            mentor = new Model.Mentor();
-            mentor.initialize(user_id);
-            mentor.setMentorId();
+            mentor = new Model.Mentor(user_id);
             initializeSocieties();
-
             InitializeComponent();
+            initializeEvents();
         }
 
         public void initializeSocieties()
@@ -41,10 +40,58 @@ namespace CampusNex
             foreach (var society in allSocieties)
             {
                 Model.Society newSociety = new Model.Society();
-
                 newSociety.initialize(society);
-
                 societies.Add(newSociety);
+            }
+
+            // Get members of each society
+            List<Member> members = new List<Member>();
+            int count = utilObj.getCount("Members");
+            for (int i = 0; i < count; i++)
+            {
+                Model.Member m= new Model.Member(i+1,0);
+                members.Add(m);
+            }
+
+            foreach (var s in societies)
+            {
+                foreach(var m in members)
+                {
+                    if(s.SocietyId == m.SocietyId)
+                    {
+                        s.Members.Add(m);
+                    }
+                }
+            }
+        }
+
+        private void initializeEvents()
+        {
+            // Clear events
+            foreach(var s in societies)
+            {
+                s.Events.Clear();
+                
+            }
+            events.Clear();
+            // Get Events count from database
+            int count = utilObj.getCount("Events");
+            for (int i = 0; i < count; i++)
+            {
+                Model.Event e = new Model.Event(i + 1);
+                events.Add(e);
+            }
+            // Link events with Societies
+            foreach (var e in events)
+            {
+                foreach (var s in societies)
+                {
+                    if (e.SocietyId == s.SocietyId)
+                    {
+                        s.Events.Add(e);
+                    }
+                }
+
             }
         }
 
@@ -87,7 +134,7 @@ namespace CampusNex
                 accViewSociety.Text = societyAcronym;
                 headViewSociety.Text = societyHead;
                 logoViewSociety.Image = societyLogo;
-                descViewSociety.Text += societyDesc;
+                descViewSociety.Text = societyDesc;
 
 
 
@@ -99,44 +146,11 @@ namespace CampusNex
 
         }
 
-
-        public string getHeadName(String head_Id)   //take user id - go to student - go to members
-        {
-            DB_Connection dbConnector = new DB_Connection();
-             string query = " select username from Users " +
-                 "INNER JOIN Students " +
-                 "ON Students.user_id = Users.user_id " +
-                 "WHERE Students.student_id = " + head_Id;
-
-           // string query = "SELECT username FROM Users WHERE user_id = " + head_Id;
-
-
-            // each list contains an individual row's data
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-
-            string headName = selectResult[0][0].ToString();
-            return headName;
-        }
-
         public void setUsernameAndPic()
         {
             this.userName.Text = mentor.GetUsername();
             this.userPic.Image = mentor.GetUserImage();
         }
-
-        public System.Drawing.Image getImage(byte[] imageBlob)
-        {
-            System.Drawing.Image societyImg;
-
-            using (MemoryStream memoryStr = new MemoryStream(imageBlob))
-            {
-                societyImg = System.Drawing.Image.FromStream(memoryStr);
-            }
-
-            return societyImg;
-        }
-
 
 
         private void Mentor_Load(object sender, EventArgs e)
@@ -145,74 +159,86 @@ namespace CampusNex
             showSocieties();
         }
 
-        public System.Drawing.Image ResizeImage(System.Drawing.Image image, int width, int height)
-        {
-            // Create a new bitmap with the desired dimensions
-            Bitmap resizedImage = new Bitmap(width, height);
-
-            // Draw the original image onto the new bitmap using Graphics
-            using (Graphics graphics = Graphics.FromImage(resizedImage))
-            {
-                graphics.DrawImage(image, 0, 0, width, height);
-            }
-
-            // Return the resized image
-            return resizedImage;
-        }
-
         public void showSocieties(string searchTxt = null)
         {
             // Add society cards from the society list
             foreach (var society in societies)
             {
-                System.Drawing.Image societyImg = utilObj.getImage(society.Logo);
+                if (society.status == "accepted")
+                {
+                    System.Drawing.Image societyImg = utilObj.getImage(society.Logo);
 
-                // get mentor and head names
-                string mentorName = utilObj.getMentorName(society.MentorId.ToString());
-                string headName = utilObj.getHeadName(society.HeadId.ToString());
+                    // get mentor and head names
+                    string mentorName = utilObj.getMentorName(society.MentorId.ToString());
+                    string headName = utilObj.getHeadName(society.HeadId.ToString());
 
 
-                string acronym = utilObj.getAcronym(society.Name);
+                    string acronym = utilObj.getAcronym(society.Name);
 
-                Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description);
+                    Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description);
+                }
             }
         }
 
         private void loadReqData()
         {
-            DB_Connection dbConnector = new DB_Connection();
-            // Query to select data to populate Society Request Data Grid
-            string query = "SELECT society_logo, society_name, u.username " +
-                       "FROM societies s " +
-                       "JOIN students st ON s.head_id = st.student_id " +
-                       "JOIN users u ON st.user_id = u.user_id " +
-                       "WHERE s.status = 'pending' AND mentor_id = " + mentor.MentorId;
 
-
-            Console.WriteLine(query);
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-            socReqGrid.Rows.Clear();
-            //// Add society cards from the select results
-            foreach (var row in selectResult)
+            socReqGrid.Rows.Clear(); 
+            eveReqGrid.Rows.Clear();
+            foreach (var s in societies)
             {
-                // Get the columns in the correct order
-                string societyName = row[1].ToString();
-                string sHeadName = row[2].ToString();
-
-                byte[] slogo = (byte[])row[0];
-                
-                System.Drawing.Image societyImg = getImage(slogo);
-                System.Drawing.Image resizedImage = ResizeImage(societyImg, 32, 32);
-                // Populate DataGrid
-                socReqGrid.Rows.Add(new Object[]
+                if (s.MentorId == mentor.MentorId)
                 {
-                    resizedImage,
-                    societyName,
-                    sHeadName
-                });
+                    if (s.status == "pending") { 
+                            // Get society and Head name
+                            string societyName = s.Name;
+                            string sHeadName = "";
+                            foreach (var m in s.Members)
+                            {
+                                if (m.IsHead)
+                                {
+                                    sHeadName = utilObj.getHeadName(m.StudentId.ToString());
+                                }
+                            }
+                            byte[] slogo = s.Logo;
 
+                            System.Drawing.Image societyImg = utilObj.getImage(slogo);
+                            System.Drawing.Image resizedImage = utilObj.ResizeImage(societyImg, 32, 32);
+                            // Populate DataGrid
+                            socReqGrid.Rows.Add(new Object[]
+                            {
+                                resizedImage,
+                                societyName,
+                                sHeadName,
+                                "View",
+                                "Accept"
+                            });
+                    }
+
+                    foreach (var e in s.Events)
+                    {
+                        if (e.Status == "pending")
+                        {
+                            string oname = utilObj.getHeadName(e.OrganizerId.ToString());
+                            System.Drawing.Image img = utilObj.getImage(e.EventImg);
+                            System.Drawing.Image eImgg = utilObj.ResizeImage(img, 32, 32);
+                            eveReqGrid.Rows.Add(new Object[]
+                            {
+                                eImgg,
+                                s.Name,
+                                e.Title,
+                                oname,
+                                "View",
+                                "Accept"
+                            });
+                        }
+
+                    }
+                }
+
+               
             }
+
         }
         private void reqBtn_Click(object sender, EventArgs e)
         {
@@ -254,5 +280,105 @@ namespace CampusNex
             showSocieties(searchBar.Text);
         }
 
+        private void eventsBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Events");
+            showEvents();
+        }
+
+        private void showEvents()
+        {
+            // Parse Each event of society 
+            // and add it to Panel
+            allEventPanel.Controls.Clear();
+
+            foreach (var s in societies)
+            {
+                foreach (var e in s.Events)
+                {
+
+                    eventCard c = new eventCard()
+                    {
+                        sName = s.Name,
+                        eName = e.Title,
+                        eDate = e.Date,
+                        eTime = e.Time.ToString(),
+                        eImage = utilObj.getImage(e.EventImg),
+                        eStatus = e.Status
+
+                    };
+                    c.eId = e.EventId;
+                    c.DetailsBtn += (sender, eve) =>
+                    {
+                        StudentPages.SetPage("view Event");
+                        eventDetails(eve);
+                    };
+                        
+                    // Add all accepted events to Panel 1
+                    allEventPanel.Controls.Add(c);
+                   
+
+                }
+
+            }
+        }
+
+        private void eventDetails(eventData e)
+        {
+            foreach (var s in societies)
+            {
+                foreach (var eve in s.Events)
+                {
+                    // Populate Page
+                    if (e.Id == eve.EventId)
+                    {
+                        socImg.Image = utilObj.getImage(s.Logo);
+                        eveImg.Image = utilObj.getImage(eve.EventImg);
+                        socTitle.Text = s.Name;
+                        eveTitle.Text = eve.Title;
+
+                        eveDesc.Text = eve.Description;
+                        eveTime.Text = eve.Time.ToString();
+                        eveDate.Text = eve.Date;
+                        eveLoc.Text = eve.Location;
+                    }
+
+                }
+            }
+
+        }
+
+        private void eveReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                if (eveReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    DataGridViewRow clickedRow = eveReqGrid.Rows[e.RowIndex];
+                    // Extract Event Id
+                    string cellValue = clickedRow.Cells[2].Value.ToString();
+                    int eveId = -1;
+                    foreach(var ee in events)
+                    {
+                        if(ee.Title == cellValue)
+                        {
+                            eveId = ee.EventId; 
+                            break;
+                        }
+                    }
+                    DB_Connection DB_Connector = new DB_Connection();
+                    // Set status to accepted
+                    string tableName = "Events";
+                    string[] scolumns = { "status" };
+                    string[] wcolumns = { "event_id" };
+                    object[] values = { "accepted", eveId};
+
+                    // Call the UpdateData method
+                    bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+                    initializeEvents();
+                    loadReqData();
+                }
+            }
+        }
     }
 }

@@ -38,8 +38,17 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -52,18 +61,10 @@
             this.userName = new Bunifu.UI.WinForms.BunifuLabel();
             this.userPic = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.searchBar = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.EventsPage = new System.Windows.Forms.TabPage();
             this.Requests = new System.Windows.Forms.TabPage();
             this.socReqGrid = new System.Windows.Forms.DataGridView();
-            this.soclogo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reqStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
             this.reqLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             this.viewSociety = new System.Windows.Forms.TabPage();
             this.accViewSociety = new System.Windows.Forms.Label();
             this.sloganViewSociety = new System.Windows.Forms.Label();
@@ -73,6 +74,38 @@
             this.headLabelViewSociety = new System.Windows.Forms.Label();
             this.logoViewSociety = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.titleViewSociety = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.eventPage = new System.Windows.Forms.TabPage();
+            this.allEventPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.allEventLabel = new System.Windows.Forms.Label();
+            this.viewEvent = new System.Windows.Forms.TabPage();
+            this.eveDate = new System.Windows.Forms.Label();
+            this.eveTime = new System.Windows.Forms.Label();
+            this.eveLoc = new System.Windows.Forms.Label();
+            this.dateLbl = new System.Windows.Forms.Label();
+            this.timeLbl = new System.Windows.Forms.Label();
+            this.locLbl = new System.Windows.Forms.Label();
+            this.backBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.eveImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.eveTitle = new System.Windows.Forms.Label();
+            this.presentLbl = new System.Windows.Forms.Label();
+            this.eveDesc = new System.Windows.Forms.Label();
+            this.desclbl = new System.Windows.Forms.Label();
+            this.socImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.socTitle = new System.Windows.Forms.Label();
+            this.eveReqGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.soclogo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reqStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -82,6 +115,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.socReqGrid)).BeginInit();
             this.viewSociety.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).BeginInit();
+            this.eventPage.SuspendLayout();
+            this.viewEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eveImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eveReqGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -282,7 +320,7 @@
             this.eventsBtn.TextMarginLeft = 0;
             this.eventsBtn.TextPadding = new System.Windows.Forms.Padding(0);
             this.eventsBtn.UseDefaultRadiusAndThickness = true;
-            this.eventsBtn.Click += new System.EventHandler(this.societiesBtn_Click);
+            this.eventsBtn.Click += new System.EventHandler(this.eventsBtn_Click);
             // 
             // societiesBtn
             // 
@@ -403,17 +441,18 @@
             this.StudentPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.StudentPages.AllowTransitions = false;
             this.StudentPages.Controls.Add(this.SocietiesPage);
-            this.StudentPages.Controls.Add(this.EventsPage);
             this.StudentPages.Controls.Add(this.Requests);
             this.StudentPages.Controls.Add(this.viewSociety);
+            this.StudentPages.Controls.Add(this.eventPage);
+            this.StudentPages.Controls.Add(this.viewEvent);
             this.StudentPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.viewSociety;
-            this.StudentPages.PageIndex = 3;
-            this.StudentPages.PageName = "viewSociety";
-            this.StudentPages.PageTitle = "view Society";
+            this.StudentPages.Page = this.Requests;
+            this.StudentPages.PageIndex = 1;
+            this.StudentPages.PageName = "Requests";
+            this.StudentPages.PageTitle = "Requests";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1079, 729);
             this.StudentPages.TabIndex = 1;
@@ -571,19 +610,10 @@
             this.searchBar.WordWrap = true;
             this.searchBar.TextChanged += new System.EventHandler(this.searchBar_TextChanged);
             // 
-            // EventsPage
-            // 
-            this.EventsPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.EventsPage.Location = new System.Drawing.Point(4, 4);
-            this.EventsPage.Name = "EventsPage";
-            this.EventsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EventsPage.Size = new System.Drawing.Size(1071, 703);
-            this.EventsPage.TabIndex = 1;
-            this.EventsPage.Text = "Events";
-            // 
             // Requests
             // 
             this.Requests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.Requests.Controls.Add(this.eveReqGrid);
             this.Requests.Controls.Add(this.socReqGrid);
             this.Requests.Controls.Add(this.reqLabel2);
             this.Requests.Controls.Add(this.reqLabel1);
@@ -600,19 +630,25 @@
             this.socReqGrid.AllowUserToDeleteRows = false;
             this.socReqGrid.AllowUserToOrderColumns = true;
             this.socReqGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.socReqGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.socReqGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.socReqGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.socReqGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.socReqGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.socReqGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.socReqGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.socReqGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.socReqGrid.ColumnHeadersHeight = 30;
             this.socReqGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.socReqGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -621,58 +657,29 @@
             this.reqStatus,
             this.viewDetails,
             this.AcceptReg});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.socReqGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.socReqGrid.DefaultCellStyle = dataGridViewCellStyle10;
             this.socReqGrid.EnableHeadersVisualStyles = false;
             this.socReqGrid.Location = new System.Drawing.Point(43, 115);
             this.socReqGrid.Name = "socReqGrid";
             this.socReqGrid.ReadOnly = true;
             this.socReqGrid.RowHeadersVisible = false;
+            this.socReqGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.socReqGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.socReqGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.socReqGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.socReqGrid.RowTemplate.Height = 40;
             this.socReqGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.socReqGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.socReqGrid.Size = new System.Drawing.Size(784, 225);
+            this.socReqGrid.Size = new System.Drawing.Size(815, 225);
             this.socReqGrid.TabIndex = 2;
             this.socReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.socReqGrid_CellContentClick);
-            // 
-            // soclogo
-            // 
-            this.soclogo.FillWeight = 30F;
-            this.soclogo.HeaderText = "";
-            this.soclogo.Name = "soclogo";
-            this.soclogo.ReadOnly = true;
-            // 
-            // socName
-            // 
-            this.socName.HeaderText = "Society Name";
-            this.socName.Name = "socName";
-            this.socName.ReadOnly = true;
-            // 
-            // reqStatus
-            // 
-            this.reqStatus.HeaderText = "Student Name";
-            this.reqStatus.Name = "reqStatus";
-            this.reqStatus.ReadOnly = true;
-            this.reqStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reqStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // viewDetails
-            // 
-            this.viewDetails.HeaderText = "View Request";
-            this.viewDetails.Name = "viewDetails";
-            this.viewDetails.ReadOnly = true;
-            // 
-            // AcceptReg
-            // 
-            this.AcceptReg.HeaderText = "Accept";
-            this.AcceptReg.Name = "AcceptReg";
-            this.AcceptReg.ReadOnly = true;
             // 
             // reqLabel2
             // 
@@ -706,19 +713,6 @@
             this.reqLabel1.Text = "Society Requests";
             this.reqLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.reqLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "AceCodersLogo.png");
-            // 
-            // mySqlDataAdapter1
-            // 
-            this.mySqlDataAdapter1.DeleteCommand = null;
-            this.mySqlDataAdapter1.InsertCommand = null;
-            this.mySqlDataAdapter1.SelectCommand = null;
-            this.mySqlDataAdapter1.UpdateCommand = null;
             // 
             // viewSociety
             // 
@@ -842,6 +836,435 @@
             this.titleViewSociety.TabIndex = 0;
             this.titleViewSociety.Text = "Title of Society";
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "AceCodersLogo.png");
+            // 
+            // mySqlDataAdapter1
+            // 
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
+            // eventPage
+            // 
+            this.eventPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.eventPage.Controls.Add(this.allEventPanel);
+            this.eventPage.Controls.Add(this.allEventLabel);
+            this.eventPage.Location = new System.Drawing.Point(4, 4);
+            this.eventPage.Name = "eventPage";
+            this.eventPage.Padding = new System.Windows.Forms.Padding(3);
+            this.eventPage.Size = new System.Drawing.Size(1071, 703);
+            this.eventPage.TabIndex = 5;
+            this.eventPage.Text = "Events";
+            // 
+            // allEventPanel
+            // 
+            this.allEventPanel.AutoScroll = true;
+            this.allEventPanel.BackColor = System.Drawing.Color.Transparent;
+            this.allEventPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.allEventPanel.Location = new System.Drawing.Point(29, 92);
+            this.allEventPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.allEventPanel.Name = "allEventPanel";
+            this.allEventPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.allEventPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.allEventPanel.Size = new System.Drawing.Size(970, 488);
+            this.allEventPanel.TabIndex = 5;
+            // 
+            // allEventLabel
+            // 
+            this.allEventLabel.AutoSize = true;
+            this.allEventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allEventLabel.ForeColor = System.Drawing.Color.White;
+            this.allEventLabel.Location = new System.Drawing.Point(53, 50);
+            this.allEventLabel.Name = "allEventLabel";
+            this.allEventLabel.Size = new System.Drawing.Size(128, 29);
+            this.allEventLabel.TabIndex = 2;
+            this.allEventLabel.Text = "All Events";
+            // 
+            // viewEvent
+            // 
+            this.viewEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.viewEvent.Controls.Add(this.eveDate);
+            this.viewEvent.Controls.Add(this.eveTime);
+            this.viewEvent.Controls.Add(this.eveLoc);
+            this.viewEvent.Controls.Add(this.dateLbl);
+            this.viewEvent.Controls.Add(this.timeLbl);
+            this.viewEvent.Controls.Add(this.locLbl);
+            this.viewEvent.Controls.Add(this.backBtn);
+            this.viewEvent.Controls.Add(this.eveImg);
+            this.viewEvent.Controls.Add(this.eveTitle);
+            this.viewEvent.Controls.Add(this.presentLbl);
+            this.viewEvent.Controls.Add(this.eveDesc);
+            this.viewEvent.Controls.Add(this.desclbl);
+            this.viewEvent.Controls.Add(this.socImg);
+            this.viewEvent.Controls.Add(this.socTitle);
+            this.viewEvent.Location = new System.Drawing.Point(4, 4);
+            this.viewEvent.Margin = new System.Windows.Forms.Padding(2);
+            this.viewEvent.Name = "viewEvent";
+            this.viewEvent.Padding = new System.Windows.Forms.Padding(2);
+            this.viewEvent.Size = new System.Drawing.Size(1071, 703);
+            this.viewEvent.TabIndex = 7;
+            this.viewEvent.Text = "view Event";
+            // 
+            // eveDate
+            // 
+            this.eveDate.AutoSize = true;
+            this.eveDate.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveDate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveDate.Location = new System.Drawing.Point(788, 513);
+            this.eveDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveDate.Name = "eveDate";
+            this.eveDate.Size = new System.Drawing.Size(102, 18);
+            this.eveDate.TabIndex = 22;
+            this.eveDate.Text = "02/04/2025";
+            // 
+            // eveTime
+            // 
+            this.eveTime.AutoSize = true;
+            this.eveTime.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveTime.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveTime.Location = new System.Drawing.Point(788, 580);
+            this.eveTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveTime.Name = "eveTime";
+            this.eveTime.Size = new System.Drawing.Size(82, 18);
+            this.eveTime.TabIndex = 21;
+            this.eveTime.Text = "14:00:00";
+            // 
+            // eveLoc
+            // 
+            this.eveLoc.AutoSize = true;
+            this.eveLoc.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveLoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveLoc.Location = new System.Drawing.Point(788, 439);
+            this.eveLoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveLoc.Name = "eveLoc";
+            this.eveLoc.Size = new System.Drawing.Size(99, 18);
+            this.eveLoc.TabIndex = 20;
+            this.eveLoc.Text = "Khyber Lab";
+            // 
+            // dateLbl
+            // 
+            this.dateLbl.AutoSize = true;
+            this.dateLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dateLbl.Location = new System.Drawing.Point(666, 509);
+            this.dateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dateLbl.Name = "dateLbl";
+            this.dateLbl.Size = new System.Drawing.Size(54, 23);
+            this.dateLbl.TabIndex = 19;
+            this.dateLbl.Text = "Date";
+            // 
+            // timeLbl
+            // 
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.timeLbl.Location = new System.Drawing.Point(666, 580);
+            this.timeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(57, 23);
+            this.timeLbl.TabIndex = 18;
+            this.timeLbl.Text = "Time";
+            // 
+            // locLbl
+            // 
+            this.locLbl.AutoSize = true;
+            this.locLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.locLbl.Location = new System.Drawing.Point(666, 439);
+            this.locLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.locLbl.Name = "locLbl";
+            this.locLbl.Size = new System.Drawing.Size(91, 23);
+            this.locLbl.TabIndex = 17;
+            this.locLbl.Text = "Location";
+            // 
+            // backBtn
+            // 
+            this.backBtn.AllowAnimations = true;
+            this.backBtn.AllowBorderColorChanges = true;
+            this.backBtn.AllowMouseEffects = true;
+            this.backBtn.AnimationSpeed = 200;
+            this.backBtn.BackColor = System.Drawing.Color.Transparent;
+            this.backBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.backBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.backBtn.BorderRadius = 1;
+            this.backBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.backBtn.BorderThickness = 1;
+            this.backBtn.ColorContrastOnClick = 30;
+            this.backBtn.ColorContrastOnHover = 30;
+            this.backBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.backBtn.CustomizableEdges = borderEdges4;
+            this.backBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.backBtn.Location = new System.Drawing.Point(17, 20);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.RoundBorders = true;
+            this.backBtn.ShowBorders = true;
+            this.backBtn.Size = new System.Drawing.Size(59, 59);
+            this.backBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.backBtn.TabIndex = 16;
+            this.backBtn.Click += new System.EventHandler(this.eventsBtn_Click);
+            // 
+            // eveImg
+            // 
+            this.eveImg.AllowFocused = false;
+            this.eveImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.eveImg.AutoSizeHeight = true;
+            this.eveImg.BorderRadius = 0;
+            this.eveImg.Image = ((System.Drawing.Image)(resources.GetObject("eveImg.Image")));
+            this.eveImg.IsCircle = true;
+            this.eveImg.Location = new System.Drawing.Point(653, 90);
+            this.eveImg.Margin = new System.Windows.Forms.Padding(2);
+            this.eveImg.Name = "eveImg";
+            this.eveImg.Size = new System.Drawing.Size(200, 200);
+            this.eveImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.eveImg.TabIndex = 15;
+            this.eveImg.TabStop = false;
+            this.eveImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            // 
+            // eveTitle
+            // 
+            this.eveTitle.AutoSize = true;
+            this.eveTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.eveTitle.Location = new System.Drawing.Point(664, 319);
+            this.eveTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveTitle.Name = "eveTitle";
+            this.eveTitle.Size = new System.Drawing.Size(213, 32);
+            this.eveTitle.TabIndex = 14;
+            this.eveTitle.Text = "Title of Event";
+            // 
+            // presentLbl
+            // 
+            this.presentLbl.AutoSize = true;
+            this.presentLbl.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.presentLbl.Location = new System.Drawing.Point(430, 197);
+            this.presentLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.presentLbl.Name = "presentLbl";
+            this.presentLbl.Size = new System.Drawing.Size(114, 25);
+            this.presentLbl.TabIndex = 6;
+            this.presentLbl.Text = "presents";
+            // 
+            // eveDesc
+            // 
+            this.eveDesc.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveDesc.Location = new System.Drawing.Point(105, 472);
+            this.eveDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveDesc.MaximumSize = new System.Drawing.Size(375, 406);
+            this.eveDesc.Name = "eveDesc";
+            this.eveDesc.Size = new System.Drawing.Size(375, 203);
+            this.eveDesc.TabIndex = 5;
+            this.eveDesc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // desclbl
+            // 
+            this.desclbl.AutoSize = true;
+            this.desclbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desclbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.desclbl.Location = new System.Drawing.Point(107, 434);
+            this.desclbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.desclbl.Name = "desclbl";
+            this.desclbl.Size = new System.Drawing.Size(128, 23);
+            this.desclbl.TabIndex = 4;
+            this.desclbl.Text = "Description:";
+            // 
+            // socImg
+            // 
+            this.socImg.AllowFocused = false;
+            this.socImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.socImg.AutoSizeHeight = true;
+            this.socImg.BorderRadius = 0;
+            this.socImg.Image = ((System.Drawing.Image)(resources.GetObject("socImg.Image")));
+            this.socImg.IsCircle = true;
+            this.socImg.Location = new System.Drawing.Point(110, 90);
+            this.socImg.Margin = new System.Windows.Forms.Padding(2);
+            this.socImg.Name = "socImg";
+            this.socImg.Size = new System.Drawing.Size(200, 200);
+            this.socImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.socImg.TabIndex = 1;
+            this.socImg.TabStop = false;
+            this.socImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            // 
+            // socTitle
+            // 
+            this.socTitle.AutoSize = true;
+            this.socTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.socTitle.Location = new System.Drawing.Point(104, 319);
+            this.socTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.socTitle.Name = "socTitle";
+            this.socTitle.Size = new System.Drawing.Size(239, 32);
+            this.socTitle.TabIndex = 0;
+            this.socTitle.Text = "Title of Society";
+            // 
+            // eveReqGrid
+            // 
+            this.eveReqGrid.AllowUserToAddRows = false;
+            this.eveReqGrid.AllowUserToDeleteRows = false;
+            this.eveReqGrid.AllowUserToOrderColumns = true;
+            this.eveReqGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.eveReqGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.eveReqGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.eveReqGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.eveReqGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.eveReqGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.eveReqGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.eveReqGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.eveReqGrid.ColumnHeadersHeight = 30;
+            this.eveReqGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.eveReqGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.orgName,
+            this.dataGridViewButtonColumn1,
+            this.dataGridViewButtonColumn2});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.eveReqGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.eveReqGrid.EnableHeadersVisualStyles = false;
+            this.eveReqGrid.Location = new System.Drawing.Point(43, 419);
+            this.eveReqGrid.Name = "eveReqGrid";
+            this.eveReqGrid.ReadOnly = true;
+            this.eveReqGrid.RowHeadersVisible = false;
+            this.eveReqGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.eveReqGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveReqGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.eveReqGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.eveReqGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.eveReqGrid.RowTemplate.Height = 40;
+            this.eveReqGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.eveReqGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.eveReqGrid.Size = new System.Drawing.Size(815, 225);
+            this.eveReqGrid.TabIndex = 3;
+            this.eveReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eveReqGrid_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 30F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Society Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Event Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // orgName
+            // 
+            this.orgName.HeaderText = "Organizer Name";
+            this.orgName.Name = "orgName";
+            this.orgName.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewButtonColumn1.HeaderText = "View Request";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewButtonColumn2.HeaderText = "Accept";
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            // 
+            // soclogo
+            // 
+            this.soclogo.FillWeight = 30F;
+            this.soclogo.HeaderText = "";
+            this.soclogo.Name = "soclogo";
+            this.soclogo.ReadOnly = true;
+            // 
+            // socName
+            // 
+            this.socName.HeaderText = "Society Name";
+            this.socName.Name = "socName";
+            this.socName.ReadOnly = true;
+            // 
+            // reqStatus
+            // 
+            this.reqStatus.HeaderText = "Student Name";
+            this.reqStatus.Name = "reqStatus";
+            this.reqStatus.ReadOnly = true;
+            this.reqStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reqStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // viewDetails
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.viewDetails.DefaultCellStyle = dataGridViewCellStyle8;
+            this.viewDetails.HeaderText = "View Request";
+            this.viewDetails.Name = "viewDetails";
+            this.viewDetails.ReadOnly = true;
+            // 
+            // AcceptReg
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.AcceptReg.DefaultCellStyle = dataGridViewCellStyle9;
+            this.AcceptReg.HeaderText = "Accept";
+            this.AcceptReg.Name = "AcceptReg";
+            this.AcceptReg.ReadOnly = true;
+            // 
             // Mentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,6 +1288,13 @@
             this.viewSociety.ResumeLayout(false);
             this.viewSociety.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).EndInit();
+            this.eventPage.ResumeLayout(false);
+            this.eventPage.PerformLayout();
+            this.viewEvent.ResumeLayout(false);
+            this.viewEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eveImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.socImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eveReqGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -878,7 +1308,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton eventsBtn;
         private Bunifu.UI.WinForms.BunifuPages StudentPages;
         private System.Windows.Forms.TabPage SocietiesPage;
-        private System.Windows.Forms.TabPage EventsPage;
         private Bunifu.UI.WinForms.BunifuTextBox searchBar;
         private Bunifu.UI.WinForms.BunifuLabel userName;
         private Bunifu.UI.WinForms.BunifuPictureBox userPic;
@@ -889,11 +1318,6 @@
         private Bunifu.UI.WinForms.BunifuLabel reqLabel2;
         private System.Windows.Forms.DataGridView socReqGrid;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.DataGridViewImageColumn soclogo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
-        private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
         private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
         private System.Windows.Forms.TabPage viewSociety;
         private System.Windows.Forms.Label accViewSociety;
@@ -904,5 +1328,35 @@
         private System.Windows.Forms.Label headLabelViewSociety;
         private Bunifu.UI.WinForms.BunifuPictureBox logoViewSociety;
         private System.Windows.Forms.Label titleViewSociety;
+        private System.Windows.Forms.TabPage eventPage;
+        private System.Windows.Forms.FlowLayoutPanel allEventPanel;
+        private System.Windows.Forms.Label allEventLabel;
+        private System.Windows.Forms.TabPage viewEvent;
+        private System.Windows.Forms.Label eveDate;
+        private System.Windows.Forms.Label eveTime;
+        private System.Windows.Forms.Label eveLoc;
+        private System.Windows.Forms.Label dateLbl;
+        private System.Windows.Forms.Label timeLbl;
+        private System.Windows.Forms.Label locLbl;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton backBtn;
+        private Bunifu.UI.WinForms.BunifuPictureBox eveImg;
+        private System.Windows.Forms.Label eveTitle;
+        private System.Windows.Forms.Label presentLbl;
+        private System.Windows.Forms.Label eveDesc;
+        private System.Windows.Forms.Label desclbl;
+        private Bunifu.UI.WinForms.BunifuPictureBox socImg;
+        private System.Windows.Forms.Label socTitle;
+        private System.Windows.Forms.DataGridView eveReqGrid;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orgName;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn soclogo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reqStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
+        private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
     }
 }

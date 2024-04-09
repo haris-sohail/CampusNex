@@ -16,9 +16,11 @@ namespace CampusNex.Model
         public string Info { get; set; }
 
         // Constructor
-        public Mentor()
+        public Mentor(string user_id)
         {
             // Default constructor
+            base.initialize(user_id);
+            this.FetchMData();
             
         }
 
@@ -31,15 +33,14 @@ namespace CampusNex.Model
             // Implement society approval logic here
         }
 
-        internal void setMentorId()
+        private void FetchMData()
         {
-            // Set Mentor Id:
-            string mID_query = "Select mentor_id from MENTORS m INNER JOIN USERS u ON" +
-                " m.user_id = u.user_id where u.user_id = " + base.GetUserId();
+            string query = "Select * From Mentors where user_id = " + base.GetUserId().ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
 
-            List<List<object>> selectResult = dbConnector.executeSelect(mID_query);
             this.MentorId = int.Parse(selectResult[0][0].ToString());
-
+            this.Designation = selectResult[0][2].ToString();
+            this.Info = selectResult[0][3].ToString();
         }
     }
 }

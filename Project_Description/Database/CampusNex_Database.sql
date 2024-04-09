@@ -150,11 +150,12 @@ intricacies of software development, algorithmic problem-solving, and innovative
 -- skills, and innovation in the field of computing through various educational, 
 -- collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('C:\\Users\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
 
+
  SELECT * FROM Societies;
  
  SELECT * FROM Users;
  SELECT * FROM Students;
- SELECT * FROM Mentors;
+ SELECT * FROM Mentors where user_id = 2;
  
  SELECT * FROM Members;
  

@@ -114,6 +114,7 @@ namespace CampusNex
             StudentPages.SetPage(((Control)sender).Text);
         }
 
+
         private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
         {
             societyCard newCard = new societyCard()

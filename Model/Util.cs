@@ -50,7 +50,7 @@ namespace CampusNex.Model
 
         public List<List<object>> getAllSocieties()
         {
-            string query = "SELECT * FROM Societies WHERE STATUS='accepted'";
+            string query = "SELECT * FROM Societies";
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
