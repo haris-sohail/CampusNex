@@ -552,7 +552,7 @@ namespace CampusNex
             month = month.PadLeft(2, '0');
 
             // Create the formatted date string
-            return $"{year}-{month}-{day}";
+            return $"{year}-{day}-{month}";
         }
     }
 }
