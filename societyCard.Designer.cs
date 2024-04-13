@@ -45,23 +45,23 @@
             // societyAcronym
             // 
             this.societyAcronym.AutoSize = true;
-            this.societyAcronym.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyAcronym.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.societyAcronym.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.societyAcronym.Location = new System.Drawing.Point(137, 34);
+            this.societyAcronym.Location = new System.Drawing.Point(138, 19);
             this.societyAcronym.Name = "societyAcronym";
-            this.societyAcronym.Size = new System.Drawing.Size(63, 24);
+            this.societyAcronym.Size = new System.Drawing.Size(47, 16);
             this.societyAcronym.TabIndex = 2;
             this.societyAcronym.Text = "FDSS";
             // 
             // societyName
             // 
             this.societyName.AutoSize = true;
-            this.societyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.societyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.societyName.Location = new System.Drawing.Point(137, 74);
+            this.societyName.Location = new System.Drawing.Point(99, 46);
             this.societyName.MaximumSize = new System.Drawing.Size(150, 70);
             this.societyName.Name = "societyName";
-            this.societyName.Size = new System.Drawing.Size(120, 32);
+            this.societyName.Size = new System.Drawing.Size(133, 13);
             this.societyName.TabIndex = 3;
             this.societyName.Text = "Fast Data Science Society";
             // 
@@ -71,11 +71,11 @@
             this.societySlogan.AutoSize = true;
             this.societySlogan.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.societySlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.societySlogan.Location = new System.Drawing.Point(24, 153);
-            this.societySlogan.MaximumSize = new System.Drawing.Size(260, 40);
-            this.societySlogan.MinimumSize = new System.Drawing.Size(260, 0);
+            this.societySlogan.Location = new System.Drawing.Point(101, 68);
+            this.societySlogan.MaximumSize = new System.Drawing.Size(130, 40);
+            this.societySlogan.MinimumSize = new System.Drawing.Size(130, 0);
             this.societySlogan.Name = "societySlogan";
-            this.societySlogan.Size = new System.Drawing.Size(260, 13);
+            this.societySlogan.Size = new System.Drawing.Size(130, 13);
             this.societySlogan.TabIndex = 4;
             this.societySlogan.Text = "Data, Data, Data";
             this.societySlogan.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -83,44 +83,44 @@
             // societyHead
             // 
             this.societyHead.AutoSize = true;
-            this.societyHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.societyHead.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.societyHead.Location = new System.Drawing.Point(24, 217);
+            this.societyHead.Location = new System.Drawing.Point(24, 156);
             this.societyHead.Name = "societyHead";
-            this.societyHead.Size = new System.Drawing.Size(77, 16);
+            this.societyHead.Size = new System.Drawing.Size(64, 13);
             this.societyHead.TabIndex = 5;
             this.societyHead.Text = "President:";
             // 
             // societyMentor
             // 
             this.societyMentor.AutoSize = true;
-            this.societyMentor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyMentor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.societyMentor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.societyMentor.Location = new System.Drawing.Point(24, 184);
+            this.societyMentor.Location = new System.Drawing.Point(24, 125);
             this.societyMentor.Name = "societyMentor";
-            this.societyMentor.Size = new System.Drawing.Size(58, 16);
+            this.societyMentor.Size = new System.Drawing.Size(56, 15);
             this.societyMentor.TabIndex = 6;
             this.societyMentor.Text = "Mentor:";
             // 
             // presidentName
             // 
             this.presidentName.AutoSize = true;
-            this.presidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presidentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.presidentName.Location = new System.Drawing.Point(117, 217);
+            this.presidentName.Location = new System.Drawing.Point(101, 156);
             this.presidentName.Name = "presidentName";
-            this.presidentName.Size = new System.Drawing.Size(34, 16);
+            this.presidentName.Size = new System.Drawing.Size(30, 15);
             this.presidentName.TabIndex = 7;
             this.presidentName.Text = "ABC";
             // 
             // mentorName
             // 
             this.mentorName.AutoSize = true;
-            this.mentorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mentorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mentorName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.mentorName.Location = new System.Drawing.Point(93, 184);
+            this.mentorName.Location = new System.Drawing.Point(97, 127);
             this.mentorName.Name = "mentorName";
-            this.mentorName.Size = new System.Drawing.Size(34, 16);
+            this.mentorName.Size = new System.Drawing.Size(28, 13);
             this.mentorName.TabIndex = 8;
             this.mentorName.Text = "ABC";
             // 
@@ -173,7 +173,7 @@
             this.viewBtn.IdleIconLeftImage = null;
             this.viewBtn.IdleIconRightImage = null;
             this.viewBtn.IndicateFocus = true;
-            this.viewBtn.Location = new System.Drawing.Point(80, 252);
+            this.viewBtn.Location = new System.Drawing.Point(63, 188);
             this.viewBtn.Margin = new System.Windows.Forms.Padding(5);
             this.viewBtn.Name = "viewBtn";
             this.viewBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -225,9 +225,9 @@
             this.societyLogo.BorderRadius = 0;
             this.societyLogo.Image = ((System.Drawing.Image)(resources.GetObject("societyLogo.Image")));
             this.societyLogo.IsCircle = true;
-            this.societyLogo.Location = new System.Drawing.Point(8, 15);
+            this.societyLogo.Location = new System.Drawing.Point(8, 17);
             this.societyLogo.Name = "societyLogo";
-            this.societyLogo.Size = new System.Drawing.Size(123, 123);
+            this.societyLogo.Size = new System.Drawing.Size(89, 89);
             this.societyLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.societyLogo.TabIndex = 0;
             this.societyLogo.TabStop = false;
@@ -251,9 +251,9 @@
             this.Controls.Add(this.societyAcronym);
             this.Controls.Add(this.societyLogo);
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Margin = new System.Windows.Forms.Padding(10);
+            this.Margin = new System.Windows.Forms.Padding(20);
             this.Name = "societyCard";
-            this.Size = new System.Drawing.Size(285, 310);
+            this.Size = new System.Drawing.Size(235, 250);
             ((System.ComponentModel.ISupportInitialize)(this.societyLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
