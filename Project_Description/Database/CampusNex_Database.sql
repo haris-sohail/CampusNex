@@ -85,6 +85,21 @@ CREATE TABLE Members (
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
 
+-- Announcements table
+
+CREATE TABLE Announcements (
+	announcement_id INT PRIMARY KEY AUTO_INCREMENT,
+    head_id INT NOT NULL,
+    society_id INT NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    body VARCHAR(300) NOT NULL,
+    posted_at DATETIME NOT NULL,
+    valid_till DATETIME NOT NULL,
+    priority ENUM('low', 'medium', 'high') NOT NULL,
+    FOREIGN KEY (head_id) REFERENCES Students(student_id),
+    FOREIGN KEY (society_id) REFERENCES Societies(society_id)
+);
+
 INSERT INTO Users (username, password, email, role, user_pic) VALUES
 ('kalsoom', 'password', 'kalsoom@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
 ('haris', 'password', 'haris@gmail.com', 'mentor', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\1.png'))),
