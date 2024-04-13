@@ -161,6 +161,7 @@ namespace CampusNex
 
         public void showSocieties(string searchTxt = null)
         {
+            societyCardsPanel.Controls.Clear();
             // Add society cards from the society list
             foreach (var society in societies)
             {

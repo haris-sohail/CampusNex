@@ -73,7 +73,9 @@ namespace CampusNex.Model
                 cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = e.EventImg;
 
                 cmd.ExecuteNonQuery();
+                dbConnector.connection.Close();
             }
+           
         }
 
         public void CreateEvent()

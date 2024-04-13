@@ -247,6 +247,13 @@ namespace CampusNex
             // Show registration request sent popup
             MessageBox.Show("Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Clear Input Fields
+            societyName.Clear();
+            societySlogan.Clear();
+            societyDesc.Clear();
+            availableMentors.Items.Clear();
+            uploadImgPicBox.Image = null;
+
             // Navigate back to the Societies page
             StudentPages.SetPage("Societies");
         }
@@ -535,7 +542,29 @@ namespace CampusNex
             // Get Image
             newEvent.EventImg = imageBytes;
 
-           Event.AddEvent(newEvent);
+            // Add to database
+            Event.AddEvent(newEvent);
+            // Add to runtime
+            foreach (var s in societies)
+            {
+                if(s.SocietyId == newEvent.SocietyId)
+                {
+                    s.Events.Add(newEvent);
+                    break;
+                }
+            }
+            // Clear Fields
+            chooseSocDD.Items.Clear();
+            elocation.Clear();
+            eTitle.Clear();
+            eType.Clear();
+            eDesc.Clear();
+            eDt.Text = "";
+            eimgHolder.Image = null;
+
+            // Navigate to Events Page
+            StudentPages.SetPage("Events");
+            showEvents();
         }
 
         private string dateVal(string dt)
