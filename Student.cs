@@ -34,37 +34,65 @@ namespace CampusNex
         {
             
             initializeSocieties();
-            InitializeComponent();
             initializeStudent(user_id);
+            InitializeComponent();
+            setControls();
             initializeEvents();
             
         }
 
-        private void initializeStudent(string user_id)
+        public void setUsernameAndPic()
         {
-            // Initialize Student 
-            student = new Model.Student(user_id);
+            this.userName.Text = student.GetUsername();
+            this.userPic.Image = student.GetUserImage();
+        }
+
+        private void Student_Load(object sender, EventArgs e)
+        {
+
+            setUsernameAndPic();
+            showSocieties();
+
+        }
+
+        private void setControls()
+        {
             // Hide Member Request Btn
             MemberReqBtn.Visible = false;
             // Hide Event Reg Button
             organizeEventBtn.Visible = false;
-            // Attach Members to Society
             foreach (var m in student.Members)
             {
-                // show only if student is member
+                // Show Organize Event button only if
+                // student is a member
                 organizeEventBtn.Visible = true;
                 foreach (var s in societies)
                 {
-                    if(m.SocietyId == s.SocietyId)
+                    if (m.SocietyId == s.SocietyId && m.status != "pending")
                     {
-
-                        s.Members.Add(m);
                         // Enable Member Request Btn only 
                         // If the Student is Head of a Society
                         if (m.IsHead)
                         {
                             MemberReqBtn.Visible = true;
                         }
+                    }
+                }
+            }
+        }
+
+        private void initializeStudent(string user_id)
+        {
+            // Initialize Student 
+            student = new Model.Student(user_id);
+            // Add student to its relevant Societies
+            foreach (var m in student.Members)
+            {
+                foreach (var s in societies)
+                {
+                    if(m.SocietyId == s.SocietyId && m.status != "pending")
+                    {
+                        s.Members.Add(m);
                     }
                 }
             }
@@ -102,10 +130,11 @@ namespace CampusNex
             foreach (var society in allSocieties)
             {
                 Model.Society newSociety = new Model.Society();
-
                 newSociety.initialize(society);
-
-                societies.Add(newSociety);
+                if (newSociety.status != "pending")
+                {
+                    societies.Add(newSociety);
+                }   
             }
         }
 
@@ -115,7 +144,7 @@ namespace CampusNex
         }
 
 
-        private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
+        private void Add_Society(FlowLayoutPanel p, string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
         {
             societyCard newCard = new societyCard()
             {
@@ -151,27 +180,45 @@ namespace CampusNex
                 descViewSociety.Text = societyDesc;
             };
 
-            societyCardsPanel.Controls.Add(newCard);
+            p.Controls.Add(newCard);
 
 
         }    
 
         public void showSocieties(string searchTxt = null)
         {
-            // Add society cards from the society list
-            foreach (var society in societies)
+            // Clear Panels
+            societyCardsPanel.Controls.Clear();
+            regSocPanel.Controls.Clear();
+
+            // Extract registered Society Id's
+            List<int> Ids = new List<int>();
+            foreach (var m in student.Members)
             {
-                System.Drawing.Image societyImg = utilObj.getImage(society.Logo);     
-
-                // get mentor and head names
-                string mentorName = utilObj.getMentorName(society.MentorId.ToString());
-
-                string headName = utilObj.getHeadName(society.HeadId.ToString());
-
-                string acronym = utilObj.getAcronym(society.Name);
-
-                Add_Society(society.Name, society.Slogan, acronym, headName, mentorName, societyImg, society.Description, society.SocietyId);    //society id added as another parameter
+                if(m.status != "pending")
+                {
+                    Ids.Add(m.SocietyId);
+                }  
             }
+
+            foreach (var s in societies)
+            {
+                System.Drawing.Image societyImg = utilObj.getImage(s.Logo);
+
+                // Check if society is registered
+                if (Ids.Contains(s.SocietyId))
+                {
+                    // Populate panel for registered societies
+                    Add_Society(regSocPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
+                }
+                else
+                {
+                    // Populate panel for all societies
+                    Add_Society(societyCardsPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
+                }
+            }
+
+
         }
 
         private void rSocietyForm_Click(object sender, EventArgs e)
@@ -241,7 +288,7 @@ namespace CampusNex
             formInput.Add(imageBytes);
             formInput.Add(student.StudentId);
 
-            
+            // Insertion in Societies and Members table
             dbConnector.executeInsert(formInput, "Societies");
 
             // Show registration request sent popup
@@ -258,17 +305,6 @@ namespace CampusNex
             StudentPages.SetPage("Societies");
         }
 
-        public void setUsernameAndPic()
-        {
-            this.userName.Text = student.GetUsername();
-            this.userPic.Image = student.GetUserImage();
-        }
-
-        private void Student_Load(object sender, EventArgs e)
-        {
-            setUsernameAndPic();
-            showSocieties();
-        }
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             // Remove the existing societies

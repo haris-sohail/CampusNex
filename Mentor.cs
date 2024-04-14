@@ -47,12 +47,16 @@ namespace CampusNex
             // Get members of each society
             List<Member> members = new List<Member>();
             int count = utilObj.getCount("Members");
+            Console.WriteLine("No Of Members: ", count.ToString());
             for (int i = 0; i < count; i++)
             {
-                Model.Member m= new Model.Member(i+1,0);
+                // Print out each Member
+                Model.Member m= new Model.Member(i+1);
                 members.Add(m);
+                Console.WriteLine(m);
             }
-
+            
+           // Adding members to respective societies
             foreach (var s in societies)
             {
                 foreach(var m in members)
@@ -194,11 +198,14 @@ namespace CampusNex
                             // Get society and Head name
                             string societyName = s.Name;
                             string sHeadName = "";
+                            int memId = -1;
                             foreach (var m in s.Members)
                             {
                                 if (m.IsHead)
                                 {
                                     sHeadName = utilObj.getHeadName(m.StudentId.ToString());
+                                    memId = m.MemberId;
+                                    Console.WriteLine("MemID: ", memId.ToString());
                                 }
                             }
                             byte[] slogo = s.Logo;
@@ -212,7 +219,8 @@ namespace CampusNex
                                 societyName,
                                 sHeadName,
                                 "View",
-                                "Accept"
+                                "Accept",
+                                memId.ToString()
                             });
                     }
 
@@ -264,8 +272,21 @@ namespace CampusNex
                     string[] wcolumns = { "society_name" };
                     object[] values = { "accepted", cellValue  };
      
-                    // Call the UpdateData method
+                    //  Update Societies Table
                     bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns,values);
+
+                    // Update Member i.e. Head Status
+                    DB_Connector.connection.Close();
+                    // Extract Member Id
+                    cellValue = clickedRow.Cells[5].Value.ToString();
+                    Console.WriteLine("Val: ", cellValue);
+                    tableName = "Members";
+                    string[] wcol = { "member_id"};
+                    object[] vals = { "accepted", int.Parse(cellValue)};
+
+                    // Update Members Table
+                    success = DB_Connector.UpdateData(tableName, scolumns, wcol, vals);
+
                     loadReqData();
                     showSocieties();
                 }

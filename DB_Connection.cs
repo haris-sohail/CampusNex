@@ -203,13 +203,15 @@ namespace CampusNex
                 {
                     Console.WriteLine(e);
                 }
-
+                CloseConnection();
             }
             return false;
             
         }
 
-        public void executeInsert(List<object> toInsert, string tableName) {
+        public void executeInsert(List<object> toInsert, string tableName) 
+        {
+            // Insert in Societies Table
             if (OpenConnection())
             {
                 string mentorName = toInsert[3].ToString();
@@ -230,7 +232,23 @@ namespace CampusNex
                 cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = toInsert[4];
 
                 cmd.ExecuteNonQuery();
+                CloseConnection();
+               
             }
+            string query1 = "INSERT INTO Members (student_id, society_id, join_date, is_head, " +
+                   "interest,status) VALUES (" + int.Parse(toInsert[5].ToString())
+               + "," + getSocietyId(toInsert[0].ToString()) + "," +
+               "@date, 1, '' ,'pending')";
+            // Insert in Members Table
+            if (OpenConnection())
+            {
+              
+                MySqlCommand cmd = new MySqlCommand(query1, connection);
+                cmd.Parameters.Add("@date", MySqlDbType.Date).Value = DateTime.Today;
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+            }
+
         }
 
      
@@ -251,7 +269,7 @@ namespace CampusNex
                 cmd.Parameters.Add("@interest", MySqlDbType.String).Value = toInsert[4];
 
                 cmd.ExecuteNonQuery();
-
+                CloseConnection() ;  
             }
         }
 

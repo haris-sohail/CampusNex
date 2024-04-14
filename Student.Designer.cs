@@ -95,6 +95,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StudentPages = new Bunifu.UI.WinForms.BunifuPages();
             this.SocietiesPage = new System.Windows.Forms.TabPage();
+            this.regSocPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.regSocLbl = new System.Windows.Forms.Label();
+            this.allSocLbl = new System.Windows.Forms.Label();
             this.rSocietyForm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.societyCardsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.userName = new Bunifu.UI.WinForms.BunifuLabel();
@@ -188,9 +191,6 @@
             this.titleLbl = new System.Windows.Forms.Label();
             this.regEvent = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.allSocLbl = new System.Windows.Forms.Label();
-            this.regSocLbl = new System.Windows.Forms.Label();
-            this.regSocPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -678,6 +678,39 @@
             this.SocietiesPage.TabIndex = 0;
             this.SocietiesPage.Text = "Societies";
             // 
+            // regSocPanel
+            // 
+            this.regSocPanel.AutoScroll = true;
+            this.regSocPanel.BackColor = System.Drawing.Color.Transparent;
+            this.regSocPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.regSocPanel.Location = new System.Drawing.Point(14, 439);
+            this.regSocPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.regSocPanel.Name = "regSocPanel";
+            this.regSocPanel.Size = new System.Drawing.Size(592, 290);
+            this.regSocPanel.TabIndex = 8;
+            // 
+            // regSocLbl
+            // 
+            this.regSocLbl.AutoSize = true;
+            this.regSocLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regSocLbl.ForeColor = System.Drawing.Color.White;
+            this.regSocLbl.Location = new System.Drawing.Point(16, 414);
+            this.regSocLbl.Name = "regSocLbl";
+            this.regSocLbl.Size = new System.Drawing.Size(202, 24);
+            this.regSocLbl.TabIndex = 7;
+            this.regSocLbl.Text = "Registered Societies";
+            // 
+            // allSocLbl
+            // 
+            this.allSocLbl.AutoSize = true;
+            this.allSocLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allSocLbl.ForeColor = System.Drawing.Color.White;
+            this.allSocLbl.Location = new System.Drawing.Point(20, 103);
+            this.allSocLbl.Name = "allSocLbl";
+            this.allSocLbl.Size = new System.Drawing.Size(125, 24);
+            this.allSocLbl.TabIndex = 6;
+            this.allSocLbl.Text = "All Societies";
+            // 
             // rSocietyForm
             // 
             this.rSocietyForm.AllowAnimations = true;
@@ -727,7 +760,7 @@
             this.rSocietyForm.IdleIconLeftImage = null;
             this.rSocietyForm.IdleIconRightImage = null;
             this.rSocietyForm.IndicateFocus = true;
-            this.rSocietyForm.Location = new System.Drawing.Point(549, 645);
+            this.rSocietyForm.Location = new System.Drawing.Point(621, 645);
             this.rSocietyForm.Margin = new System.Windows.Forms.Padding(5);
             this.rSocietyForm.Name = "rSocietyForm";
             this.rSocietyForm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -3396,39 +3429,6 @@
             this.label12.Size = new System.Drawing.Size(148, 24);
             this.label12.TabIndex = 6;
             this.label12.Text = "Select Society:";
-            // 
-            // allSocLbl
-            // 
-            this.allSocLbl.AutoSize = true;
-            this.allSocLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allSocLbl.ForeColor = System.Drawing.Color.White;
-            this.allSocLbl.Location = new System.Drawing.Point(20, 103);
-            this.allSocLbl.Name = "allSocLbl";
-            this.allSocLbl.Size = new System.Drawing.Size(125, 24);
-            this.allSocLbl.TabIndex = 6;
-            this.allSocLbl.Text = "All Societies";
-            // 
-            // regSocLbl
-            // 
-            this.regSocLbl.AutoSize = true;
-            this.regSocLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regSocLbl.ForeColor = System.Drawing.Color.White;
-            this.regSocLbl.Location = new System.Drawing.Point(16, 414);
-            this.regSocLbl.Name = "regSocLbl";
-            this.regSocLbl.Size = new System.Drawing.Size(202, 24);
-            this.regSocLbl.TabIndex = 7;
-            this.regSocLbl.Text = "Registered Societies";
-            // 
-            // regSocPanel
-            // 
-            this.regSocPanel.AutoScroll = true;
-            this.regSocPanel.BackColor = System.Drawing.Color.Transparent;
-            this.regSocPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.regSocPanel.Location = new System.Drawing.Point(14, 439);
-            this.regSocPanel.Margin = new System.Windows.Forms.Padding(10);
-            this.regSocPanel.Name = "regSocPanel";
-            this.regSocPanel.Size = new System.Drawing.Size(510, 290);
-            this.regSocPanel.TabIndex = 8;
             // 
             // Student
             // 

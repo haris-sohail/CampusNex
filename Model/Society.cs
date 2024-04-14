@@ -26,6 +26,11 @@ namespace CampusNex.Model
         public List<Event> Events { get; set; } = new List<Event>();
         public List<Announcement> Announcements { get; set; } = new List<Announcement>();
 
+        // Helping Properties
+        public string headName { get; set; }
+        public string mentorName { get; set; }
+        public string acronym { get; set; }
+
         // Constructor
         public Society()
         {
@@ -54,6 +59,21 @@ namespace CampusNex.Model
             this.CreationDate = DateTime.Parse(society[6].ToString());
             this.Logo = (byte[])society[7];
             this.status = society[8].ToString();
+
+            // Initialize Head and Mentor Info
+            this.mentorName = utilObj.getMentorName(this.MentorId.ToString());
+            this.headName = utilObj.getHeadName(this.HeadId.ToString());
+            this.acronym = utilObj.getAcronym(this.Name);
+
+
+        }
+
+        // Overload ToString Operator for debugging
+        public override string ToString()
+        {
+            // Customize the string representation of the object
+            return $"\nSociety:{this.Name}\n SocietyId: {this.SocietyId}\nHeadname: {this.headName}\n"
+                + $"Mentor Name: {this.mentorName}\nSlogan: {this.Slogan}\nStatus: {this.status}\n";
         }
 
     }

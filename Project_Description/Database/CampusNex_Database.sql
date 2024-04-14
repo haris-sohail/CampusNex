@@ -192,11 +192,12 @@ LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
 WHERE U.role = 'mentor'
 GROUP BY M.mentor_id
 HAVING COUNT(S.society_id) < 2;
-
+select * from Societies;
+select * from Members;
 select society_name, u.username from societies s join students st on s.head_id = st.student_id
 join users u on st.user_id = u.user_id where s.status = 'pending' and mentor_id = 1;
 
-select * from events;
+select * from members;
 
 SELECT U.user_pic AS user_img, U.username AS user_name, S.society_name
 FROM Members M
