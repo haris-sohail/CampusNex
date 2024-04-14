@@ -54,25 +54,25 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -85,7 +85,8 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties34 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties35 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties36 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MemberReqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.Announcements = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -191,6 +192,9 @@
             this.titleLbl = new System.Windows.Forms.Label();
             this.regEvent = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.socMentorLbl = new System.Windows.Forms.Label();
+            this.mentorViewSociety = new System.Windows.Forms.Label();
+            this.backSocBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -635,10 +639,10 @@
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.SocietiesPage;
-            this.StudentPages.PageIndex = 0;
-            this.StudentPages.PageName = "SocietiesPage";
-            this.StudentPages.PageTitle = "Societies";
+            this.StudentPages.Page = this.viewSociety;
+            this.StudentPages.PageIndex = 3;
+            this.StudentPages.PageName = "viewSociety";
+            this.StudentPages.PageTitle = "view Society";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1079, 729);
             this.StudentPages.TabIndex = 1;
@@ -1649,6 +1653,9 @@
             // viewSociety
             // 
             this.viewSociety.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.viewSociety.Controls.Add(this.backSocBtn);
+            this.viewSociety.Controls.Add(this.mentorViewSociety);
+            this.viewSociety.Controls.Add(this.socMentorLbl);
             this.viewSociety.Controls.Add(this.regViewSocietyButton);
             this.viewSociety.Controls.Add(this.accViewSociety);
             this.viewSociety.Controls.Add(this.sloganViewSociety);
@@ -1681,16 +1688,16 @@
             this.regViewSocietyButton.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
             this.regViewSocietyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("regViewSocietyButton.BackgroundImage")));
             this.regViewSocietyButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.regViewSocietyButton.ButtonText = "Register";
+            this.regViewSocietyButton.ButtonText = "TBD";
             this.regViewSocietyButton.ButtonTextMarginLeft = 0;
             this.regViewSocietyButton.ColorContrastOnClick = 45;
             this.regViewSocietyButton.ColorContrastOnHover = 45;
             this.regViewSocietyButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.regViewSocietyButton.CustomizableEdges = borderEdges9;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.regViewSocietyButton.CustomizableEdges = borderEdges10;
             this.regViewSocietyButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.regViewSocietyButton.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.regViewSocietyButton.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1763,85 +1770,90 @@
             // accViewSociety
             // 
             this.accViewSociety.AutoSize = true;
-            this.accViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.accViewSociety.Location = new System.Drawing.Point(100, 152);
+            this.accViewSociety.BackColor = System.Drawing.Color.DodgerBlue;
+            this.accViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accViewSociety.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.accViewSociety.Location = new System.Drawing.Point(90, 198);
             this.accViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.accViewSociety.Name = "accViewSociety";
-            this.accViewSociety.Size = new System.Drawing.Size(94, 31);
+            this.accViewSociety.Size = new System.Drawing.Size(72, 25);
             this.accViewSociety.TabIndex = 7;
-            this.accViewSociety.Text = "<acc>";
+            this.accViewSociety.Text = "FDSS";
             // 
             // sloganViewSociety
             // 
             this.sloganViewSociety.AutoSize = true;
-            this.sloganViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sloganViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.sloganViewSociety.Location = new System.Drawing.Point(86, 219);
+            this.sloganViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sloganViewSociety.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.sloganViewSociety.Location = new System.Drawing.Point(410, 105);
             this.sloganViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sloganViewSociety.MaximumSize = new System.Drawing.Size(187, 50);
+            this.sloganViewSociety.MinimumSize = new System.Drawing.Size(187, 25);
             this.sloganViewSociety.Name = "sloganViewSociety";
-            this.sloganViewSociety.Size = new System.Drawing.Size(134, 31);
+            this.sloganViewSociety.Size = new System.Drawing.Size(187, 25);
             this.sloganViewSociety.TabIndex = 6;
-            this.sloganViewSociety.Text = "<slogan>";
+            this.sloganViewSociety.Text = "Data, Data, Data";
+            this.sloganViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // descViewSociety
             // 
-            this.descViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.descViewSociety.Location = new System.Drawing.Point(78, 396);
+            this.descViewSociety.Location = new System.Drawing.Point(89, 412);
             this.descViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descViewSociety.MaximumSize = new System.Drawing.Size(375, 406);
             this.descViewSociety.Name = "descViewSociety";
             this.descViewSociety.Size = new System.Drawing.Size(375, 203);
             this.descViewSociety.TabIndex = 5;
+            this.descViewSociety.Text = "Hello World ";
             this.descViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // aboutUsLabelViewSociety
             // 
             this.aboutUsLabelViewSociety.AutoSize = true;
-            this.aboutUsLabelViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutUsLabelViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.aboutUsLabelViewSociety.Location = new System.Drawing.Point(77, 342);
+            this.aboutUsLabelViewSociety.BackColor = System.Drawing.Color.DodgerBlue;
+            this.aboutUsLabelViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutUsLabelViewSociety.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.aboutUsLabelViewSociety.Location = new System.Drawing.Point(88, 365);
             this.aboutUsLabelViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.aboutUsLabelViewSociety.Name = "aboutUsLabelViewSociety";
-            this.aboutUsLabelViewSociety.Size = new System.Drawing.Size(143, 31);
+            this.aboutUsLabelViewSociety.Size = new System.Drawing.Size(115, 25);
             this.aboutUsLabelViewSociety.TabIndex = 4;
             this.aboutUsLabelViewSociety.Text = "About Us:";
             // 
             // headViewSociety
             // 
             this.headViewSociety.AutoSize = true;
-            this.headViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.headViewSociety.Location = new System.Drawing.Point(242, 281);
+            this.headViewSociety.Location = new System.Drawing.Point(282, 243);
             this.headViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.headViewSociety.Name = "headViewSociety";
-            this.headViewSociety.Size = new System.Drawing.Size(191, 31);
+            this.headViewSociety.Size = new System.Drawing.Size(144, 24);
             this.headViewSociety.TabIndex = 3;
-            this.headViewSociety.Text = "<head name>";
+            this.headViewSociety.Text = "Kalsoom Tariq";
             // 
             // headLabelViewSociety
             // 
             this.headLabelViewSociety.AutoSize = true;
-            this.headLabelViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headLabelViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.headLabelViewSociety.Location = new System.Drawing.Point(77, 281);
+            this.headLabelViewSociety.BackColor = System.Drawing.Color.DodgerBlue;
+            this.headLabelViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headLabelViewSociety.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.headLabelViewSociety.Location = new System.Drawing.Point(89, 243);
             this.headLabelViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.headLabelViewSociety.Name = "headLabelViewSociety";
-            this.headLabelViewSociety.Size = new System.Drawing.Size(148, 31);
+            this.headLabelViewSociety.Size = new System.Drawing.Size(159, 25);
             this.headLabelViewSociety.TabIndex = 2;
-            this.headLabelViewSociety.Text = "Our Head:";
+            this.headLabelViewSociety.Text = "Society Head:";
             // 
             // logoViewSociety
             // 
             this.logoViewSociety.AllowFocused = false;
             this.logoViewSociety.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoViewSociety.AutoSizeHeight = true;
-            this.logoViewSociety.BorderRadius = 100;
+            this.logoViewSociety.BorderRadius = 0;
             this.logoViewSociety.Image = ((System.Drawing.Image)(resources.GetObject("logoViewSociety.Image")));
-            this.logoViewSociety.IsCircle = true;
+            this.logoViewSociety.IsCircle = false;
             this.logoViewSociety.Location = new System.Drawing.Point(740, 139);
             this.logoViewSociety.Margin = new System.Windows.Forms.Padding(2);
             this.logoViewSociety.Name = "logoViewSociety";
@@ -1849,19 +1861,22 @@
             this.logoViewSociety.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoViewSociety.TabIndex = 1;
             this.logoViewSociety.TabStop = false;
-            this.logoViewSociety.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.logoViewSociety.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
             // titleViewSociety
             // 
             this.titleViewSociety.AutoSize = true;
-            this.titleViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleViewSociety.ForeColor = System.Drawing.SystemColors.Control;
-            this.titleViewSociety.Location = new System.Drawing.Point(394, 43);
+            this.titleViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleViewSociety.ForeColor = System.Drawing.Color.White;
+            this.titleViewSociety.Location = new System.Drawing.Point(312, 43);
             this.titleViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleViewSociety.MaximumSize = new System.Drawing.Size(382, 60);
+            this.titleViewSociety.MinimumSize = new System.Drawing.Size(382, 33);
             this.titleViewSociety.Name = "titleViewSociety";
-            this.titleViewSociety.Size = new System.Drawing.Size(261, 39);
+            this.titleViewSociety.Size = new System.Drawing.Size(382, 33);
             this.titleViewSociety.TabIndex = 0;
-            this.titleViewSociety.Text = "Title of Society";
+            this.titleViewSociety.Text = "Fast Data Science Society";
+            this.titleViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // studentReg
             // 
@@ -2050,11 +2065,11 @@
             this.buttonRegStudent.ColorContrastOnClick = 45;
             this.buttonRegStudent.ColorContrastOnHover = 45;
             this.buttonRegStudent.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.buttonRegStudent.CustomizableEdges = borderEdges10;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.buttonRegStudent.CustomizableEdges = borderEdges11;
             this.buttonRegStudent.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonRegStudent.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonRegStudent.DisabledFillColor = System.Drawing.Color.Empty;
@@ -2594,11 +2609,11 @@
             this.backBtn.ColorContrastOnClick = 30;
             this.backBtn.ColorContrastOnHover = 30;
             this.backBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.backBtn.CustomizableEdges = borderEdges11;
+            borderEdges12.BottomLeft = true;
+            borderEdges12.BottomRight = true;
+            borderEdges12.TopLeft = true;
+            borderEdges12.TopRight = true;
+            this.backBtn.CustomizableEdges = borderEdges12;
             this.backBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
             this.backBtn.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -2835,11 +2850,11 @@
             this.bckBtn.ColorContrastOnClick = 30;
             this.bckBtn.ColorContrastOnHover = 30;
             this.bckBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges12.BottomLeft = true;
-            borderEdges12.BottomRight = true;
-            borderEdges12.TopLeft = true;
-            borderEdges12.TopRight = true;
-            this.bckBtn.CustomizableEdges = borderEdges12;
+            borderEdges13.BottomLeft = true;
+            borderEdges13.BottomRight = true;
+            borderEdges13.TopLeft = true;
+            borderEdges13.TopRight = true;
+            this.bckBtn.CustomizableEdges = borderEdges13;
             this.bckBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bckBtn.Image = ((System.Drawing.Image)(resources.GetObject("bckBtn.Image")));
             this.bckBtn.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -2908,11 +2923,11 @@
             this.uplBtn.ColorContrastOnClick = 45;
             this.uplBtn.ColorContrastOnHover = 45;
             this.uplBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges13.BottomLeft = true;
-            borderEdges13.BottomRight = true;
-            borderEdges13.TopLeft = true;
-            borderEdges13.TopRight = true;
-            this.uplBtn.CustomizableEdges = borderEdges13;
+            borderEdges14.BottomLeft = true;
+            borderEdges14.BottomRight = true;
+            borderEdges14.TopLeft = true;
+            borderEdges14.TopRight = true;
+            this.uplBtn.CustomizableEdges = borderEdges14;
             this.uplBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.uplBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.uplBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -3290,11 +3305,11 @@
             this.regEventBtn.ColorContrastOnClick = 45;
             this.regEventBtn.ColorContrastOnHover = 45;
             this.regEventBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges14.BottomLeft = true;
-            borderEdges14.BottomRight = true;
-            borderEdges14.TopLeft = true;
-            borderEdges14.TopRight = true;
-            this.regEventBtn.CustomizableEdges = borderEdges14;
+            borderEdges15.BottomLeft = true;
+            borderEdges15.BottomRight = true;
+            borderEdges15.TopLeft = true;
+            borderEdges15.TopRight = true;
+            this.regEventBtn.CustomizableEdges = borderEdges15;
             this.regEventBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.regEventBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.regEventBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -3429,6 +3444,63 @@
             this.label12.Size = new System.Drawing.Size(148, 24);
             this.label12.TabIndex = 6;
             this.label12.Text = "Select Society:";
+            // 
+            // socMentorLbl
+            // 
+            this.socMentorLbl.AutoSize = true;
+            this.socMentorLbl.BackColor = System.Drawing.Color.DodgerBlue;
+            this.socMentorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socMentorLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.socMentorLbl.Location = new System.Drawing.Point(87, 289);
+            this.socMentorLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.socMentorLbl.Name = "socMentorLbl";
+            this.socMentorLbl.Size = new System.Drawing.Size(177, 25);
+            this.socMentorLbl.TabIndex = 14;
+            this.socMentorLbl.Text = "Society Mentor:";
+            // 
+            // mentorViewSociety
+            // 
+            this.mentorViewSociety.AutoSize = true;
+            this.mentorViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mentorViewSociety.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mentorViewSociety.Location = new System.Drawing.Point(282, 289);
+            this.mentorViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.mentorViewSociety.Name = "mentorViewSociety";
+            this.mentorViewSociety.Size = new System.Drawing.Size(134, 24);
+            this.mentorViewSociety.TabIndex = 15;
+            this.mentorViewSociety.Text = "Aiman Safdar";
+            // 
+            // backSocBtn
+            // 
+            this.backSocBtn.AllowAnimations = true;
+            this.backSocBtn.AllowBorderColorChanges = true;
+            this.backSocBtn.AllowMouseEffects = true;
+            this.backSocBtn.AnimationSpeed = 200;
+            this.backSocBtn.BackColor = System.Drawing.Color.Transparent;
+            this.backSocBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.backSocBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.backSocBtn.BorderRadius = 1;
+            this.backSocBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.backSocBtn.BorderThickness = 1;
+            this.backSocBtn.ColorContrastOnClick = 30;
+            this.backSocBtn.ColorContrastOnHover = 30;
+            this.backSocBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.backSocBtn.CustomizableEdges = borderEdges9;
+            this.backSocBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.backSocBtn.Image = ((System.Drawing.Image)(resources.GetObject("backSocBtn.Image")));
+            this.backSocBtn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.backSocBtn.Location = new System.Drawing.Point(53, 43);
+            this.backSocBtn.Name = "backSocBtn";
+            this.backSocBtn.RoundBorders = true;
+            this.backSocBtn.ShowBorders = true;
+            this.backSocBtn.Size = new System.Drawing.Size(59, 59);
+            this.backSocBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.backSocBtn.TabIndex = 17;
+            this.backSocBtn.Click += new System.EventHandler(this.societiesBtn_Click);
             // 
             // Student
             // 
@@ -3579,5 +3651,8 @@
         private System.Windows.Forms.Label allSocLbl;
         private System.Windows.Forms.FlowLayoutPanel regSocPanel;
         private System.Windows.Forms.Label regSocLbl;
+        private System.Windows.Forms.Label mentorViewSociety;
+        private System.Windows.Forms.Label socMentorLbl;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton backSocBtn;
     }
 }
