@@ -28,8 +28,9 @@ namespace CampusNex
         List<Model.Event> events = new List<Model.Event>();
         Model.Util utilObj = new Model.Util();
 
-
-
+        // Event Handler for togling
+        // Registration and Announcements
+        private EventHandler currentHandler;
         public Student(string user_id)
         {
             
@@ -140,12 +141,12 @@ namespace CampusNex
 
         private void societiesBtn_Click(object sender, EventArgs e)
         {
-            StudentPages.SetPage(((Control)sender).Text);
+            // Navigate back to the Societies page
+            StudentPages.SetPage("Societies");
         }
-
-
         private void Add_Society(FlowLayoutPanel p, string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
         {
+            
             societyCard newCard = new societyCard()
             {
                 sName = Name,
@@ -168,6 +169,7 @@ namespace CampusNex
                 string societySlogan = clickedCard.sSlogan;
                 string societyAcronym = clickedCard.sAcronym;
                 string societyHead = clickedCard.sHead;
+                string societyMentor = clickedCard.sMentor;
 
                 System.Drawing.Image societyLogo = clickedCard.sImage;
                 string societyDesc = description;
@@ -178,18 +180,53 @@ namespace CampusNex
                 headViewSociety.Text = societyHead;
                 logoViewSociety.Image = societyLogo;
                 descViewSociety.Text = societyDesc;
+                mentorViewSociety.Text = societyMentor;
+
+                // Change Button Label 
+                // and Button OnClick Attribute
+                if(p.Name == "societyCardsPanel")
+                {
+                    customSocietyBtn.Text = "Register";
+                    customSocietyBtn.Click -= currentHandler;
+                    currentHandler = regForSociety_Click;
+                    customSocietyBtn.Click += currentHandler;
+                }
+                else
+                {
+                    customSocietyBtn.Text = "Announcements";
+                    customSocietyBtn.Click -= currentHandler;
+                    currentHandler = societyAnnouncement_Click;
+                    customSocietyBtn.Click += currentHandler;
+                }
             };
 
             p.Controls.Add(newCard);
 
 
-        }    
+        }
+        private void regForSociety_Click(object sender, EventArgs e)
+        {
+
+            string societyName = titleViewSociety.Text;
+            System.Drawing.Image societyLogo = logoViewSociety.Image;
+
+            // this function will help us switch to tab for student registartion and pass soceity name and logo as well
+            StudentRegistrationTab(societyName, societyLogo);
+            StudentPages.SelectedIndex = 4;
+        }
+
+        // @Haris Announcement Page Entry Point
+        private void societyAnnouncement_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Announcements");
+        }
 
         public void showSocieties(string searchTxt = null)
         {
             // Clear Panels
             societyCardsPanel.Controls.Clear();
             regSocPanel.Controls.Clear();
+            currentHandler = regForSociety_Click;
 
             // Extract registered Society Id's
             List<int> Ids = new List<int>();
@@ -335,7 +372,7 @@ namespace CampusNex
 
             MessageBox.Show("Member Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             StudentPages.SelectedIndex = 0;   //will take user bcak to socities display page after user has pressed confirm button
-            regViewSocietyButton.IndicateFocus = false;
+            customSocietyBtn.IndicateFocus = false;
         }
 
         private void StudentRegistrationTab(string societyName, System.Drawing.Image societyLogo)
@@ -347,16 +384,7 @@ namespace CampusNex
             nameRegField.Text = student.Username;
         }
 
-        private void regViewSocietyButton_Click(object sender, EventArgs e)    //on student page, tab 'view society'
-        {
-
-            string societyName = titleViewSociety.Text;
-            System.Drawing.Image societyLogo = logoViewSociety.Image;
-
-            // this function will help us switch to tab for student registartion and pass soceity name and logo as well
-            StudentRegistrationTab(societyName, societyLogo);
-            StudentPages.SelectedIndex = 4;
-        }
+      
 
         private void eventsBtn_Click(object sender, EventArgs e)
         {

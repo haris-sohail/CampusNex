@@ -173,7 +173,7 @@
             this.viewBtn.IdleIconLeftImage = null;
             this.viewBtn.IdleIconRightImage = null;
             this.viewBtn.IndicateFocus = true;
-            this.viewBtn.Location = new System.Drawing.Point(63, 188);
+            this.viewBtn.Location = new System.Drawing.Point(63, 184);
             this.viewBtn.Margin = new System.Windows.Forms.Padding(5);
             this.viewBtn.Name = "viewBtn";
             this.viewBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -225,7 +225,7 @@
             this.societyLogo.BorderRadius = 0;
             this.societyLogo.Image = ((System.Drawing.Image)(resources.GetObject("societyLogo.Image")));
             this.societyLogo.IsCircle = true;
-            this.societyLogo.Location = new System.Drawing.Point(8, 17);
+            this.societyLogo.Location = new System.Drawing.Point(8, 12);
             this.societyLogo.Name = "societyLogo";
             this.societyLogo.Size = new System.Drawing.Size(89, 89);
             this.societyLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -253,7 +253,7 @@
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Margin = new System.Windows.Forms.Padding(20);
             this.Name = "societyCard";
-            this.Size = new System.Drawing.Size(235, 250);
+            this.Size = new System.Drawing.Size(235, 240);
             ((System.ComponentModel.ISupportInitialize)(this.societyLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
