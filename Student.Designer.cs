@@ -135,8 +135,8 @@
             this.aboutUsLabelViewSociety = new System.Windows.Forms.Label();
             this.headViewSociety = new System.Windows.Forms.Label();
             this.headLabelViewSociety = new System.Windows.Forms.Label();
-            this.logoViewSociety = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.titleViewSociety = new System.Windows.Forms.Label();
+            this.logoViewSociety = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.studentReg = new System.Windows.Forms.TabPage();
             this.societyStudentRegTextBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.datePickerRegStudent = new Bunifu.UI.WinForms.BunifuDatePicker();
@@ -168,20 +168,20 @@
             this.dateLbl = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
             this.locLbl = new System.Windows.Forms.Label();
-            this.backBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
-            this.eveImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.eveTitle = new System.Windows.Forms.Label();
             this.presentLbl = new System.Windows.Forms.Label();
             this.eveDesc = new System.Windows.Forms.Label();
             this.desclbl = new System.Windows.Forms.Label();
-            this.socImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.socTitle = new System.Windows.Forms.Label();
+            this.backBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.eveImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.socImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.organizeEvent = new System.Windows.Forms.TabPage();
             this.eType = new Bunifu.UI.WinForms.BunifuTextBox();
             this.eTypeLbl = new System.Windows.Forms.Label();
+            this.dteLbl = new System.Windows.Forms.Label();
             this.bckBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.eDt = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.dteLbl = new System.Windows.Forms.Label();
             this.uplBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.eimgHolder = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.chooseSocDD = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -196,7 +196,9 @@
             this.regEvent = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.socAnnouncmentPage = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.annLbl = new System.Windows.Forms.Label();
+            this.announcementCard3 = new CampusNex.AnnouncementCard();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -217,6 +219,7 @@
             this.organizeEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eimgHolder)).BeginInit();
             this.socAnnouncmentPage.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -1667,8 +1670,8 @@
             this.viewSociety.Controls.Add(this.aboutUsLabelViewSociety);
             this.viewSociety.Controls.Add(this.headViewSociety);
             this.viewSociety.Controls.Add(this.headLabelViewSociety);
-            this.viewSociety.Controls.Add(this.logoViewSociety);
             this.viewSociety.Controls.Add(this.titleViewSociety);
+            this.viewSociety.Controls.Add(this.logoViewSociety);
             this.viewSociety.Location = new System.Drawing.Point(4, 4);
             this.viewSociety.Margin = new System.Windows.Forms.Padding(2);
             this.viewSociety.Name = "viewSociety";
@@ -1906,6 +1909,21 @@
             this.headLabelViewSociety.TabIndex = 2;
             this.headLabelViewSociety.Text = "Society Head:";
             // 
+            // titleViewSociety
+            // 
+            this.titleViewSociety.AutoSize = true;
+            this.titleViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleViewSociety.ForeColor = System.Drawing.Color.White;
+            this.titleViewSociety.Location = new System.Drawing.Point(312, 43);
+            this.titleViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleViewSociety.MaximumSize = new System.Drawing.Size(382, 60);
+            this.titleViewSociety.MinimumSize = new System.Drawing.Size(382, 33);
+            this.titleViewSociety.Name = "titleViewSociety";
+            this.titleViewSociety.Size = new System.Drawing.Size(382, 33);
+            this.titleViewSociety.TabIndex = 0;
+            this.titleViewSociety.Text = "Fast Data Science Society";
+            this.titleViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // logoViewSociety
             // 
             this.logoViewSociety.AllowFocused = false;
@@ -1922,21 +1940,6 @@
             this.logoViewSociety.TabIndex = 1;
             this.logoViewSociety.TabStop = false;
             this.logoViewSociety.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
-            // 
-            // titleViewSociety
-            // 
-            this.titleViewSociety.AutoSize = true;
-            this.titleViewSociety.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleViewSociety.ForeColor = System.Drawing.Color.White;
-            this.titleViewSociety.Location = new System.Drawing.Point(312, 43);
-            this.titleViewSociety.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.titleViewSociety.MaximumSize = new System.Drawing.Size(382, 60);
-            this.titleViewSociety.MinimumSize = new System.Drawing.Size(382, 33);
-            this.titleViewSociety.Name = "titleViewSociety";
-            this.titleViewSociety.Size = new System.Drawing.Size(382, 33);
-            this.titleViewSociety.TabIndex = 0;
-            this.titleViewSociety.Text = "Fast Data Science Society";
-            this.titleViewSociety.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // studentReg
             // 
@@ -2566,14 +2569,14 @@
             this.viewEvent.Controls.Add(this.dateLbl);
             this.viewEvent.Controls.Add(this.timeLbl);
             this.viewEvent.Controls.Add(this.locLbl);
-            this.viewEvent.Controls.Add(this.backBtn);
-            this.viewEvent.Controls.Add(this.eveImg);
             this.viewEvent.Controls.Add(this.eveTitle);
             this.viewEvent.Controls.Add(this.presentLbl);
             this.viewEvent.Controls.Add(this.eveDesc);
             this.viewEvent.Controls.Add(this.desclbl);
-            this.viewEvent.Controls.Add(this.socImg);
             this.viewEvent.Controls.Add(this.socTitle);
+            this.viewEvent.Controls.Add(this.backBtn);
+            this.viewEvent.Controls.Add(this.eveImg);
+            this.viewEvent.Controls.Add(this.socImg);
             this.viewEvent.Location = new System.Drawing.Point(4, 4);
             this.viewEvent.Margin = new System.Windows.Forms.Padding(2);
             this.viewEvent.Name = "viewEvent";
@@ -2654,6 +2657,66 @@
             this.locLbl.TabIndex = 17;
             this.locLbl.Text = "Location";
             // 
+            // eveTitle
+            // 
+            this.eveTitle.AutoSize = true;
+            this.eveTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.eveTitle.Location = new System.Drawing.Point(664, 319);
+            this.eveTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveTitle.Name = "eveTitle";
+            this.eveTitle.Size = new System.Drawing.Size(213, 32);
+            this.eveTitle.TabIndex = 14;
+            this.eveTitle.Text = "Title of Event";
+            // 
+            // presentLbl
+            // 
+            this.presentLbl.AutoSize = true;
+            this.presentLbl.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.presentLbl.Location = new System.Drawing.Point(430, 197);
+            this.presentLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.presentLbl.Name = "presentLbl";
+            this.presentLbl.Size = new System.Drawing.Size(114, 25);
+            this.presentLbl.TabIndex = 6;
+            this.presentLbl.Text = "presents";
+            // 
+            // eveDesc
+            // 
+            this.eveDesc.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eveDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eveDesc.Location = new System.Drawing.Point(105, 472);
+            this.eveDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.eveDesc.MaximumSize = new System.Drawing.Size(375, 406);
+            this.eveDesc.Name = "eveDesc";
+            this.eveDesc.Size = new System.Drawing.Size(375, 203);
+            this.eveDesc.TabIndex = 5;
+            this.eveDesc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // desclbl
+            // 
+            this.desclbl.AutoSize = true;
+            this.desclbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desclbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.desclbl.Location = new System.Drawing.Point(107, 434);
+            this.desclbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.desclbl.Name = "desclbl";
+            this.desclbl.Size = new System.Drawing.Size(128, 23);
+            this.desclbl.TabIndex = 4;
+            this.desclbl.Text = "Description:";
+            // 
+            // socTitle
+            // 
+            this.socTitle.AutoSize = true;
+            this.socTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.socTitle.Location = new System.Drawing.Point(104, 319);
+            this.socTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.socTitle.Name = "socTitle";
+            this.socTitle.Size = new System.Drawing.Size(239, 32);
+            this.socTitle.TabIndex = 0;
+            this.socTitle.Text = "Title of Society";
+            // 
             // backBtn
             // 
             this.backBtn.AllowAnimations = true;
@@ -2703,54 +2766,6 @@
             this.eveImg.TabStop = false;
             this.eveImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
-            // eveTitle
-            // 
-            this.eveTitle.AutoSize = true;
-            this.eveTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eveTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.eveTitle.Location = new System.Drawing.Point(664, 319);
-            this.eveTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eveTitle.Name = "eveTitle";
-            this.eveTitle.Size = new System.Drawing.Size(213, 32);
-            this.eveTitle.TabIndex = 14;
-            this.eveTitle.Text = "Title of Event";
-            // 
-            // presentLbl
-            // 
-            this.presentLbl.AutoSize = true;
-            this.presentLbl.Font = new System.Drawing.Font("Verdana", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presentLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.presentLbl.Location = new System.Drawing.Point(430, 197);
-            this.presentLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.presentLbl.Name = "presentLbl";
-            this.presentLbl.Size = new System.Drawing.Size(114, 25);
-            this.presentLbl.TabIndex = 6;
-            this.presentLbl.Text = "presents";
-            // 
-            // eveDesc
-            // 
-            this.eveDesc.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eveDesc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eveDesc.Location = new System.Drawing.Point(105, 472);
-            this.eveDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.eveDesc.MaximumSize = new System.Drawing.Size(375, 406);
-            this.eveDesc.Name = "eveDesc";
-            this.eveDesc.Size = new System.Drawing.Size(375, 203);
-            this.eveDesc.TabIndex = 5;
-            this.eveDesc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // desclbl
-            // 
-            this.desclbl.AutoSize = true;
-            this.desclbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desclbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.desclbl.Location = new System.Drawing.Point(107, 434);
-            this.desclbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.desclbl.Name = "desclbl";
-            this.desclbl.Size = new System.Drawing.Size(128, 23);
-            this.desclbl.TabIndex = 4;
-            this.desclbl.Text = "Description:";
-            // 
             // socImg
             // 
             this.socImg.AllowFocused = false;
@@ -2768,26 +2783,14 @@
             this.socImg.TabStop = false;
             this.socImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
-            // socTitle
-            // 
-            this.socTitle.AutoSize = true;
-            this.socTitle.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.socTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.socTitle.Location = new System.Drawing.Point(104, 319);
-            this.socTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.socTitle.Name = "socTitle";
-            this.socTitle.Size = new System.Drawing.Size(239, 32);
-            this.socTitle.TabIndex = 0;
-            this.socTitle.Text = "Title of Society";
-            // 
             // organizeEvent
             // 
             this.organizeEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.organizeEvent.Controls.Add(this.eType);
             this.organizeEvent.Controls.Add(this.eTypeLbl);
+            this.organizeEvent.Controls.Add(this.dteLbl);
             this.organizeEvent.Controls.Add(this.bckBtn);
             this.organizeEvent.Controls.Add(this.eDt);
-            this.organizeEvent.Controls.Add(this.dteLbl);
             this.organizeEvent.Controls.Add(this.uplBtn);
             this.organizeEvent.Controls.Add(this.eimgHolder);
             this.organizeEvent.Controls.Add(this.chooseSocDD);
@@ -2895,6 +2898,17 @@
             this.eTypeLbl.TabIndex = 24;
             this.eTypeLbl.Text = "Event Type:";
             // 
+            // dteLbl
+            // 
+            this.dteLbl.AutoSize = true;
+            this.dteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dteLbl.ForeColor = System.Drawing.Color.White;
+            this.dteLbl.Location = new System.Drawing.Point(671, 365);
+            this.dteLbl.Name = "dteLbl";
+            this.dteLbl.Size = new System.Drawing.Size(111, 24);
+            this.dteLbl.TabIndex = 19;
+            this.dteLbl.Text = "Date/Time:";
+            // 
             // bckBtn
             // 
             this.bckBtn.AllowAnimations = true;
@@ -2952,17 +2966,6 @@
             this.eDt.Size = new System.Drawing.Size(246, 32);
             this.eDt.TabIndex = 22;
             this.eDt.Value = new System.DateTime(2024, 4, 8, 22, 7, 0, 0);
-            // 
-            // dteLbl
-            // 
-            this.dteLbl.AutoSize = true;
-            this.dteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dteLbl.ForeColor = System.Drawing.Color.White;
-            this.dteLbl.Location = new System.Drawing.Point(671, 365);
-            this.dteLbl.Name = "dteLbl";
-            this.dteLbl.Size = new System.Drawing.Size(111, 24);
-            this.dteLbl.TabIndex = 19;
-            this.dteLbl.Text = "Date/Time:";
             // 
             // uplBtn
             // 
@@ -3508,6 +3511,7 @@
             // socAnnouncmentPage
             // 
             this.socAnnouncmentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.socAnnouncmentPage.Controls.Add(this.flowLayoutPanel1);
             this.socAnnouncmentPage.Controls.Add(this.annLbl);
             this.socAnnouncmentPage.Location = new System.Drawing.Point(4, 4);
             this.socAnnouncmentPage.Margin = new System.Windows.Forms.Padding(2);
@@ -3516,6 +3520,20 @@
             this.socAnnouncmentPage.Size = new System.Drawing.Size(1071, 703);
             this.socAnnouncmentPage.TabIndex = 8;
             this.socAnnouncmentPage.Text = "Announcements";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.announcementCard3);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(31, 102);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1009, 570);
+            this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
             // annLbl
             // 
@@ -3531,6 +3549,37 @@
             this.annLbl.TabIndex = 0;
             this.annLbl.Text = "Announcements Page";
             this.annLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // announcementCard3
+            // 
+            this.announcementCard3.AllowAnimations = false;
+            this.announcementCard3.AllowBorderColorChanges = false;
+            this.announcementCard3.AllowMouseEffects = false;
+            this.announcementCard3.AnimationSpeed = 200;
+            this.announcementCard3.announcement_body = "body\r\nbody\r\nbody\r\nbody";
+            this.announcementCard3.BackColor = System.Drawing.Color.Transparent;
+            this.announcementCard3.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.announcementCard3.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.announcementCard3.BorderRadius = 10;
+            this.announcementCard3.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
+            this.announcementCard3.BorderThickness = 5;
+            this.announcementCard3.ColorContrastOnClick = 30;
+            this.announcementCard3.ColorContrastOnHover = 30;
+            this.announcementCard3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.announcementCard3.expires_at = "12/10/2024 11:00 pm";
+            this.announcementCard3.Image = null;
+            this.announcementCard3.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.announcementCard3.Location = new System.Drawing.Point(80, 3);
+            this.announcementCard3.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
+            this.announcementCard3.Name = "announcementCard3";
+            this.announcementCard3.Padding = new System.Windows.Forms.Padding(10);
+            this.announcementCard3.posted_at = "12/10/2024 10:00 pm";
+            this.announcementCard3.ShowBorders = true;
+            this.announcementCard3.Size = new System.Drawing.Size(813, 222);
+            this.announcementCard3.society_name = "Society Name";
+            this.announcementCard3.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
+            this.announcementCard3.TabIndex = 2;
+            this.announcementCard3.title = "Title";
             // 
             // Student
             // 
@@ -3572,6 +3621,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.eimgHolder)).EndInit();
             this.socAnnouncmentPage.ResumeLayout(false);
             this.socAnnouncmentPage.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3688,5 +3738,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton backSocBtn;
         private System.Windows.Forms.TabPage socAnnouncmentPage;
         private System.Windows.Forms.Label annLbl;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private AnnouncementCard announcementCard3;
     }
 }

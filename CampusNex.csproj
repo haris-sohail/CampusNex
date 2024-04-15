@@ -111,6 +111,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnouncementCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnnouncementCard.Designer.cs">
+      <DependentUpon>AnnouncementCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB_Connection.cs" />
     <Compile Include="eventCard.cs">
       <SubType>UserControl</SubType>
@@ -152,6 +158,9 @@
     <Compile Include="Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnnouncementCard.resx">
+      <DependentUpon>AnnouncementCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="eventCard.resx">
       <DependentUpon>eventCard.cs</DependentUpon>
     </EmbeddedResource>

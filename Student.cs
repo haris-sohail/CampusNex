@@ -39,7 +39,6 @@ namespace CampusNex
             InitializeComponent();
             setControls();
             initializeEvents();
-            
         }
 
         public void setUsernameAndPic()
