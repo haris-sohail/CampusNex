@@ -43,33 +43,35 @@
             // 
             this.announcementTitle.AllowParentOverrides = false;
             this.announcementTitle.AutoEllipsis = false;
+            this.announcementTitle.AutoSize = false;
             this.announcementTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.announcementTitle.CursorType = System.Windows.Forms.Cursors.Default;
             this.announcementTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.announcementTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.announcementTitle.Location = new System.Drawing.Point(396, 13);
+            this.announcementTitle.Location = new System.Drawing.Point(155, 13);
             this.announcementTitle.Name = "announcementTitle";
             this.announcementTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.announcementTitle.Size = new System.Drawing.Size(46, 25);
+            this.announcementTitle.Size = new System.Drawing.Size(592, 25);
             this.announcementTitle.TabIndex = 0;
-            this.announcementTitle.Text = "Title";
-            this.announcementTitle.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.announcementTitle.Text = "FCS Meeting Today";
+            this.announcementTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.announcementTitle.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // announcementBody
             // 
             this.announcementBody.AllowParentOverrides = false;
             this.announcementBody.AutoEllipsis = false;
+            this.announcementBody.AutoSize = false;
             this.announcementBody.Cursor = System.Windows.Forms.Cursors.Default;
             this.announcementBody.CursorType = System.Windows.Forms.Cursors.Default;
-            this.announcementBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.announcementBody.Location = new System.Drawing.Point(22, 70);
+            this.announcementBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.announcementBody.Location = new System.Drawing.Point(17, 78);
             this.announcementBody.Name = "announcementBody";
             this.announcementBody.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.announcementBody.Size = new System.Drawing.Size(34, 80);
+            this.announcementBody.Size = new System.Drawing.Size(773, 80);
             this.announcementBody.TabIndex = 2;
-            this.announcementBody.Text = "body\r\nbody\r\nbody\r\nbody";
-            this.announcementBody.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.announcementBody.Text = resources.GetString("announcementBody.Text");
+            this.announcementBody.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.announcementBody.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuShapes1
@@ -92,45 +94,48 @@
             // 
             this.postedAt.AllowParentOverrides = false;
             this.postedAt.AutoEllipsis = false;
+            this.postedAt.AutoSize = false;
             this.postedAt.CursorType = null;
             this.postedAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.postedAt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.postedAt.Location = new System.Drawing.Point(66, 191);
+            this.postedAt.Location = new System.Drawing.Point(76, 191);
             this.postedAt.Name = "postedAt";
             this.postedAt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.postedAt.Size = new System.Drawing.Size(150, 20);
+            this.postedAt.Size = new System.Drawing.Size(161, 20);
             this.postedAt.TabIndex = 4;
-            this.postedAt.Text = "12/10/2024 10:00 pm";
-            this.postedAt.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.postedAt.Text = "2024-10-15 15:30:00";
+            this.postedAt.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.postedAt.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // expiresAt
             // 
             this.expiresAt.AllowParentOverrides = false;
             this.expiresAt.AutoEllipsis = false;
+            this.expiresAt.AutoSize = false;
             this.expiresAt.CursorType = null;
             this.expiresAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expiresAt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.expiresAt.Location = new System.Drawing.Point(652, 191);
+            this.expiresAt.Location = new System.Drawing.Point(645, 191);
             this.expiresAt.Name = "expiresAt";
             this.expiresAt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.expiresAt.Size = new System.Drawing.Size(150, 20);
+            this.expiresAt.Size = new System.Drawing.Size(157, 20);
             this.expiresAt.TabIndex = 5;
-            this.expiresAt.Text = "12/10/2024 11:00 pm";
-            this.expiresAt.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.expiresAt.Text = "2024-10-15 15:30:00";
+            this.expiresAt.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.expiresAt.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
             this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
             this.bunifuLabel1.Location = new System.Drawing.Point(13, 191);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(54, 20);
+            this.bunifuLabel1.Size = new System.Drawing.Size(66, 20);
             this.bunifuLabel1.TabIndex = 6;
             this.bunifuLabel1.Text = "Posted:";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -140,13 +145,14 @@
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
             this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.bunifuLabel2.Location = new System.Drawing.Point(595, 191);
+            this.bunifuLabel2.Location = new System.Drawing.Point(582, 191);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(56, 20);
+            this.bunifuLabel2.Size = new System.Drawing.Size(61, 20);
             this.bunifuLabel2.TabIndex = 7;
             this.bunifuLabel2.Text = "Expires:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -158,9 +164,9 @@
             this.societyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.societyName.Location = new System.Drawing.Point(13, 13);
             this.societyName.Name = "societyName";
-            this.societyName.Size = new System.Drawing.Size(107, 20);
+            this.societyName.Size = new System.Drawing.Size(178, 20);
             this.societyName.TabIndex = 8;
-            this.societyName.Text = "Society Name";
+            this.societyName.Text = "Fast Computing Society";
             // 
             // AnnouncementCard
             // 
@@ -179,6 +185,7 @@
             this.Controls.Add(this.announcementBody);
             this.Controls.Add(this.announcementTitle);
             this.Controls.Add(this.bunifuShapes1);
+            this.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
             this.Name = "AnnouncementCard";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(813, 222);

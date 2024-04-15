@@ -10,10 +10,12 @@ namespace CampusNex.Model
     {
         // Properties
         public int AnnouncementId { get; set; }
-        public string Description { get; set; }
-        public byte[] Image { get; set; }
-        public Member Head { get; set; }
-        public Society Society { get; set; }
+        public string announcementTitle { get; set; }
+        public string announcementBody { get; set; }
+        public string societyName { get; set; }
+        public DateTime postedAt { get; set; }
+        public DateTime validTill { get; set; }
+        public string priority { get; set; }
 
         // Constructor
         public Announcement()
@@ -22,6 +24,17 @@ namespace CampusNex.Model
         }
 
         // Methods
+
+        public void initialize(List<object> announcementDetails)
+        {
+            this.AnnouncementId = int.Parse(announcementDetails[0].ToString());
+            this.announcementTitle = announcementDetails[1].ToString();
+            this.announcementBody = announcementDetails[2].ToString();
+            this.postedAt = DateTime.Parse(announcementDetails[3].ToString());
+            this.validTill = DateTime.Parse(announcementDetails[4].ToString());
+            this.priority = announcementDetails[5].ToString();
+            this.societyName = announcementDetails[6].ToString();
+        }
         public void PostAnnouncement(Member head)
         {
             // Implement announcement posting logic here

@@ -196,9 +196,8 @@
             this.regEvent = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.socAnnouncmentPage = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.announcementFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.annLbl = new System.Windows.Forms.Label();
-            this.announcementCard3 = new CampusNex.AnnouncementCard();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -219,7 +218,6 @@
             this.organizeEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eimgHolder)).BeginInit();
             this.socAnnouncmentPage.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -3511,7 +3509,7 @@
             // socAnnouncmentPage
             // 
             this.socAnnouncmentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.socAnnouncmentPage.Controls.Add(this.flowLayoutPanel1);
+            this.socAnnouncmentPage.Controls.Add(this.announcementFlowLayoutPanel);
             this.socAnnouncmentPage.Controls.Add(this.annLbl);
             this.socAnnouncmentPage.Location = new System.Drawing.Point(4, 4);
             this.socAnnouncmentPage.Margin = new System.Windows.Forms.Padding(2);
@@ -3521,19 +3519,18 @@
             this.socAnnouncmentPage.TabIndex = 8;
             this.socAnnouncmentPage.Text = "Announcements";
             // 
-            // flowLayoutPanel1
+            // announcementFlowLayoutPanel
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.announcementFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.announcementCard3);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(31, 102);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1009, 570);
-            this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.WrapContents = false;
+            this.announcementFlowLayoutPanel.AutoScroll = true;
+            this.announcementFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.announcementFlowLayoutPanel.Location = new System.Drawing.Point(31, 102);
+            this.announcementFlowLayoutPanel.Name = "announcementFlowLayoutPanel";
+            this.announcementFlowLayoutPanel.Size = new System.Drawing.Size(1009, 570);
+            this.announcementFlowLayoutPanel.TabIndex = 1;
+            this.announcementFlowLayoutPanel.WrapContents = false;
             // 
             // annLbl
             // 
@@ -3549,37 +3546,6 @@
             this.annLbl.TabIndex = 0;
             this.annLbl.Text = "Announcements Page";
             this.annLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // announcementCard3
-            // 
-            this.announcementCard3.AllowAnimations = false;
-            this.announcementCard3.AllowBorderColorChanges = false;
-            this.announcementCard3.AllowMouseEffects = false;
-            this.announcementCard3.AnimationSpeed = 200;
-            this.announcementCard3.announcement_body = "body\r\nbody\r\nbody\r\nbody";
-            this.announcementCard3.BackColor = System.Drawing.Color.Transparent;
-            this.announcementCard3.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.announcementCard3.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.announcementCard3.BorderRadius = 10;
-            this.announcementCard3.BorderStyle = Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid;
-            this.announcementCard3.BorderThickness = 5;
-            this.announcementCard3.ColorContrastOnClick = 30;
-            this.announcementCard3.ColorContrastOnHover = 30;
-            this.announcementCard3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.announcementCard3.expires_at = "12/10/2024 11:00 pm";
-            this.announcementCard3.Image = null;
-            this.announcementCard3.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.announcementCard3.Location = new System.Drawing.Point(80, 3);
-            this.announcementCard3.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
-            this.announcementCard3.Name = "announcementCard3";
-            this.announcementCard3.Padding = new System.Windows.Forms.Padding(10);
-            this.announcementCard3.posted_at = "12/10/2024 10:00 pm";
-            this.announcementCard3.ShowBorders = true;
-            this.announcementCard3.Size = new System.Drawing.Size(813, 222);
-            this.announcementCard3.society_name = "Society Name";
-            this.announcementCard3.Style = Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles.Flat;
-            this.announcementCard3.TabIndex = 2;
-            this.announcementCard3.title = "Title";
             // 
             // Student
             // 
@@ -3621,7 +3587,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.eimgHolder)).EndInit();
             this.socAnnouncmentPage.ResumeLayout(false);
             this.socAnnouncmentPage.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3738,7 +3703,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton backSocBtn;
         private System.Windows.Forms.TabPage socAnnouncmentPage;
         private System.Windows.Forms.Label annLbl;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private AnnouncementCard announcementCard3;
+        private System.Windows.Forms.FlowLayoutPanel announcementFlowLayoutPanel;
     }
 }

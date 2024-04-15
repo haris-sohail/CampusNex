@@ -57,6 +57,27 @@ namespace CampusNex.Model
             return selectResult;
         }
 
+        public List<List<object>> getAnnouncements(int user_id)
+        {
+            string query = "SELECT ANNOUNCEMENTS.announcement_id, ANNOUNCEMENTS.title, ANNOUNCEMENTS.body, ANNOUNCEMENTS.posted_at, ANNOUNCEMENTS.valid_till, ANNOUNCEMENTS.priority, \r\nSOCIETIES.society_name FROM ANNOUNCEMENTS\r\nINNER JOIN SOCIETIES ON\r\nSOCIETIES.society_id = ANNOUNCEMENTS.society_id\r\nINNER JOIN MEMBERS ON \r\nMEMBERS.society_id = SOCIETIES.society_id\r\nINNER JOIN STUDENTS ON\r\nSTUDENTS.student_id = MEMBERS.student_id\r\nINNER JOIN USERS ON\r\nUSERS.user_id = STUDENTS.user_id\r\nWHERE USERS.user_id = " + user_id.ToString();
+            
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            return selectResult;
+        }
+
+        public bool announcement_is_expired(Announcement announcement)
+        {
+            if(DateTime.Now > announcement.validTill)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public string getAcronym(string societyName)
         {
             string[] splitName = societyName.Split(' ');

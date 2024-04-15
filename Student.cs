@@ -26,6 +26,7 @@ namespace CampusNex
         Model.Student student;
         List<Model.Society> societies = new List<Model.Society>();
         List<Model.Event> events = new List<Model.Event>();
+        List<Model.Announcement> announcements = new List<Model.Announcement>();
         Model.Util utilObj = new Model.Util();
 
         // Event Handler for togling
@@ -39,6 +40,7 @@ namespace CampusNex
             InitializeComponent();
             setControls();
             initializeEvents();
+            initializeAnnouncements();
         }
 
         public void setUsernameAndPic()
@@ -143,6 +145,36 @@ namespace CampusNex
             // Navigate back to the Societies page
             StudentPages.SetPage("Societies");
         }
+
+        private void Add_Announcement(string title, string body, string societyName, string postedAt, string expiresAt, string priority)
+        {
+            AnnouncementCard newAnnouncement = new AnnouncementCard()
+            {
+                title = title,
+                announcement_body = body,
+                society_name = societyName,
+                posted_at = postedAt,
+                expires_at = expiresAt
+            };
+
+            // set the border color according to priority
+            if (priority.Equals("low"))
+            {
+                newAnnouncement.BorderColor = Color.Green;
+            }
+
+            else if (priority.Equals("medium"))
+            {
+                newAnnouncement.BorderColor = Color.Orange;
+            }
+
+            else
+            {
+                newAnnouncement.BorderColor = Color.IndianRed;
+            }
+
+            announcementFlowLayoutPanel.Controls.Add(newAnnouncement);
+        }
         private void Add_Society(FlowLayoutPanel p, string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)
         {
             
@@ -214,10 +246,38 @@ namespace CampusNex
             StudentPages.SelectedIndex = 4;
         }
 
+        protected void initializeAnnouncements()
+        {
+            // get the specific announcements for logged in student
+            List<List<object>> announcementResults = utilObj.getAnnouncements(student.UserId);
+
+            // initialize all announcements
+            foreach (var announcement in announcementResults)
+            {
+                Model.Announcement newAnnouncement = new Model.Announcement();
+                newAnnouncement.initialize(announcement);
+                announcements.Add(newAnnouncement);
+            }
+        }
+
+        protected void addAnnouncementCards()
+        {
+            announcementFlowLayoutPanel.Controls.Clear();
+            foreach(var announcement in announcements)
+            {
+                if(utilObj.announcement_is_expired(announcement) == false)
+                {
+                    Add_Announcement(announcement.announcementTitle, announcement.announcementBody, announcement.societyName, announcement.postedAt.ToString(), announcement.validTill.ToString(), announcement.priority);
+                }
+            }
+        }
+
         // @Haris Announcement Page Entry Point
         private void societyAnnouncement_Click(object sender, EventArgs e)
         {
             StudentPages.SetPage("Announcements");
+
+            addAnnouncementCards();
         }
 
         public void showSocieties(string searchTxt = null)
