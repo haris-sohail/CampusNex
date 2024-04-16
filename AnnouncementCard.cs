@@ -18,6 +18,10 @@ namespace CampusNex
             InitializeComponent();
         }
 
+        public void setColor()
+        {
+            bunifuShapes1.BorderColor = this.BorderColor;
+        }
         public string title {
             get
             {

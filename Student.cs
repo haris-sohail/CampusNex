@@ -176,7 +176,8 @@ namespace CampusNex
             {
                 newAnnouncement.BorderColor = Color.IndianRed;
             }
-
+            // set color
+            newAnnouncement.setColor();
             announcementFlowLayoutPanel.Controls.Add(newAnnouncement);
         }
         private void Add_Society(FlowLayoutPanel p, string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description, int societyId)

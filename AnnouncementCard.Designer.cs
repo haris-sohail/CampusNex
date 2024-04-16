@@ -47,8 +47,8 @@
             this.announcementTitle.Cursor = System.Windows.Forms.Cursors.Default;
             this.announcementTitle.CursorType = System.Windows.Forms.Cursors.Default;
             this.announcementTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.announcementTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.announcementTitle.Location = new System.Drawing.Point(155, 13);
+            this.announcementTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.announcementTitle.Location = new System.Drawing.Point(155, 20);
             this.announcementTitle.Name = "announcementTitle";
             this.announcementTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.announcementTitle.Size = new System.Drawing.Size(592, 25);
@@ -62,9 +62,11 @@
             this.announcementBody.AllowParentOverrides = false;
             this.announcementBody.AutoEllipsis = false;
             this.announcementBody.AutoSize = false;
+            this.announcementBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.announcementBody.Cursor = System.Windows.Forms.Cursors.Default;
             this.announcementBody.CursorType = System.Windows.Forms.Cursors.Default;
-            this.announcementBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.announcementBody.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.announcementBody.ForeColor = System.Drawing.Color.White;
             this.announcementBody.Location = new System.Drawing.Point(17, 78);
             this.announcementBody.Name = "announcementBody";
             this.announcementBody.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -78,15 +80,15 @@
             // 
             this.bunifuShapes1.Angle = 0F;
             this.bunifuShapes1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShapes1.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.bunifuShapes1.BorderColor = System.Drawing.Color.Red;
             this.bunifuShapes1.BorderThickness = 2;
-            this.bunifuShapes1.FillColor = System.Drawing.Color.Transparent;
+            this.bunifuShapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.bunifuShapes1.FillShape = true;
-            this.bunifuShapes1.Location = new System.Drawing.Point(11, 44);
+            this.bunifuShapes1.Location = new System.Drawing.Point(11, 51);
             this.bunifuShapes1.Name = "bunifuShapes1";
             this.bunifuShapes1.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Rectangle;
             this.bunifuShapes1.Sides = 5;
-            this.bunifuShapes1.Size = new System.Drawing.Size(791, 141);
+            this.bunifuShapes1.Size = new System.Drawing.Size(795, 125);
             this.bunifuShapes1.TabIndex = 3;
             this.bunifuShapes1.Text = "bunifuShapes1";
             // 
@@ -96,12 +98,12 @@
             this.postedAt.AutoEllipsis = false;
             this.postedAt.AutoSize = false;
             this.postedAt.CursorType = null;
-            this.postedAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postedAt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.postedAt.Location = new System.Drawing.Point(76, 191);
+            this.postedAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postedAt.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.postedAt.Location = new System.Drawing.Point(87, 185);
             this.postedAt.Name = "postedAt";
             this.postedAt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.postedAt.Size = new System.Drawing.Size(161, 20);
+            this.postedAt.Size = new System.Drawing.Size(222, 20);
             this.postedAt.TabIndex = 4;
             this.postedAt.Text = "2024-10-15 15:30:00";
             this.postedAt.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -113,12 +115,12 @@
             this.expiresAt.AutoEllipsis = false;
             this.expiresAt.AutoSize = false;
             this.expiresAt.CursorType = null;
-            this.expiresAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expiresAt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.expiresAt.Location = new System.Drawing.Point(645, 191);
+            this.expiresAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expiresAt.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.expiresAt.Location = new System.Drawing.Point(611, 185);
             this.expiresAt.Name = "expiresAt";
             this.expiresAt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.expiresAt.Size = new System.Drawing.Size(157, 20);
+            this.expiresAt.Size = new System.Drawing.Size(184, 20);
             this.expiresAt.TabIndex = 5;
             this.expiresAt.Text = "2024-10-15 15:30:00";
             this.expiresAt.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -130,9 +132,9 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.bunifuLabel1.Location = new System.Drawing.Point(13, 191);
+            this.bunifuLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.bunifuLabel1.Location = new System.Drawing.Point(18, 184);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(66, 20);
@@ -147,9 +149,9 @@
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.AutoSize = false;
             this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.bunifuLabel2.Location = new System.Drawing.Point(582, 191);
+            this.bunifuLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.bunifuLabel2.Location = new System.Drawing.Point(544, 185);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(61, 20);
@@ -161,10 +163,11 @@
             // societyName
             // 
             this.societyName.AutoSize = true;
-            this.societyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.societyName.Location = new System.Drawing.Point(13, 13);
+            this.societyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.societyName.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.societyName.Location = new System.Drawing.Point(18, 24);
             this.societyName.Name = "societyName";
-            this.societyName.Size = new System.Drawing.Size(178, 20);
+            this.societyName.Size = new System.Drawing.Size(170, 16);
             this.societyName.TabIndex = 8;
             this.societyName.Text = "Fast Computing Society";
             // 
@@ -173,10 +176,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.BorderRadius = 10;
-            this.BorderThickness = 5;
+            this.BackgroundColor = System.Drawing.Color.White;
+            this.BorderColor = System.Drawing.Color.Red;
+            this.BorderRadius = 5;
+            this.BorderThickness = 7;
             this.Controls.Add(this.societyName);
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.bunifuLabel1);
@@ -188,7 +191,7 @@
             this.Margin = new System.Windows.Forms.Padding(80, 3, 3, 3);
             this.Name = "AnnouncementCard";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(813, 222);
+            this.Size = new System.Drawing.Size(815, 220);
             this.ResumeLayout(false);
             this.PerformLayout();
 
