@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace CampusNex.Model
 {
-    internal class Event
+    // Changed Accessibility
+    public class Event
     {
         // Properties
         public int EventId { get; set; }

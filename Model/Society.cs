@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace CampusNex.Model
 {
-    internal class Society
+    // Changed Accessibility
+    public class Society
     {
         Util utilObj = new Util();
         // Properties

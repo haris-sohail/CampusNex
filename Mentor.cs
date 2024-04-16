@@ -1,5 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
 using CampusNex.Model;
+using CampusNex.PopUps;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -264,7 +265,7 @@ namespace CampusNex
                 if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
                     DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
-                    // Extract Society Name
+                    // Extract Society Id
                     string societyId = clickedRow.Cells[6].Value.ToString();
 
                     DB_Connection DB_Connector = new DB_Connection();
@@ -315,7 +316,19 @@ namespace CampusNex
                 if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
                     DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
-                   
+                    // Get Society Id
+                    string societyId = clickedRow.Cells[6].Value.ToString();
+                    foreach(var s in societies)
+                    {
+                        if(s.SocietyId == int.Parse(societyId))
+                        {
+                            SocietyRequest popup = new SocietyRequest(s);
+                            popup.ShowDialog();
+                            break;
+                        }
+                    }
+                    
+
                 }
             }
 
@@ -438,7 +451,7 @@ namespace CampusNex
             {
                 string message = "No entries Yet";
                 using (var font = new Font("Verdana", 16, FontStyle.Bold))
-                using (var brush = new SolidBrush(Color.Black))
+                using (var brush = new SolidBrush(Color.White))
                 {
                     var stringSize = e.Graphics.MeasureString(message, font);
                     var x = (socReqGrid.Width - stringSize.Width) / 2;
@@ -455,7 +468,7 @@ namespace CampusNex
             {
                 string message = "No entries Yet";
                 using (var font = new Font("Verdana", 16, FontStyle.Bold))
-                using (var brush = new SolidBrush(Color.Black))
+                using (var brush = new SolidBrush(Color.White))
                 {
                     var stringSize = e.Graphics.MeasureString(message, font);
                     var x = (eveReqGrid.Width - stringSize.Width) / 2;

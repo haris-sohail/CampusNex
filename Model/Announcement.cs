@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CampusNex.Model
 {
-    internal class Announcement
+    // Changed Accessibility
+    public class Announcement
     {
         // Properties
         public int AnnouncementId { get; set; }

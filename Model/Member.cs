@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace CampusNex.Model
 {
-    internal class Member
+    // Changed Accessibility
+    public class Member
     {
         // Properties
         public int MemberId { get; set; }

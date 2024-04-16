@@ -154,5 +154,13 @@ namespace CampusNex.Model
 
             return bytes;
         }
+
+        public System.Drawing.Image getUserImage(int studentid)
+        {
+            string query = "Select user_pic from users u inner join" +
+                " students s on u.user_id = s.user_id where student_id = " + studentid.ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            return this.getImage(selectResult[0][0] as byte[]);
+        }
     }
 }

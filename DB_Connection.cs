@@ -12,7 +12,8 @@ using Org.BouncyCastle.Asn1.X509;
 
 namespace CampusNex
 {
-    internal class DB_Connection
+    // Changed Accessibility
+    public class DB_Connection
     {
         public MySqlConnection connection;
         private string server;
