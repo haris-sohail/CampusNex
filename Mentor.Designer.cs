@@ -107,6 +107,7 @@
             this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
             this.stId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -683,6 +684,7 @@
             this.eveReqGrid.Size = new System.Drawing.Size(815, 225);
             this.eveReqGrid.TabIndex = 3;
             this.eveReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eveReqGrid_CellContentClick);
+            this.eveReqGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.EveGrid_Paint);
             // 
             // dataGridViewImageColumn1
             // 
@@ -742,6 +744,7 @@
             this.socReqGrid.AllowUserToDeleteRows = false;
             this.socReqGrid.AllowUserToOrderColumns = true;
             this.socReqGrid.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
@@ -749,19 +752,19 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.socReqGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.socReqGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.socReqGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.socReqGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.socReqGrid.BackgroundColor = System.Drawing.Color.White;
+            this.socReqGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.socReqGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.socReqGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.socReqGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.socReqGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.socReqGrid.ColumnHeadersHeight = 30;
+            this.socReqGrid.ColumnHeadersHeight = 40;
             this.socReqGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.socReqGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.soclogo,
@@ -769,13 +772,14 @@
             this.reqStatus,
             this.viewDetails,
             this.AcceptReg,
-            this.stId});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.stId,
+            this.socId});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.socReqGrid.DefaultCellStyle = dataGridViewCellStyle10;
             this.socReqGrid.EnableHeadersVisualStyles = false;
@@ -790,9 +794,10 @@
             this.socReqGrid.RowTemplate.Height = 40;
             this.socReqGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.socReqGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.socReqGrid.Size = new System.Drawing.Size(815, 225);
+            this.socReqGrid.Size = new System.Drawing.Size(945, 225);
             this.socReqGrid.TabIndex = 2;
             this.socReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.socReqGrid_CellContentClick);
+            this.socReqGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.SocGrid_Paint);
             // 
             // reqLabel2
             // 
@@ -1224,7 +1229,7 @@
             // soclogo
             // 
             this.soclogo.FillWeight = 30F;
-            this.soclogo.HeaderText = "";
+            this.soclogo.HeaderText = "Logo";
             this.soclogo.Name = "soclogo";
             this.soclogo.ReadOnly = true;
             // 
@@ -1250,6 +1255,7 @@
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.viewDetails.DefaultCellStyle = dataGridViewCellStyle8;
+            this.viewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewDetails.HeaderText = "View Request";
             this.viewDetails.Name = "viewDetails";
             this.viewDetails.ReadOnly = true;
@@ -1263,6 +1269,7 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             this.AcceptReg.DefaultCellStyle = dataGridViewCellStyle9;
+            this.AcceptReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AcceptReg.HeaderText = "Accept";
             this.AcceptReg.Name = "AcceptReg";
             this.AcceptReg.ReadOnly = true;
@@ -1273,6 +1280,13 @@
             this.stId.Name = "stId";
             this.stId.ReadOnly = true;
             this.stId.Visible = false;
+            // 
+            // socId
+            // 
+            this.socId.HeaderText = "Society Id";
+            this.socId.Name = "socId";
+            this.socId.ReadOnly = true;
+            this.socId.Visible = false;
             // 
             // Mentor
             // 
@@ -1368,5 +1382,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
         private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
         private System.Windows.Forms.DataGridViewTextBoxColumn stId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socId;
     }
 }

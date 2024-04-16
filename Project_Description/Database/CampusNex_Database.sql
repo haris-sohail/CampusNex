@@ -128,13 +128,22 @@ skills, and innovation in the field of computing through various educational,
 collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\FCS_Logo.png')),'accepted'),
  ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
  skills, and innovation in the field of computing through various educational, 
- collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\FDSS_Logo.png')),'accepted');
+ collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\FDSS_Logo.png')),'accepted'),
+ ('Robotics Society', 'Building the Future', 'The Robotics Society aims to explore the intersection of technology and robotics to create innovative solutions for real-world problems.',
+ 1, 3, '2024-04-16', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\RS_Logo.png')), 'pending'),
+ ('AI Enthusiasts Society', 'Exploring the Future of AI', 'The AI Enthusiasts Society is dedicated to exploring the latest advancements and applications of artificial intelligence.',
+ 1, 4, '2024-04-16', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\AI_Logo.png')), 'pending'),
+('Cybersecurity Alliance', 'Securing the Digital World', 'The Cybersecurity Alliance focuses on raising awareness and providing resources to address cybersecurity challenges.',
+ 1, 5, '2024-04-17', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\CS_Logo.png')), 'pending');
  
 INSERT INTO Members (student_id, society_id, join_date, is_head, interest,status)
 VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence','accepted'),
 (2, 2, '2023-01-20', 1, 'Data Science, Machine Learning','accepted'),
 (3, 1, '2024-01-10', 0, 'Graphic Design, Calculations','accepted'),
-(4, 2, '2024-02-05', 0, 'NLP, Management','pending');
+(4, 2, '2024-02-05', 0, 'NLP, Management','pending'),
+(3, 3, '2024-02-05', 1, 'NLP, Management','pending'),
+(4, 4, '2024-02-05', 1, 'NLP, Management','pending'),
+(5, 5, '2024-02-05', 1, 'NLP, Management','pending');
 
 INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status,event_Img)
 VALUES (2, 'Data Escapes', '2024-04-15', '15:00:00', 'Community Hall', 'Join us for an immersive journey into the world of data science at "Data Escapes." This 

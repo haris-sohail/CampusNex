@@ -212,7 +212,7 @@ namespace CampusNex
 
                             System.Drawing.Image societyImg = utilObj.getImage(slogo);
                             System.Drawing.Image resizedImage = utilObj.ResizeImage(societyImg, 32, 32);
-                            // Populate DataGrid
+                            // Populate the society request DataGrid 
                             socReqGrid.Rows.Add(new Object[]
                             {
                                 resizedImage,
@@ -220,7 +220,8 @@ namespace CampusNex
                                 sHeadName,
                                 "View",
                                 "Accept",
-                                memId.ToString()
+                                memId.ToString(),
+                                s.SocietyId.ToString()
                             });
                     }
 
@@ -257,20 +258,21 @@ namespace CampusNex
 
         private void socReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check Click Event on Accept Column
             if (e.ColumnIndex == 4) 
             {
                 if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                 {
                     DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
                     // Extract Society Name
-                    string cellValue = clickedRow.Cells[1].Value.ToString();
+                    string societyId = clickedRow.Cells[6].Value.ToString();
 
                     DB_Connection DB_Connector = new DB_Connection();
                     // Set status to accepted
                     string tableName = "Societies";
                     string[] scolumns = { "status" };
-                    string[] wcolumns = { "society_name" };
-                    object[] values = { "accepted", cellValue  };
+                    string[] wcolumns = { "society_id" };
+                    object[] values = { "accepted", int.Parse(societyId)};
      
                     //  Update Societies Table
                     bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns,values);
@@ -278,19 +280,45 @@ namespace CampusNex
                     // Update Member i.e. Head Status
                     DB_Connector.connection.Close();
                     // Extract Member Id
-                    cellValue = clickedRow.Cells[5].Value.ToString();
-                    Console.WriteLine("Val: ", cellValue);
+                    string memberId = clickedRow.Cells[5].Value.ToString();
+                    Console.WriteLine("Val: ", memberId);
                     tableName = "Members";
                     string[] wcol = { "member_id"};
-                    object[] vals = { "accepted", int.Parse(cellValue)};
+                    object[] vals = { "accepted", int.Parse(memberId)};
 
-                    // Update Members Table
+                    // Update Members Table in database
                     success = DB_Connector.UpdateData(tableName, scolumns, wcol, vals);
+                    // Update Runtime data
+                    foreach (var s in societies)
+                    {
+                        if (s.SocietyId == int.Parse(societyId))
+                        {
+                            foreach(var m in s.Members)
+                            {
+                                if(m.MemberId == int.Parse(memberId))
+                                {
+                                    s.status = "accepted";
+                                    m.status = "accepted";
+                                }
+                            }
+                        }
+                    }
 
                     loadReqData();
                     showSocieties();
                 }
             }
+
+            // Check Click Event on View More Column
+            if (e.ColumnIndex == 3)
+            {
+                if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                {
+                    DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
+                   
+                }
+            }
+
         }
 
         private void searchBar_TextChanged(object sender, EventArgs e)
@@ -402,5 +430,40 @@ namespace CampusNex
                 }
             }
         }
+
+        // Added New Event Handlers For Empty Grids
+        private void SocGrid_Paint(object sender, PaintEventArgs e)
+        {
+            if (socReqGrid.Rows.Count == 0)
+            {
+                string message = "No entries Yet";
+                using (var font = new Font("Verdana", 16, FontStyle.Bold))
+                using (var brush = new SolidBrush(Color.Black))
+                {
+                    var stringSize = e.Graphics.MeasureString(message, font);
+                    var x = (socReqGrid.Width - stringSize.Width) / 2;
+                    var y = (socReqGrid.Height - stringSize.Height) / 2;
+                    e.Graphics.DrawString(message, font, brush, x, y);
+                }
+            }
+        }
+
+        private void EveGrid_Paint(object sender, PaintEventArgs e)
+        {
+
+            if (eveReqGrid.Rows.Count == 0)
+            {
+                string message = "No entries Yet";
+                using (var font = new Font("Verdana", 16, FontStyle.Bold))
+                using (var brush = new SolidBrush(Color.Black))
+                {
+                    var stringSize = e.Graphics.MeasureString(message, font);
+                    var x = (eveReqGrid.Width - stringSize.Width) / 2;
+                    var y = (eveReqGrid.Height - stringSize.Height) / 2;
+                    e.Graphics.DrawString(message, font, brush, x, y);
+                }
+            }
+        }
+
     }
 }
