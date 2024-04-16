@@ -220,6 +220,8 @@
   <ItemGroup>
     <None Include="Project_Description\assets\searchIcon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Project_Description\assets\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
