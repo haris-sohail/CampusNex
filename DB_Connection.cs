@@ -273,6 +273,29 @@ namespace CampusNex
             }
         }
 
+        public void executeInsertAnnouncement(List<object> toInsert)
+        {
+            if (OpenConnection())
+            {
+                string query = "INSERT INTO ANNOUNCEMENTS (society_id, head_id, title, body, posted_at, valid_till, priority) " +
+                    " VALUES (@societyId, @headId, @title, @body, @postedAt, @validTill, @priority)";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.Add("@societyId", MySqlDbType.String ).Value = toInsert[0];
+                cmd.Parameters.Add("@headId", MySqlDbType.String ).Value = toInsert[1];
+                cmd.Parameters.Add("@title", MySqlDbType.String ).Value = toInsert[2];
+                cmd.Parameters.Add("@body", MySqlDbType.String ).Value = toInsert[3];
+                cmd.Parameters.Add("@postedAt", MySqlDbType.DateTime).Value = DateTime.Now;
+                cmd.Parameters.Add("@validTill", MySqlDbType.DateTime).Value = DateTime.Parse(toInsert[4].ToString());
+                cmd.Parameters.Add("@priority", MySqlDbType.String).Value = toInsert[5];
+
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+            }
+        }
+
+
         //function to get societyId
         public string getSocietyId(string societyName)
         {

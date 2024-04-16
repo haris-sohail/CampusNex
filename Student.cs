@@ -11,10 +11,12 @@ using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static Bunifu.UI.WinForms.BunifuSnackbar;
 using static CampusNex.Student;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Net.Mime.MediaTypeNames;
@@ -34,13 +36,11 @@ namespace CampusNex
         private EventHandler currentHandler;
         public Student(string user_id)
         {
-            
             initializeSocieties();
             initializeStudent(user_id);
             InitializeComponent();
             setControls();
             initializeEvents();
-            initializeAnnouncements();
         }
 
         public void setUsernameAndPic()
@@ -63,6 +63,9 @@ namespace CampusNex
             MemberReqBtn.Visible = false;
             // Hide Event Reg Button
             organizeEventBtn.Visible = false;
+            // Hide add announcement button 
+            addAnnouncementBtn.Visible = false;
+
             foreach (var m in student.Members)
             {
                 // Show Organize Event button only if
@@ -72,11 +75,12 @@ namespace CampusNex
                 {
                     if (m.SocietyId == s.SocietyId && m.status != "pending")
                     {
-                        // Enable Member Request Btn only 
+                        // Enable Member Request and add announcement Btn only 
                         // If the Student is Head of a Society
                         if (m.IsHead)
                         {
                             MemberReqBtn.Visible = true;
+                            addAnnouncementBtn.Visible = true;
                         }
                     }
                 }
@@ -248,6 +252,8 @@ namespace CampusNex
 
         protected void initializeAnnouncements()
         {
+            announcements.Clear();
+
             // get the specific announcements for logged in student
             List<List<object>> announcementResults = utilObj.getAnnouncements(student.UserId);
 
@@ -263,7 +269,9 @@ namespace CampusNex
         protected void addAnnouncementCards()
         {
             announcementFlowLayoutPanel.Controls.Clear();
-            foreach(var announcement in announcements)
+            initializeAnnouncements();
+
+            foreach (var announcement in announcements)
             {
                 if(utilObj.announcement_is_expired(announcement) == false)
                 {
@@ -705,6 +713,100 @@ namespace CampusNex
 
             // Create the formatted date string
             return $"{year}-{day}-{month}";
+        }
+
+        private void addAnnouncementBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("addAnnouncementPage");
+        }
+
+        private void previousPageBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Societies");
+        }
+
+        public List<List<object>> getSocietyAndHeadId(string user_id)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+
+            string query = "SELECT SOCIETIES.society_id, STUDENTS.student_id\r\nFROM SOCIETIES INNER JOIN \r\nMEMBERS ON \r\nSOCIETIES.society_id = MEMBERS.society_id\r\nINNER JOIN STUDENTS ON\r\nSTUDENTS.student_id = MEMBERS.student_id\r\nINNER JOIN USERS ON\r\nUSERS.user_id = STUDENTS.user_id\r\nWHERE USERS.user_id = " + user_id;
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            return selectResult;
+        }
+
+        public bool isEmptyFieldPresent_AnnouncementForm()
+        {
+            if((titleTxt.Text.Length == 0) || (bodyTxt.Text.Length == 0) || (validTillPicker.Text.Length == 0)
+                || (hoursCombo.Text.Length == 0) || (minsCombo.Text.Length == 0) || (am_pmCombo.Text.Length == 0)
+                || (priorityCombo.Text.Length == 0))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool isDateTimeValid(DateTime toCheck)
+        {
+            if (toCheck < DateTime.Now)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public List<object> getAnnouncementFormInput()
+        {
+            if (isEmptyFieldPresent_AnnouncementForm())
+            {
+                MessageBox.Show("Input field can not be empty", "Post failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StudentPages.SetPage("addAnnouncementPage");
+                return null;
+            }
+            List<object> formData = new List<object>();
+
+            List<List<object>> societyAndHeadId = getSocietyAndHeadId(student.UserId.ToString());
+
+            formData.Add(societyAndHeadId[0][0].ToString());
+            formData.Add(societyAndHeadId[0][1].ToString());
+            formData.Add(titleTxt.Text);
+            formData.Add(bodyTxt.Text);
+
+            string validDate = validTillPicker.Text;
+            string hours = hoursCombo.Text;
+            string mins = minsCombo.Text;
+            string am_pm = am_pmCombo.Text;
+
+            string combinedDateTime = utilObj.getCombinedDateTime(validDate, hours, mins, am_pm);
+
+            if (isDateTimeValid(DateTime.Parse(combinedDateTime)) == false)
+            {
+                MessageBox.Show("Please enter a valid date and time", "Post failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                StudentPages.SetPage("addAnnouncementPage");
+                return null;
+            }
+
+            formData.Add(combinedDateTime);
+            formData.Add(priorityCombo.Text);
+
+            return formData;
+        }
+        private void postBtn_Click(object sender, EventArgs e)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            List<object> formInput = getAnnouncementFormInput();
+            
+            if(formInput != null)
+            { 
+                dbConnector.executeInsertAnnouncement(formInput);
+                MessageBox.Show("Announcement Posted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StudentPages.SetPage("Announcements");
+                addAnnouncementCards();
+            }
         }
     }
 }

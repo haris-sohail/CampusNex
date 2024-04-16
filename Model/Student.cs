@@ -12,7 +12,7 @@ namespace CampusNex.Model
         // Properties specific to Student
         public int StudentId { get; set; }
         public string RollNo { get; set; }
-        // As one Student Can be a Member of atleast two societies
+        // As one Student Can be a Member of atmost two societies
         public int nOfm = 0;
         public List<Member> Members { get; set; } = new List<Member>();
         // Constructor

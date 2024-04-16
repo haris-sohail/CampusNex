@@ -78,6 +78,24 @@ namespace CampusNex.Model
             }
         }
 
+        public string getCombinedDateTime(string validDate, string hours, string mins, string am_pm)
+        {
+            DateTime date = DateTime.Parse(validDate);
+
+            int hoursInt = int.Parse(hours);
+            int minsInt = int.Parse(mins);
+
+            if (am_pm == "pm" && hoursInt < 12)
+            {
+                hoursInt += 12;
+            }
+
+            // Create the combined DateTime
+            DateTime combinedDateTime = new DateTime(date.Year, date.Month, date.Day, hoursInt, minsInt, 0);
+
+            return combinedDateTime.ToString();
+        }
+
         public string getAcronym(string societyName)
         {
             string[] splitName = societyName.Split(' ');
