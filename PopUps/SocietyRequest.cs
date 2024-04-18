@@ -34,7 +34,8 @@ namespace CampusNex.PopUps
             {
                 if (m.IsHead)
                 {
-                    headPic.Image = utilobj.getUserImage(m.StudentId);                }
+                    headPic.Image = utilobj.getUserImage(m.StudentId);                
+                }
             }
             headName.Text = this.Request.headName;
             socSlogan.Text = this.Request.Slogan;
