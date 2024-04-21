@@ -14,9 +14,8 @@ namespace CampusNex
 
         public Credentials()
         {
-            server = "DESKTOP-M9UAP31\\SQLEXPRESS";
+            server = "SOMALSPC\\SQLEXPRESS";
             database = "campusnex";
-            uid = "SOMALSPC\\kalsoom"; // Replace with your SQL Server username
         }
     }
 }
