@@ -253,7 +253,6 @@ namespace CampusNex
             string societyName = titleViewSociety.Text;
             System.Drawing.Image societyLogo = logoViewSociety.Image;
 
-            // this function will help us switch to tab for student registartion and pass soceity name and logo as well
             StudentRegistrationTab(societyName, societyLogo);
             StudentPages.SelectedIndex = 4;
         }
@@ -335,12 +334,11 @@ namespace CampusNex
 
         private void rSocietyForm_Click(object sender, EventArgs e)
         {
-            StudentPages.SetPage(((Control)sender).Text);
             // Load Dropdown of available Mentors
             string query = @"
             SELECT U.username AS mentor_name
             FROM Mentors M
-            INNER JOIN CUsers U ON M.user_id = CU.user_id
+            INNER JOIN CUsers U ON M.user_id = U.user_id
             LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
             WHERE U.role = 'mentor'
             GROUP BY M.mentor_id, U.username
@@ -357,6 +355,13 @@ namespace CampusNex
                 Console.WriteLine(mentorName);
                 availableMentors.Items.Add(mentorName);
             }
+            // If No Mentor's Available Display Message
+            if (availableMentors.Items.Count == 0)
+            {
+                MessageBox.Show("No Mentors are Currently Available", "Cannot Initiate Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            StudentPages.SetPage(((Control)sender).Text);
 
         }
 
@@ -385,6 +390,22 @@ namespace CampusNex
 
         private void regNewSociety_Click(object sender, EventArgs e)
         {
+            // Check For Empty Fields
+            if(societyName.Text == "" || societySlogan.Text == ""
+                || societyDesc.Text == "" || availableMentors.Text == "" || uploadImgPicBox.Image == null)
+            {
+                MessageBox.Show("One or More Field(s) empty", "Please Fill All Fields and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // BVA For Fields
+            if (! utilObj.CheckRegistrationParams(societyName.Text,
+                societySlogan.Text, societyDesc.Text))
+            {
+                return;
+            }
+            
+
             DB_Connection dbConnector = new DB_Connection();
 
             List<object> formInput = new List<object>();

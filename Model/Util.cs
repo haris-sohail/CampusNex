@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -309,6 +310,47 @@ namespace CampusNex.Model
         {
             if (!checkPasswordLength(password))
             {
+                return false;
+            }
+
+            return true;
+        }
+
+        // Society Registration Page
+        // Validation
+        public bool CheckRegistrationParams(string Name, string Slogan, string Desc)
+        {
+            // No leading or ending spaces
+            if (Name[0] == ' ' || Name[Name.Length-1] == ' '|| Slogan[0] == ' ' || Slogan[Slogan.Length - 1] == ' ')
+            {
+                MessageBox.Show("One or More Field(s) has leading or ending White Spaces", "Please Fix and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Check For Letters and Spaces only in Name
+            string pattern = @"^[a-zA-Z\s]*$";
+            Regex regex = new Regex(pattern);
+           
+            if (!regex.IsMatch(Name))
+            {
+                MessageBox.Show("Society Name Cannot Have any Special Characters or Numbers", "Please Fix and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Check Length
+            if (Name.Count() < 5 || Name.Count() > 40)
+            {
+                MessageBox.Show("Society Name should be between 5 and 20 Characters", "Please Fix and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (Slogan.Count() < 5 || Slogan.Count() > 100)
+            {
+                MessageBox.Show("Society Slogan should be between 5 and 100 Characters", "Please Fix and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (Desc.Count() < 20 || Desc.Count() > 255)
+            {
+                MessageBox.Show("Society Description should be between 20 and 255 Characters", "Please Fix and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

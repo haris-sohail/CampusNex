@@ -103,7 +103,7 @@ namespace CampusNex
 
         private void societiesBtn_Click(object sender, EventArgs e)
         {
-            StudentPages.SetPage(((Control)sender).Text);
+            MentorPages.SetPage(((Control)sender).Text);
         }
 
         private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description)
@@ -122,7 +122,7 @@ namespace CampusNex
             newCard.ViewBtnClicked += (sender, e) =>
             {
                 // Switch to the "View More" tab when the button is clicked
-                StudentPages.SelectedIndex = 2; // Index of the "View More" tab
+                MentorPages.SelectedIndex = 2; // Index of the "View More" tab
 
 
                 // Get the details from the clicked user control object
@@ -261,7 +261,7 @@ namespace CampusNex
         }
         private void reqBtn_Click(object sender, EventArgs e)
         {
-            StudentPages.SetPage(((Control)sender).Text);
+            MentorPages.SetPage(((Control)sender).Text);
             loadReqData();
         }
 
@@ -358,7 +358,7 @@ namespace CampusNex
 
         private void eventsBtn_Click(object sender, EventArgs e)
         {
-            StudentPages.SetPage("Events");
+            MentorPages.SetPage("Events");
             showEvents();
         }
 
@@ -386,7 +386,7 @@ namespace CampusNex
                     c.eId = e.EventId;
                     c.DetailsBtn += (sender, eve) =>
                     {
-                        StudentPages.SetPage("view Event");
+                        MentorPages.SetPage("view Event");
                         eventDetails(eve);
                     };
                         

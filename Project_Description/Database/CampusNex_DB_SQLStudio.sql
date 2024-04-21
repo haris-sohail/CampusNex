@@ -1,14 +1,15 @@
---DROP DATABASE IF EXISTS CampusNex;
---CREATE DATABASE CampusNex;
---USE CampusNex;
+Use master;
+DROP DATABASE IF EXISTS CampusNex;
+CREATE DATABASE CampusNex;
+USE CampusNex;
 
 /*
 		  CREATE TABLE
 */
 
--- CUser Table
-
-CREATE TABLE CUser (
+use CampusNex;
+--Drop database CampusNex;
+CREATE TABLE CUsers (
     user_id INT PRIMARY KEY IDENTITY(1,1),
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(50) NOT NULL,
@@ -22,7 +23,7 @@ CREATE TABLE Students (
     student_id INT PRIMARY KEY IDENTITY(1,1),
     user_id INT NOT NULL,
     roll_number VARCHAR(20) UNIQUE NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES CUser(user_id)
+    FOREIGN KEY (user_id) REFERENCES CUsers(user_id)
 );
 
 -- Mentor ID
@@ -31,7 +32,7 @@ CREATE TABLE Mentors (
     user_id INT NOT NULL,
     designation VARCHAR(100) NOT NULL,
     education_info TEXT,
-    FOREIGN KEY (user_id) REFERENCES CUser(user_id)
+    FOREIGN KEY (user_id) REFERENCES CUsers(user_id)
 );
 
 
@@ -100,7 +101,7 @@ CREATE TABLE Announcements (
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
 
-INSERT INTO CUser (username, password, email, role, user_pic) VALUES
+INSERT INTO CUsers (username, password, email, role, user_pic) VALUES
 ('kalsoom', 'password', 'kalsoom@gmail.com', 'student',(SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
 ('haris', 'password', 'haris@gmail.com', 'mentor', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\1.png', SINGLE_BLOB) AS user_pic)),
 ('aiman', 'password', 'aiman@gmail.com', 'mentor', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\6.png', SINGLE_BLOB) AS user_pic)),
@@ -171,26 +172,26 @@ VALUES
 -- INSERT INTO Societies (society_name, society_slogan,society_description, mentor_id, head_id, creation_date,society_logo,status) VALUES
 -- ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge,
 -- skills, and innovation in the field of computing through various educational, 
--- collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('C:\\CUser\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'accepted'),
+-- collaborative, and networking activities.', 1, 1, '2012-05-15',(LOAD_FILE('C:\\CUsers\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'accepted'),
 -- ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge,
 -- skills, and innovation in the field of computing through various educational, 
--- collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('C:\\CUser\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
+-- collaborative, and networking activities.', 1, 2, '2012-05-15',(LOAD_FILE('C:\\CUsers\\aimen\\Desktop\\SE\\Project\\CampusNex\\Project_Description\\assets\\AceCodersLogo.png')),'pending');
 
 
  SELECT * FROM Societies;
  
- SELECT * FROM CUser;
+ SELECT * FROM CUsers;
  SELECT * FROM Students;
  SELECT * FROM Mentors where user_id = 2;
  
  SELECT * FROM Members;
  
-  select username from CUser INNER JOIN Students ON Students.user_id = CUser.user_id WHERE Students.user_id = 1;
+  select username from CUsers INNER JOIN Students ON Students.user_id = CUsers.user_id WHERE Students.user_id = 1;
 
 -- Select Mentors Avaiable based on no enlistment
 SELECT U.username AS mentor_name
 FROM Mentors M
-INNER JOIN CUser U ON M.user_id = U.user_id
+INNER JOIN CUsers U ON M.user_id = U.user_id
 LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
 WHERE S.society_id IS NULL
 AND U.role = 'mentor';
@@ -198,7 +199,7 @@ AND U.role = 'mentor';
 -- Select Mentors Avaiable based on less than 2 societies
 SELECT U.username AS mentor_name-- , COUNT(S.society_id) AS num_societies_enlisted
 FROM Mentors M
-INNER JOIN CUser U ON M.user_id = U.user_id
+INNER JOIN CUsers U ON M.user_id = U.user_id
 LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
 WHERE U.role = 'mentor'
 GROUP BY M.mentor_id,U.username
@@ -207,15 +208,17 @@ HAVING COUNT(S.society_id) < 2;
 select * from Societies;
 select * from Members;
 select society_name, u.username from societies s join students st on s.head_id = st.student_id
-join CUser u on st.user_id = u.user_id where s.status = 'pending' and mentor_id = 1;
+join CUsers u on st.user_id = u.user_id where s.status = 'pending' and mentor_id = 1;
 
 select * from members;
 
 SELECT U.user_pic AS user_img, U.username AS user_name, S.society_name
 FROM Members M
 JOIN Students St ON M.student_id = St.student_id
-JOIN CUser U ON St.user_id = U.user_id
+JOIN CUsers U ON St.user_id = U.user_id
 JOIN Societies S ON M.society_id = S.society_id
 WHERE M.status = 'pending' and M.society_id = 2;
 
 -- show variables like "secure_file_priv";
+
+SELECT user_id, role, username FROM CUsers WHERE CUsers.username = 'haris' AND CUsers.password = 'password'

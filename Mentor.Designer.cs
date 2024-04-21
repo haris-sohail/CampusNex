@@ -54,7 +54,7 @@
             this.societiesBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.StudentPages = new Bunifu.UI.WinForms.BunifuPages();
+            this.MentorPages = new Bunifu.UI.WinForms.BunifuPages();
             this.SocietiesPage = new System.Windows.Forms.TabPage();
             this.societyCardsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.userName = new Bunifu.UI.WinForms.BunifuLabel();
@@ -109,7 +109,7 @@
             this.socTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.StudentPages.SuspendLayout();
+            this.MentorPages.SuspendLayout();
             this.SocietiesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).BeginInit();
             this.Requests.SuspendLayout();
@@ -187,7 +187,7 @@
             this.reqBtn.IdleIconRightImage = null;
             this.reqBtn.IndicateFocus = true;
             this.reqBtn.Location = new System.Drawing.Point(27, 315);
-            this.reqBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.reqBtn.Margin = new System.Windows.Forms.Padding(5);
             this.reqBtn.Name = "reqBtn";
             this.reqBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.reqBtn.OnDisabledState.BorderRadius = 39;
@@ -280,7 +280,7 @@
             this.eventsBtn.IdleIconRightImage = null;
             this.eventsBtn.IndicateFocus = true;
             this.eventsBtn.Location = new System.Drawing.Point(27, 234);
-            this.eventsBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.eventsBtn.Margin = new System.Windows.Forms.Padding(5);
             this.eventsBtn.Name = "eventsBtn";
             this.eventsBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.eventsBtn.OnDisabledState.BorderRadius = 39;
@@ -373,7 +373,7 @@
             this.societiesBtn.IdleIconRightImage = null;
             this.societiesBtn.IndicateFocus = true;
             this.societiesBtn.Location = new System.Drawing.Point(27, 155);
-            this.societiesBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.societiesBtn.Margin = new System.Windows.Forms.Padding(5);
             this.societiesBtn.Name = "societiesBtn";
             this.societiesBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.societiesBtn.OnDisabledState.BorderRadius = 39;
@@ -437,26 +437,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // StudentPages
+            // MentorPages
             // 
-            this.StudentPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.StudentPages.AllowTransitions = false;
-            this.StudentPages.Controls.Add(this.SocietiesPage);
-            this.StudentPages.Controls.Add(this.Requests);
-            this.StudentPages.Controls.Add(this.viewSociety);
-            this.StudentPages.Controls.Add(this.eventPage);
-            this.StudentPages.Controls.Add(this.viewEvent);
-            this.StudentPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StudentPages.Location = new System.Drawing.Point(271, 0);
-            this.StudentPages.Multiline = true;
-            this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.SocietiesPage;
-            this.StudentPages.PageIndex = 0;
-            this.StudentPages.PageName = "SocietiesPage";
-            this.StudentPages.PageTitle = "Societies";
-            this.StudentPages.SelectedIndex = 0;
-            this.StudentPages.Size = new System.Drawing.Size(1099, 749);
-            this.StudentPages.TabIndex = 1;
+            this.MentorPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.MentorPages.AllowTransitions = false;
+            this.MentorPages.Controls.Add(this.SocietiesPage);
+            this.MentorPages.Controls.Add(this.Requests);
+            this.MentorPages.Controls.Add(this.viewSociety);
+            this.MentorPages.Controls.Add(this.eventPage);
+            this.MentorPages.Controls.Add(this.viewEvent);
+            this.MentorPages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MentorPages.Location = new System.Drawing.Point(271, 0);
+            this.MentorPages.Multiline = true;
+            this.MentorPages.Name = "MentorPages";
+            this.MentorPages.Page = this.SocietiesPage;
+            this.MentorPages.PageIndex = 0;
+            this.MentorPages.PageName = "SocietiesPage";
+            this.MentorPages.PageTitle = "Societies";
+            this.MentorPages.SelectedIndex = 0;
+            this.MentorPages.Size = new System.Drawing.Size(1099, 749);
+            this.MentorPages.TabIndex = 1;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 0F;
@@ -472,8 +472,8 @@
             animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
-            this.StudentPages.Transition = animation1;
-            this.StudentPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
+            this.MentorPages.Transition = animation1;
+            this.MentorPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
             // 
             // SocietiesPage
             // 
@@ -484,7 +484,7 @@
             this.SocietiesPage.Controls.Add(this.searchBar);
             this.SocietiesPage.Location = new System.Drawing.Point(4, 4);
             this.SocietiesPage.Name = "SocietiesPage";
-            this.SocietiesPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SocietiesPage.Padding = new System.Windows.Forms.Padding(3);
             this.SocietiesPage.Size = new System.Drawing.Size(1091, 723);
             this.SocietiesPage.TabIndex = 0;
             this.SocietiesPage.Text = "Societies";
@@ -494,7 +494,7 @@
             this.societyCardsPanel.AutoScroll = true;
             this.societyCardsPanel.BackColor = System.Drawing.Color.Transparent;
             this.societyCardsPanel.Location = new System.Drawing.Point(25, 126);
-            this.societyCardsPanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.societyCardsPanel.Margin = new System.Windows.Forms.Padding(10);
             this.societyCardsPanel.Name = "societyCardsPanel";
             this.societyCardsPanel.Padding = new System.Windows.Forms.Padding(40, 10, 10, 10);
             this.societyCardsPanel.Size = new System.Drawing.Size(996, 584);
@@ -589,7 +589,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Transparent;
             this.searchBar.OnIdleState = stateProperties4;
-            this.searchBar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.searchBar.Padding = new System.Windows.Forms.Padding(3);
             this.searchBar.PasswordChar = '\0';
             this.searchBar.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.searchBar.PlaceholderText = "Search Societies";
@@ -620,7 +620,7 @@
             this.Requests.Controls.Add(this.reqLabel1);
             this.Requests.Location = new System.Drawing.Point(4, 4);
             this.Requests.Name = "Requests";
-            this.Requests.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Requests.Padding = new System.Windows.Forms.Padding(3);
             this.Requests.Size = new System.Drawing.Size(1091, 723);
             this.Requests.TabIndex = 2;
             this.Requests.Text = "Requests";
@@ -960,10 +960,10 @@
             this.viewSociety.Controls.Add(this.logoViewSociety);
             this.viewSociety.Controls.Add(this.titleViewSociety);
             this.viewSociety.Location = new System.Drawing.Point(4, 4);
-            this.viewSociety.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewSociety.Margin = new System.Windows.Forms.Padding(2);
             this.viewSociety.Name = "viewSociety";
-            this.viewSociety.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.viewSociety.Size = new System.Drawing.Size(1071, 703);
+            this.viewSociety.Padding = new System.Windows.Forms.Padding(2);
+            this.viewSociety.Size = new System.Drawing.Size(1091, 723);
             this.viewSociety.TabIndex = 4;
             this.viewSociety.Text = "view Society";
             // 
@@ -1050,7 +1050,7 @@
             this.logoViewSociety.Image = ((System.Drawing.Image)(resources.GetObject("logoViewSociety.Image")));
             this.logoViewSociety.IsCircle = true;
             this.logoViewSociety.Location = new System.Drawing.Point(104, 152);
-            this.logoViewSociety.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoViewSociety.Margin = new System.Windows.Forms.Padding(2);
             this.logoViewSociety.Name = "logoViewSociety";
             this.logoViewSociety.Size = new System.Drawing.Size(200, 200);
             this.logoViewSociety.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1077,8 +1077,8 @@
             this.eventPage.Controls.Add(this.allEventLabel);
             this.eventPage.Location = new System.Drawing.Point(4, 4);
             this.eventPage.Name = "eventPage";
-            this.eventPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.eventPage.Size = new System.Drawing.Size(1071, 703);
+            this.eventPage.Padding = new System.Windows.Forms.Padding(3);
+            this.eventPage.Size = new System.Drawing.Size(1091, 723);
             this.eventPage.TabIndex = 5;
             this.eventPage.Text = "Events";
             // 
@@ -1088,9 +1088,9 @@
             this.allEventPanel.BackColor = System.Drawing.Color.Transparent;
             this.allEventPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.allEventPanel.Location = new System.Drawing.Point(29, 92);
-            this.allEventPanel.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.allEventPanel.Margin = new System.Windows.Forms.Padding(10);
             this.allEventPanel.Name = "allEventPanel";
-            this.allEventPanel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.allEventPanel.Padding = new System.Windows.Forms.Padding(10);
             this.allEventPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.allEventPanel.Size = new System.Drawing.Size(970, 488);
             this.allEventPanel.TabIndex = 5;
@@ -1124,10 +1124,10 @@
             this.viewEvent.Controls.Add(this.socImg);
             this.viewEvent.Controls.Add(this.socTitle);
             this.viewEvent.Location = new System.Drawing.Point(4, 4);
-            this.viewEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewEvent.Margin = new System.Windows.Forms.Padding(2);
             this.viewEvent.Name = "viewEvent";
-            this.viewEvent.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.viewEvent.Size = new System.Drawing.Size(1071, 703);
+            this.viewEvent.Padding = new System.Windows.Forms.Padding(2);
+            this.viewEvent.Size = new System.Drawing.Size(1091, 723);
             this.viewEvent.TabIndex = 7;
             this.viewEvent.Text = "view Event";
             // 
@@ -1244,7 +1244,7 @@
             this.eveImg.Image = ((System.Drawing.Image)(resources.GetObject("eveImg.Image")));
             this.eveImg.IsCircle = true;
             this.eveImg.Location = new System.Drawing.Point(653, 90);
-            this.eveImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eveImg.Margin = new System.Windows.Forms.Padding(2);
             this.eveImg.Name = "eveImg";
             this.eveImg.Size = new System.Drawing.Size(200, 200);
             this.eveImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1309,7 +1309,7 @@
             this.socImg.Image = ((System.Drawing.Image)(resources.GetObject("socImg.Image")));
             this.socImg.IsCircle = true;
             this.socImg.Location = new System.Drawing.Point(110, 90);
-            this.socImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.socImg.Margin = new System.Windows.Forms.Padding(2);
             this.socImg.Name = "socImg";
             this.socImg.Size = new System.Drawing.Size(200, 200);
             this.socImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1334,7 +1334,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.StudentPages);
+            this.Controls.Add(this.MentorPages);
             this.Controls.Add(this.panel1);
             this.Name = "Mentor";
             this.Text = "Mentor";
@@ -1342,7 +1342,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.StudentPages.ResumeLayout(false);
+            this.MentorPages.ResumeLayout(false);
             this.SocietiesPage.ResumeLayout(false);
             this.SocietiesPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPic)).EndInit();
@@ -1370,7 +1370,7 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton societiesBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton eventsBtn;
-        private Bunifu.UI.WinForms.BunifuPages StudentPages;
+        private Bunifu.UI.WinForms.BunifuPages MentorPages;
         private System.Windows.Forms.TabPage SocietiesPage;
         private Bunifu.UI.WinForms.BunifuTextBox searchBar;
         private Bunifu.UI.WinForms.BunifuLabel userName;
