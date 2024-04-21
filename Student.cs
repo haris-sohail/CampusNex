@@ -1,7 +1,9 @@
 ﻿using Bunifu.UI.WinForms;
 using CampusNex.Model;
+using CampusNex.PopUps;
 using Google.Protobuf;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -34,6 +36,11 @@ namespace CampusNex
         // Event Handler for togling
         // Registration and Announcements
         private EventHandler currentHandler;
+
+        public Student()
+        {
+
+        }
         public Student(string user_id)
         {
             initializeSocieties();
@@ -575,6 +582,10 @@ namespace CampusNex
                     memName,
                     "More Details",
                     "Accept"
+
+                                //need to add user id of that particular member
+
+                     
                 });
 
             }
@@ -583,26 +594,70 @@ namespace CampusNex
 
         private void memReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
-            {
-                if (memReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            //if (e.RowIndex != 0)
+           // {
+                //member approved
+                if (e.ColumnIndex == 4)
                 {
-                    DataGridViewRow clickedRow = memReqGrid.Rows[e.RowIndex];
-                    // Extract Request ID
-                    int cellValue = int.Parse(clickedRow.Cells[0].Value.ToString());
+                    if (memReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    {
+                        DataGridViewRow clickedRow = memReqGrid.Rows[e.RowIndex];
+                        // Extract Request ID
+                        int cellValue = int.Parse(clickedRow.Cells[0].Value.ToString());
 
-                    DB_Connection DB_Connector = new DB_Connection();
-                    // Set status to accepted
-                    string tableName = "Members";
-                    string[] scolumns = { "status" };
-                    string[] wcolumns = { "member_id" };
-                    object[] values = { "accepted", cellValue };
+                        DB_Connection DB_Connector = new DB_Connection();
+                        // Set status to accepted
+                        string tableName = "Members";
+                        string[] scolumns = { "status" };
+                        string[] wcolumns = { "member_id" };
+                        object[] values = { "accepted", cellValue };
 
-                    // Call the UpdateData method
-                    bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
-                    loadReqData();
+                        // Call the UpdateData method
+                        bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+                        loadReqData();
+                    }
                 }
-            }
+
+                //if view button clicked on member request table
+                if (e.ColumnIndex == 3)
+                {
+                    if (memReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    {
+                        DataGridViewRow clickedRow = memReqGrid.Rows[e.RowIndex];
+
+                        string memberId = clickedRow.Cells[0].Value.ToString();
+                        foreach (var m in student.Members)
+                        {
+                            
+
+                            //if (int.Parse(memberId) == m.MemberId)
+                            // {
+
+                            Console.Write(memberId);                            
+                            System.Drawing.Image socPic;
+                            System.Drawing.Image memPic;
+                            int socId = m.SocietyId;
+                            socPic = utilObj.getSocietyImage(socId);
+                            memPic = utilObj.getMemberImage(int.Parse(memberId));
+                            String socName = utilObj.getSocietyName(socId.ToString());
+                            string memberInt = utilObj.getMemberInterest(int.Parse(memberId));
+                            string memberName = utilObj.getMemberName(int.Parse(memberId));
+                            string dateJoined = m.getMemberDateJoined(int.Parse(memberId));
+
+
+                            MemberRequest popup = new MemberRequest(m, socName, socPic, memberInt, memberName, memPic, dateJoined);
+                            popup.ShowDialog();
+                            break;
+
+                            // }
+                        }
+
+
+
+
+                    }
+                }
+           // }
         }
 
         private void MemberReqBtn_Click(object sender, EventArgs e)
@@ -808,6 +863,11 @@ namespace CampusNex
                 StudentPages.SetPage("Announcements");
                 addAnnouncementCards();
             }
+        }
+
+        private void allEventPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

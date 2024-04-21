@@ -10,6 +10,7 @@ using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -233,6 +234,11 @@ namespace CampusNex
                             string oname = utilObj.getHeadName(e.OrganizerId.ToString());
                             System.Drawing.Image img = utilObj.getImage(e.EventImg);
                             System.Drawing.Image eImgg = utilObj.ResizeImage(img, 32, 32);
+
+                            byte[] slogo = s.Logo;
+
+                            System.Drawing.Image societyImg = utilObj.getImage(slogo);
+                            System.Drawing.Image resizedImage = utilObj.ResizeImage(societyImg, 32, 32);
                             eveReqGrid.Rows.Add(new Object[]
                             {
                                 eImgg,
@@ -240,7 +246,10 @@ namespace CampusNex
                                 e.Title,
                                 oname,
                                 "View",
-                                "Accept"
+                                "Accept",
+                                 e.EventId.ToString(),   //sending eventId
+                                 resizedImage
+             
                             });
                         }
 
@@ -259,6 +268,8 @@ namespace CampusNex
 
         private void socReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            //need to add condition that if its row 1
             // Check Click Event on Accept Column
             if (e.ColumnIndex == 4) 
             {
@@ -413,35 +424,74 @@ namespace CampusNex
 
         private void eveReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
-            {
-                if (eveReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+           
+                //when accept button is clicked
+                if (e.ColumnIndex == 5)
                 {
-                    DataGridViewRow clickedRow = eveReqGrid.Rows[e.RowIndex];
-                    // Extract Event Id
-                    string cellValue = clickedRow.Cells[2].Value.ToString();
-                    int eveId = -1;
-                    foreach(var ee in events)
+                    if (eveReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
                     {
-                        if(ee.Title == cellValue)
+                        DataGridViewRow clickedRow = eveReqGrid.Rows[e.RowIndex];
+                        // Extract Event Id
+                        string cellValue = clickedRow.Cells[2].Value.ToString();
+                        int eveId = -1;
+                        foreach (var ee in events)
                         {
-                            eveId = ee.EventId; 
-                            break;
+                            if (ee.Title == cellValue)
+                            {
+                                eveId = ee.EventId;
+                                break;
+                            }
                         }
-                    }
-                    DB_Connection DB_Connector = new DB_Connection();
-                    // Set status to accepted
-                    string tableName = "Events";
-                    string[] scolumns = { "status" };
-                    string[] wcolumns = { "event_id" };
-                    object[] values = { "accepted", eveId};
+                        DB_Connection DB_Connector = new DB_Connection();
+                        // Set status to accepted
+                        string tableName = "Events";
+                        string[] scolumns = { "status" };
+                        string[] wcolumns = { "event_id" };
+                        object[] values = { "accepted", eveId };
 
-                    // Call the UpdateData method
-                    bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
-                    initializeEvents();
-                    loadReqData();
+                        // Call the UpdateData method
+                        bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+                        initializeEvents();
+                        loadReqData();
+                    }
                 }
-            }
+
+                if (e.ColumnIndex == 4)
+                {
+                    if (eveReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                    {
+                        DataGridViewRow clickedRow = eveReqGrid.Rows[e.RowIndex];
+                        
+
+                        string eventId = clickedRow.Cells[6].Value.ToString();
+                        bool flg = false;
+                    
+
+                        foreach (var s in societies)
+                        {
+                            foreach (var ev in s.Events)
+                            {
+                                //if (ev.EventId == int.Parse(eventId))
+                               // {
+                                    string organizerOfEvent = utilObj.getHeadName(s.HeadId.ToString());
+                                    string socName = utilObj.getSocietyName(s.SocietyId.ToString());
+                                    EventRequest popup = new EventRequest(ev, s.Logo, socName, organizerOfEvent);
+                                    popup.ShowDialog();
+                                    flg = true;
+                            
+                                    break;
+                                //}
+                            }
+
+                            if(flg == true)
+                             {
+                               break;
+                             }
+                        }
+
+                    }
+                }
+            
         }
 
         // Added New Event Handlers For Empty Grids

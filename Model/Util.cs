@@ -126,6 +126,18 @@ namespace CampusNex.Model
             return headName;
         }
 
+        public string getSocietyName(String societyId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = " select society_name from Societies " +
+               "WHERE " + societyId;
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string societyName = selectResult[0][0].ToString();
+            return societyName;
+        }
+
         public string getMentorName(String mentorId)
         {
             DB_Connection dbConnector = new DB_Connection();
@@ -159,6 +171,68 @@ namespace CampusNex.Model
         {
             string query = "Select user_pic from users u inner join" +
                 " students s on u.user_id = s.user_id where student_id = " + studentid.ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            return this.getImage(selectResult[0][0] as byte[]);
+        }
+
+        public string getUserName(int studentid)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT username FROM Users u inner join" +
+                " Students s ON u.user_id = s.user_id " +
+                "WHERE s.student_id = " + studentid.ToString();
+
+            // each list contains an individual row's data
+
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string userName = selectResult[0][0].ToString();
+            return userName;
+        }
+
+        public System.Drawing.Image getSocietyImage(int societyid)
+        {
+            string query = "Select  society_logo from Societies " +
+                " where  society_id = " + societyid.ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            return this.getImage(selectResult[0][0] as byte[]);
+        }
+
+      
+
+        public string getMemberInterest(int studentid)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT interest FROM Members WHERE student_id = " + studentid.ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string memberInterest = selectResult[0][0].ToString();
+            return memberInterest;
+
+        }
+
+       
+
+
+        public string getMemberName(int studentId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT u.username AS student_name " +
+                "FROM Members m JOIN Students s ON m.student_id = s.student_id " +
+                "JOIN Users u ON s.user_id = u.user_id " + 
+                "WHERE m.student_id = " + studentId.ToString();
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+            string memberName = selectResult[0][0].ToString();
+            return memberName;
+        }
+
+        public System.Drawing.Image getMemberImage(int memberid)
+        {
+            string query = "SELECT u.user_pic " +
+               "FROM Members m, Students s " +
+               "JOIN Users u ON u.user_id = s.user_id " +
+               "WHERE s.student_id = m.student_id AND m.member_id = " + memberid.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
             return this.getImage(selectResult[0][0] as byte[]);
         }

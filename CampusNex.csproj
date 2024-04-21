@@ -138,6 +138,18 @@
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Util.cs" />
+    <Compile Include="PopUps\EventRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUps\EventRequest.Designer.cs">
+      <DependentUpon>EventRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUps\MemberRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUps\MemberRequest.Designer.cs">
+      <DependentUpon>MemberRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUps\SocietyRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUps\EventRequest.resx">
+      <DependentUpon>EventRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUps\MemberRequest.resx">
+      <DependentUpon>MemberRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUps\SocietyRequest.resx">
       <DependentUpon>SocietyRequest.cs</DependentUpon>

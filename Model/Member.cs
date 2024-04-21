@@ -20,6 +20,10 @@ namespace CampusNex.Model
         public string status { get; set; } 
         protected static DB_Connection dbConnector = new DB_Connection();
         // Constructor
+        public Member()
+        {
+
+        }
         public Member(int student_id, int index)
         {
             // Initialize all Member Related 
@@ -80,6 +84,19 @@ namespace CampusNex.Model
             // Customize the string representation of the object
             return $"\nMember: MemberId: {this.MemberId}\nStudentId: {this.StudentId}\n"
                 +$"SocietyId: {this.SocietyId}\nIsHead: {this.IsHead}\nStatus: {this.status}\n";
+        }
+
+        public String getMemberDateJoined(int memberId)
+        {
+            DB_Connection dbConnector = new DB_Connection();
+            string query = "SELECT join_date " +
+            "FROM Members WHERE member_id = " + memberId;
+            List<List<object>> selectResult = dbConnector.executeSelect(query);
+
+
+            String memberDateJoined = selectResult[0][0].ToString();
+            return memberDateJoined;
+
         }
     }
 }
