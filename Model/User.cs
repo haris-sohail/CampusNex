@@ -116,8 +116,9 @@ namespace CampusNex.Model
 
             // Implement validation logic here
             // run select query based on the entered username and password
-            string query = "SELECT user_id, role, username FROM USERS WHERE USERS.username = '" + username
-                + "' AND USERS.password = '" + password + "'";
+            
+            string query = "SELECT user_id, role, username FROM CUSERS WHERE CUSERS.username = '" + username
+                + "' AND CUSERS.password = '" + password + "'";
 
             List<List<object>> user = dbConnector.executeSelect(query);
 
@@ -143,7 +144,7 @@ namespace CampusNex.Model
         {
             // Populate the User Class
             // By fetching data from DB
-            string query = "Select * From Users where user_id = " + this.GetUserId().ToString();
+            string query = "Select * From CUsers where user_id = " + this.GetUserId().ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
             // Set all Values

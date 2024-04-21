@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -70,7 +71,7 @@ namespace CampusNex.Model
             if (dbConnector.OpenConnection())
             {
 
-                MySqlCommand cmd = new MySqlCommand(query, dbConnector.connection);
+                SqlCommand cmd = new SqlCommand(query, dbConnector.connection);
                 cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = e.EventImg;
 
                 cmd.ExecuteNonQuery();

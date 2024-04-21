@@ -117,6 +117,7 @@
     <Compile Include="AnnouncementCard.Designer.cs">
       <DependentUpon>AnnouncementCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Credentials.cs" />
     <Compile Include="DB_Connection.cs" />
     <Compile Include="eventCard.cs">
       <SubType>UserControl</SubType>

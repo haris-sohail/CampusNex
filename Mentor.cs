@@ -122,8 +122,7 @@ namespace CampusNex
             newCard.ViewBtnClicked += (sender, e) =>
             {
                 // Switch to the "View More" tab when the button is clicked
-                StudentPages.SelectedIndex = 3; // Index of the "View More" tab
-
+                StudentPages.SelectedIndex = 2; // Index of the "View More" tab
 
 
                 // Get the details from the clicked user control object

@@ -61,7 +61,7 @@ namespace CampusNex.Model
 
         public List<List<object>> getAnnouncements(int user_id)
         {
-            string query = "SELECT ANNOUNCEMENTS.announcement_id, ANNOUNCEMENTS.title, ANNOUNCEMENTS.body, ANNOUNCEMENTS.posted_at, ANNOUNCEMENTS.valid_till, ANNOUNCEMENTS.priority, \r\nSOCIETIES.society_name FROM ANNOUNCEMENTS\r\nINNER JOIN SOCIETIES ON\r\nSOCIETIES.society_id = ANNOUNCEMENTS.society_id\r\nINNER JOIN MEMBERS ON \r\nMEMBERS.society_id = SOCIETIES.society_id\r\nINNER JOIN STUDENTS ON\r\nSTUDENTS.student_id = MEMBERS.student_id\r\nINNER JOIN USERS ON\r\nUSERS.user_id = STUDENTS.user_id\r\nWHERE USERS.user_id = " + user_id.ToString();
+            string query = "SELECT ANNOUNCEMENTS.announcement_id, ANNOUNCEMENTS.title, ANNOUNCEMENTS.body, ANNOUNCEMENTS.posted_at, ANNOUNCEMENTS.valid_till, ANNOUNCEMENTS.priority, \r\nSOCIETIES.society_name FROM ANNOUNCEMENTS\r\nINNER JOIN SOCIETIES ON\r\nSOCIETIES.society_id = ANNOUNCEMENTS.society_id\r\nINNER JOIN MEMBERS ON \r\nMEMBERS.society_id = SOCIETIES.society_id\r\nINNER JOIN STUDENTS ON\r\nSTUDENTS.student_id = MEMBERS.student_id\r\nINNER JOIN CUSERS ON\r\nCUSERS.user_id = STUDENTS.user_id\r\nWHERE CUSERS.user_id = " + user_id.ToString();
             
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
@@ -115,9 +115,9 @@ namespace CampusNex.Model
         public string getHeadName(String headId)
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = " select username from Users " +
+            string query = " select username from CUsers " +
                 "INNER JOIN Students " +
-                "ON Students.user_id = Users.user_id " +
+                "ON Students.user_id = CUsers.user_id " +
                 "WHERE Students.student_id = " + headId;
 
             // each list contains an individual row's data
@@ -132,7 +132,7 @@ namespace CampusNex.Model
         {
             DB_Connection dbConnector = new DB_Connection();
             string query = " select society_name from Societies " +
-               "WHERE " + societyId;
+               "WHERE society_id=" + societyId;
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
@@ -143,9 +143,9 @@ namespace CampusNex.Model
         public string getMentorName(String mentorId)
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = " select username from Users " +
+            string query = " select username from CUsers " +
                 "INNER JOIN Mentors " +
-                "ON Mentors.user_id = Users.user_id " +
+                "ON Mentors.user_id = CUsers.user_id " +
                 "WHERE Mentors.mentor_id = " + mentorId;
 
             // each list contains an individual row's data
@@ -171,7 +171,7 @@ namespace CampusNex.Model
 
         public System.Drawing.Image getUserImage(int studentid)
         {
-            string query = "Select user_pic from users u inner join" +
+            string query = "Select user_pic from cusers u inner join" +
                 " students s on u.user_id = s.user_id where student_id = " + studentid.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
             return this.getImage(selectResult[0][0] as byte[]);
@@ -180,7 +180,7 @@ namespace CampusNex.Model
         public string getUserName(int studentid)
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT username FROM Users u inner join" +
+            string query = "SELECT username FROM cUsers u inner join" +
                 " Students s ON u.user_id = s.user_id " +
                 "WHERE s.student_id = " + studentid.ToString();
 
@@ -221,7 +221,7 @@ namespace CampusNex.Model
             DB_Connection dbConnector = new DB_Connection();
             string query = "SELECT u.username AS student_name " +
                 "FROM Members m JOIN Students s ON m.student_id = s.student_id " +
-                "JOIN Users u ON s.user_id = u.user_id " + 
+                "JOIN cUsers u ON s.user_id = u.user_id " + 
                 "WHERE m.student_id = " + studentId.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
@@ -233,7 +233,7 @@ namespace CampusNex.Model
         {
             string query = "SELECT u.user_pic " +
                "FROM Members m, Students s " +
-               "JOIN Users u ON u.user_id = s.user_id " +
+               "JOIN cUsers u ON u.user_id = s.user_id " +
                "WHERE s.student_id = m.student_id AND m.member_id = " + memberid.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
             return this.getImage(selectResult[0][0] as byte[]);

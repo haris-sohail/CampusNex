@@ -340,10 +340,10 @@ namespace CampusNex
             string query = @"
             SELECT U.username AS mentor_name
             FROM Mentors M
-            INNER JOIN Users U ON M.user_id = U.user_id
+            INNER JOIN CUsers U ON M.user_id = CU.user_id
             LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
             WHERE U.role = 'mentor'
-            GROUP BY M.mentor_id
+            GROUP BY M.mentor_id, U.username
             HAVING COUNT(S.society_id) < 2;"
             ;
             DB_Connection dbConnector = new DB_Connection();
@@ -401,7 +401,7 @@ namespace CampusNex
             formInput.Add(student.StudentId);
 
             // Insertion in Societies and Members table
-            dbConnector.executeInsert(formInput, "Societies");
+            dbConnector.ExecuteInsert(formInput, "Societies");
 
             // Show registration request sent popup
             MessageBox.Show("Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -437,7 +437,7 @@ namespace CampusNex
         private void member_Registration(object sender, EventArgs e)     
         {
             DB_Connection dbConnector = new DB_Connection();
-            string societyId = dbConnector.getSocietyId(societyNameRegField.Text).ToString();   //getting soicetyId and converting it to string
+            string societyId = dbConnector.GetSocietyId(societyNameRegField.Text).ToString();   //getting soicetyId and converting it to string
             bool isHead = false;   //will always be false for members
             List<object> formInput = new List<object>();
             formInput.Add(student.StudentId);
@@ -446,7 +446,7 @@ namespace CampusNex
             formInput.Add(isHead);            
             formInput.Add(societyStudentRegTextBox.Text);
 
-            dbConnector.executeInsert2(formInput, "Members");
+            dbConnector.ExecuteInsert2(formInput, "Members");
             // Clear Fields
             societyStudentRegTextBox.Text = "";
 
@@ -562,7 +562,7 @@ namespace CampusNex
             string query = "SELECT " +
                 "U.username AS user_name, S.society_name,M.member_id" +
                 " FROM Members M JOIN Students St ON M.student_id = St.student_id" +
-                " JOIN Users U ON St.user_id = U.user_id" +
+                " JOIN CUsers U ON St.user_id = U.user_id" +
                 " JOIN Societies S ON M.society_id = S.society_id" +
                 " WHERE M.status = 'pending' and M.society_id = " + sId.ToString();
 
@@ -784,7 +784,7 @@ namespace CampusNex
         {
             DB_Connection dbConnector = new DB_Connection();
 
-            string query = "SELECT SOCIETIES.society_id, STUDENTS.student_id\r\nFROM SOCIETIES INNER JOIN \r\nMEMBERS ON \r\nSOCIETIES.society_id = MEMBERS.society_id\r\nINNER JOIN STUDENTS ON\r\nSTUDENTS.student_id = MEMBERS.student_id\r\nINNER JOIN USERS ON\r\nUSERS.user_id = STUDENTS.user_id\r\nWHERE USERS.user_id = " + user_id;
+            string query = "SELECT SOCIETIES.society_id, STUDENTS.student_id\r\nFROM SOCIETIES INNER JOIN \r\nMEMBERS ON \r\nSOCIETIES.society_id = MEMBERS.society_id\r\nINNER JOIN STUDENTS ON\r\nSTUDENTS.student_id = MEMBERS.student_id\r\nINNER JOIN CUSERS ON\r\nCUSERS.user_id = STUDENTS.user_id\r\nWHERE CUSERS.user_id = " + user_id;
 
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
@@ -857,7 +857,7 @@ namespace CampusNex
             
             if(formInput != null)
             { 
-                dbConnector.executeInsertAnnouncement(formInput);
+                dbConnector.ExecuteInsertAnnouncement(formInput);
                 MessageBox.Show("Announcement Posted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 StudentPages.SetPage("Announcements");
                 addAnnouncementCards();
