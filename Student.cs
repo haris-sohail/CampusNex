@@ -417,13 +417,18 @@ namespace CampusNex
             StudentPages.SetPage("Societies");
         }
 
+        // Implement Dynamic search
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
-            // Remove the existing societies
-            societyCardsPanel.Controls.Clear();
+            foreach (societyCard card in societyCardsPanel.Controls)
+            {
+                // Check if the control is a UserControl
+                if (card is UserControl)
+                {
+                    card.toggleDisplay(searchBar.Text);
+                }
+            }
 
-            // Search the societies 
-            showSocieties(searchBar.Text);
         }
 
 
@@ -629,10 +634,6 @@ namespace CampusNex
                         foreach (var m in student.Members)
                         {
                             
-
-                            //if (int.Parse(memberId) == m.MemberId)
-                            // {
-
                             Console.Write(memberId);                            
                             System.Drawing.Image socPic;
                             System.Drawing.Image memPic;
@@ -648,8 +649,6 @@ namespace CampusNex
                             MemberRequest popup = new MemberRequest(m, socName, socPic, memberInt, memberName, memPic, dateJoined);
                             popup.ShowDialog();
                             break;
-
-                            // }
                         }
 
 
@@ -865,9 +864,20 @@ namespace CampusNex
             }
         }
 
-        private void allEventPanel_Paint(object sender, PaintEventArgs e)
+        private void memReqGrid_Paint(object sender, PaintEventArgs e)
         {
-
+            if (memReqGrid.Rows.Count == 0)
+            {
+                string message = "No entries Yet";
+                using (var font = new Font("Verdana", 16, FontStyle.Bold))
+                using (var brush = new SolidBrush(Color.White))
+                {
+                    var stringSize = e.Graphics.MeasureString(message, font);
+                    var x = (memReqGrid.Width - stringSize.Width) / 2;
+                    var y = (memReqGrid.Height - stringSize.Height) / 2;
+                    e.Graphics.DrawString(message, font, brush, x, y);
+                }
+            }
         }
     }
 }

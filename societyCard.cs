@@ -113,6 +113,25 @@ namespace CampusNex
             ViewBtnClicked?.Invoke(this, EventArgs.Empty);
 
         }
+        public void toggleDisplay(string searchtxt)
+        {
+            string info = this.sAcronym.ToString()+" "+
+                this.sSlogan.ToString() + " " +
+                this.sHead.ToString() + " " +
+                this.sMentor.ToString() + " " +
+                this.sName.ToString();
+            info = info.ToLower();
+            searchtxt = searchtxt.ToLower();
+
+            if (info.Contains(searchtxt))
+            {
+                this.Visible = true;
+            }
+            else
+            {
+                this.Visible = false;
+            }
+        }
 
     }
 }

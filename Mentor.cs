@@ -347,11 +347,14 @@ namespace CampusNex
 
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
-            // Remove the existing societies
-            societyCardsPanel.Controls.Clear();
-
-            // Search the societies 
-            showSocieties(searchBar.Text);
+            foreach (societyCard card in societyCardsPanel.Controls)
+            {
+                // Check if the control is a UserControl
+                if (card is UserControl)
+                {
+                    card.toggleDisplay(searchBar.Text);
+                }
+            }
         }
 
         private void eventsBtn_Click(object sender, EventArgs e)
