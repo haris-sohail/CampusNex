@@ -203,10 +203,10 @@ namespace CampusNex.Model
 
       
 
-        public string getMemberInterest(int studentid)
+        public string getMemberInterest(int memberid)
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT interest FROM Members WHERE student_id = " + studentid.ToString();
+            string query = "SELECT interest FROM Members WHERE member_id = " + memberid.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
             string memberInterest = selectResult[0][0].ToString();
@@ -217,13 +217,10 @@ namespace CampusNex.Model
        
 
 
-        public string getMemberName(int studentId)
+        public string getMemberName(int memberid)
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT u.username AS student_name " +
-                "FROM Members m JOIN Students s ON m.student_id = s.student_id " +
-                "JOIN cUsers u ON s.user_id = u.user_id " + 
-                "WHERE m.student_id = " + studentId.ToString();
+            string query = "SELECT u.username AS student_name FROM Members m JOIN Students s ON m.student_id = s.student_id JOIN cUsers u ON s.user_id = u.user_id WHERE m.member_id = " + memberid.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
             string memberName = selectResult[0][0].ToString();

@@ -169,12 +169,12 @@ namespace CampusNex
             };
 
             // set the border color according to priority
-            if (priority.Equals("low"))
+            if (priority.Equals("Low"))
             {
                 newAnnouncement.BorderColor = Color.Green;
             }
 
-            else if (priority.Equals("medium"))
+            else if (priority.Equals("Medium"))
             {
                 newAnnouncement.BorderColor = Color.Orange;
             }
