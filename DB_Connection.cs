@@ -204,8 +204,8 @@ namespace CampusNex
                 int mentorId = int.Parse(GetMentorId(mentorName));
 
                 string query = $"INSERT INTO {tableName} (society_name, society_slogan, society_description, " +
-                    "mentor_id, head_id, creation_date, society_logo) VALUES (@societyName, @societySlog, " +
-                    "@societyDesc, @mentorId, @headId, @creationDate, @logoBlob)";
+                    "mentor_id, head_id, creation_date, society_logo, status) VALUES (@societyName, @societySlog, " +
+                    "@societyDesc, @mentorId, @headId, @creationDate, @logoBlob, @status)";
 
                 SqlCommand cmd = new SqlCommand(query, connection);
 
@@ -216,6 +216,7 @@ namespace CampusNex
                 cmd.Parameters.Add("@headId", SqlDbType.Int).Value = int.Parse(toInsert[5].ToString());
                 cmd.Parameters.Add("@creationDate", SqlDbType.Date).Value = DateTime.Today;
                 cmd.Parameters.Add("@logoBlob", SqlDbType.VarBinary).Value = toInsert[4];
+                cmd.Parameters.Add("@status", SqlDbType.NVarChar).Value = "pending";
 
                 cmd.ExecuteNonQuery();
                 CloseConnection();

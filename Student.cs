@@ -169,12 +169,12 @@ namespace CampusNex
             };
 
             // set the border color according to priority
-            if (priority.Equals("low"))
+            if (priority.Equals("Low"))
             {
                 newAnnouncement.BorderColor = Color.Green;
             }
 
-            else if (priority.Equals("medium"))
+            else if (priority.Equals("Medium"))
             {
                 newAnnouncement.BorderColor = Color.Orange;
             }
@@ -340,7 +340,7 @@ namespace CampusNex
             string query = @"
             SELECT U.username AS mentor_name
             FROM Mentors M
-            INNER JOIN CUsers U ON M.user_id = CU.user_id
+            INNER JOIN CUsers U ON M.user_id = U.user_id
             LEFT JOIN Societies S ON M.mentor_id = S.mentor_id
             WHERE U.role = 'mentor'
             GROUP BY M.mentor_id, U.username
