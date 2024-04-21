@@ -102,6 +102,16 @@ namespace CampusNex.Model
 
         public static bool ValidateUser(string username, string password, Login loginForm)
         {
+            if (!Util.checkUsername(username))
+            {
+                return false;
+            }
+
+            if (!Util.checkPassword(password))
+            {
+                return false;
+            }
+
             dbConnector = new DB_Connection();
 
             // Implement validation logic here

@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CampusNex.Model
 {
@@ -235,6 +237,82 @@ namespace CampusNex.Model
                "WHERE s.student_id = m.student_id AND m.member_id = " + memberid.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
             return this.getImage(selectResult[0][0] as byte[]);
+        }
+
+        public static bool checkUserNameLength(string userName)
+        {
+            if(userName.Count() == 0)
+            {
+                MessageBox.Show("Username should not be empty", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (userName.Count() >= 5 && userName.Count() <= 15)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Username length should be between 5 and 15", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public static bool checkPasswordLength(string password)
+        {
+            if (password.Count() == 0)
+            {
+                MessageBox.Show("Password should not be empty", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (password.Count() >= 5 && password.Count() <= 20)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Password length should be between 5 and 20", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public static bool checkUserNameSpecialChars(string username)
+        {
+            if (username.All(Char.IsLetter))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Username should only contain alphabets", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        public static bool checkUsername(string username)
+        {
+
+            if (!checkUserNameLength(username))
+            {
+                return false;
+            }
+
+            if (!checkUserNameSpecialChars(username))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool checkPassword(string password)
+        {
+            if (!checkPasswordLength(password))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

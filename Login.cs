@@ -43,6 +43,8 @@ namespace CampusNex
         }
         private void loginBtn_Click(object sender, EventArgs e)
         {
+
+
             // get the username and password
             string usernameEntered = usernameTxt.Text;
             string passEntered = passTxt.Text;
@@ -51,6 +53,11 @@ namespace CampusNex
             {
                 clearInputFields();
                 this.Hide();
+            }
+
+            else
+            {
+                clearInputFields();
             }
         }
 

@@ -107,7 +107,17 @@ INSERT INTO Users (username, password, email, role, user_pic) VALUES
 ('aliza', 'password', 'aliza@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\4.png'))),
 ('kissa', 'password', 'kissa@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\2.png'))),
 ('hamna', 'password', 'hamna@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\3.png'))),
-('test', 'password', 'test@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png')));
+('test', 'password', 'test@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('kalsoomtariq', 'Password', 'kalsoomtariq@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('masood', 'password', 'masood@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('dilshankhatoon', 'password', 'dilshan@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('khurramshehzzad', 'password', 'khurram@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('abubakarmukarram', 'password', 'abubakar@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('ahmed', 'passw', 'ahmed@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('mukarram', 'passwo', 'mukkarram@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('siddique', 'passwordpassword1', 'siddique@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('zainulabideen', 'passwordpassword12', 'zain@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png'))),
+('musaamir', 'passwordpassword123', 'musa@gmail.com', 'student', (LOAD_FILE('D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png')));
 
 INSERT INTO Students (user_id, roll_number) VALUES
 (1, 2487),
