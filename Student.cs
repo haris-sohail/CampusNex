@@ -14,6 +14,7 @@ using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
@@ -994,6 +995,11 @@ namespace CampusNex
             StudentPages.SetPage("changePassword");
             oldPassTxt.Clear();
             newPassTxt.Clear();
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

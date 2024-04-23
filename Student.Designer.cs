@@ -96,9 +96,10 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties43 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties44 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties45 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties46 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties47 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -107,7 +108,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties50 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties51 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties52 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MemberReqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -236,8 +236,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.closeBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.changePassBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.signOutBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.changePicBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.idLbl = new Bunifu.UI.WinForms.BunifuLabel();
             this.emailLbl = new Bunifu.UI.WinForms.BunifuLabel();
@@ -250,10 +250,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
             this.changePassword = new System.Windows.Forms.TabPage();
+            this.confirmBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.newPassTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.oldPassTxt = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.confirmBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -4049,8 +4049,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.tabPage1.Controls.Add(this.closeBtn);
             this.tabPage1.Controls.Add(this.changePassBtn);
-            this.tabPage1.Controls.Add(this.signOutBtn);
             this.tabPage1.Controls.Add(this.changePicBtn);
             this.tabPage1.Controls.Add(this.idLbl);
             this.tabPage1.Controls.Add(this.emailLbl);
@@ -4068,6 +4068,38 @@
             this.tabPage1.Size = new System.Drawing.Size(1091, 723);
             this.tabPage1.TabIndex = 10;
             this.tabPage1.Text = "Dashboard";
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.AllowAnimations = true;
+            this.closeBtn.AllowBorderColorChanges = true;
+            this.closeBtn.AllowMouseEffects = true;
+            this.closeBtn.AnimationSpeed = 200;
+            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BorderRadius = 1;
+            this.closeBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.closeBtn.BorderThickness = 1;
+            this.closeBtn.ColorContrastOnClick = 30;
+            this.closeBtn.ColorContrastOnHover = 30;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges18.BottomLeft = true;
+            borderEdges18.BottomRight = true;
+            borderEdges18.TopLeft = true;
+            borderEdges18.TopRight = true;
+            this.closeBtn.CustomizableEdges = borderEdges18;
+            this.closeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.closeBtn.Image = global::CampusNex.Properties.Resources.logout;
+            this.closeBtn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.closeBtn.Location = new System.Drawing.Point(1020, 16);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.RoundBorders = true;
+            this.closeBtn.ShowBorders = true;
+            this.closeBtn.Size = new System.Drawing.Size(44, 44);
+            this.closeBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.closeBtn.TabIndex = 15;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // changePassBtn
             // 
@@ -4088,11 +4120,11 @@
             this.changePassBtn.ColorContrastOnClick = 45;
             this.changePassBtn.ColorContrastOnHover = 45;
             this.changePassBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges18.BottomLeft = true;
-            borderEdges18.BottomRight = true;
-            borderEdges18.TopLeft = true;
-            borderEdges18.TopRight = true;
-            this.changePassBtn.CustomizableEdges = borderEdges18;
+            borderEdges19.BottomLeft = true;
+            borderEdges19.BottomRight = true;
+            borderEdges19.TopLeft = true;
+            borderEdges19.TopRight = true;
+            this.changePassBtn.CustomizableEdges = borderEdges19;
             this.changePassBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.changePassBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.changePassBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -4118,7 +4150,7 @@
             this.changePassBtn.IdleIconLeftImage = null;
             this.changePassBtn.IdleIconRightImage = null;
             this.changePassBtn.IndicateFocus = false;
-            this.changePassBtn.Location = new System.Drawing.Point(958, 63);
+            this.changePassBtn.Location = new System.Drawing.Point(959, 66);
             this.changePassBtn.Name = "changePassBtn";
             this.changePassBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.changePassBtn.OnDisabledState.BorderRadius = 10;
@@ -4160,98 +4192,6 @@
             this.changePassBtn.TextPadding = new System.Windows.Forms.Padding(0);
             this.changePassBtn.UseDefaultRadiusAndThickness = true;
             this.changePassBtn.Click += new System.EventHandler(this.changePassBtn_Click);
-            // 
-            // signOutBtn
-            // 
-            this.signOutBtn.AllowAnimations = true;
-            this.signOutBtn.AllowMouseEffects = true;
-            this.signOutBtn.AllowToggling = false;
-            this.signOutBtn.AnimationSpeed = 200;
-            this.signOutBtn.AutoGenerateColors = false;
-            this.signOutBtn.AutoRoundBorders = false;
-            this.signOutBtn.AutoSizeLeftIcon = true;
-            this.signOutBtn.AutoSizeRightIcon = true;
-            this.signOutBtn.BackColor = System.Drawing.Color.Transparent;
-            this.signOutBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.signOutBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("signOutBtn.BackgroundImage")));
-            this.signOutBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.signOutBtn.ButtonText = "Sign Out";
-            this.signOutBtn.ButtonTextMarginLeft = 0;
-            this.signOutBtn.ColorContrastOnClick = 45;
-            this.signOutBtn.ColorContrastOnHover = 45;
-            this.signOutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges19.BottomLeft = true;
-            borderEdges19.BottomRight = true;
-            borderEdges19.TopLeft = true;
-            borderEdges19.TopRight = true;
-            this.signOutBtn.CustomizableEdges = borderEdges19;
-            this.signOutBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.signOutBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.signOutBtn.DisabledFillColor = System.Drawing.Color.Empty;
-            this.signOutBtn.DisabledForecolor = System.Drawing.Color.Empty;
-            this.signOutBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.signOutBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.signOutBtn.ForeColor = System.Drawing.Color.White;
-            this.signOutBtn.IconLeft = null;
-            this.signOutBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.signOutBtn.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.signOutBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.signOutBtn.IconMarginLeft = 11;
-            this.signOutBtn.IconPadding = 10;
-            this.signOutBtn.IconRight = null;
-            this.signOutBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.signOutBtn.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.signOutBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.signOutBtn.IconSize = 25;
-            this.signOutBtn.IdleBorderColor = System.Drawing.Color.Empty;
-            this.signOutBtn.IdleBorderRadius = 0;
-            this.signOutBtn.IdleBorderThickness = 0;
-            this.signOutBtn.IdleFillColor = System.Drawing.Color.Empty;
-            this.signOutBtn.IdleIconLeftImage = null;
-            this.signOutBtn.IdleIconRightImage = null;
-            this.signOutBtn.IndicateFocus = false;
-            this.signOutBtn.Location = new System.Drawing.Point(984, 24);
-            this.signOutBtn.Name = "signOutBtn";
-            this.signOutBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.signOutBtn.OnDisabledState.BorderRadius = 10;
-            this.signOutBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.signOutBtn.OnDisabledState.BorderThickness = 1;
-            this.signOutBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.signOutBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.signOutBtn.OnDisabledState.IconLeftImage = null;
-            this.signOutBtn.OnDisabledState.IconRightImage = null;
-            this.signOutBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.signOutBtn.onHoverState.BorderRadius = 10;
-            this.signOutBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.signOutBtn.onHoverState.BorderThickness = 1;
-            this.signOutBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.signOutBtn.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.signOutBtn.onHoverState.IconLeftImage = null;
-            this.signOutBtn.onHoverState.IconRightImage = null;
-            this.signOutBtn.OnIdleState.BorderColor = System.Drawing.SystemColors.Window;
-            this.signOutBtn.OnIdleState.BorderRadius = 10;
-            this.signOutBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.signOutBtn.OnIdleState.BorderThickness = 1;
-            this.signOutBtn.OnIdleState.FillColor = System.Drawing.Color.IndianRed;
-            this.signOutBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.signOutBtn.OnIdleState.IconLeftImage = null;
-            this.signOutBtn.OnIdleState.IconRightImage = null;
-            this.signOutBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.signOutBtn.OnPressedState.BorderRadius = 10;
-            this.signOutBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.signOutBtn.OnPressedState.BorderThickness = 1;
-            this.signOutBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.signOutBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.signOutBtn.OnPressedState.IconLeftImage = null;
-            this.signOutBtn.OnPressedState.IconRightImage = null;
-            this.signOutBtn.Size = new System.Drawing.Size(79, 24);
-            this.signOutBtn.TabIndex = 13;
-            this.signOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.signOutBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.signOutBtn.TextMarginLeft = 0;
-            this.signOutBtn.TextPadding = new System.Windows.Forms.Padding(0);
-            this.signOutBtn.UseDefaultRadiusAndThickness = true;
-            this.signOutBtn.Click += new System.EventHandler(this.signOutBtn_Click);
             // 
             // changePicBtn
             // 
@@ -4534,6 +4474,114 @@
             this.changePassword.TabIndex = 11;
             this.changePassword.Text = "changePassword";
             // 
+            // confirmBtn
+            // 
+            this.confirmBtn.AllowAnimations = true;
+            this.confirmBtn.AllowMouseEffects = false;
+            this.confirmBtn.AllowToggling = false;
+            this.confirmBtn.AnimationSpeed = 200;
+            this.confirmBtn.AutoGenerateColors = false;
+            this.confirmBtn.AutoRoundBorders = false;
+            this.confirmBtn.AutoSizeLeftIcon = true;
+            this.confirmBtn.AutoSizeRightIcon = true;
+            this.confirmBtn.BackColor = System.Drawing.Color.Transparent;
+            this.confirmBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.confirmBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmBtn.BackgroundImage")));
+            this.confirmBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.confirmBtn.ButtonText = "Confirm";
+            this.confirmBtn.ButtonTextMarginLeft = 0;
+            this.confirmBtn.ColorContrastOnClick = 45;
+            this.confirmBtn.ColorContrastOnHover = 45;
+            this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges21.BottomLeft = true;
+            borderEdges21.BottomRight = true;
+            borderEdges21.TopLeft = true;
+            borderEdges21.TopRight = true;
+            this.confirmBtn.CustomizableEdges = borderEdges21;
+            this.confirmBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.confirmBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.confirmBtn.DisabledFillColor = System.Drawing.Color.Empty;
+            this.confirmBtn.DisabledForecolor = System.Drawing.Color.Empty;
+            this.confirmBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.confirmBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtn.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.IconLeft = null;
+            this.confirmBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.confirmBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.confirmBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.confirmBtn.IconMarginLeft = 11;
+            this.confirmBtn.IconPadding = 10;
+            this.confirmBtn.IconRight = null;
+            this.confirmBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.confirmBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.confirmBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.confirmBtn.IconSize = 25;
+            this.confirmBtn.IdleBorderColor = System.Drawing.Color.Empty;
+            this.confirmBtn.IdleBorderRadius = 0;
+            this.confirmBtn.IdleBorderThickness = 0;
+            this.confirmBtn.IdleFillColor = System.Drawing.Color.Empty;
+            this.confirmBtn.IdleIconLeftImage = null;
+            this.confirmBtn.IdleIconRightImage = null;
+            this.confirmBtn.IndicateFocus = false;
+            this.confirmBtn.Location = new System.Drawing.Point(486, 453);
+            this.confirmBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.confirmBtn.OnDisabledState.BorderRadius = 39;
+            this.confirmBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.confirmBtn.OnDisabledState.BorderThickness = 1;
+            this.confirmBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.confirmBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.confirmBtn.OnDisabledState.IconLeftImage = null;
+            this.confirmBtn.OnDisabledState.IconRightImage = null;
+            this.confirmBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.confirmBtn.onHoverState.BorderRadius = 39;
+            this.confirmBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
+            this.confirmBtn.onHoverState.BorderThickness = 1;
+            this.confirmBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
+            this.confirmBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.confirmBtn.onHoverState.IconLeftImage = null;
+            this.confirmBtn.onHoverState.IconRightImage = null;
+            this.confirmBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.confirmBtn.OnIdleState.BorderRadius = 39;
+            this.confirmBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.confirmBtn.OnIdleState.BorderThickness = 1;
+            this.confirmBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.confirmBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.OnIdleState.IconLeftImage = null;
+            this.confirmBtn.OnIdleState.IconRightImage = null;
+            this.confirmBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.confirmBtn.OnPressedState.BorderRadius = 39;
+            this.confirmBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.confirmBtn.OnPressedState.BorderThickness = 1;
+            this.confirmBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.confirmBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.OnPressedState.IconLeftImage = null;
+            this.confirmBtn.OnPressedState.IconRightImage = null;
+            this.confirmBtn.Size = new System.Drawing.Size(173, 38);
+            this.confirmBtn.TabIndex = 18;
+            this.confirmBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.confirmBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.confirmBtn.TextMarginLeft = 0;
+            this.confirmBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.confirmBtn.UseDefaultRadiusAndThickness = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(384, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(382, 60);
+            this.label1.MinimumSize = new System.Drawing.Size(382, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(382, 33);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Enter Credentials";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // newPassTxt
             // 
             this.newPassTxt.AcceptsReturn = false;
@@ -4685,114 +4733,6 @@
             this.oldPassTxt.TextPlaceholder = "Old Password";
             this.oldPassTxt.UseSystemPasswordChar = true;
             this.oldPassTxt.WordWrap = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(384, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.MaximumSize = new System.Drawing.Size(382, 60);
-            this.label1.MinimumSize = new System.Drawing.Size(382, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 33);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Enter Credentials";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // confirmBtn
-            // 
-            this.confirmBtn.AllowAnimations = true;
-            this.confirmBtn.AllowMouseEffects = false;
-            this.confirmBtn.AllowToggling = false;
-            this.confirmBtn.AnimationSpeed = 200;
-            this.confirmBtn.AutoGenerateColors = false;
-            this.confirmBtn.AutoRoundBorders = false;
-            this.confirmBtn.AutoSizeLeftIcon = true;
-            this.confirmBtn.AutoSizeRightIcon = true;
-            this.confirmBtn.BackColor = System.Drawing.Color.Transparent;
-            this.confirmBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.confirmBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmBtn.BackgroundImage")));
-            this.confirmBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.confirmBtn.ButtonText = "Confirm";
-            this.confirmBtn.ButtonTextMarginLeft = 0;
-            this.confirmBtn.ColorContrastOnClick = 45;
-            this.confirmBtn.ColorContrastOnHover = 45;
-            this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges21.BottomLeft = true;
-            borderEdges21.BottomRight = true;
-            borderEdges21.TopLeft = true;
-            borderEdges21.TopRight = true;
-            this.confirmBtn.CustomizableEdges = borderEdges21;
-            this.confirmBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.confirmBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.confirmBtn.DisabledFillColor = System.Drawing.Color.Empty;
-            this.confirmBtn.DisabledForecolor = System.Drawing.Color.Empty;
-            this.confirmBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.confirmBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.IconLeft = null;
-            this.confirmBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.confirmBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.confirmBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.confirmBtn.IconMarginLeft = 11;
-            this.confirmBtn.IconPadding = 10;
-            this.confirmBtn.IconRight = null;
-            this.confirmBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.confirmBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.confirmBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.confirmBtn.IconSize = 25;
-            this.confirmBtn.IdleBorderColor = System.Drawing.Color.Empty;
-            this.confirmBtn.IdleBorderRadius = 0;
-            this.confirmBtn.IdleBorderThickness = 0;
-            this.confirmBtn.IdleFillColor = System.Drawing.Color.Empty;
-            this.confirmBtn.IdleIconLeftImage = null;
-            this.confirmBtn.IdleIconRightImage = null;
-            this.confirmBtn.IndicateFocus = false;
-            this.confirmBtn.Location = new System.Drawing.Point(486, 453);
-            this.confirmBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.confirmBtn.Name = "confirmBtn";
-            this.confirmBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.confirmBtn.OnDisabledState.BorderRadius = 39;
-            this.confirmBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.confirmBtn.OnDisabledState.BorderThickness = 1;
-            this.confirmBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.confirmBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.confirmBtn.OnDisabledState.IconLeftImage = null;
-            this.confirmBtn.OnDisabledState.IconRightImage = null;
-            this.confirmBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.confirmBtn.onHoverState.BorderRadius = 39;
-            this.confirmBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Dash;
-            this.confirmBtn.onHoverState.BorderThickness = 1;
-            this.confirmBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.confirmBtn.onHoverState.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.confirmBtn.onHoverState.IconLeftImage = null;
-            this.confirmBtn.onHoverState.IconRightImage = null;
-            this.confirmBtn.OnIdleState.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.confirmBtn.OnIdleState.BorderRadius = 39;
-            this.confirmBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.confirmBtn.OnIdleState.BorderThickness = 1;
-            this.confirmBtn.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.confirmBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.OnIdleState.IconLeftImage = null;
-            this.confirmBtn.OnIdleState.IconRightImage = null;
-            this.confirmBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.confirmBtn.OnPressedState.BorderRadius = 39;
-            this.confirmBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.confirmBtn.OnPressedState.BorderThickness = 1;
-            this.confirmBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.confirmBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.OnPressedState.IconLeftImage = null;
-            this.confirmBtn.OnPressedState.IconRightImage = null;
-            this.confirmBtn.Size = new System.Drawing.Size(173, 38);
-            this.confirmBtn.TabIndex = 18;
-            this.confirmBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.confirmBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.confirmBtn.TextMarginLeft = 0;
-            this.confirmBtn.TextPadding = new System.Windows.Forms.Padding(0);
-            this.confirmBtn.UseDefaultRadiusAndThickness = true;
-            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // Student
             // 
@@ -4986,12 +4926,12 @@
         private Bunifu.UI.WinForms.BunifuLabel emailLbl;
         private Bunifu.UI.WinForms.BunifuLabel nameLbl;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton changePicBtn;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton signOutBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton changePassBtn;
         private System.Windows.Forms.TabPage changePassword;
         private Bunifu.UI.WinForms.BunifuTextBox newPassTxt;
         private Bunifu.UI.WinForms.BunifuTextBox oldPassTxt;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton confirmBtn;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton closeBtn;
     }
 }
