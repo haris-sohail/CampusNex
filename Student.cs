@@ -2,6 +2,7 @@
 using CampusNex.Model;
 using CampusNex.PopUps;
 using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Crypto;
 using System;
@@ -13,6 +14,7 @@ using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,10 +60,22 @@ namespace CampusNex
 
         private void Student_Load(object sender, EventArgs e)
         {
-
+            showDashBoard();
             setUsernameAndPic();
             showSocieties();
+        }
 
+        public void populateDashBoard()
+        {
+            nameLbl.Text = student.Username;
+            emailLbl.Text = student.Email;
+            userPicBox.Image = student.UserImage;
+        }
+
+        public void showDashBoard()
+        {
+            StudentPages.SetPage("Dashboard");
+            populateDashBoard();
         }
 
         private void setControls()
@@ -155,6 +169,7 @@ namespace CampusNex
         {
             // Navigate back to the Societies page
             StudentPages.SetPage("Societies");
+            setUsernameAndPic();
         }
 
         private void Add_Announcement(string title, string body, string societyName, string postedAt, string expiresAt, string priority)
@@ -899,6 +914,92 @@ namespace CampusNex
                     e.Graphics.DrawString(message, font, brush, x, y);
                 }
             }
+        }
+
+        private void campusNexLbl_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("Dashboard");
+        }
+
+        private void signOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void changePicBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDial = new OpenFileDialog();
+            fileDial.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff)|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff";
+
+            if (fileDial.ShowDialog() == DialogResult.OK)
+            {
+                userPicBox.Image = new Bitmap(fileDial.FileName);
+            }
+
+            
+
+            // update in database
+            DB_Connection DB_Connector = new DB_Connection();
+            string tableName = "CUsers";
+            string[] scolumns = { "user_pic" };
+            string[] wcolumns = { "user_id" };
+            object[] values = { utilObj.convertToByteStream(userPicBox.Image), student.UserId};
+
+            // Call the UpdateData method
+            bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+            if(success)
+            {
+                MessageBox.Show("Successfully changed your image", "Success", MessageBoxButtons.OK);
+            }
+
+            else
+            {
+                MessageBox.Show("Error changing your image", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // change the student pic locally
+            this.student.UserImage = userPicBox.Image;
+        }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            if (oldPassTxt.Text.Equals(student.Password))
+            {
+                // update in database
+                DB_Connection DB_Connector = new DB_Connection();
+                string tableName = "CUsers";
+                string[] scolumns = { "password" };
+                string[] wcolumns = { "user_id" };
+                object[] values = { newPassTxt.Text, student.UserId };
+
+                // Call the UpdateData method
+                bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+                if (success)
+                {
+                    MessageBox.Show("Successfully changed your password", "Success", MessageBoxButtons.OK);
+                    StudentPages.SetPage("Dashboard");
+                    this.student.Password = newPassTxt.Text;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Old Password does not match", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                oldPassTxt.Clear();
+            }
+        }
+
+        private void changePassBtn_Click(object sender, EventArgs e)
+        {
+            StudentPages.SetPage("changePassword");
+            oldPassTxt.Clear();
+            newPassTxt.Clear();
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
