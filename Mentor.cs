@@ -1,22 +1,9 @@
-﻿using Bunifu.UI.WinForms;
-using CampusNex.Model;
+﻿using CampusNex.Model;
 using CampusNex.PopUps;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
 using System.Drawing;
-using System.Drawing.Text;
-using System.IO;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CampusNex
 {

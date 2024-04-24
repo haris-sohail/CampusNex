@@ -237,6 +237,28 @@ namespace CampusNex
             }
         }
 
+        // Delete Data
+        public void DeleteSocietyAndMember(int societyId)
+        {
+            if (OpenConnection())
+            {
+                // First, delete entries from the Members table
+                string deleteMemberQuery = "DELETE FROM Members WHERE society_id = @societyId and is_head = 1";
+                SqlCommand deleteMemberCmd = new SqlCommand(deleteMemberQuery, connection);
+                deleteMemberCmd.Parameters.AddWithValue("@societyId", societyId);
+                deleteMemberCmd.ExecuteNonQuery();
+
+                // Second, delete entry from the Societies table
+                string deleteSocietyQuery = "DELETE FROM Societies WHERE society_id = @societyId";
+                SqlCommand deleteSocietyCmd = new SqlCommand(deleteSocietyQuery, connection);
+                deleteSocietyCmd.Parameters.AddWithValue("@societyId", societyId);
+                deleteSocietyCmd.ExecuteNonQuery();
+
+                CloseConnection();
+            }
+        }
+
+
         public void ExecuteInsert2(List<object> toInsert, string tableName)
         {
             if (OpenConnection())

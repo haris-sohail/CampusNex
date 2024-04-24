@@ -151,6 +151,12 @@
     <Compile Include="PopUps\MemberRequest.Designer.cs">
       <DependentUpon>MemberRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUps\CNMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUps\CNMessage.Designer.cs">
+      <DependentUpon>CNMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUps\Reject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUps\MemberRequest.resx">
       <DependentUpon>MemberRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUps\CNMessage.resx">
+      <DependentUpon>CNMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUps\Reject.resx">
       <DependentUpon>Reject.cs</DependentUpon>

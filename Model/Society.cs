@@ -18,6 +18,7 @@ namespace CampusNex.Model
         public DateTime CreationDate { get; set; }
         public int MentorId { get; set; }
         public string Slogan { get; set; }
+        public string Comments { get; set; }
         public byte[] Logo { get; set; }
         public string Description { get; set; }
         public int HeadId { get; set; }
@@ -60,6 +61,7 @@ namespace CampusNex.Model
             this.CreationDate = DateTime.Parse(society[6].ToString());
             this.Logo = (byte[])society[7];
             this.status = society[8].ToString();
+            this.Comments = society[9].ToString();
 
             // Initialize Head and Mentor Info
             this.mentorName = utilObj.getMentorName(this.MentorId.ToString());
@@ -83,6 +85,12 @@ namespace CampusNex.Model
             // Call the UpdateData method
             bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
 
+        }
+
+        public void DeleteSociety()
+        {
+            DB_Connection DB_Connector = new DB_Connection();
+            DB_Connector.DeleteSocietyAndMember(this.SocietyId);
         }
 
         // Overload ToString Operator for debugging

@@ -1,29 +1,10 @@
 ﻿using Bunifu.UI.WinForms;
 using CampusNex.Model;
 using CampusNex.PopUps;
-using Google.Protobuf;
-using Google.Protobuf.WellKnownTypes;
-using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Common;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
-using static Bunifu.UI.WinForms.BunifuSnackbar;
-using static CampusNex.Student;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CampusNex
 {
@@ -39,10 +20,6 @@ namespace CampusNex
         // Registration and Announcements
         private EventHandler currentHandler;
 
-        public Student()
-        {
-
-        }
         public Student(string user_id)
         {
             initializeSocieties();
@@ -50,6 +27,29 @@ namespace CampusNex
             InitializeComponent();
             setControls();
             initializeEvents();
+            
+        }
+
+        private void viewMsgs_Click(object sender, EventArgs e)
+        {
+            fetchNotifications();
+
+        }
+
+        public void fetchNotifications()
+        {
+            // 01. Show Rejected Society 
+            // Notification
+            foreach(var s in societies)
+            {
+                if(s.HeadId == student.StudentId && s.status == "rejected")
+                {
+                    CNMessage popup = new CNMessage("Society Rejected",s.Comments);
+                    popup.ShowDialog();
+                    s.DeleteSociety();
+                }
+            }
+
         }
 
         public void setUsernameAndPic()
@@ -321,7 +321,7 @@ namespace CampusNex
             List<int> Ids = new List<int>();
             foreach (var m in student.Members)
             {
-                if(m.status != "pending")
+                if(m.status != "pending" && m.status != "rejected")
                 {
                     Ids.Add(m.SocietyId);
                 }  
@@ -330,18 +330,21 @@ namespace CampusNex
             foreach (var s in societies)
             {
                 System.Drawing.Image societyImg = utilObj.getImage(s.Logo);
-
-                // Check if society is registered
-                if (Ids.Contains(s.SocietyId))
+                if(s.status != "rejected")
                 {
-                    // Populate panel for registered societies
-                    Add_Society(regSocPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
+                    // Check if society is registered
+                    if (Ids.Contains(s.SocietyId))
+                    {
+                        // Populate panel for registered societies
+                        Add_Society(regSocPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
+                    }
+                    else
+                    {
+                        // Populate panel for all societies
+                        Add_Society(societyCardsPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
+                    }
                 }
-                else
-                {
-                    // Populate panel for all societies
-                    Add_Society(societyCardsPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
-                }
+                
             }
 
 
@@ -1001,5 +1004,6 @@ namespace CampusNex
         {
             this.Close();
         }
+
     }
 }
