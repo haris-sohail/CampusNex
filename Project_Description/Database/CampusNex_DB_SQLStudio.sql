@@ -49,6 +49,7 @@ CREATE TABLE Societies (
     creation_date DATE NOT NULL,
     society_logo image,
 	status NVARCHAR(50) CHECK (status IN ('pending', 'accepted', 'rejected')) NOT NULL,
+	comments VARCHAR(200),
     FOREIGN KEY (head_id) REFERENCES Students(student_id),
     FOREIGN KEY (mentor_id) REFERENCES Mentors(mentor_id)
 );
@@ -68,6 +69,7 @@ CREATE TABLE Events (
     organizer_id INT NOT NULL,
 	status NVARCHAR(50) CHECK (status IN ('pending', 'accepted', 'rejected')) NOT NULL,
     event_Img image,
+	comments VARCHAR(200), 
     FOREIGN KEY (society_id) REFERENCES Societies(society_id),
     FOREIGN KEY (organizer_id) REFERENCES Students(student_id)
 );
@@ -222,3 +224,5 @@ WHERE M.status = 'pending' and M.society_id = 2;
 -- show variables like "secure_file_priv";
 
 SELECT user_id, role, username FROM CUsers WHERE CUsers.username = 'haris' AND CUsers.password = 'password'
+
+select * from events

@@ -184,15 +184,17 @@ namespace CampusNex
                         }
 
                         command.ExecuteNonQuery();
+                        CloseConnection();
                         return true;
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                }
-                CloseConnection();
+
+                } 
             }
+            CloseConnection();
             return false;
         }
 

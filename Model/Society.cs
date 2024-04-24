@@ -69,6 +69,22 @@ namespace CampusNex.Model
 
         }
 
+        // Reject Society
+        public void rejectSociety(string reason)
+        {
+            // Update Database
+            DB_Connection DB_Connector = new DB_Connection();
+            // Set status to accepted
+            string tableName = "Societies";
+            string[] scolumns = { "status", "comments" };
+            string[] wcolumns = { "society_id" };
+            object[] values = { "rejected", reason, this.SocietyId };
+
+            // Call the UpdateData method
+            bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+        }
+
         // Overload ToString Operator for debugging
         public override string ToString()
         {

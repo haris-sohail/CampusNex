@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -32,6 +33,9 @@ namespace CampusNex
             initializeSocieties();
             InitializeComponent();
             initializeEvents();
+
+            SocietyRequestsPanel.Paint += SocReqGrid_Paint;
+            EventsRequestsPanel.Paint += EveReqGrid_Paint;
         }
 
         public void initializeSocieties()
@@ -103,7 +107,7 @@ namespace CampusNex
 
         private void societiesBtn_Click(object sender, EventArgs e)
         {
-            MentorPages.SetPage(((Control)sender).Text);
+            MentorPages.SetPage("Societies");
         }
 
         private void Add_Society(string Name, string Slogan, string Acronym, string Head, string Mentor, System.Drawing.Image logo, string description)
@@ -188,42 +192,34 @@ namespace CampusNex
 
         private void loadReqData()
         {
-
-            socReqGrid.Rows.Clear(); 
-            eveReqGrid.Rows.Clear();
-            foreach (var s in societies)
+            // changing
+            SocietyRequestsPanel.Controls.Clear();
+            EventsRequestsPanel.Controls.Clear();
+            foreach (var s in societies)    
             {
                 if (s.MentorId == mentor.MentorId)
                 {
                     if (s.status == "pending") { 
                             // Get society and Head name
-                            string societyName = s.Name;
-                            string sHeadName = "";
-                            int memId = -1;
-                            foreach (var m in s.Members)
+                        string societyName = s.Name;
+                        string sHeadName = "";
+                        int memId = -1;
+                        foreach (var m in s.Members)
+                        {
+                            if (m.IsHead)
                             {
-                                if (m.IsHead)
-                                {
-                                    sHeadName = utilObj.getHeadName(m.StudentId.ToString());
-                                    memId = m.MemberId;
-                                    Console.WriteLine("MemID: ", memId.ToString());
-                                }
+                                sHeadName = utilObj.getHeadName(m.StudentId.ToString());
+                                memId = m.MemberId;
+                                Console.WriteLine("MemID: ", memId.ToString());
                             }
-                            byte[] slogo = s.Logo;
+                        }
+                        byte[] slogo = s.Logo;
 
-                            System.Drawing.Image societyImg = utilObj.getImage(slogo);
-                            System.Drawing.Image resizedImage = utilObj.ResizeImage(societyImg, 32, 32);
-                            // Populate the society request DataGrid 
-                            socReqGrid.Rows.Add(new Object[]
-                            {
-                                resizedImage,
-                                societyName,
-                                sHeadName,
-                                "View",
-                                "Accept",
-                                memId.ToString(),
-                                s.SocietyId.ToString()
-                            });
+                        System.Drawing.Image societyImg = utilObj.getImage(slogo);
+                            // Populate soc Req Panel
+                        addSocReqCard(societyImg, societyName, sHeadName, memId,
+                            s.SocietyId);
+
                     }
 
                     foreach (var e in s.Events)
@@ -232,118 +228,229 @@ namespace CampusNex
                         {
                             string oname = utilObj.getHeadName(e.OrganizerId.ToString());
                             System.Drawing.Image img = utilObj.getImage(e.EventImg);
-                            System.Drawing.Image eImgg = utilObj.ResizeImage(img, 32, 32);
-
+                           
                             byte[] slogo = s.Logo;
 
                             System.Drawing.Image societyImg = utilObj.getImage(slogo);
-                            System.Drawing.Image resizedImage = utilObj.ResizeImage(societyImg, 32, 32);
-                            eveReqGrid.Rows.Add(new Object[]
-                            {
-                                eImgg,
-                                s.Name,
-                                e.Title,
-                                oname,
-                                "View",
-                                "Accept",
-                                 e.EventId.ToString(),   //sending eventId
-                                 resizedImage
-             
-                            });
+                           
+                            addEventsReqCard(img, s.Name, e.Title, oname, e.EventId, societyImg);
                         }
 
                     }
                 }
-
-               
             }
+            SocietyRequestsPanel.Invalidate();
+            EventsRequestsPanel.Invalidate();
 
         }
-        private void reqBtn_Click(object sender, EventArgs e)
-        {
-            MentorPages.SetPage(((Control)sender).Text);
-            loadReqData();
-        }
 
-        private void socReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void addEventsReqCard(System.Drawing.Image eImg, string sName ,string eName ,
+            string oname, int eId, System.Drawing.Image sImg)
         {
+            RequestCard card = new RequestCard();
+            card.Logo = eImg;
+            card.HeadName = eName;
+            card.Title = oname;
+            card.uId = eId;
+            card.hImg = sImg;
+            card.sName = sName;
 
-            //need to add condition that if its row 1
-            // Check Click Event on Accept Column
-            if (e.ColumnIndex == 4) 
+            // Add Controllers
+            card.detailsBtnClicked += (sender, e) =>
             {
-                if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                foreach (var ev in events)
                 {
-                    DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
-                    // Extract Society Id
-                    string societyId = clickedRow.Cells[6].Value.ToString();
-
-                    DB_Connection DB_Connector = new DB_Connection();
-                    // Set status to accepted
-                    string tableName = "Societies";
-                    string[] scolumns = { "status" };
-                    string[] wcolumns = { "society_id" };
-                    object[] values = { "accepted", int.Parse(societyId)};
-     
-                    //  Update Societies Table
-                    bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns,values);
-
-                    // Update Member i.e. Head Status
-                    DB_Connector.connection.Close();
-                    // Extract Member Id
-                    string memberId = clickedRow.Cells[5].Value.ToString();
-                    Console.WriteLine("Val: ", memberId);
-                    tableName = "Members";
-                    string[] wcol = { "member_id"};
-                    object[] vals = { "accepted", int.Parse(memberId)};
-
-                    // Update Members Table in database
-                    success = DB_Connector.UpdateData(tableName, scolumns, wcol, vals);
-                    // Update Runtime data
-                    foreach (var s in societies)
+                    if (ev.EventId == card.uId)
                     {
-                        if (s.SocietyId == int.Parse(societyId))
-                        {
-                            foreach(var m in s.Members)
-                            {
-                                if(m.MemberId == int.Parse(memberId))
-                                {
-                                    s.status = "accepted";
-                                    m.status = "accepted";
-                                }
-                            }
-                        }
+                        EventRequest popup = new EventRequest(ev, card.hImg, card.sName, card.Title);
+                        popup.ShowDialog();
+                        break;
                     }
-
-                    loadReqData();
-                    showSocieties();
                 }
-            }
 
-            // Check Click Event on View More Column
-            if (e.ColumnIndex == 3)
+            };
+
+            card.acceptBtnClicked += (sender, e) =>
             {
-                if (socReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+                DB_Connection DB_Connector = new DB_Connection();
+                // Set status to accepted
+                string tableName = "Events";
+                string[] scolumns = { "status" };
+                string[] wcolumns = { "event_id" };
+                object[] values = { "accepted", card.uId };
+
+                // Call the UpdateData method
+                bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+                
+                // Update Runtime
+                foreach (var s in societies)
                 {
-                    DataGridViewRow clickedRow = socReqGrid.Rows[e.RowIndex];
-                    // Get Society Id
-                    string societyId = clickedRow.Cells[6].Value.ToString();
-                    foreach(var s in societies)
+                    foreach(var ev in s.Events)
                     {
-                        if(s.SocietyId == int.Parse(societyId))
+                        if(ev.EventId == card.uId)
                         {
-                            SocietyRequest popup = new SocietyRequest(s);
-                            popup.ShowDialog();
+                            ev.Status = "accepted";
                             break;
                         }
                     }
-                    
-
                 }
+                
+                loadReqData();
+            };
+
+            card.rejectBtnClicked += (sender, e) =>
+            {
+                foreach(var ev in events)
+                {
+                    if(ev.EventId == card.uId)
+                    {
+                        Reject popup = new Reject("Event");
+                        popup.er = ev;
+                        popup.DataSent += RejectEveReq;
+                        popup.ShowDialog();
+                        break;
+                    }
+                }
+            };
+
+               
+            EventsRequestsPanel.Controls.Add(card);
+        }
+        private void RejectEveReq(object sender, DataSentEventArgs e)
+        {
+            if (e.Status)
+            {
+                // Delete from runtime
+                foreach(var s in societies)
+                {
+                    int idx = s.Events.FindIndex(ev => ev.EventId == e.Id);
+                    if (idx != -1)
+                    {
+                        s.Events.RemoveAt(idx);
+                        break;
+                    }
+                }
+
+                int index = events.FindIndex(ev => ev.EventId == e.Id);
+                if (index != -1)
+                {
+                   events.RemoveAt(index);
+                }
+                // Reload Page
+                loadReqData();
+                MentorPages.SetPage("eventReq");
+            }
+            
+        }
+
+        private void addSocReqCard(System.Drawing.Image img, string sName, string hName, int memId,
+                                int SocietyId)
+        {
+
+            RequestCard card = new RequestCard();
+            card.Logo = img;
+            card.HeadName = sName;
+            card.Title = hName;
+            card.uId = memId;
+            card.societyId = SocietyId;
+            // Add Controllers
+            card.detailsBtnClicked += (sender, e) =>
+            {
+                foreach (var s in societies)
+                {
+                    if (s.SocietyId == card.societyId)
+                    {
+                        SocietyRequest popup = new SocietyRequest(s);
+                        popup.ShowDialog();
+                        break;
+                    }
+                }
+            };
+
+            card.acceptBtnClicked += (sender, e) =>
+            {
+                DB_Connection DB_Connector = new DB_Connection();
+                // Set status to accepted
+                string tableName = "Societies";
+                string[] scolumns = { "status" };
+                string[] wcolumns = { "society_id" };
+                object[] values = { "accepted", card.societyId };
+
+                //  Update Societies Table
+                bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+                // Update Member i.e. Head Status
+                DB_Connector.connection.Close();
+                // Extract Member Id
+                tableName = "Members";
+                string[] wcol = { "member_id" };
+                object[] vals = { "accepted", card.uId };
+
+                // Update Members Table in database
+                success = DB_Connector.UpdateData(tableName, scolumns, wcol, vals);
+                // Update Runtime data
+                foreach (var s in societies)
+                {
+                    if (s.SocietyId == card.societyId)
+                    {
+                        foreach (var m in s.Members)
+                        {
+                            if (m.MemberId == card.uId)
+                            {
+                                s.status = "accepted";
+                                m.status = "accepted";
+                            }
+                        }
+                    }
+                }
+
+                loadReqData();
+                showSocieties();
+       
+
+            };
+
+            card.rejectBtnClicked += (sender, e) =>
+            {
+                foreach (var s in societies)
+                {
+                    if(s.SocietyId == card.societyId)
+                    {
+                        Reject popup = new Reject("Society");
+                        popup.sr = s;
+                        popup.DataSent += RejectSocReq;
+                        popup.ShowDialog();
+                        break;
+                    }
+                          
+                }
+            };
+
+            SocietyRequestsPanel.Controls.Add(card);
+        }
+
+        private void RejectSocReq(object sender, DataSentEventArgs e)
+        {
+            if (e.Status)
+            {
+                // Delete from runtime
+                int index = societies.FindIndex(s => s.SocietyId == e.Id);
+                if (index != -1)
+                {
+                    societies.RemoveAt(index);
+                }
+                // Reload Page
+                loadReqData();
+                MentorPages.SetPage("societyReq");
             }
 
         }
 
+        private void reqBtn_Click(object sender, EventArgs e)
+        {
+            MentorPages.SetPage("societyReq");
+            loadReqData();
+        }
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             foreach (societyCard card in societyCardsPanel.Controls)
@@ -424,111 +531,43 @@ namespace CampusNex
 
         }
 
-        private void eveReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void eventRequest_Click(object sender, EventArgs e)
         {
-           
-                //when accept button is clicked
-                if (e.ColumnIndex == 5)
-                {
-                    if (eveReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                    {
-                        DataGridViewRow clickedRow = eveReqGrid.Rows[e.RowIndex];
-                        // Extract Event Id
-                        string cellValue = clickedRow.Cells[2].Value.ToString();
-                        int eveId = -1;
-                        foreach (var ee in events)
-                        {
-                            if (ee.Title == cellValue)
-                            {
-                                eveId = ee.EventId;
-                                break;
-                            }
-                        }
-                        DB_Connection DB_Connector = new DB_Connection();
-                        // Set status to accepted
-                        string tableName = "Events";
-                        string[] scolumns = { "status" };
-                        string[] wcolumns = { "event_id" };
-                        object[] values = { "accepted", eveId };
-
-                        // Call the UpdateData method
-                        bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
-                        initializeEvents();
-                        loadReqData();
-                    }
-                }
-
-                if (e.ColumnIndex == 4)
-                {
-                    if (eveReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                    {
-                        DataGridViewRow clickedRow = eveReqGrid.Rows[e.RowIndex];
-                        
-
-                        string eventId = clickedRow.Cells[6].Value.ToString();
-                        bool flg = false;
-                    
-
-                        foreach (var s in societies)
-                        {
-                            foreach (var ev in s.Events)
-                            {
-                                //if (ev.EventId == int.Parse(eventId))
-                               // {
-                                    string organizerOfEvent = utilObj.getHeadName(s.HeadId.ToString());
-                                    string socName = utilObj.getSocietyName(s.SocietyId.ToString());
-                                    EventRequest popup = new EventRequest(ev, s.Logo, socName, organizerOfEvent);
-                                    popup.ShowDialog();
-                                    flg = true;
-                            
-                                    break;
-                                //}
-                            }
-
-                            if(flg == true)
-                             {
-                               break;
-                             }
-                        }
-
-                    }
-                }
-            
+            MentorPages.SetPage("eventReq");
+            loadReqData();
         }
 
-        // Added New Event Handlers For Empty Grids
-        private void SocGrid_Paint(object sender, PaintEventArgs e)
+        private void EveReqGrid_Paint(object sender, PaintEventArgs e)
         {
-            if (socReqGrid.Rows.Count == 0)
+
+            if (EventsRequestsPanel.Controls.Count == 0)
             {
                 string message = "No entries Yet";
                 using (var font = new Font("Verdana", 16, FontStyle.Bold))
                 using (var brush = new SolidBrush(Color.White))
                 {
                     var stringSize = e.Graphics.MeasureString(message, font);
-                    var x = (socReqGrid.Width - stringSize.Width) / 2;
-                    var y = (socReqGrid.Height - stringSize.Height) / 2;
+                    var x = (EventsRequestsPanel.Width - stringSize.Width) / 2;
+                    var y = (EventsRequestsPanel.Height - stringSize.Height) / 2;
                     e.Graphics.DrawString(message, font, brush, x, y);
                 }
             }
         }
 
-        private void EveGrid_Paint(object sender, PaintEventArgs e)
+        private void SocReqGrid_Paint(object sender, PaintEventArgs e)
         {
-
-            if (eveReqGrid.Rows.Count == 0)
+            if (SocietyRequestsPanel.Controls.Count == 0)
             {
                 string message = "No entries Yet";
                 using (var font = new Font("Verdana", 16, FontStyle.Bold))
                 using (var brush = new SolidBrush(Color.White))
                 {
                     var stringSize = e.Graphics.MeasureString(message, font);
-                    var x = (eveReqGrid.Width - stringSize.Width) / 2;
-                    var y = (eveReqGrid.Height - stringSize.Height) / 2;
+                    var x = (SocietyRequestsPanel.Width - stringSize.Width) / 2;
+                    var y = (SocietyRequestsPanel.Height - stringSize.Height) / 2;
                     e.Graphics.DrawString(message, font, brush, x, y);
                 }
             }
         }
-
     }
 }

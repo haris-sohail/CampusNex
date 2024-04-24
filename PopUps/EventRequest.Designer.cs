@@ -64,7 +64,6 @@
             this.socPic.TabIndex = 17;
             this.socPic.TabStop = false;
             this.socPic.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
-            this.socPic.Click += new System.EventHandler(this.eventPic_Click);
             // 
             // presentLbl_ViewEvent
             // 
@@ -99,7 +98,6 @@
             this.evePic.TabIndex = 18;
             this.evePic.TabStop = false;
             this.evePic.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
-            this.evePic.Click += new System.EventHandler(this.evePic_Click);
             // 
             // socName
             // 
@@ -117,7 +115,6 @@
             this.socName.Text = "FCCS";
             this.socName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.socName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.socName.Click += new System.EventHandler(this.socName_Click);
             // 
             // eveName
             // 
@@ -170,7 +167,6 @@
             this.locationLbl.Text = "Location";
             this.locationLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.locationLbl.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.locationLbl.Click += new System.EventHandler(this.locationLbl_Click);
             // 
             // descLbl
             // 
@@ -207,7 +203,6 @@
             this.eveDesc.TabIndex = 23;
             this.eveDesc.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.eveDesc.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.eveDesc.Click += new System.EventHandler(this.socDesc_Click);
             // 
             // dateViewEvent
             // 

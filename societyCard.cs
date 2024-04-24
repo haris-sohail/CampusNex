@@ -110,7 +110,7 @@ namespace CampusNex
             //clicking on this button should create Student page, but the view Society one
 
             //first addition
-            ViewBtnClicked?.Invoke(this, EventArgs.Empty);
+        ViewBtnClicked?.Invoke(this, EventArgs.Empty);
 
         }
         public void toggleDisplay(string searchtxt)

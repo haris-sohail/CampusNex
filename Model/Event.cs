@@ -80,6 +80,21 @@ namespace CampusNex.Model
            
         }
 
+        public void rejectEvent(string reason)
+        {
+            // Update Database
+            DB_Connection DB_Connector = new DB_Connection();
+            // Set status to accepted
+            string tableName = "Events";
+            string[] scolumns = { "status","comments"};
+            string[] wcolumns = { "event_id" };
+            object[] values = { "rejected",reason, this.EventId };
+
+            // Call the UpdateData method
+            bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+        }
+
         public void CreateEvent()
         {
             // Implement event creation logic here

@@ -14,7 +14,7 @@ namespace CampusNex
 
         public Credentials()
         {
-            server = "DESKTOP-M9UAP31\\SQLEXPRESS";
+            server = "SOMALSPC\\SQLEXPRESS";
             database = "campusnex";
         }
     }
