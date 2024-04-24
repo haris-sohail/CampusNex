@@ -1,4 +1,4 @@
-﻿namespace CampusNex
+﻿ namespace CampusNex
 {
     partial class Student
     {
