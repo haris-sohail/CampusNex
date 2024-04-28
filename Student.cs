@@ -352,6 +352,14 @@ namespace CampusNex
 
         private void rSocietyForm_Click(object sender, EventArgs e)
         {
+            // Clear Input Fields
+            societyName.Clear();
+            societySlogan.Clear();
+            societyDesc.Clear();
+            availableMentors.Text = "";
+            availableMentors.Items.Clear();
+            uploadImgPicBox.Image = null;
+
             // Load Dropdown of available Mentors
             string query = @"
             SELECT U.username AS mentor_name

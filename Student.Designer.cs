@@ -96,6 +96,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties43 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties44 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges19 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -108,7 +109,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties50 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties51 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties52 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MemberReqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -237,6 +237,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.viewMsgs = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.bunifuShapes4 = new Bunifu.UI.WinForms.BunifuShapes();
             this.closeBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.changePassBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -257,8 +259,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.newPassTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.oldPassTxt = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.viewMsgs = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -621,10 +621,10 @@
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.tabPage1;
-            this.StudentPages.PageIndex = 10;
-            this.StudentPages.PageName = "tabPage1";
-            this.StudentPages.PageTitle = "Dashboard";
+            this.StudentPages.Page = this.societyReg;
+            this.StudentPages.PageIndex = 2;
+            this.StudentPages.PageName = "societyReg";
+            this.StudentPages.PageTitle = "Register a New Society !!";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1099, 749);
             this.StudentPages.TabIndex = 1;
@@ -1114,8 +1114,8 @@
             // uploadImageBtn
             // 
             this.uploadImageBtn.AllowAnimations = true;
-            this.uploadImageBtn.AllowMouseEffects = true;
-            this.uploadImageBtn.AllowToggling = true;
+            this.uploadImageBtn.AllowMouseEffects = false;
+            this.uploadImageBtn.AllowToggling = false;
             this.uploadImageBtn.AnimationSpeed = 200;
             this.uploadImageBtn.AutoGenerateColors = false;
             this.uploadImageBtn.AutoRoundBorders = false;
@@ -1210,7 +1210,7 @@
             this.uploadImgPicBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.uploadImgPicBox.AutoSizeHeight = true;
             this.uploadImgPicBox.BorderRadius = 61;
-            this.uploadImgPicBox.Image = ((System.Drawing.Image)(resources.GetObject("uploadImgPicBox.Image")));
+            this.uploadImgPicBox.ErrorImage = null;
             this.uploadImgPicBox.IsCircle = true;
             this.uploadImgPicBox.Location = new System.Drawing.Point(865, 127);
             this.uploadImgPicBox.Name = "uploadImgPicBox";
@@ -4077,6 +4077,57 @@
             this.tabPage1.TabIndex = 10;
             this.tabPage1.Text = "Dashboard";
             // 
+            // bunifuLabel5
+            // 
+            this.bunifuLabel5.AllowParentOverrides = false;
+            this.bunifuLabel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bunifuLabel5.AutoEllipsis = false;
+            this.bunifuLabel5.AutoSize = false;
+            this.bunifuLabel5.CursorType = null;
+            this.bunifuLabel5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel5.ForeColor = System.Drawing.Color.White;
+            this.bunifuLabel5.Location = new System.Drawing.Point(853, 245);
+            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuLabel5.Name = "bunifuLabel5";
+            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel5.Size = new System.Drawing.Size(199, 24);
+            this.bunifuLabel5.TabIndex = 22;
+            this.bunifuLabel5.Text = "Click to fetch notifications (if any)";
+            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // viewMsgs
+            // 
+            this.viewMsgs.AllowAnimations = true;
+            this.viewMsgs.AllowBorderColorChanges = true;
+            this.viewMsgs.AllowMouseEffects = true;
+            this.viewMsgs.AnimationSpeed = 200;
+            this.viewMsgs.BackColor = System.Drawing.Color.Transparent;
+            this.viewMsgs.BackgroundColor = System.Drawing.Color.Empty;
+            this.viewMsgs.BorderColor = System.Drawing.Color.Empty;
+            this.viewMsgs.BorderRadius = 1;
+            this.viewMsgs.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.viewMsgs.BorderThickness = 1;
+            this.viewMsgs.ColorContrastOnClick = 30;
+            this.viewMsgs.ColorContrastOnHover = 30;
+            this.viewMsgs.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges18.BottomLeft = true;
+            borderEdges18.BottomRight = true;
+            borderEdges18.TopLeft = true;
+            borderEdges18.TopRight = true;
+            this.viewMsgs.CustomizableEdges = borderEdges18;
+            this.viewMsgs.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.viewMsgs.Image = ((System.Drawing.Image)(resources.GetObject("viewMsgs.Image")));
+            this.viewMsgs.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.viewMsgs.Location = new System.Drawing.Point(905, 166);
+            this.viewMsgs.Name = "viewMsgs";
+            this.viewMsgs.RoundBorders = true;
+            this.viewMsgs.ShowBorders = true;
+            this.viewMsgs.Size = new System.Drawing.Size(84, 84);
+            this.viewMsgs.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.viewMsgs.TabIndex = 21;
+            this.viewMsgs.Click += new System.EventHandler(this.viewMsgs_Click);
+            // 
             // bunifuShapes4
             // 
             this.bunifuShapes4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -4780,57 +4831,6 @@
             this.oldPassTxt.TextPlaceholder = "Old Password";
             this.oldPassTxt.UseSystemPasswordChar = true;
             this.oldPassTxt.WordWrap = true;
-            // 
-            // viewMsgs
-            // 
-            this.viewMsgs.AllowAnimations = true;
-            this.viewMsgs.AllowBorderColorChanges = true;
-            this.viewMsgs.AllowMouseEffects = true;
-            this.viewMsgs.AnimationSpeed = 200;
-            this.viewMsgs.BackColor = System.Drawing.Color.Transparent;
-            this.viewMsgs.BackgroundColor = System.Drawing.Color.Empty;
-            this.viewMsgs.BorderColor = System.Drawing.Color.Empty;
-            this.viewMsgs.BorderRadius = 1;
-            this.viewMsgs.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
-            this.viewMsgs.BorderThickness = 1;
-            this.viewMsgs.ColorContrastOnClick = 30;
-            this.viewMsgs.ColorContrastOnHover = 30;
-            this.viewMsgs.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges18.BottomLeft = true;
-            borderEdges18.BottomRight = true;
-            borderEdges18.TopLeft = true;
-            borderEdges18.TopRight = true;
-            this.viewMsgs.CustomizableEdges = borderEdges18;
-            this.viewMsgs.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.viewMsgs.Image = ((System.Drawing.Image)(resources.GetObject("viewMsgs.Image")));
-            this.viewMsgs.ImageMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.viewMsgs.Location = new System.Drawing.Point(905, 166);
-            this.viewMsgs.Name = "viewMsgs";
-            this.viewMsgs.RoundBorders = true;
-            this.viewMsgs.ShowBorders = true;
-            this.viewMsgs.Size = new System.Drawing.Size(84, 84);
-            this.viewMsgs.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
-            this.viewMsgs.TabIndex = 21;
-            this.viewMsgs.Click += new System.EventHandler(this.viewMsgs_Click);
-            // 
-            // bunifuLabel5
-            // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.AutoSize = false;
-            this.bunifuLabel5.CursorType = null;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.ForeColor = System.Drawing.Color.White;
-            this.bunifuLabel5.Location = new System.Drawing.Point(853, 245);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(199, 24);
-            this.bunifuLabel5.TabIndex = 22;
-            this.bunifuLabel5.Text = "Click to fetch notifications (if any)";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // Student
             // 
