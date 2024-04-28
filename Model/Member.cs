@@ -25,6 +25,7 @@ namespace CampusNex.Model
         public string Comments { get; set; }
         protected static DB_Connection dbConnector = new DB_Connection();
         // Constructors
+        public Member() { }
         public Member(int student_id, int index)
         {
             this.StudentId = student_id;

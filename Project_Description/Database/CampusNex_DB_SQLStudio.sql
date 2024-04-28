@@ -84,6 +84,7 @@ CREATE TABLE Members (
     is_head BIT NOT NULL,
     interest VARCHAR(200),   
     status NVARCHAR(50) CHECK (status IN ('pending', 'accepted', 'rejected')) NOT NULL,
+	comments VARCHAR(200),
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (society_id) REFERENCES Societies(society_id)
 );
@@ -110,11 +111,11 @@ INSERT INTO CUsers (username, password, email, role, user_pic) VALUES
 ('aliza', 'password', 'aliza@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\4.png', SINGLE_BLOB) AS user_pic)),
 ('kissa', 'password', 'kissa@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\2.png', SINGLE_BLOB) AS user_pic)),
 ('hamna', 'password', 'hamna@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\3.png', SINGLE_BLOB) AS user_pic)),
-('test', 'password', 'test@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
-('kalsoomtariq', 'Password', 'kalsoomtariq@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
-('masood', 'password', 'masood@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
-('dilshankhatoon', 'password', 'dilshan@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
-('khurramshehzzad', 'password', 'khurram@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
+('testing', 'password', 'test@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
+('sarah', 'Password', 'sarahtaghreed@gmail.com', 'mentor', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
+('masood', 'password', 'masood@gmail.com', 'mentor', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
+('dilshan', 'password', 'dilshan@gmail.com', 'mentor', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
+('khurram', 'password', 'khurram@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
 ('abubakarmukarram', 'password', 'abubakar@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
 ('ahmed', 'passw', 'ahmed@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
 ('mukarram', 'passwo', 'mukkarram@gmail.com', 'student', (SELECT BULKCOLUMN FROM OPENROWSET(BULK 'D:\\SOMAL\\SEMESTER_06\\Software Engineering\\Project\\5.png', SINGLE_BLOB) AS user_pic)),
@@ -127,30 +128,32 @@ INSERT INTO Students (user_id, roll_number) VALUES
 (4, 470),
 (5, 572),
 (6, 603),
-(7, 111);
+(7, 111),
+(11, 2477);
 
 INSERT INTO Mentors (user_id, designation, education_info) VALUES
 (2, 'Assistant Professor', 'BSCS'),
-(3, 'Assistant Professor', 'BSCS')
-;
+(3, 'Assistant Professor', 'BSCS'),
+(8, 'Assistant Professor', 'BSCS'),
+(9, 'Assistant Professor', 'BSCS'),
+(10, 'Assistant Professor', 'BSCS');
 
 INSERT INTO Societies (society_name, society_slogan, society_description, mentor_id, head_id, creation_date, society_logo, status)
 VALUES
 ('Fast Computing Society', 'Computer Computer Computer' ,'The Fast Computing Society is a student organization dedicated to promoting and advancing knowledge, skills, and innovation in the field of computing through various educational, collaborative, and networking activities.', 1, 1, '2012-05-15', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\FCS_Logo.png', SINGLE_BLOB) AS society_logo), 'accepted'),
 ('Fast Data Science Society', 'Data, Data Everywhere' ,'FDSS is a student organization dedicated to promoting and advancing knowledge, skills, and innovation in the field of computing through various educational, collaborative, and networking activities.', 1, 2, '2012-05-15', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\FDSS_Logo.png', SINGLE_BLOB) AS society_logo), 'accepted'),
-('Robotics Society', 'Building the Future', 'The Robotics Society aims to explore the intersection of technology and robotics to create innovative solutions for real-world problems.', 1, 3, '2024-04-16', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\RS_Logo.png', SINGLE_BLOB) AS society_logo), 'pending'),
-('AI Enthusiasts Society', 'Exploring the Future of AI', 'The AI Enthusiasts Society is dedicated to exploring the latest advancements and applications of artificial intelligence.', 1, 4, '2024-04-16', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\AI_Logo.png', SINGLE_BLOB) AS society_logo), 'pending'),
-('Cybersecurity Alliance', 'Securing the Digital World', 'The Cybersecurity Alliance focuses on raising awareness and providing resources to address cybersecurity challenges.', 1, 5, '2024-04-17', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\CS_Logo.png', SINGLE_BLOB) AS society_logo), 'pending');
+('Robotics Society', 'Building the Future', 'The Robotics Society aims to explore the intersection of technology and robotics to create innovative solutions for real-world problems.', 2, 3, '2024-04-16', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\RS_Logo.png', SINGLE_BLOB) AS society_logo), 'pending'),
+('AI Enthusiasts Society', 'Exploring the Future of AI', 'The AI Enthusiasts Society is dedicated to exploring the latest advancements and applications of artificial intelligence.', 3, 4, '2024-04-16', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\AI_Logo.png', SINGLE_BLOB) AS society_logo), 'pending'),
+('Cybersecurity Alliance', 'Securing the Digital World', 'The Cybersecurity Alliance focuses on raising awareness and providing resources to address cybersecurity challenges.', 4, 5, '2024-04-17', (SELECT BulkColumn FROM OPENROWSET(BULK 'D:\SOMAL\SEMESTER_06\Software Engineering\Project\CS_Logo.png', SINGLE_BLOB) AS society_logo), 'pending');
 
  
 INSERT INTO Members (student_id, society_id, join_date, is_head, interest,status)
 VALUES (1, 1, '2023-05-20', 1, 'Computing, Artificial Intelligence','accepted'),
-(2, 2, '2023-01-20', 1, 'Data Science, Machine Learning','accepted'),
-(3, 1, '2024-01-10', 0, 'Graphic Design, Calculations','accepted'),
-(4, 2, '2024-02-05', 0, 'NLP, Management','pending'),
-(3, 3, '2024-02-05', 1, 'NLP, Management','pending'),
+(2, 2, '2023-01-20', 1, 'Data Science, Machine Learning','pending'),
+(3, 3, '2024-01-10', 1, 'Graphic Design, Calculations','pending'),
 (4, 4, '2024-02-05', 1, 'NLP, Management','pending'),
-(5, 5, '2024-02-05', 1, 'NLP, Management','pending');
+(5, 5, '2024-02-05', 1, 'NLP, Management','pending'),
+(3, 1, '2024-02-05', 0, 'Mathematics, Algorithms','pending');
 
 INSERT INTO Events (society_id, title, event_date, event_time, location, description, event_type, organizer_id, status, event_Img)
 VALUES 
@@ -225,4 +228,4 @@ WHERE M.status = 'pending' and M.society_id = 2;
 
 SELECT user_id, role, username FROM CUsers WHERE CUsers.username = 'haris' AND CUsers.password = 'password';
 
-select * from societies;
+select * from Members;
