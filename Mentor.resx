@@ -727,9 +727,6 @@
         RK5CYII=
 </value>
   </data>
-  <data name="viewMsgsLbl.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Verdana'; font-size: 8.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
-  </data>
   <data name="changePassBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALwAAAAmCAYAAAB+tPGOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -773,19 +770,6 @@
   </data>
   <data name="bunifuLabel5.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Microsoft Sans Serif'; font-size: 20.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
-  </data>
-  <data name="viewMsgs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAY9JREFUaEPtmDFKA0EYhRcLsfQEZpPSyht4DeNFLC2NjTbZgJW9IJgTeAJTeQON
-        sQvMakCIjrP6kFGfPBCX/Vfmg49osm/32yRVskQi8Q/ZPPOr3VF52C3cXXj0zeqm4XFQNSFPUw0+n8SE
-        A+RpbLzzX3Uz5Gn4CZoXeRo2tiDyNGxsQeRp2NiCyNOwsQWRp2FjCyJPw8YWRJ6GjS2IPA0bWxB5Gja2
-        IPI0bBy7O174yf3ST2ZL3794rPWYWORp2Di2uuCNe37zKvxd5zGxyNOwcWzrb6D6uKuLVxfd+eGj/6tj
-        YpGnYWMLIk/DxhZEnoaNLYg8DRtbEHkaNrYg8jRsbEHkadjYgsjTsLEFkadhYwsiT8PGFkSeho0bt3C3
-        yNPQEzRsXpQHyNOwEzTn737cJSeChXvJR24Ph9qEhgfzwj31hmUfh9mFxQfn4Qa2cYhtvse7aWf4sIWX
-        7RPHh+/7de9ksYGX2sHHDRTusnM8X8fT7eH9nS/PO6d+DU+1i/C1Ocr2/Qr+TSQSibrIslf9AmrasOS8
-        zgAAAABJRU5ErkJggg==
-</value>
   </data>
   <data name="userPicBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
