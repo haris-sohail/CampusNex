@@ -1,35 +1,41 @@
-﻿using CampusNex.Model;
+﻿/*
+ *              CAMPUSNEX POPUP CLASSES: SocietyRequest.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
+using CampusNex.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CampusNex.PopUps
 {
     public partial class SocietyRequest : Form
     {
+        // Data Members
         Society Request = new Society();
         Util utilobj = new Util();
+
+        // Constructor
         public SocietyRequest(Society Request)
         {
             InitializeComponent();
             this.Request = Request;
-            Console.WriteLine(this.Request);
         }
-
+        
+        // Dismiss Button
         private void btnDismiss_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Loader Function
         private void SocietyRequest_Load(object sender, EventArgs e)
         {
-            // Load All Data
             foreach(var m in this.Request.Members)
             {
                 if (m.IsHead)

@@ -513,7 +513,7 @@ namespace CampusNex
             formInput.Add(student.StudentId);
 
             // Insertion in Societies and Members table
-            dbConnector.ExecuteInsert(formInput, "Societies");
+            dbConnector.InsertSocietyAndMember(formInput, "Societies");
 
             // Show registration request sent popup
             MessageBox.Show("Registration request sent", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -558,7 +558,7 @@ namespace CampusNex
             formInput.Add(isHead);            
             formInput.Add(societyStudentRegTextBox.Text);
 
-            dbConnector.ExecuteInsert2(formInput, "Members");
+            dbConnector.InsertMember(formInput, "Members");
             // Clear Fields
             societyStudentRegTextBox.Text = "";
 

@@ -1,4 +1,14 @@
-﻿using CampusNex.Model;
+﻿/*
+ *              CAMPUSNEX POPUP CLASSES: Reject.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
+using CampusNex.Model;
 using System;
 using System.Windows.Forms;
 
@@ -7,30 +17,31 @@ namespace CampusNex.PopUps
     public partial class Reject : Form
     {
 
-        // To Send Back Data
+        // Handler to Send Data Back To Controller
         public event DataSentEventHandler DataSent;
-        // 3 Rejections
-        // Society rejection
+        // Unique Data Members for each Rejection
         private string type;
         public Society sr = new Society();
         public Event er = new Event();
         public int mId;
 
+        // Constructor
         public Reject(string type)
         {
             this.type = type;
             InitializeComponent();
         }
 
+        // Dismiss Button
         private void btnDismiss_Click(object sender, EventArgs e)
         {
-
             DataSent?.Invoke(this, new DataSentEventArgs(false, -1));
             this.Close();
         }
+
+        // Reject Logic
         private void rejectButton_Click(object sender, EventArgs e)
         {
-            // Event reject Logic
             if (type == "Event")
             {
                 er.rejectEvent(rejectReason.Text);
@@ -50,7 +61,7 @@ namespace CampusNex.PopUps
     }
 }
 
-// A Delegate Event Handler
+// A Delegate Event Handler 
 public delegate void DataSentEventHandler(object sender, DataSentEventArgs e);
 public class DataSentEventArgs : EventArgs
 {

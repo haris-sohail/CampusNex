@@ -1,21 +1,23 @@
-﻿using Google.Protobuf;
+﻿/*
+ *              CAMPUSNEX MODEL CLASS: Event.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CampusNex.Model
 {
-    // Changed Accessibility
     public class Event
     {
-        // Properties
+        // Data Members
         public int EventId { get; set; }
         public string Location { get; set; }
         public string Title { get; set; }
@@ -30,19 +32,19 @@ namespace CampusNex.Model
         public byte[] EventImg { get; set; }
 
         private static DB_Connection dbConnector = new DB_Connection();
-        // Constructor
+
+        // Constructors
+        public Event() { }
         public Event(int eventId)
         {
-            // Fetch Event Data From Database
             this.EventId = eventId;
             FetchEvent();
         }
-        public Event() { }
 
-        // Methods
+
+        // Fetch Events From Database
         public void FetchEvent()
         {
-            // Implement event fetching logic here
             string query = "Select * From Events where event_id = " + EventId.ToString();
             List<List<object>> selectResult = dbConnector.executeSelect(query);
 
@@ -56,61 +58,42 @@ namespace CampusNex.Model
             this.OrganizerId = int.Parse(selectResult[0][8].ToString());
             this.Status = selectResult[0][9].ToString();
             this.EventImg = (byte[])selectResult[0][10];
-            // Comments added
             this.Comments = selectResult[0][11].ToString();
-
         }
 
+        // Insert Event to Database
         public static void AddEvent(Event e)
         {
-            Console.WriteLine(e.Time);
-            Console.WriteLine(e.Date);
             string query = "INSERT INTO Events (society_id, title, event_date, " +
                 "event_time, location, description, event_type, organizer_id, status,event_Img)" +
                 " VALUES ('"+ e.SocietyId.ToString() +"','"+e.Title +"','"+e.Date+"','"+
                 e.Time+"','"+e.Location+"','"+e.Description+"','"+ e.Type+ "','" +
                 e.OrganizerId + "','pending', @logoBlob);";
-            // Execute Insert
             if (dbConnector.OpenConnection())
-            {
-
+            { 
                 SqlCommand cmd = new SqlCommand(query, dbConnector.connection);
                 cmd.Parameters.AddWithValue("@logoBlob", MySqlDbType.Blob).Value = e.EventImg;
 
                 cmd.ExecuteNonQuery();
                 dbConnector.connection.Close();
             }
-           
         }
 
+        // Reject Event
         public void rejectEvent(string reason)
         {
-            // Update Database
             DB_Connection DB_Connector = new DB_Connection();
-            // Set status to accepted
             string tableName = "Events";
             string[] scolumns = { "status","comments"};
             string[] wcolumns = { "event_id" };
             object[] values = { "rejected",reason, this.EventId };
-
-            // Call the UpdateData method
             bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
-
         }
 
+        // Delete Event From Database
         public void DeleteEvent()
         {
             dbConnector.DeleteRejectedEvent(this.EventId);
-        }
-
-        public void CreateEvent()
-        {
-            // Implement event creation logic here
-        }
-
-        public void UpdateStatus()
-        {
-            // Implement status updating logic here
         }
     }
 }

@@ -1,21 +1,28 @@
-﻿using CampusNex.Model;
+﻿/*
+ *              CAMPUSNEX DATABASE CLASS: DB_Connection.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
 namespace CampusNex
 {
-    // Changed Accessibility
     public class DB_Connection
     {
+        // Data Members
         public SqlConnection connection;
         private string server;
         private string database;
-        private string uid;
 
         // Constructor
         public DB_Connection()
@@ -26,11 +33,9 @@ namespace CampusNex
         // Initialize values
         private void Initialize()
         {
-
             Credentials c = new Credentials();
             this.server = c.server;
             this.database = c.database;
-           
             string connectionString = $"Data Source={this.server};Initial Catalog={this.database};Integrated Security=True;";
             connection = new SqlConnection(connectionString);
         }
@@ -45,7 +50,6 @@ namespace CampusNex
             }
             catch (SqlException ex)
             {
-                // Handle exception
                 Console.WriteLine(ex.Message);
                 return false;
             }
@@ -61,43 +65,20 @@ namespace CampusNex
             }
             catch (SqlException ex)
             {
-                // Handle exception
                 Console.WriteLine(ex.Message);
                 return false;
             }
         }
 
-        public string getTypeOfQuery(string query)
-        {
-            string[] querySplit = query.Split(' ');
-            string typeOfQuery = querySplit[0];
-            return typeOfQuery;
-        }
-
-        static string[] GetColumnNames(SqlDataReader reader)
-        {
-            var colNames = new List<string>();
-
-            for (int i = 0; i < reader.FieldCount; i++)
-            {
-                colNames.Add(reader.GetName(i));
-            }
-
-            return colNames.ToArray();
-        }
-
+        // Generic Select Statement
         public List<List<object>> executeSelect(string query)
         {
             if (OpenConnection())
             {
                 SqlCommand cmd = new SqlCommand(query, connection);
-
                 List<List<object>> selectResult = new List<List<object>>();
-
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    var columnNames = GetColumnNames(reader);
-
                     while (reader.Read())
                     {
                         List<object> row = new List<object>();
@@ -105,12 +86,10 @@ namespace CampusNex
                         {
                             row.Add(reader[i]);
                         }
-
                         selectResult.Add(row);
                     }
                 }
                 CloseConnection();
-
                 return selectResult;
             }
             else
@@ -119,6 +98,7 @@ namespace CampusNex
             }
         }
 
+        // Fetch Mentor ID From Name
         public string GetMentorId(string mentorName)
         {
             DB_Connection dbConnector = new DB_Connection();
@@ -139,6 +119,7 @@ namespace CampusNex
             }
         }
 
+        // Generic Update Function
         public bool UpdateData(string tableName, string[] setColumns, string[] whereColumns, object[] values)
         {
             StringBuilder queryBuilder = new StringBuilder($"UPDATE {tableName} SET ");
@@ -198,7 +179,8 @@ namespace CampusNex
             return false;
         }
 
-        public void ExecuteInsert(List<object> toInsert, string tableName)
+        // Insert Data Into Society Table
+        public void InsertSocietyAndMember(List<object> toInsert, string tableName)
         {
             if (OpenConnection())
             {
@@ -237,33 +219,28 @@ namespace CampusNex
             }
         }
 
-        // Delete Data
+        // Delete Society And Member
         public void DeleteSocietyAndMember(int societyId)
         {
             if (OpenConnection())
             {
-                // First, delete entries from the Members table
                 string deleteMemberQuery = "DELETE FROM Members WHERE society_id = @societyId and is_head = 1";
                 SqlCommand deleteMemberCmd = new SqlCommand(deleteMemberQuery, connection);
                 deleteMemberCmd.Parameters.AddWithValue("@societyId", societyId);
                 deleteMemberCmd.ExecuteNonQuery();
-
-                // Second, delete entry from the Societies table
                 string deleteSocietyQuery = "DELETE FROM Societies WHERE society_id = @societyId";
                 SqlCommand deleteSocietyCmd = new SqlCommand(deleteSocietyQuery, connection);
                 deleteSocietyCmd.Parameters.AddWithValue("@societyId", societyId);
                 deleteSocietyCmd.ExecuteNonQuery();
-
                 CloseConnection();
             }
         }
 
+        // Delete Event Entry
         public void DeleteRejectedEvent(int eventId)
         {
             if (OpenConnection())
             {
-
-                // Delete from Event Table
                 string deleteSocietyQuery = "DELETE FROM events WHERE event_id = @eventId";
                 SqlCommand deleteSocietyCmd = new SqlCommand(deleteSocietyQuery, connection);
                 deleteSocietyCmd.Parameters.AddWithValue("@eventId", eventId);
@@ -273,12 +250,11 @@ namespace CampusNex
             }
         }
 
+        // Delete Member Entry
         public void DeleteRejectedMember(int memId)
         {
             if (OpenConnection())
             {
-
-                // Delete from Event Table
                 string deleteSocietyQuery = "DELETE FROM members WHERE member_id = @memId";
                 SqlCommand deleteSocietyCmd = new SqlCommand(deleteSocietyQuery, connection);
                 deleteSocietyCmd.Parameters.AddWithValue("@memId", memId);
@@ -289,7 +265,7 @@ namespace CampusNex
         }
 
 
-        public void ExecuteInsert2(List<object> toInsert, string tableName)
+        public void InsertMember(List<object> toInsert, string tableName)
         {
             if (OpenConnection())
             {
@@ -310,6 +286,7 @@ namespace CampusNex
             }
         }
 
+        // Insert into Announcements Table
         public void ExecuteInsertAnnouncement(List<object> toInsert)
         {
             if (OpenConnection())
@@ -331,13 +308,12 @@ namespace CampusNex
                 CloseConnection();
             }
         }
-
+        
+        // Function to get society id
         public string GetSocietyId(string societyName)
         {
             string societyId = null;
-
             string query = $"SELECT Societies.society_id FROM Societies WHERE Societies.society_name = '{societyName}'";
-
             try
             {
                 List<List<object>> selectResult = executeSelect(query);
@@ -356,7 +332,4 @@ namespace CampusNex
         }
 
     }
-
 }
-
-

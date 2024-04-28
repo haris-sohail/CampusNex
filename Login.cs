@@ -1,26 +1,28 @@
-﻿using MySql.Data.MySqlClient;
+﻿/*
+ *              CAMPUSNEX CONTROLLER CLASSES: Login.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySqlX.XDevAPI;
 using CampusNex.Model;
 
 namespace CampusNex
 {
     public partial class Login : Form
     {
+        // Constructor
         public Login()
         {
             InitializeComponent();
         }
 
+        // Screen Navigation Function
         public void openRelevantScreen(string role, string user_id)
         {
             if (role.Equals("mentor"))
@@ -41,11 +43,10 @@ namespace CampusNex
                 s.Show();
             }
         }
+
+        // Login Button Handler
         private void loginBtn_Click(object sender, EventArgs e)
         {
-
-
-            // get the username and password
             string usernameEntered = usernameTxt.Text;
             string passEntered = passTxt.Text;
 
@@ -61,27 +62,21 @@ namespace CampusNex
             }
         }
 
-        // Function that Clears UserName and
-        // Password Fields upon successful Login
+        // Function to Clear Fields
         private void clearInputFields()
         {
             usernameTxt.Text = "";
             passTxt.Text = "";
         }
-
-
+        // Function to Show login Screen
         private void studentFormClosed(object sender, FormClosedEventArgs e)
         {
-            // Stop Code Execution Manually
             this.Show();
         }
-
-
-
+        // Dismiss Button Handler
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }
 }

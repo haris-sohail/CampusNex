@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections;
+﻿/*
+ *              CAMPUSNEX MODEL CLASS: Mentor.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
 
 namespace CampusNex.Model
 {
     internal class Mentor : User
     {
-        // Properties specific to Mentor
+        // Data Members
         public int MentorId { get; set; }
         public string Designation { get; set; }
         public string Info { get; set; }
@@ -18,21 +22,10 @@ namespace CampusNex.Model
         // Constructor
         public Mentor(string user_id)
         {
-            // Default constructor
             base.initialize(user_id);
-            this.FetchMData();
-            
+            this.FetchMData();   
         }
-
-        // Methods
-        // Other methods specific to Mentor can be added here
-
-        // Method to approve a society
-        public void ApproveSociety(object society)
-        {
-            // Implement society approval logic here
-        }
-
+        // Fetch Mentor Data From Database
         private void FetchMData()
         {
             string query = "Select * From Mentors where user_id = " + base.GetUserId().ToString();

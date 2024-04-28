@@ -1,18 +1,23 @@
-﻿using System;
+﻿/*
+ *              CAMPUSNEX MODEL CLASS: Society.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
+
+using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Management.Instrumentation;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CampusNex.Model
 {
-    // Changed Accessibility
     public class Society
     {
+        // Data Members
         Util utilObj = new Util();
-        // Properties
         public int SocietyId { get; set; }
         public string Name { get; set; }
         public DateTime CreationDate { get; set; }
@@ -22,34 +27,19 @@ namespace CampusNex.Model
         public byte[] Logo { get; set; }
         public string Description { get; set; }
         public int HeadId { get; set; }
-
         public string status { get; set; }
         public List<Member> Members { get; set; } = new List<Member>();
         public List<Event> Events { get; set; } = new List<Event>();
         public List<Announcement> Announcements { get; set; } = new List<Announcement>();
-
-        // Helping Properties
+        // Helping Data Members
         public string headName { get; set; }
         public string mentorName { get; set; }
         public string acronym { get; set; }
 
-        // Constructor
-        public Society()
-        {
-            // Default constructor
-        }
+        // Constructors
+        public Society() { }
 
-        // Methods
-        public void FetchData()
-        {
-            // Implement data fetching logic here
-        }
-
-        public void UpdateStatus()
-        {
-            // Implement status updating logic here
-        }
-
+        // Fetch Data From Database
         public void initialize(List<object> society)
         {
             this.SocietyId = int.Parse(society[0].ToString());
@@ -63,7 +53,6 @@ namespace CampusNex.Model
             this.status = society[8].ToString();
             this.Comments = society[9].ToString();
 
-            // Initialize Head and Mentor Info
             this.mentorName = utilObj.getMentorName(this.MentorId.ToString());
             this.headName = utilObj.getHeadName(this.HeadId.ToString());
             this.acronym = utilObj.getAcronym(this.Name);
@@ -74,19 +63,16 @@ namespace CampusNex.Model
         // Reject Society
         public void rejectSociety(string reason)
         {
-            // Update Database
             DB_Connection DB_Connector = new DB_Connection();
 
             string tableName = "Societies";
             string[] scolumns = { "status", "comments" };
             string[] wcolumns = { "society_id" };
             object[] values = { "rejected", reason, this.SocietyId };
-
-            // Call the UpdateData method
             bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
-
         }
 
+        // Delete Society from Database
         public void DeleteSociety()
         {
             DB_Connection DB_Connector = new DB_Connection();
@@ -96,10 +82,8 @@ namespace CampusNex.Model
         // Overload ToString Operator for debugging
         public override string ToString()
         {
-            // Customize the string representation of the object
             return $"\nSociety:{this.Name}\n SocietyId: {this.SocietyId}\nHeadname: {this.headName}\n"
                 + $"Mentor Name: {this.mentorName}\nSlogan: {this.Slogan}\nStatus: {this.status}\n";
         }
-
     }
 }

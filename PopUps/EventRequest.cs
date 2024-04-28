@@ -1,35 +1,40 @@
-﻿using CampusNex.Model;
+﻿/*
+ *              CAMPUSNEX POPUP CLASSES: EventRequest.cs
+ *              
+ *              Coded By ACECODERS:
+ *              
+ *                      -> Kalsoom Tariq (i21-2487)
+ *                      -> Haris Sohail (i21-0531)
+ *                      -> Aiman Safdar (i21-0588)
+ *                      
+ */
+using CampusNex.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CampusNex.PopUps
 {
     public partial class EventRequest : Form
     {
+        // Data Members
         Event Request = new Event();
         Util utilobj = new Util();
         private Image societyImg;
         private string socname;
         private string org;
 
+        // Constructor
         public EventRequest(Event Request, Image societyImg, string socName, string organizer )
         {
             this.Request = Request;
             this.societyImg = societyImg;
-            this.socname = socName;
-            this.org = organizer;
+            socname = socName;
+            org = organizer;
             InitializeComponent();
-            Console.WriteLine(this.Request);
         }
+
+        // Load Function
         private void EventRequest_Load(object sender, EventArgs e)
         {
             // Load All Data    
@@ -44,11 +49,10 @@ namespace CampusNex.PopUps
             
         }
 
+        // Close Button
         private void closeButtonViewEvent_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
     }
 }
