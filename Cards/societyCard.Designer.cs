@@ -239,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundColor = System.Drawing.Color.White;
-            this.BorderColor = System.Drawing.Color.White;
+            this.BorderColor = System.Drawing.Color.Black;
             this.BorderRadius = 10;
             this.Controls.Add(this.viewBtn);
             this.Controls.Add(this.mentorName);

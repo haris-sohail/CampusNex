@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mentor));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -43,22 +42,23 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mentor));
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.eventreqbtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.reqBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.eventsBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.societiesBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.viewSociety = new System.Windows.Forms.TabPage();
             this.backSocBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.mentorViewSociety = new System.Windows.Forms.Label();
@@ -88,7 +88,6 @@
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShapes4 = new Bunifu.UI.WinForms.BunifuShapes();
-            this.closeBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.userPicBox = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.bunifuShapes3 = new Bunifu.UI.WinForms.BunifuShapes();
@@ -122,8 +121,10 @@
             this.backBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.eveImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.socImg = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.bunifuIconButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.closeBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.viewSociety.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).BeginInit();
             this.changePassword.SuspendLayout();
@@ -143,16 +144,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.closeBtn);
+            this.panel1.Controls.Add(this.bunifuIconButton1);
             this.panel1.Controls.Add(this.eventreqbtn);
             this.panel1.Controls.Add(this.reqBtn);
             this.panel1.Controls.Add(this.eventsBtn);
             this.panel1.Controls.Add(this.societiesBtn);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(271, 749);
+            this.panel1.Size = new System.Drawing.Size(269, 749);
             this.panel1.TabIndex = 0;
             // 
             // eventreqbtn
@@ -174,11 +177,11 @@
             this.eventreqbtn.ColorContrastOnClick = 45;
             this.eventreqbtn.ColorContrastOnHover = 45;
             this.eventreqbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.eventreqbtn.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.eventreqbtn.CustomizableEdges = borderEdges3;
             this.eventreqbtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.eventreqbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.eventreqbtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -267,11 +270,11 @@
             this.reqBtn.ColorContrastOnClick = 45;
             this.reqBtn.ColorContrastOnHover = 45;
             this.reqBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.reqBtn.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.reqBtn.CustomizableEdges = borderEdges4;
             this.reqBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.reqBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.reqBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -360,11 +363,11 @@
             this.eventsBtn.ColorContrastOnClick = 45;
             this.eventsBtn.ColorContrastOnHover = 45;
             this.eventsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.eventsBtn.CustomizableEdges = borderEdges3;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.eventsBtn.CustomizableEdges = borderEdges5;
             this.eventsBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.eventsBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.eventsBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -453,11 +456,11 @@
             this.societiesBtn.ColorContrastOnClick = 45;
             this.societiesBtn.ColorContrastOnHover = 45;
             this.societiesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.societiesBtn.CustomizableEdges = borderEdges4;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.societiesBtn.CustomizableEdges = borderEdges6;
             this.societiesBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.societiesBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.societiesBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -539,16 +542,6 @@
             this.label1.Text = "CampusNex";
             this.label1.Click += new System.EventHandler(this.campusNexLbl_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CampusNex.Properties.Resources.CampusNex1;
-            this.pictureBox1.Location = new System.Drawing.Point(-66, -30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 208);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // viewSociety
             // 
             this.viewSociety.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
@@ -567,7 +560,7 @@
             this.viewSociety.Margin = new System.Windows.Forms.Padding(2);
             this.viewSociety.Name = "viewSociety";
             this.viewSociety.Padding = new System.Windows.Forms.Padding(2);
-            this.viewSociety.Size = new System.Drawing.Size(1091, 723);
+            this.viewSociety.Size = new System.Drawing.Size(1093, 723);
             this.viewSociety.TabIndex = 13;
             this.viewSociety.Text = "view Society";
             // 
@@ -586,11 +579,11 @@
             this.backSocBtn.ColorContrastOnClick = 30;
             this.backSocBtn.ColorContrastOnHover = 30;
             this.backSocBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.backSocBtn.CustomizableEdges = borderEdges5;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.backSocBtn.CustomizableEdges = borderEdges7;
             this.backSocBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.backSocBtn.Image = ((System.Drawing.Image)(resources.GetObject("backSocBtn.Image")));
             this.backSocBtn.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -730,7 +723,7 @@
             this.logoViewSociety.BorderRadius = 0;
             this.logoViewSociety.Image = ((System.Drawing.Image)(resources.GetObject("logoViewSociety.Image")));
             this.logoViewSociety.IsCircle = false;
-            this.logoViewSociety.Location = new System.Drawing.Point(740, 139);
+            this.logoViewSociety.Location = new System.Drawing.Point(741, 139);
             this.logoViewSociety.Margin = new System.Windows.Forms.Padding(2);
             this.logoViewSociety.Name = "logoViewSociety";
             this.logoViewSociety.Size = new System.Drawing.Size(200, 200);
@@ -750,7 +743,7 @@
             this.changePassword.Location = new System.Drawing.Point(4, 4);
             this.changePassword.Name = "changePassword";
             this.changePassword.Padding = new System.Windows.Forms.Padding(3);
-            this.changePassword.Size = new System.Drawing.Size(1091, 723);
+            this.changePassword.Size = new System.Drawing.Size(1093, 723);
             this.changePassword.TabIndex = 12;
             this.changePassword.Text = "changePassword";
             // 
@@ -769,7 +762,7 @@
             this.bunifuShapes5.Name = "bunifuShapes5";
             this.bunifuShapes5.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Line;
             this.bunifuShapes5.Sides = 5;
-            this.bunifuShapes5.Size = new System.Drawing.Size(1099, 10);
+            this.bunifuShapes5.Size = new System.Drawing.Size(1101, 10);
             this.bunifuShapes5.TabIndex = 20;
             this.bunifuShapes5.Text = "bunifuShapes5";
             // 
@@ -792,11 +785,11 @@
             this.confirmBtn.ColorContrastOnClick = 45;
             this.confirmBtn.ColorContrastOnHover = 45;
             this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.confirmBtn.CustomizableEdges = borderEdges6;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.confirmBtn.CustomizableEdges = borderEdges8;
             this.confirmBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.confirmBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.confirmBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1046,14 +1039,13 @@
             this.Dashboard.Controls.Add(this.bunifuLabel2);
             this.Dashboard.Controls.Add(this.bunifuLabel5);
             this.Dashboard.Controls.Add(this.bunifuShapes4);
-            this.Dashboard.Controls.Add(this.closeBtn);
             this.Dashboard.Controls.Add(this.userPicBox);
             this.Dashboard.Controls.Add(this.label13);
             this.Dashboard.Controls.Add(this.bunifuShapes3);
             this.Dashboard.Location = new System.Drawing.Point(4, 4);
             this.Dashboard.Name = "Dashboard";
             this.Dashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.Dashboard.Size = new System.Drawing.Size(1091, 723);
+            this.Dashboard.Size = new System.Drawing.Size(1093, 723);
             this.Dashboard.TabIndex = 11;
             this.Dashboard.Text = "Dashboard";
             // 
@@ -1076,11 +1068,11 @@
             this.changePassBtn.ColorContrastOnClick = 45;
             this.changePassBtn.ColorContrastOnHover = 45;
             this.changePassBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.changePassBtn.CustomizableEdges = borderEdges7;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.changePassBtn.CustomizableEdges = borderEdges9;
             this.changePassBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.changePassBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.changePassBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1168,11 +1160,11 @@
             this.changePicBtn.ColorContrastOnClick = 45;
             this.changePicBtn.ColorContrastOnHover = 45;
             this.changePicBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.changePicBtn.CustomizableEdges = borderEdges8;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.changePicBtn.CustomizableEdges = borderEdges10;
             this.changePicBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.changePicBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.changePicBtn.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1384,41 +1376,9 @@
             this.bunifuShapes4.Name = "bunifuShapes4";
             this.bunifuShapes4.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Line;
             this.bunifuShapes4.Sides = 5;
-            this.bunifuShapes4.Size = new System.Drawing.Size(1099, 10);
+            this.bunifuShapes4.Size = new System.Drawing.Size(1101, 10);
             this.bunifuShapes4.TabIndex = 20;
             this.bunifuShapes4.Text = "bunifuShapes4";
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.AllowAnimations = true;
-            this.closeBtn.AllowBorderColorChanges = true;
-            this.closeBtn.AllowMouseEffects = true;
-            this.closeBtn.AnimationSpeed = 200;
-            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.closeBtn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.closeBtn.BorderColor = System.Drawing.Color.Transparent;
-            this.closeBtn.BorderRadius = 1;
-            this.closeBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
-            this.closeBtn.BorderThickness = 1;
-            this.closeBtn.ColorContrastOnClick = 30;
-            this.closeBtn.ColorContrastOnHover = 30;
-            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.closeBtn.CustomizableEdges = borderEdges9;
-            this.closeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.closeBtn.Image = global::CampusNex.Properties.Resources.logout;
-            this.closeBtn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.closeBtn.Location = new System.Drawing.Point(1015, 22);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.RoundBorders = true;
-            this.closeBtn.ShowBorders = true;
-            this.closeBtn.Size = new System.Drawing.Size(68, 68);
-            this.closeBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
-            this.closeBtn.TabIndex = 15;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // userPicBox
             // 
@@ -1428,7 +1388,7 @@
             this.userPicBox.BorderRadius = 75;
             this.userPicBox.Image = ((System.Drawing.Image)(resources.GetObject("userPicBox.Image")));
             this.userPicBox.IsCircle = true;
-            this.userPicBox.Location = new System.Drawing.Point(122, 300);
+            this.userPicBox.Location = new System.Drawing.Point(124, 300);
             this.userPicBox.Name = "userPicBox";
             this.userPicBox.Size = new System.Drawing.Size(150, 150);
             this.userPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1475,7 +1435,7 @@
             this.eventRequestTab.Location = new System.Drawing.Point(4, 4);
             this.eventRequestTab.Name = "eventRequestTab";
             this.eventRequestTab.Padding = new System.Windows.Forms.Padding(3);
-            this.eventRequestTab.Size = new System.Drawing.Size(1091, 723);
+            this.eventRequestTab.Size = new System.Drawing.Size(1093, 723);
             this.eventRequestTab.TabIndex = 8;
             this.eventRequestTab.Text = "eventReq";
             // 
@@ -1514,7 +1474,7 @@
             this.eventPage.Location = new System.Drawing.Point(4, 4);
             this.eventPage.Name = "eventPage";
             this.eventPage.Padding = new System.Windows.Forms.Padding(3);
-            this.eventPage.Size = new System.Drawing.Size(1091, 723);
+            this.eventPage.Size = new System.Drawing.Size(1093, 723);
             this.eventPage.TabIndex = 5;
             this.eventPage.Text = "Events";
             // 
@@ -1550,7 +1510,7 @@
             this.Requests.Location = new System.Drawing.Point(4, 4);
             this.Requests.Name = "Requests";
             this.Requests.Padding = new System.Windows.Forms.Padding(3);
-            this.Requests.Size = new System.Drawing.Size(1091, 723);
+            this.Requests.Size = new System.Drawing.Size(1093, 723);
             this.Requests.TabIndex = 2;
             this.Requests.Text = "societyReq";
             // 
@@ -1592,7 +1552,7 @@
             this.SocietiesPage.Location = new System.Drawing.Point(4, 4);
             this.SocietiesPage.Name = "SocietiesPage";
             this.SocietiesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.SocietiesPage.Size = new System.Drawing.Size(1091, 723);
+            this.SocietiesPage.Size = new System.Drawing.Size(1093, 723);
             this.SocietiesPage.TabIndex = 0;
             this.SocietiesPage.Text = "Societies";
             // 
@@ -1616,7 +1576,7 @@
             this.userName.CursorType = System.Windows.Forms.Cursors.Default;
             this.userName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(227)))), ((int)(((byte)(255)))));
-            this.userName.Location = new System.Drawing.Point(903, 62);
+            this.userName.Location = new System.Drawing.Point(905, 62);
             this.userName.Name = "userName";
             this.userName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.userName.Size = new System.Drawing.Size(97, 18);
@@ -1633,7 +1593,7 @@
             this.userPic.BorderRadius = 50;
             this.userPic.Image = ((System.Drawing.Image)(resources.GetObject("userPic.Image")));
             this.userPic.IsCircle = true;
-            this.userPic.Location = new System.Drawing.Point(806, 19);
+            this.userPic.Location = new System.Drawing.Point(808, 19);
             this.userPic.Name = "userPic";
             this.userPic.Size = new System.Drawing.Size(100, 100);
             this.userPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1731,7 +1691,7 @@
             this.MentorPages.Controls.Add(this.viewSociety);
             this.MentorPages.Controls.Add(this.viewEvent);
             this.MentorPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MentorPages.Location = new System.Drawing.Point(271, 0);
+            this.MentorPages.Location = new System.Drawing.Point(269, 0);
             this.MentorPages.Multiline = true;
             this.MentorPages.Name = "MentorPages";
             this.MentorPages.Page = this.Dashboard;
@@ -1739,7 +1699,7 @@
             this.MentorPages.PageName = "Dashboard";
             this.MentorPages.PageTitle = "Dashboard";
             this.MentorPages.SelectedIndex = 0;
-            this.MentorPages.Size = new System.Drawing.Size(1099, 749);
+            this.MentorPages.Size = new System.Drawing.Size(1101, 749);
             this.MentorPages.TabIndex = 1;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -1780,7 +1740,7 @@
             this.viewEvent.Margin = new System.Windows.Forms.Padding(2);
             this.viewEvent.Name = "viewEvent";
             this.viewEvent.Padding = new System.Windows.Forms.Padding(2);
-            this.viewEvent.Size = new System.Drawing.Size(1091, 723);
+            this.viewEvent.Size = new System.Drawing.Size(1093, 723);
             this.viewEvent.TabIndex = 14;
             this.viewEvent.Text = "view Event";
             // 
@@ -1935,11 +1895,11 @@
             this.backBtn.ColorContrastOnClick = 30;
             this.backBtn.ColorContrastOnHover = 30;
             this.backBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.backBtn.CustomizableEdges = borderEdges10;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.backBtn.CustomizableEdges = borderEdges11;
             this.backBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
             this.backBtn.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -1960,7 +1920,7 @@
             this.eveImg.BorderRadius = 0;
             this.eveImg.Image = ((System.Drawing.Image)(resources.GetObject("eveImg.Image")));
             this.eveImg.IsCircle = true;
-            this.eveImg.Location = new System.Drawing.Point(653, 90);
+            this.eveImg.Location = new System.Drawing.Point(654, 90);
             this.eveImg.Margin = new System.Windows.Forms.Padding(2);
             this.eveImg.Name = "eveImg";
             this.eveImg.Size = new System.Drawing.Size(200, 200);
@@ -1977,7 +1937,7 @@
             this.socImg.BorderRadius = 0;
             this.socImg.Image = ((System.Drawing.Image)(resources.GetObject("socImg.Image")));
             this.socImg.IsCircle = true;
-            this.socImg.Location = new System.Drawing.Point(110, 90);
+            this.socImg.Location = new System.Drawing.Point(111, 90);
             this.socImg.Margin = new System.Windows.Forms.Padding(2);
             this.socImg.Name = "socImg";
             this.socImg.Size = new System.Drawing.Size(200, 200);
@@ -1986,19 +1946,95 @@
             this.socImg.TabStop = false;
             this.socImg.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
+            // bunifuIconButton1
+            // 
+            this.bunifuIconButton1.AllowAnimations = true;
+            this.bunifuIconButton1.AllowBorderColorChanges = true;
+            this.bunifuIconButton1.AllowMouseEffects = true;
+            this.bunifuIconButton1.AnimationSpeed = 200;
+            this.bunifuIconButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuIconButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuIconButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuIconButton1.BorderRadius = 1;
+            this.bunifuIconButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.bunifuIconButton1.BorderThickness = 1;
+            this.bunifuIconButton1.ColorContrastOnClick = 30;
+            this.bunifuIconButton1.ColorContrastOnHover = 30;
+            this.bunifuIconButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuIconButton1.CustomizableEdges = borderEdges2;
+            this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bunifuIconButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuIconButton1.Image")));
+            this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.bunifuIconButton1.Location = new System.Drawing.Point(-2, 9);
+            this.bunifuIconButton1.Name = "bunifuIconButton1";
+            this.bunifuIconButton1.RoundBorders = true;
+            this.bunifuIconButton1.ShowBorders = true;
+            this.bunifuIconButton1.Size = new System.Drawing.Size(114, 114);
+            this.bunifuIconButton1.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.bunifuIconButton1.TabIndex = 6;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.AllowAnimations = true;
+            this.closeBtn.AllowBorderColorChanges = true;
+            this.closeBtn.AllowMouseEffects = true;
+            this.closeBtn.AnimationSpeed = 200;
+            this.closeBtn.BackColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BorderColor = System.Drawing.Color.Transparent;
+            this.closeBtn.BorderRadius = 1;
+            this.closeBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.closeBtn.BorderThickness = 1;
+            this.closeBtn.ColorContrastOnClick = 30;
+            this.closeBtn.ColorContrastOnHover = 30;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.closeBtn.CustomizableEdges = borderEdges1;
+            this.closeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.closeBtn.Image = global::CampusNex.Properties.Resources.logout;
+            this.closeBtn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.closeBtn.Location = new System.Drawing.Point(12, 669);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.RoundBorders = true;
+            this.closeBtn.ShowBorders = true;
+            this.closeBtn.Size = new System.Drawing.Size(68, 68);
+            this.closeBtn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.closeBtn.TabIndex = 21;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(82)))), ((int)(((byte)(90)))));
+            this.label3.Location = new System.Drawing.Point(86, 688);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 29);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "LogOut";
+            this.label3.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
             // Mentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ControlBox = false;
             this.Controls.Add(this.MentorPages);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Mentor";
-            this.Text = "Mentor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Mentor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.viewSociety.ResumeLayout(false);
             this.viewSociety.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoViewSociety)).EndInit();
@@ -2028,7 +2064,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton societiesBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton eventsBtn;
@@ -2063,7 +2098,6 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes4;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton closeBtn;
         private Bunifu.UI.WinForms.BunifuPictureBox userPicBox;
         private System.Windows.Forms.Label label13;
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes3;
@@ -2097,5 +2131,8 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton backBtn;
         private Bunifu.UI.WinForms.BunifuPictureBox eveImg;
         private Bunifu.UI.WinForms.BunifuPictureBox socImg;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton bunifuIconButton1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton closeBtn;
+        private System.Windows.Forms.Label label3;
     }
 }

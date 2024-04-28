@@ -40,6 +40,10 @@
             this.regDateViewMember = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.memberDesc = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.bunifuSeparator4 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.memberPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socPic)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +88,7 @@
             this.memberPic.BorderRadius = 0;
             this.memberPic.Image = ((System.Drawing.Image)(resources.GetObject("memberPic.Image")));
             this.memberPic.IsCircle = true;
-            this.memberPic.Location = new System.Drawing.Point(42, 67);
+            this.memberPic.Location = new System.Drawing.Point(42, 56);
             this.memberPic.Name = "memberPic";
             this.memberPic.Size = new System.Drawing.Size(129, 129);
             this.memberPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -98,11 +102,13 @@
             this.memberName.AutoEllipsis = false;
             this.memberName.CursorType = null;
             this.memberName.Font = new System.Drawing.Font("Verdana", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memberName.Location = new System.Drawing.Point(68, 201);
+            this.memberName.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.memberName.Location = new System.Drawing.Point(12, 204);
+            this.memberName.MaximumSize = new System.Drawing.Size(200, 50);
+            this.memberName.MinimumSize = new System.Drawing.Size(200, 24);
             this.memberName.Name = "memberName";
             this.memberName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.memberName.Size = new System.Drawing.Size(92, 23);
+            this.memberName.Size = new System.Drawing.Size(200, 37);
             this.memberName.TabIndex = 19;
             this.memberName.Text = "Kalsoom";
             this.memberName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,11 +137,13 @@
             this.socName.Cursor = System.Windows.Forms.Cursors.Default;
             this.socName.CursorType = System.Windows.Forms.Cursors.Default;
             this.socName.Font = new System.Drawing.Font("Verdana", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.socName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.socName.Location = new System.Drawing.Point(309, 204);
+            this.socName.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.socName.Location = new System.Drawing.Point(288, 204);
+            this.socName.MaximumSize = new System.Drawing.Size(300, 50);
+            this.socName.MinimumSize = new System.Drawing.Size(300, 24);
             this.socName.Name = "socName";
             this.socName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.socName.Size = new System.Drawing.Size(279, 23);
+            this.socName.Size = new System.Drawing.Size(300, 37);
             this.socName.TabIndex = 22;
             this.socName.Text = "Fast Data Science Society";
             this.socName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,8 +155,8 @@
             this.joinLbl.AutoEllipsis = false;
             this.joinLbl.CursorType = null;
             this.joinLbl.Font = new System.Drawing.Font("Verdana", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.joinLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.joinLbl.Location = new System.Drawing.Point(202, 132);
+            this.joinLbl.ForeColor = System.Drawing.Color.White;
+            this.joinLbl.Location = new System.Drawing.Point(209, 132);
             this.joinLbl.Name = "joinLbl";
             this.joinLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.joinLbl.Size = new System.Drawing.Size(94, 17);
@@ -163,8 +171,8 @@
             this.registartionViewMemberLbl.AutoEllipsis = false;
             this.registartionViewMemberLbl.CursorType = null;
             this.registartionViewMemberLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registartionViewMemberLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.registartionViewMemberLbl.Location = new System.Drawing.Point(42, 266);
+            this.registartionViewMemberLbl.ForeColor = System.Drawing.Color.White;
+            this.registartionViewMemberLbl.Location = new System.Drawing.Point(42, 288);
             this.registartionViewMemberLbl.Name = "registartionViewMemberLbl";
             this.registartionViewMemberLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.registartionViewMemberLbl.Size = new System.Drawing.Size(191, 23);
@@ -179,8 +187,8 @@
             this.regDateViewMember.AutoEllipsis = false;
             this.regDateViewMember.CursorType = null;
             this.regDateViewMember.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.regDateViewMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.regDateViewMember.Location = new System.Drawing.Point(275, 266);
+            this.regDateViewMember.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.regDateViewMember.Location = new System.Drawing.Point(275, 286);
             this.regDateViewMember.Name = "regDateViewMember";
             this.regDateViewMember.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.regDateViewMember.Size = new System.Drawing.Size(81, 23);
@@ -195,8 +203,8 @@
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.bunifuLabel1.Location = new System.Drawing.Point(42, 319);
+            this.bunifuLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuLabel1.Location = new System.Drawing.Point(42, 335);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(99, 23);
@@ -212,24 +220,94 @@
             this.memberDesc.Cursor = System.Windows.Forms.Cursors.Default;
             this.memberDesc.CursorType = System.Windows.Forms.Cursors.Default;
             this.memberDesc.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memberDesc.Location = new System.Drawing.Point(86, 358);
+            this.memberDesc.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.memberDesc.Location = new System.Drawing.Point(86, 384);
             this.memberDesc.MaximumSize = new System.Drawing.Size(450, 200);
-            this.memberDesc.MinimumSize = new System.Drawing.Size(400, 200);
+            this.memberDesc.MinimumSize = new System.Drawing.Size(400, 24);
             this.memberDesc.Name = "memberDesc";
             this.memberDesc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.memberDesc.Size = new System.Drawing.Size(400, 200);
+            this.memberDesc.Size = new System.Drawing.Size(400, 24);
             this.memberDesc.TabIndex = 27;
             this.memberDesc.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.memberDesc.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator1.BackgroundImage")));
+            this.bunifuSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator1.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator1.LineThickness = 2;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(598, 0);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(0);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator1.Size = new System.Drawing.Size(2, 600);
+            this.bunifuSeparator1.TabIndex = 32;
+            this.bunifuSeparator1.TabStop = false;
+            // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
+            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator3.LineThickness = 2;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(0, 0);
+            this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(0);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator3.Size = new System.Drawing.Size(2, 600);
+            this.bunifuSeparator3.TabIndex = 31;
+            this.bunifuSeparator3.TabStop = false;
+            // 
+            // bunifuSeparator4
+            // 
+            this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator4.BackgroundImage")));
+            this.bunifuSeparator4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator4.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.bunifuSeparator4.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator4.LineThickness = 2;
+            this.bunifuSeparator4.Location = new System.Drawing.Point(0, 0);
+            this.bunifuSeparator4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuSeparator4.Name = "bunifuSeparator4";
+            this.bunifuSeparator4.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator4.Size = new System.Drawing.Size(600, 2);
+            this.bunifuSeparator4.TabIndex = 34;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
+            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator2.LineThickness = 2;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(0, 598);
+            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator2.Size = new System.Drawing.Size(600, 2);
+            this.bunifuSeparator2.TabIndex = 33;
             // 
             // MemberRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(600, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.bunifuSeparator4);
+            this.Controls.Add(this.bunifuSeparator2);
+            this.Controls.Add(this.bunifuSeparator1);
+            this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.memberDesc);
             this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.regDateViewMember);
@@ -241,7 +319,7 @@
             this.Controls.Add(this.memberPic);
             this.Controls.Add(this.closeBtnViewMember);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MemberRequest";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -265,5 +343,9 @@
         private Bunifu.UI.WinForms.BunifuLabel regDateViewMember;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuLabel memberDesc;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
     }
 }

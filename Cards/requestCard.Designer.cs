@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestCard));
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.newSocImg = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.newSocName = new Bunifu.UI.WinForms.BunifuLabel();
             this.socHeadName = new Bunifu.UI.WinForms.BunifuLabel();
@@ -66,10 +66,12 @@
             this.newSocName.CursorType = System.Windows.Forms.Cursors.Default;
             this.newSocName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newSocName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.newSocName.Location = new System.Drawing.Point(177, 37);
+            this.newSocName.Location = new System.Drawing.Point(181, 37);
+            this.newSocName.MaximumSize = new System.Drawing.Size(300, 50);
+            this.newSocName.MinimumSize = new System.Drawing.Size(300, 24);
             this.newSocName.Name = "newSocName";
             this.newSocName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.newSocName.Size = new System.Drawing.Size(164, 25);
+            this.newSocName.Size = new System.Drawing.Size(300, 38);
             this.newSocName.TabIndex = 1;
             this.newSocName.Text = "New New Society";
             this.newSocName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,14 +81,17 @@
             // 
             this.socHeadName.AllowParentOverrides = false;
             this.socHeadName.AutoEllipsis = false;
+            this.socHeadName.BackColor = System.Drawing.Color.White;
             this.socHeadName.Cursor = System.Windows.Forms.Cursors.Default;
             this.socHeadName.CursorType = System.Windows.Forms.Cursors.Default;
             this.socHeadName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.socHeadName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.socHeadName.Location = new System.Drawing.Point(173, 121);
+            this.socHeadName.Location = new System.Drawing.Point(173, 115);
+            this.socHeadName.MaximumSize = new System.Drawing.Size(300, 50);
+            this.socHeadName.MinimumSize = new System.Drawing.Size(300, 24);
             this.socHeadName.Name = "socHeadName";
             this.socHeadName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.socHeadName.Size = new System.Drawing.Size(78, 25);
+            this.socHeadName.Size = new System.Drawing.Size(300, 38);
             this.socHeadName.TabIndex = 2;
             this.socHeadName.Text = "Test test";
             this.socHeadName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,7 +105,7 @@
             this.presentlabel.CursorType = System.Windows.Forms.Cursors.Default;
             this.presentlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presentlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.presentlabel.Location = new System.Drawing.Point(223, 78);
+            this.presentlabel.Location = new System.Drawing.Point(292, 85);
             this.presentlabel.Name = "presentlabel";
             this.presentlabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.presentlabel.Size = new System.Drawing.Size(65, 19);
@@ -124,11 +129,11 @@
             this.acceptBtn.ColorContrastOnClick = 30;
             this.acceptBtn.ColorContrastOnHover = 30;
             this.acceptBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.acceptBtn.CustomizableEdges = borderEdges1;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.acceptBtn.CustomizableEdges = borderEdges4;
             this.acceptBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.acceptBtn.Image = ((System.Drawing.Image)(resources.GetObject("acceptBtn.Image")));
             this.acceptBtn.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -156,11 +161,11 @@
             this.detailsBtn.ColorContrastOnClick = 30;
             this.detailsBtn.ColorContrastOnHover = 30;
             this.detailsBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.detailsBtn.CustomizableEdges = borderEdges2;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.detailsBtn.CustomizableEdges = borderEdges5;
             this.detailsBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.detailsBtn.Image = ((System.Drawing.Image)(resources.GetObject("detailsBtn.Image")));
             this.detailsBtn.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -188,11 +193,11 @@
             this.bunifuIconButton1.ColorContrastOnClick = 30;
             this.bunifuIconButton1.ColorContrastOnHover = 30;
             this.bunifuIconButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.bunifuIconButton1.CustomizableEdges = borderEdges3;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.bunifuIconButton1.CustomizableEdges = borderEdges6;
             this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuIconButton1.Image")));
             this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);

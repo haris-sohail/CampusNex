@@ -260,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundColor = System.Drawing.Color.White;
-            this.BorderColor = System.Drawing.Color.White;
+            this.BorderColor = System.Drawing.Color.Black;
             this.BorderRadius = 10;
             this.Controls.Add(this.eventStatus);
             this.Controls.Add(this.statusLabel);
