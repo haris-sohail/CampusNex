@@ -248,6 +248,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.newPassTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.oldPassTxt = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuShapes6 = new Bunifu.UI.WinForms.BunifuShapes();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.StudentPages.SuspendLayout();
@@ -2604,6 +2605,7 @@
             // organizeEvent
             // 
             this.organizeEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            this.organizeEvent.Controls.Add(this.bunifuShapes6);
             this.organizeEvent.Controls.Add(this.eType);
             this.organizeEvent.Controls.Add(this.eTypeLbl);
             this.organizeEvent.Controls.Add(this.dteLbl);
@@ -2750,7 +2752,7 @@
             this.bckBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bckBtn.Image = ((System.Drawing.Image)(resources.GetObject("bckBtn.Image")));
             this.bckBtn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.bckBtn.Location = new System.Drawing.Point(33, 38);
+            this.bckBtn.Location = new System.Drawing.Point(33, 31);
             this.bckBtn.Name = "bckBtn";
             this.bckBtn.RoundBorders = true;
             this.bckBtn.ShowBorders = true;
@@ -3309,7 +3311,7 @@
             this.regEvent.AutoSize = true;
             this.regEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regEvent.ForeColor = System.Drawing.Color.White;
-            this.regEvent.Location = new System.Drawing.Point(367, 57);
+            this.regEvent.Location = new System.Drawing.Point(365, 52);
             this.regEvent.Name = "regEvent";
             this.regEvent.Size = new System.Drawing.Size(265, 29);
             this.regEvent.TabIndex = 7;
@@ -4701,6 +4703,25 @@
             this.oldPassTxt.UseSystemPasswordChar = true;
             this.oldPassTxt.WordWrap = true;
             // 
+            // bunifuShapes6
+            // 
+            this.bunifuShapes6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuShapes6.Angle = 0F;
+            this.bunifuShapes6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuShapes6.BorderColor = System.Drawing.Color.Silver;
+            this.bunifuShapes6.BorderThickness = 2;
+            this.bunifuShapes6.FillColor = System.Drawing.Color.Transparent;
+            this.bunifuShapes6.FillShape = true;
+            this.bunifuShapes6.Location = new System.Drawing.Point(-4, 103);
+            this.bunifuShapes6.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuShapes6.Name = "bunifuShapes6";
+            this.bunifuShapes6.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Line;
+            this.bunifuShapes6.Sides = 5;
+            this.bunifuShapes6.Size = new System.Drawing.Size(1099, 10);
+            this.bunifuShapes6.TabIndex = 26;
+            this.bunifuShapes6.Text = "bunifuShapes1";
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4897,5 +4918,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton viewMsgs;
         private Bunifu.UI.WinForms.BunifuLabel viewMsgsLbl;
         private System.Windows.Forms.FlowLayoutPanel MemberRequestsPanel;
+        private Bunifu.UI.WinForms.BunifuShapes bunifuShapes6;
     }
 }

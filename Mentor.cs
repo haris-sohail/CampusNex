@@ -113,7 +113,7 @@ namespace CampusNex
             newCard.ViewBtnClicked += (sender, e) =>
             {
                 // Switch to the "View More" tab when the button is clicked
-                MentorPages.SelectedIndex = 2; // Index of the "View More" tab
+                MentorPages.SetPage("view Society");// Index of the "View More" tab
 
 
                 // Get the details from the clicked user control object
@@ -150,9 +150,101 @@ namespace CampusNex
 
 
         private void Mentor_Load(object sender, EventArgs e)
-        {   
+        {
+            showDashBoard();
             setUsernameAndPic();
             showSocieties();
+        }
+
+        public void populateDashBoard()
+        {
+            nameLbl.Text = mentor.Username;
+            emailLbl.Text = mentor.Email;
+            userPicBox.Image = mentor.UserImage;
+        }
+
+        public void showDashBoard()
+        {
+            MentorPages.SetPage("Dashboard");
+            populateDashBoard();
+        }
+
+        private void changePassBtn_Click(object sender, EventArgs e)
+        {
+            MentorPages.SetPage("changePassword");
+            oldPassTxt.Clear();
+            newPassTxt.Clear();
+        }
+
+        private void changePicBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDial = new OpenFileDialog();
+            fileDial.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff)|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff";
+
+            if (fileDial.ShowDialog() == DialogResult.OK)
+            {
+                userPicBox.Image = new Bitmap(fileDial.FileName);
+            }
+
+
+
+            // update in database
+            DB_Connection DB_Connector = new DB_Connection();
+            string tableName = "CUsers";
+            string[] scolumns = { "user_pic" };
+            string[] wcolumns = { "user_id" };
+            object[] values = { utilObj.convertToByteStream(userPicBox.Image), mentor.UserId };
+
+            // Call the UpdateData method
+            bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+            if (success)
+            {
+                MessageBox.Show("Successfully changed your image", "Success", MessageBoxButtons.OK);
+            }
+
+            else
+            {
+                MessageBox.Show("Error changing your image", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // change the student pic locally
+            this.mentor.UserImage = userPicBox.Image;
+        }
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            if (oldPassTxt.Text.Equals(mentor.Password))
+            {
+                // update in database
+                DB_Connection DB_Connector = new DB_Connection();
+                string tableName = "CUsers";
+                string[] scolumns = { "password" };
+                string[] wcolumns = { "user_id" };
+                object[] values = { newPassTxt.Text, mentor.UserId };
+
+                // Call the UpdateData method
+                bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+
+                if (success)
+                {
+                    MessageBox.Show("Successfully changed your password", "Success", MessageBoxButtons.OK);
+                    MentorPages.SetPage("Dashboard");
+                    this.mentor.Password = newPassTxt.Text;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Old Password does not match", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                oldPassTxt.Clear();
+            }
+        }
+        private void campusNexLbl_Click(object sender, EventArgs e)
+        {
+            MentorPages.SetPage("Dashboard");
+        }
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         public void showSocieties(string searchTxt = null)
@@ -492,6 +584,12 @@ namespace CampusNex
 
             }
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            MentorPages.SetPage("Events");
+        }
+
 
         private void eventDetails(eventData e)
         {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CNMessage));
             this.closeBtnViewMember = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.msgtype = new System.Windows.Forms.Label();
@@ -51,11 +51,11 @@
             this.closeBtnViewMember.ColorContrastOnClick = 30;
             this.closeBtnViewMember.ColorContrastOnHover = 30;
             this.closeBtnViewMember.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.closeBtnViewMember.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.closeBtnViewMember.CustomizableEdges = borderEdges1;
             this.closeBtnViewMember.DialogResult = System.Windows.Forms.DialogResult.None;
             this.closeBtnViewMember.Image = ((System.Drawing.Image)(resources.GetObject("closeBtnViewMember.Image")));
             this.closeBtnViewMember.ImageMargin = new System.Windows.Forms.Padding(0);
@@ -73,11 +73,14 @@
             this.msgtype.AutoSize = true;
             this.msgtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msgtype.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.msgtype.Location = new System.Drawing.Point(120, 24);
+            this.msgtype.Location = new System.Drawing.Point(27, 12);
+            this.msgtype.MaximumSize = new System.Drawing.Size(350, 50);
+            this.msgtype.MinimumSize = new System.Drawing.Size(350, 50);
             this.msgtype.Name = "msgtype";
-            this.msgtype.Size = new System.Drawing.Size(167, 24);
+            this.msgtype.Size = new System.Drawing.Size(350, 50);
             this.msgtype.TabIndex = 11;
             this.msgtype.Text = "Society Rejected";
+            this.msgtype.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // reasons
             // 

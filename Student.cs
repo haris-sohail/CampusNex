@@ -609,7 +609,7 @@ namespace CampusNex
                     c.eId = e.EventId;
                     c.DetailsBtn += (sender, eve) =>
                     {
-                        StudentPages.SelectedIndex = 6;
+                        StudentPages.SetPage("view Event");
                         eventDetails(eve);
                     };
 

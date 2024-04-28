@@ -43,7 +43,7 @@
             this.rejectReason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rejectReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rejectReason.ForeColor = System.Drawing.Color.White;
-            this.rejectReason.Location = new System.Drawing.Point(58, 44);
+            this.rejectReason.Location = new System.Drawing.Point(51, 72);
             this.rejectReason.Name = "rejectReason";
             this.rejectReason.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.rejectReason.Size = new System.Drawing.Size(369, 178);
@@ -58,10 +58,12 @@
             this.CommentLbl.CursorType = System.Windows.Forms.Cursors.Default;
             this.CommentLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommentLbl.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.CommentLbl.Location = new System.Drawing.Point(84, 12);
+            this.CommentLbl.Location = new System.Drawing.Point(37, 16);
+            this.CommentLbl.MaximumSize = new System.Drawing.Size(400, 50);
+            this.CommentLbl.MinimumSize = new System.Drawing.Size(400, 50);
             this.CommentLbl.Name = "CommentLbl";
             this.CommentLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CommentLbl.Size = new System.Drawing.Size(114, 23);
+            this.CommentLbl.Size = new System.Drawing.Size(400, 50);
             this.CommentLbl.TabIndex = 29;
             this.CommentLbl.Text = "Comments";
             this.CommentLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,7 +116,7 @@
             this.rejectBtn.IdleIconLeftImage = null;
             this.rejectBtn.IdleIconRightImage = null;
             this.rejectBtn.IndicateFocus = true;
-            this.rejectBtn.Location = new System.Drawing.Point(166, 237);
+            this.rejectBtn.Location = new System.Drawing.Point(166, 255);
             this.rejectBtn.Name = "rejectBtn";
             this.rejectBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.rejectBtn.OnDisabledState.BorderRadius = 10;
