@@ -4,6 +4,8 @@ using CampusNex.PopUps;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace CampusNex
@@ -44,11 +46,74 @@ namespace CampusNex
             {
                 if(s.HeadId == student.StudentId && s.status == "rejected")
                 {
-                    CNMessage popup = new CNMessage("Society Rejected",s.Comments);
+                    CNMessage popup = new CNMessage(s.Name+" Rejected",s.Comments);
                     popup.ShowDialog();
                     s.DeleteSociety();
                 }
             }
+            // Remove from RunTime
+            int index = societies.FindIndex(s => s.HeadId == student.StudentId
+                                            && s.status == "rejected");
+            if (index != -1)
+            {
+                societies.RemoveAt(index);
+            }
+
+            // 02. Show Rejected Events
+            // Notifications
+            foreach (var e in events)
+            {
+                if(student.StudentId == e.OrganizerId && e.Status == "rejected")
+                {
+                    CNMessage popup = new CNMessage(e.Title+" Rejected", e.Comments);
+                    popup.ShowDialog();
+                    e.DeleteEvent();
+                }
+            }
+            // Remove from RunTime
+            index = -1;
+            index = events.FindIndex(e => e.OrganizerId == student.StudentId
+                                            && e.Status == "rejected");
+            if (index != -1)
+            {
+                events.RemoveAt(index);
+            }
+
+            foreach (var s in societies)
+            {
+                int idx = s.Events.FindIndex(e => e.OrganizerId == student.StudentId
+                                            && e.Status == "rejected");
+                if (idx != -1)
+                {
+                    s.Events.RemoveAt(idx);
+                }
+            }
+
+            // 02. Show Rejected Member Request
+            // Notifications
+            foreach (var m in student.Members)
+            {
+                if(m.status == "rejected" && m.IsHead != true)
+                {
+                    CNMessage popup = new CNMessage("Member Rejection", m.Comments);
+                    popup.ShowDialog();
+                    m.DeleteMember();
+                }
+            }
+
+            // Remove from RunTime
+            index = -1;
+            index = student.Members.FindIndex(m => m.status == "rejected"
+                                                && m.IsHead != true);
+            if (index != -1)
+            {
+                student.Members.RemoveAt(index);
+                student.nOfm -= 1;
+            }
+
+            // No Notificications left
+            viewMsgsLbl.Text = "";
+            viewMsgs.Visible = false;
 
         }
 
@@ -91,11 +156,11 @@ namespace CampusNex
             {
                 // Show Organize Event button only if
                 // student is a member
-                organizeEventBtn.Visible = true;
                 foreach (var s in societies)
                 {
-                    if (m.SocietyId == s.SocietyId && m.status != "pending")
+                    if (m.SocietyId == s.SocietyId && (m.status != "pending" || m.status != "rejected"))
                     {
+                        organizeEventBtn.Visible = true;
                         // Enable Member Request and add announcement Btn only 
                         // If the Student is Head of a Society
                         if (m.IsHead)
@@ -333,7 +398,7 @@ namespace CampusNex
                 if(s.status != "rejected")
                 {
                     // Check if society is registered
-                    if (Ids.Contains(s.SocietyId))
+                    if (Ids.Contains(s.SocietyId) && s.status !="pending")
                     {
                         // Populate panel for registered societies
                         Add_Society(regSocPanel, s.Name, s.Slogan, s.acronym, s.headName, s.mentorName, societyImg, s.Description, s.SocietyId);
@@ -557,7 +622,7 @@ namespace CampusNex
                     // Add only Society Relevant Events to Panel 2
                     foreach(var m in student.Members)
                     {
-                        if(m.SocietyId == e.SocietyId)
+                        if(m.SocietyId == e.SocietyId && m.status == "accepted")
                         {
                             societyEventPanel.Controls.Add(c);
                         }
@@ -594,7 +659,9 @@ namespace CampusNex
         // Member Request Data For Head
         private void loadReqData()
         {
+            MemberRequestsPanel.Controls.Clear();
             // Fetch society Id
+            // Of head
             int sId = -1;
             foreach (var m in student.Members)
             {
@@ -604,107 +671,87 @@ namespace CampusNex
                 }
             }
 
-            DB_Connection dbConnector = new DB_Connection();
-            // Query to select data to populate Society Request Data Grid
-            string query = "SELECT " +
-                "U.username AS user_name, S.society_name,M.member_id" +
-                " FROM Members M JOIN Students St ON M.student_id = St.student_id" +
-                " JOIN CUsers U ON St.user_id = U.user_id" +
-                " JOIN Societies S ON M.society_id = S.society_id" +
-                " WHERE M.status = 'pending' and M.society_id = " + sId.ToString();
-
-
-            Console.WriteLine(query);
-
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
-            memReqGrid.Rows.Clear();
-            //// Add society cards from the select results
-            foreach (var row in selectResult)
+            // Leading One Society
+            if (sId != -1)
             {
-                // Get the columns in the correct order
-                string societyName = row[1].ToString();
-                string memName = row[0].ToString();
-                string memId = row[2].ToString();
+                // Query to select data to populate Member Requests
+                string query = "SELECT " +
+                    "U.username AS user_name, S.society_name,M.member_id, U.user_pic, S.society_logo, M.join_date " +
+                    ", M.interest FROM Members M JOIN Students St ON M.student_id = St.student_id" +
+                    " JOIN CUsers U ON St.user_id = U.user_id" +
+                    " JOIN Societies S ON M.society_id = S.society_id" +
+                    " WHERE M.status = 'pending' and M.society_id = " + sId.ToString();
 
-                // Populate DataGrid
-                memReqGrid.Rows.Add(new Object[]
+                DB_Connection dbConnector = new DB_Connection();
+                List<List<object>> memreqdata = dbConnector.executeSelect(query);
+
+                
+                foreach (var row in memreqdata)
                 {
-                    memId,
-                    societyName,
-                    memName,
-                    "More Details",
-                    "Accept"
+                    // Get the columns in the correct order
+                    string societyName = row[1].ToString();
+                    string memName = row[0].ToString();
+                    string memId = row[2].ToString();
 
-                                //need to add user id of that particular member
+                    Image uImg = utilObj.getImage((row[3] as byte[]));
+                    Image sLogo = utilObj.getImage((row[4] as byte[]));
+                    string mdate = row[5].ToString();
+                    string interest = row[6].ToString();
 
-                     
-                });
+                    addMemReq(memId, societyName, memName, uImg, sLogo, mdate, interest);
+                }
 
             }
             
         }
 
-        private void memReqGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void addMemReq(string memId, string societyName, string memName, 
+                            Image uImg, Image sImg, string d, string interest)
         {
-            //if (e.RowIndex != 0)
-           // {
-                //member approved
-                if (e.ColumnIndex == 4)
-                {
-                    if (memReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                    {
-                        DataGridViewRow clickedRow = memReqGrid.Rows[e.RowIndex];
-                        // Extract Request ID
-                        int cellValue = int.Parse(clickedRow.Cells[0].Value.ToString());
+            RequestCard card = new RequestCard();
+            card.Logo = uImg;
+            card.HeadName = societyName;
+            card.prlabel = "wants to join";
+            card.Title = memName;
+            card.uId = int.Parse(memId);
+            card.hImg = sImg;
+            card.hdate = d;
+            card.desc = interest;
 
-                        DB_Connection DB_Connector = new DB_Connection();
-                        // Set status to accepted
-                        string tableName = "Members";
-                        string[] scolumns = { "status" };
-                        string[] wcolumns = { "member_id" };
-                        object[] values = { "accepted", cellValue };
+            // Add Controllers
+            card.detailsBtnClicked += (sender, e) =>
+            {
+                MemberRequest popup = new MemberRequest(card.Title, card.HeadName,card.Logo, card.hImg, card.hdate, card.desc);
+                popup.ShowDialog();
 
-                        // Call the UpdateData method
-                        bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
-                        loadReqData();
-                    }
-                }
+            };
 
-                //if view button clicked on member request table
-                if (e.ColumnIndex == 3)
-                {
-                    if (memReqGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-                    {
-                        DataGridViewRow clickedRow = memReqGrid.Rows[e.RowIndex];
+            card.acceptBtnClicked += (sender, e) =>
+            {
+                DB_Connection DB_Connector = new DB_Connection();
+                // Set status to accepted
+                string tableName = "Members";
+                string[] scolumns = { "status" };
+                string[] wcolumns = { "member_id" };
+                object[] values = { "accepted", card.uId };
 
-                        string memberId = clickedRow.Cells[0].Value.ToString();
-                        foreach (var m in student.Members)
-                        {
-                            
-                            Console.Write(memberId);                            
-                            System.Drawing.Image socPic;
-                            System.Drawing.Image memPic;
-                            int socId = m.SocietyId;
-                            socPic = utilObj.getSocietyImage(socId);
-                            memPic = utilObj.getMemberImage(int.Parse(memberId));
-                            String socName = utilObj.getSocietyName(socId.ToString());
-                            string memberInt = utilObj.getMemberInterest(int.Parse(memberId));
-                            string memberName = utilObj.getMemberName(int.Parse(memberId));
-                            string dateJoined = m.getMemberDateJoined(int.Parse(memberId));
+                // Call the UpdateData method
+                bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
+                loadReqData();
+            };
+
+            card.rejectBtnClicked += (sender, e) =>
+            {
+                Reject popup = new Reject("Member");
+                popup.mId = card.uId;
+                popup.ShowDialog();
+                loadReqData();
+            };
 
 
-                            MemberRequest popup = new MemberRequest(m, socName, socPic, memberInt, memberName, memPic, dateJoined);
-                            popup.ShowDialog();
-                            break;
-                        }
-
-
-
-
-                    }
-                }
-           // }
+            MemberRequestsPanel.Controls.Add(card);
         }
+
 
         private void MemberReqBtn_Click(object sender, EventArgs e)
         {
@@ -913,15 +960,15 @@ namespace CampusNex
 
         private void memReqGrid_Paint(object sender, PaintEventArgs e)
         {
-            if (memReqGrid.Rows.Count == 0)
+            if (MemberRequestsPanel.Controls.Count == 0)
             {
                 string message = "No entries Yet";
                 using (var font = new Font("Verdana", 16, FontStyle.Bold))
                 using (var brush = new SolidBrush(Color.White))
                 {
                     var stringSize = e.Graphics.MeasureString(message, font);
-                    var x = (memReqGrid.Width - stringSize.Width) / 2;
-                    var y = (memReqGrid.Height - stringSize.Height) / 2;
+                    var x = (MemberRequestsPanel.Width - stringSize.Width) / 2;
+                    var y = (MemberRequestsPanel.Height - stringSize.Height) / 2;
                     e.Graphics.DrawString(message, font, brush, x, y);
                 }
             }

@@ -60,11 +60,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -174,13 +169,7 @@
             this.nameLabelReg = new Bunifu.UI.WinForms.BunifuLabel();
             this.titlReg = new Bunifu.UI.WinForms.BunifuLabel();
             this.memberRequest = new System.Windows.Forms.TabPage();
-            this.memReqGrid = new System.Windows.Forms.DataGridView();
-            this.reqID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.socName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reqStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewDetails = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AcceptReg = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.studentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberRequestsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.reqLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.viewEvent = new System.Windows.Forms.TabPage();
             this.eveDate = new System.Windows.Forms.Label();
@@ -237,7 +226,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.viewMsgsLbl = new Bunifu.UI.WinForms.BunifuLabel();
             this.viewMsgs = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.bunifuShapes4 = new Bunifu.UI.WinForms.BunifuShapes();
             this.closeBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
@@ -272,7 +261,6 @@
             this.studentReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).BeginInit();
             this.memberRequest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memReqGrid)).BeginInit();
             this.viewEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eveImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socImg)).BeginInit();
@@ -621,10 +609,10 @@
             this.StudentPages.Location = new System.Drawing.Point(271, 0);
             this.StudentPages.Multiline = true;
             this.StudentPages.Name = "StudentPages";
-            this.StudentPages.Page = this.societyReg;
-            this.StudentPages.PageIndex = 2;
-            this.StudentPages.PageName = "societyReg";
-            this.StudentPages.PageTitle = "Register a New Society !!";
+            this.StudentPages.Page = this.tabPage1;
+            this.StudentPages.PageIndex = 10;
+            this.StudentPages.PageName = "tabPage1";
+            this.StudentPages.PageTitle = "Dashboard";
             this.StudentPages.SelectedIndex = 0;
             this.StudentPages.Size = new System.Drawing.Size(1099, 749);
             this.StudentPages.TabIndex = 1;
@@ -1211,6 +1199,7 @@
             this.uploadImgPicBox.AutoSizeHeight = true;
             this.uploadImgPicBox.BorderRadius = 61;
             this.uploadImgPicBox.ErrorImage = null;
+            this.uploadImgPicBox.Image = ((System.Drawing.Image)(resources.GetObject("uploadImgPicBox.Image")));
             this.uploadImgPicBox.IsCircle = true;
             this.uploadImgPicBox.Location = new System.Drawing.Point(865, 127);
             this.uploadImgPicBox.Name = "uploadImgPicBox";
@@ -2347,7 +2336,7 @@
             // memberRequest
             // 
             this.memberRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memberRequest.Controls.Add(this.memReqGrid);
+            this.memberRequest.Controls.Add(this.MemberRequestsPanel);
             this.memberRequest.Controls.Add(this.reqLabel1);
             this.memberRequest.Location = new System.Drawing.Point(4, 4);
             this.memberRequest.Name = "memberRequest";
@@ -2356,137 +2345,17 @@
             this.memberRequest.TabIndex = 5;
             this.memberRequest.Text = "Member Requests";
             // 
-            // memReqGrid
+            // MemberRequestsPanel
             // 
-            this.memReqGrid.AllowUserToAddRows = false;
-            this.memReqGrid.AllowUserToDeleteRows = false;
-            this.memReqGrid.AllowUserToOrderColumns = true;
-            this.memReqGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memReqGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.memReqGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memReqGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.memReqGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.memReqGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.memReqGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.memReqGrid.ColumnHeadersHeight = 40;
-            this.memReqGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.memReqGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reqID,
-            this.socName,
-            this.reqStatus,
-            this.viewDetails,
-            this.AcceptReg,
-            this.studentId});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.memReqGrid.DefaultCellStyle = dataGridViewCellStyle5;
-            this.memReqGrid.EnableHeadersVisualStyles = false;
-            this.memReqGrid.Location = new System.Drawing.Point(43, 116);
-            this.memReqGrid.Name = "memReqGrid";
-            this.memReqGrid.ReadOnly = true;
-            this.memReqGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.memReqGrid.RowHeadersVisible = false;
-            this.memReqGrid.RowHeadersWidth = 45;
-            this.memReqGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.memReqGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.memReqGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memReqGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memReqGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.memReqGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.memReqGrid.RowTemplate.DividerHeight = 1;
-            this.memReqGrid.RowTemplate.Height = 50;
-            this.memReqGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.memReqGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.memReqGrid.Size = new System.Drawing.Size(785, 540);
-            this.memReqGrid.TabIndex = 2;
-            this.memReqGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.memReqGrid_CellContentClick);
-            this.memReqGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.memReqGrid_Paint);
-            // 
-            // reqID
-            // 
-            this.reqID.FillWeight = 77.48223F;
-            this.reqID.HeaderText = "ID";
-            this.reqID.MinimumWidth = 6;
-            this.reqID.Name = "reqID";
-            this.reqID.ReadOnly = true;
-            this.reqID.Width = 80;
-            // 
-            // socName
-            // 
-            this.socName.FillWeight = 77.48223F;
-            this.socName.HeaderText = "Society Name";
-            this.socName.MinimumWidth = 6;
-            this.socName.Name = "socName";
-            this.socName.ReadOnly = true;
-            this.socName.Width = 200;
-            // 
-            // reqStatus
-            // 
-            this.reqStatus.FillWeight = 77.48223F;
-            this.reqStatus.HeaderText = "Student Name";
-            this.reqStatus.MinimumWidth = 6;
-            this.reqStatus.Name = "reqStatus";
-            this.reqStatus.ReadOnly = true;
-            this.reqStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reqStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reqStatus.Width = 200;
-            // 
-            // viewDetails
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewDetails.DefaultCellStyle = dataGridViewCellStyle3;
-            this.viewDetails.FillWeight = 77.48223F;
-            this.viewDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewDetails.HeaderText = "View Request";
-            this.viewDetails.MinimumWidth = 6;
-            this.viewDetails.Name = "viewDetails";
-            this.viewDetails.ReadOnly = true;
-            this.viewDetails.Text = "More Details";
-            this.viewDetails.Width = 150;
-            // 
-            // AcceptReg
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AcceptReg.DefaultCellStyle = dataGridViewCellStyle4;
-            this.AcceptReg.FillWeight = 77.48223F;
-            this.AcceptReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AcceptReg.HeaderText = "Accept";
-            this.AcceptReg.MinimumWidth = 6;
-            this.AcceptReg.Name = "AcceptReg";
-            this.AcceptReg.ReadOnly = true;
-            this.AcceptReg.Text = "Accept";
-            this.AcceptReg.ToolTipText = "Accept";
-            this.AcceptReg.Width = 150;
-            // 
-            // studentId
-            // 
-            this.studentId.HeaderText = "studentId";
-            this.studentId.MinimumWidth = 6;
-            this.studentId.Name = "studentId";
-            this.studentId.ReadOnly = true;
-            this.studentId.Visible = false;
-            this.studentId.Width = 125;
+            this.MemberRequestsPanel.AutoScroll = true;
+            this.MemberRequestsPanel.BackColor = System.Drawing.Color.Transparent;
+            this.MemberRequestsPanel.Location = new System.Drawing.Point(65, 108);
+            this.MemberRequestsPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.MemberRequestsPanel.Name = "MemberRequestsPanel";
+            this.MemberRequestsPanel.Padding = new System.Windows.Forms.Padding(40, 10, 10, 10);
+            this.MemberRequestsPanel.Size = new System.Drawing.Size(960, 618);
+            this.MemberRequestsPanel.TabIndex = 7;
+            this.MemberRequestsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.memReqGrid_Paint);
             // 
             // reqLabel1
             // 
@@ -2494,12 +2363,12 @@
             this.reqLabel1.AutoEllipsis = false;
             this.reqLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.reqLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.reqLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reqLabel1.ForeColor = System.Drawing.Color.White;
-            this.reqLabel1.Location = new System.Drawing.Point(43, 66);
+            this.reqLabel1.Location = new System.Drawing.Point(423, 52);
             this.reqLabel1.Name = "reqLabel1";
             this.reqLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.reqLabel1.Size = new System.Drawing.Size(213, 29);
+            this.reqLabel1.Size = new System.Drawing.Size(253, 33);
             this.reqLabel1.TabIndex = 0;
             this.reqLabel1.Text = "Member Requests";
             this.reqLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -4054,7 +3923,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.tabPage1.Controls.Add(this.bunifuLabel5);
+            this.tabPage1.Controls.Add(this.viewMsgsLbl);
             this.tabPage1.Controls.Add(this.viewMsgs);
             this.tabPage1.Controls.Add(this.bunifuShapes4);
             this.tabPage1.Controls.Add(this.closeBtn);
@@ -4077,24 +3946,24 @@
             this.tabPage1.TabIndex = 10;
             this.tabPage1.Text = "Dashboard";
             // 
-            // bunifuLabel5
+            // viewMsgsLbl
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.AutoSize = false;
-            this.bunifuLabel5.CursorType = null;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.ForeColor = System.Drawing.Color.White;
-            this.bunifuLabel5.Location = new System.Drawing.Point(853, 245);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(199, 24);
-            this.bunifuLabel5.TabIndex = 22;
-            this.bunifuLabel5.Text = "Click to fetch notifications (if any)";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.viewMsgsLbl.AllowParentOverrides = false;
+            this.viewMsgsLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.viewMsgsLbl.AutoEllipsis = false;
+            this.viewMsgsLbl.AutoSize = false;
+            this.viewMsgsLbl.CursorType = null;
+            this.viewMsgsLbl.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewMsgsLbl.ForeColor = System.Drawing.Color.White;
+            this.viewMsgsLbl.Location = new System.Drawing.Point(853, 245);
+            this.viewMsgsLbl.Margin = new System.Windows.Forms.Padding(2);
+            this.viewMsgsLbl.Name = "viewMsgsLbl";
+            this.viewMsgsLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.viewMsgsLbl.Size = new System.Drawing.Size(199, 24);
+            this.viewMsgsLbl.TabIndex = 22;
+            this.viewMsgsLbl.Text = "Click to fetch notifications (if any)";
+            this.viewMsgsLbl.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.viewMsgsLbl.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // viewMsgs
             // 
@@ -4862,7 +4731,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoStudentReg)).EndInit();
             this.memberRequest.ResumeLayout(false);
             this.memberRequest.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memReqGrid)).EndInit();
             this.viewEvent.ResumeLayout(false);
             this.viewEvent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eveImg)).EndInit();
@@ -4943,7 +4811,6 @@
         private System.Windows.Forms.FlowLayoutPanel societyEventPanel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton MemberReqBtn;
         private System.Windows.Forms.TabPage memberRequest;
-        private System.Windows.Forms.DataGridView memReqGrid;
         private Bunifu.UI.WinForms.BunifuLabel reqLabel1;
         private System.Windows.Forms.TabPage viewEvent;
         private System.Windows.Forms.Label presentLbl;
@@ -5006,12 +4873,6 @@
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes1;
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes2;
         private Bunifu.UI.WinForms.BunifuDatePicker validTillPicker;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reqStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn viewDetails;
-        private System.Windows.Forms.DataGridViewButtonColumn AcceptReg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentId;
         private System.Windows.Forms.TabPage tabPage1;
         private Bunifu.UI.WinForms.BunifuPictureBox userPicBox;
         private System.Windows.Forms.Label label13;
@@ -5034,6 +4895,7 @@
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes4;
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes5;
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton viewMsgs;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuLabel viewMsgsLbl;
+        private System.Windows.Forms.FlowLayoutPanel MemberRequestsPanel;
     }
 }

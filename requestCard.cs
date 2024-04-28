@@ -31,6 +31,18 @@ namespace CampusNex
                 newSocName.Text = value;
             }
         }
+        
+        public string prlabel
+        {
+            get
+            {
+                return presentlabel.Text;
+            }
+            set
+            {
+                presentlabel.Text = value;
+            }
+        }
 
         public string HeadName
         {
@@ -60,7 +72,10 @@ namespace CampusNex
         public int uId;
         public int societyId;
         public string sName;
+        public string hdate;
+        public string desc;
         public System.Drawing.Image hImg;
+
 
         public void detailsBtn_Click(object sender, EventArgs e)
         {

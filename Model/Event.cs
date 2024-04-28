@@ -26,6 +26,7 @@ namespace CampusNex.Model
         public int OrganizerId { get; set; }
         public int SocietyId { get; set; }
         public string Status { get; set; }
+        public string Comments { get; set; }
         public byte[] EventImg { get; set; }
 
         private static DB_Connection dbConnector = new DB_Connection();
@@ -55,6 +56,8 @@ namespace CampusNex.Model
             this.OrganizerId = int.Parse(selectResult[0][8].ToString());
             this.Status = selectResult[0][9].ToString();
             this.EventImg = (byte[])selectResult[0][10];
+            // Comments added
+            this.Comments = selectResult[0][11].ToString();
 
         }
 
@@ -72,7 +75,7 @@ namespace CampusNex.Model
             {
 
                 SqlCommand cmd = new SqlCommand(query, dbConnector.connection);
-                cmd.Parameters.Add("@logoBlob", MySqlDbType.Blob).Value = e.EventImg;
+                cmd.Parameters.AddWithValue("@logoBlob", MySqlDbType.Blob).Value = e.EventImg;
 
                 cmd.ExecuteNonQuery();
                 dbConnector.connection.Close();
@@ -93,6 +96,11 @@ namespace CampusNex.Model
             // Call the UpdateData method
             bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
 
+        }
+
+        public void DeleteEvent()
+        {
+            dbConnector.DeleteRejectedEvent(this.EventId);
         }
 
         public void CreateEvent()

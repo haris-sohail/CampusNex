@@ -76,7 +76,7 @@ namespace CampusNex.Model
         {
             // Update Database
             DB_Connection DB_Connector = new DB_Connection();
-            // Set status to accepted
+
             string tableName = "Societies";
             string[] scolumns = { "status", "comments" };
             string[] wcolumns = { "society_id" };

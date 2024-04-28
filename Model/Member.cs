@@ -17,7 +17,8 @@ namespace CampusNex.Model
         public bool IsHead { get; set; }
         public int StudentId { get; set; }
         public int SocietyId { get; set; }
-        public string status { get; set; } 
+        public string status { get; set; }
+        public string Comments { get; set; }
         protected static DB_Connection dbConnector = new DB_Connection();
         // Constructor
         public Member()
@@ -49,6 +50,7 @@ namespace CampusNex.Model
             this.JoinedDate = DateTime.Parse(selectResult[0][3].ToString());
             this.IsHead = Boolean.Parse(selectResult[0][4].ToString());
             this.status = selectResult[0][6].ToString();
+            this.Comments = selectResult[0][7].ToString();
         }
 
         // Methods
@@ -67,8 +69,9 @@ namespace CampusNex.Model
             this.JoinedDate = DateTime.Parse(selectResult[index][3].ToString());
             this.IsHead = Boolean.Parse(selectResult[index][4].ToString());
             this.status = selectResult[index][6].ToString();
-           
-            
+            this.Comments = selectResult[0][7].ToString();
+
+
         }
         public static int IsMember(int student_id)
         {
@@ -86,16 +89,24 @@ namespace CampusNex.Model
                 +$"SocietyId: {this.SocietyId}\nIsHead: {this.IsHead}\nStatus: {this.status}\n";
         }
 
-        public String getMemberDateJoined(int memberId)
+        public void DeleteMember()
         {
             DB_Connection dbConnector = new DB_Connection();
-            string query = "SELECT join_date " +
-            "FROM Members WHERE member_id = " + memberId;
-            List<List<object>> selectResult = dbConnector.executeSelect(query);
+            dbConnector.DeleteRejectedMember(this.MemberId);
+        }
 
+        public static void rejectMember(int mid, string reason)
+        {
+            // Update Database
+            DB_Connection DB_Connector = new DB_Connection();
 
-            String memberDateJoined = selectResult[0][0].ToString();
-            return memberDateJoined;
+            string tableName = "Members";
+            string[] scolumns = { "status", "comments" };
+            string[] wcolumns = { "member_id" };
+            object[] values = { "rejected", reason, mid };
+
+            // Call the UpdateData method
+            bool success = DB_Connector.UpdateData(tableName, scolumns, wcolumns, values);
 
         }
     }

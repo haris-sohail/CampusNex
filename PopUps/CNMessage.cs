@@ -16,7 +16,15 @@ namespace CampusNex.PopUps
         {
             InitializeComponent();
             msgtype.Text = t;
-            reasons.Text = c;
+            if (c != null )
+            {
+                reasons.Text = c;
+            }
+            else
+            {
+                reasons.Text = "No Comments :(";
+            }
+           
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

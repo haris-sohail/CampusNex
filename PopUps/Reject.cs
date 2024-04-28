@@ -14,6 +14,7 @@ namespace CampusNex.PopUps
         private string type;
         public Society sr = new Society();
         public Event er = new Event();
+        public int mId;
 
         public Reject(string type)
         {
@@ -39,6 +40,10 @@ namespace CampusNex.PopUps
             {
                 sr.rejectSociety(rejectReason.Text);
                 DataSent?.Invoke(this, new DataSentEventArgs(true, sr.SocietyId));
+            }
+            else if (type == "Member")
+            {
+                Member.rejectMember(mId, rejectReason.Text);
             }
             this.Close();
         }

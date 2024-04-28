@@ -16,26 +16,17 @@ namespace CampusNex.PopUps
 {
     public partial class MemberRequest : Form
     {
-        Member Request = new Member();
-        Util utilobj = new Util();
-        private System.Drawing.Image societyImg;
-        private System.Drawing.Image memImg;
-        private string soc_Name;
-        private string memInterest;
-        private string memName;
-        private string dateJoined;
 
-        public MemberRequest(Member Request, string soc_Name, System.Drawing.Image socImg, string memInterest, string memName, System.Drawing.Image memImg, string dateJoined)
+        public MemberRequest(string mName, string sName, System.Drawing.Image mPic, 
+                            System.Drawing.Image sPic, string dateJoined, string interest)
         {
             InitializeComponent();
-            this.Request = Request;
-            this.societyImg = socImg;
-            this.soc_Name = soc_Name;
-            this.memInterest = memInterest;
-            this.memName = memName;
-            this.memImg = memImg;
-            this.dateJoined = dateJoined;
-            Console.WriteLine(this.Request);
+            memberName.Text = mName;
+            socName.Text = sName;
+            memberPic.Image = mPic;
+            socPic.Image = sPic;
+            regDateViewMember.Text = dateJoined;
+            memberDesc.Text = interest;
            
         }
 
@@ -44,27 +35,5 @@ namespace CampusNex.PopUps
             this.Close();
         }
 
-        private void bunifuLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void regDateViewMember_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MemberRequest_Load(object sender, EventArgs e)
-        {
-            //Load all data  
-            memberPic.Image = this.memImg;
-            socPic.Image = this.societyImg;
-            nameViewMember.Text = this.memName;   
-            socName.Text = this.soc_Name;
-            regDateViewMember.Text = this.dateJoined;
-            memberDesc.Text = this.memInterest;
-            
-
-        }
     }
 }

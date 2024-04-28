@@ -64,15 +64,15 @@
             this.newSocName.AutoEllipsis = false;
             this.newSocName.Cursor = System.Windows.Forms.Cursors.Default;
             this.newSocName.CursorType = System.Windows.Forms.Cursors.Default;
-            this.newSocName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSocName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newSocName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
             this.newSocName.Location = new System.Drawing.Point(177, 37);
             this.newSocName.Name = "newSocName";
             this.newSocName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.newSocName.Size = new System.Drawing.Size(182, 25);
+            this.newSocName.Size = new System.Drawing.Size(164, 25);
             this.newSocName.TabIndex = 1;
             this.newSocName.Text = "New New Society";
-            this.newSocName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.newSocName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.newSocName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // socHeadName
@@ -81,15 +81,15 @@
             this.socHeadName.AutoEllipsis = false;
             this.socHeadName.Cursor = System.Windows.Forms.Cursors.Default;
             this.socHeadName.CursorType = System.Windows.Forms.Cursors.Default;
-            this.socHeadName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.socHeadName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.socHeadName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.socHeadName.Location = new System.Drawing.Point(179, 121);
+            this.socHeadName.Location = new System.Drawing.Point(173, 121);
             this.socHeadName.Name = "socHeadName";
             this.socHeadName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.socHeadName.Size = new System.Drawing.Size(92, 25);
+            this.socHeadName.Size = new System.Drawing.Size(78, 25);
             this.socHeadName.TabIndex = 2;
             this.socHeadName.Text = "Test test";
-            this.socHeadName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.socHeadName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.socHeadName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // presentlabel
@@ -103,10 +103,10 @@
             this.presentlabel.Location = new System.Drawing.Point(223, 78);
             this.presentlabel.Name = "presentlabel";
             this.presentlabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.presentlabel.Size = new System.Drawing.Size(65, 18);
+            this.presentlabel.Size = new System.Drawing.Size(65, 19);
             this.presentlabel.TabIndex = 3;
             this.presentlabel.Text = "presents";
-            this.presentlabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.presentlabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.presentlabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // acceptBtn
@@ -132,7 +132,7 @@
             this.acceptBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.acceptBtn.Image = ((System.Drawing.Image)(resources.GetObject("acceptBtn.Image")));
             this.acceptBtn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.acceptBtn.Location = new System.Drawing.Point(666, 48);
+            this.acceptBtn.Location = new System.Drawing.Point(724, 48);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.RoundBorders = true;
             this.acceptBtn.ShowBorders = true;
@@ -164,7 +164,7 @@
             this.detailsBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.detailsBtn.Image = ((System.Drawing.Image)(resources.GetObject("detailsBtn.Image")));
             this.detailsBtn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.detailsBtn.Location = new System.Drawing.Point(441, 49);
+            this.detailsBtn.Location = new System.Drawing.Point(482, 49);
             this.detailsBtn.Name = "detailsBtn";
             this.detailsBtn.RoundBorders = true;
             this.detailsBtn.ShowBorders = true;
@@ -196,7 +196,7 @@
             this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuIconButton1.Image")));
             this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.bunifuIconButton1.Location = new System.Drawing.Point(540, 32);
+            this.bunifuIconButton1.Location = new System.Drawing.Point(593, 32);
             this.bunifuIconButton1.Name = "bunifuIconButton1";
             this.bunifuIconButton1.RoundBorders = true;
             this.bunifuIconButton1.ShowBorders = true;

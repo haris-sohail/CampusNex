@@ -58,13 +58,13 @@
             this.CommentLbl.CursorType = System.Windows.Forms.Cursors.Default;
             this.CommentLbl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CommentLbl.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.CommentLbl.Location = new System.Drawing.Point(181, 13);
+            this.CommentLbl.Location = new System.Drawing.Point(84, 12);
             this.CommentLbl.Name = "CommentLbl";
             this.CommentLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CommentLbl.Size = new System.Drawing.Size(114, 23);
             this.CommentLbl.TabIndex = 29;
             this.CommentLbl.Text = "Comments";
-            this.CommentLbl.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.CommentLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.CommentLbl.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // rejectBtn
