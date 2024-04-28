@@ -37,9 +37,7 @@ namespace CampusNex
             else
             {
                 Student s = new Student(user_id);
-
                 s.FormClosed += studentFormClosed;
-
                 s.Show();
             }
         }
