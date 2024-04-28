@@ -482,11 +482,21 @@ namespace CampusNex
         private void regNewSociety_Click(object sender, EventArgs e)
         {
             // Check For Empty Fields
-            if(societyName.Text == "" || societySlogan.Text == ""
+            if (societyName.Text == "" || societySlogan.Text == ""
                 || societyDesc.Text == "" || availableMentors.Text == "" || uploadImgPicBox.Image == null)
             {
                 MessageBox.Show("One or More Field(s) empty", "Please Fill All Fields and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            // check if society name is already taken
+            foreach (Society society in this.societies)
+            {
+                if(society.Name.ToLower() == societyName.Text.ToLower())
+                {
+                    MessageBox.Show("Society name has already been taken", "Please Fill All Fields and Try Again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
 
             // BVA For Fields
