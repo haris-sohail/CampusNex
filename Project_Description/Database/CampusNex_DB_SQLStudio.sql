@@ -223,6 +223,6 @@ WHERE M.status = 'pending' and M.society_id = 2;
 
 -- show variables like "secure_file_priv";
 
-SELECT user_id, role, username FROM CUsers WHERE CUsers.username = 'haris' AND CUsers.password = 'password'
+SELECT user_id, role, username FROM CUsers WHERE CUsers.username = 'haris' AND CUsers.password = 'password';
 
-select * from events
+select * from societies;
