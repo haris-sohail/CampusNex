@@ -223,10 +223,8 @@ namespace CampusNex
             {
                 Model.Society newSociety = new Model.Society();
                 newSociety.initialize(society);
-                if (newSociety.status != "pending")
-                {
-                    societies.Add(newSociety);
-                }   
+                
+                societies.Add(newSociety);  
             }
         }
 
@@ -395,7 +393,7 @@ namespace CampusNex
             foreach (var s in societies)
             {
                 System.Drawing.Image societyImg = utilObj.getImage(s.Logo);
-                if(s.status != "rejected")
+                if(s.status != "rejected" && s.status != "pending")
                 {
                     // Check if society is registered
                     if (Ids.Contains(s.SocietyId) && s.status !="pending")
@@ -505,7 +503,22 @@ namespace CampusNex
             {
                 return;
             }
-            
+
+            // update societies array locally
+            Society newSociety = new Society();
+            newSociety.Name = societyName.Text;
+            newSociety.Slogan = societySlogan.Text;
+            newSociety.Description = societyDesc.Text;
+            newSociety.mentorName = availableMentors.Text;
+            newSociety.headName = student.Username;
+            newSociety.HeadId = student.UserId;
+            newSociety.Logo = utilObj.convertToByteStream(uploadImgPicBox.Image);
+            newSociety.headName = student.Username;
+            newSociety.status = "pending";
+
+
+            societies.Add(newSociety);
+
 
             DB_Connection dbConnector = new DB_Connection();
 
