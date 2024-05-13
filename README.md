@@ -2,4 +2,4 @@
 A desktop application made for managing university societies
 
 ## Documentation
-[CampusNex Documentation](https://drive.google.com/file/d/1pYu_cqoSi-A-7xG98LPetC8Bwzyg1Aa0/view?usp=sharing)
+[CampusNex Documentation](https://drive.google.com/file/d/1WlB_nyBncVJksiq09sjn4Kj-0BtQTMRM/view?usp=sharing)
